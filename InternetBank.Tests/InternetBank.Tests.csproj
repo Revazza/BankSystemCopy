@@ -20,7 +20,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\CommonServices\Common.csproj" />
-      <ProjectReference Include="..\InternetBank.Services\InternetBank.csproj" />
     </ItemGroup>
 
 </Project>

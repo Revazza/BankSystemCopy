@@ -36,7 +36,6 @@
   </ItemGroup>
 
   <ItemGroup>
-	  <ProjectReference Include="..\InternetBank.Services\InternetBank.csproj" />
 	  <ProjectReference Include="..\CommonServices\Common.csproj" />
   </ItemGroup>
 </Project>

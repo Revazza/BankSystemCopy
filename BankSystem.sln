@@ -3,29 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Internet Bank", "Internet Bank", "{C36D98E9-5A65-4538-B48C-F79856315177}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InternetBank", "InternetBank", "{C36D98E9-5A65-4538-B48C-F79856315177}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternetBank.API", "InternetBank.API\InternetBank.API.csproj", "{C67F830D-683C-491F-ACEE-FED63058DB3D}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternetBank", "InternetBank.Services\InternetBank.csproj", "{DA643DD2-35CE-41BF-B835-9CA2D9D79D54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankSystem.InternetBank.Api", "InternetBank.Api\BankSystem.InternetBank.Api.csproj", "{C67F830D-683C-491F-ACEE-FED63058DB3D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ATM", "ATM", "{7065DE3F-2958-47D1-8CE6-DD639E91BD62}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ATM.Api", "Atm.Api\BankSystem.Atm.Api.csproj", "{9FF50265-7AB8-4C87-9AC9-9580CCB804EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankSystem.Atm.Api", "Atm.Api\BankSystem.Atm.Api.csproj", "{9FF50265-7AB8-4C87-9AC9-9580CCB804EF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ATM", "Atm\BankSystem.Atm.csproj", "{EFD2F3A4-CB3D-4168-887D-7D9B57B1ACBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankSystem.Atm", "Atm\BankSystem.Atm.csproj", "{EFD2F3A4-CB3D-4168-887D-7D9B57B1ACBD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{353DA829-BA8A-4148-8924-062487E13C15}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\BankSystem.Common.csproj", "{C71B49E6-BE75-48E0-BF44-9D9A72F30829}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankSystem.Common", "Common\BankSystem.Common.csproj", "{C71B49E6-BE75-48E0-BF44-9D9A72F30829}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Tests", "Common.Tests\BankSystem.Common.Tests.csproj", "{7397578F-AA6B-4A3D-BE3C-C63B997AB24A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankSystem.Common.Tests", "Common.Tests\BankSystem.Common.Tests.csproj", "{7397578F-AA6B-4A3D-BE3C-C63B997AB24A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reports", "Reports", "{D41E46C2-8774-4DE3-A036-C5CC89FCE1EF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reports.API", "Reports\Reports.API.csproj", "{4DD13417-80AB-4F69-AB51-A516EAF519C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankSystem.Reports.Api", "Reports.Api\BankSystem.Reports.Api.csproj", "{4DD13417-80AB-4F69-AB51-A516EAF519C1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reports", "Reports.Services\Reports.csproj", "{EDD6EC6D-2FF1-4A94-BCD4-5CD73FDBA9D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankSystem.Reports", "Reports\BankSystem.Reports.csproj", "{EDD6EC6D-2FF1-4A94-BCD4-5CD73FDBA9D8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EmailService", "EmailService", "{9D848EB3-13E9-4F17-A867-EEB7F79774EA}"
 EndProject
@@ -37,7 +35,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedSettings", "SharedSet
 		SharedSettings.win32nt.json = SharedSettings.win32nt.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternetBank.Tests", "InternetBank.Tests\InternetBank.Tests.csproj", "{E145C52C-FFFD-4D2B-A2E6-8B020CDE4608}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternetBank.Tests", "InternetBank.Tests\InternetBank.Tests.csproj", "{E145C52C-FFFD-4D2B-A2E6-8B020CDE4608}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternetBank", "InternetBank\InternetBank.csproj", "{19FFD42A-802C-4992-9573-5531702C7A03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,10 +49,6 @@ Global
 		{C67F830D-683C-491F-ACEE-FED63058DB3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C67F830D-683C-491F-ACEE-FED63058DB3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C67F830D-683C-491F-ACEE-FED63058DB3D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DA643DD2-35CE-41BF-B835-9CA2D9D79D54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DA643DD2-35CE-41BF-B835-9CA2D9D79D54}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DA643DD2-35CE-41BF-B835-9CA2D9D79D54}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DA643DD2-35CE-41BF-B835-9CA2D9D79D54}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9FF50265-7AB8-4C87-9AC9-9580CCB804EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9FF50265-7AB8-4C87-9AC9-9580CCB804EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FF50265-7AB8-4C87-9AC9-9580CCB804EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -85,13 +81,16 @@ Global
 		{E145C52C-FFFD-4D2B-A2E6-8B020CDE4608}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E145C52C-FFFD-4D2B-A2E6-8B020CDE4608}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E145C52C-FFFD-4D2B-A2E6-8B020CDE4608}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19FFD42A-802C-4992-9573-5531702C7A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19FFD42A-802C-4992-9573-5531702C7A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19FFD42A-802C-4992-9573-5531702C7A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19FFD42A-802C-4992-9573-5531702C7A03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C67F830D-683C-491F-ACEE-FED63058DB3D} = {C36D98E9-5A65-4538-B48C-F79856315177}
-		{DA643DD2-35CE-41BF-B835-9CA2D9D79D54} = {C36D98E9-5A65-4538-B48C-F79856315177}
 		{9FF50265-7AB8-4C87-9AC9-9580CCB804EF} = {7065DE3F-2958-47D1-8CE6-DD639E91BD62}
 		{EFD2F3A4-CB3D-4168-887D-7D9B57B1ACBD} = {7065DE3F-2958-47D1-8CE6-DD639E91BD62}
 		{C71B49E6-BE75-48E0-BF44-9D9A72F30829} = {353DA829-BA8A-4148-8924-062487E13C15}
@@ -100,6 +99,7 @@ Global
 		{EDD6EC6D-2FF1-4A94-BCD4-5CD73FDBA9D8} = {D41E46C2-8774-4DE3-A036-C5CC89FCE1EF}
 		{2397AA78-590F-41DF-AC3A-39B40F0F24CF} = {9D848EB3-13E9-4F17-A867-EEB7F79774EA}
 		{E145C52C-FFFD-4D2B-A2E6-8B020CDE4608} = {C36D98E9-5A65-4538-B48C-F79856315177}
+		{19FFD42A-802C-4992-9573-5531702C7A03} = {C36D98E9-5A65-4538-B48C-F79856315177}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A893F652-84A8-43E6-9335-05497E5E9E71}
