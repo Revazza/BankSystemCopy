@@ -17,9 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ATM", "Atm\BankSystem.Atm.c
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{353DA829-BA8A-4148-8924-062487E13C15}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "CommonServices\Common.csproj", "{C71B49E6-BE75-48E0-BF44-9D9A72F30829}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\BankSystem.Common.csproj", "{C71B49E6-BE75-48E0-BF44-9D9A72F30829}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Tests", "CommonServies.Tests\Common.Tests.csproj", "{7397578F-AA6B-4A3D-BE3C-C63B997AB24A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Tests", "Common.Tests\BankSystem.Common.Tests.csproj", "{7397578F-AA6B-4A3D-BE3C-C63B997AB24A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reports", "Reports", "{D41E46C2-8774-4DE3-A036-C5CC89FCE1EF}"
 EndProject
