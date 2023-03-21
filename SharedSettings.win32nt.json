@@ -1,0 +1,6 @@
+{
+  "CompanyEmail": "sandro.revazishviliii@gmail.com",
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=BankSystem"
+  }
+}

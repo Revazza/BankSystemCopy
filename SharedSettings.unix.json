@@ -1,0 +1,6 @@
+{
+  "CompanyEmail": "ana@gmail.com",
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=BankSystem;User Id=sa;Password=Anabec3451.;Encrypt=False;"
+  }
+}
