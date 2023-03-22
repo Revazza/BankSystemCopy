@@ -1,11 +1,11 @@
-﻿using CommonServices.Db;
-using CommonServices.Db.Entities;
+﻿using BankSystem.Common.Db;
+using BankSystem.Common.Db.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Abstractions;
 using System.Security.Cryptography;
 
-namespace CommonServices.Seed
+namespace BankSystem.Common.Seed
 {
     public static class Seeder
     {

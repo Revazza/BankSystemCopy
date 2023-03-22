@@ -1,4 +1,4 @@
-﻿namespace ATM.Exceptions
+﻿namespace BankSystem.Atm.Exceptions
 {
     public class CashOutLimitExceededException : Exception
     {

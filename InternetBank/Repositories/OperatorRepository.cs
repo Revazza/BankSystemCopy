@@ -1,11 +1,12 @@
 using System.Security.Claims;
-using CommonServices.Auth;
-using CommonServices.Db;
-using CommonServices.Db.Entities;
+using BankSystem.Common.Auth;
+using BankSystem.Common.Db;
+using BankSystem.Common.Db.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace CommonServices.Repositores;
+namespace BankSystem.InternetBank.Repositories;
+
 public interface IOperatorRepository
 {
     Task<string> OperatorLoginAsync(string name);

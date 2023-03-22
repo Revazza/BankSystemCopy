@@ -1,4 +1,4 @@
-namespace InternetBank.Models.Requests;
+namespace BankSystem.InternetBank.Models.Requests;
 
 public class LoginRequest
 {

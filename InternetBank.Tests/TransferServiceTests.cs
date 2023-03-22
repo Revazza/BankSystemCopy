@@ -1,8 +1,9 @@
-using CommonServices.Db.Entities;
-using CommonServices.Db.FinancialEnums;
-using CommonServices.Repositores;
-using InternetBank.Models.Requests;
-using InternetBank.Services;
+using BankSystem.Common.Db.Entities;
+using BankSystem.Common.Db.FinancialEnums;
+using BankSystem.Common.Repositores;
+using BankSystem.InternetBank.Models.Requests;
+using BankSystem.InternetBank.Repositories;
+using BankSystem.InternetBank.Services;
 using Moq;
 
 namespace InternetBank.Tests;
@@ -36,7 +37,8 @@ public class TransferServiceTests
         {
             UserId = transferor.UserId,
             Currency = CurrencyType.GEL,
-            Amount = 500, Iban = "GE05VT3774861580071408"
+            Amount = 500,
+            Iban = "GE05VT3774861580071408"
         };
         await fakeDb.Accounts.AddRangeAsync(transferor, transferee);
         await fakeDb.SaveChangesAsync();
@@ -47,7 +49,7 @@ public class TransferServiceTests
             Amount = 500
         };
         await _transferService.TransferMoneyAsync(request, transferor.UserId);
-        
+
         var updatedTransferor = await fakeDb.Accounts.FindAsync(transferor.Id);
         var updatedTransferee = await fakeDb.Accounts.FindAsync(transferee.Id);
         Assert.That(transferee.Amount, Is.EqualTo(500));

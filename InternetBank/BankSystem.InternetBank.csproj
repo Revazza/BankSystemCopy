@@ -14,13 +14,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="IbanNet">
-      <HintPath>..\..\..\.nuget\packages\ibannet\5.8.0\lib\net7.0\IbanNet.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\Common\BankSystem.Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CommonServices\Common.csproj" />
+    <Reference Include="IbanNet">
+      <HintPath>..\..\..\.nuget\packages\ibannet\5.8.0\lib\net7.0\IbanNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

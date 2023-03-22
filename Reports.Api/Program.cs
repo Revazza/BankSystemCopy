@@ -1,9 +1,9 @@
-using CommonServices.Db;
+using BankSystem.Common.Db;
 using InternetBank.API.Auth;
 using Microsoft.EntityFrameworkCore;
-using Reports.API.Auth;
-using Reports.Repositories;
-using Reports.Services.Transaction;
+using BankSystem.Reports.API.Auth;
+using BankSystem.Reports.Repositories;
+using BankSystem.Reports.Services.Transaction;
 
 var builder = WebApplication.CreateBuilder(args);
 

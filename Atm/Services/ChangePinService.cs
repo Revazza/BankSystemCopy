@@ -1,7 +1,7 @@
-﻿using ATM.Api.Repositories;
-using ATM.Services.Models.Requests;
+﻿using BankSystem.Atm.Repositories;
+using BankSystem.Atm.Services.Models.Requests;
 
-namespace ATM.Services
+namespace BankSystem.Atm.Services
 {
     public interface IChangePinService 
     {

@@ -1,12 +1,11 @@
-using System.Net.Http.Headers;
-using CommonServices.Db;
-using CommonServices.Db.Entities;
-using CommonServices.Db.FinancialEnums;
-using CommonServices.Repositores;
-using CommonServices.Services;
-using InternetBank.Models.Requests;
+using BankSystem.Common.Db.Entities;
+using BankSystem.Common.Db.FinancialEnums;
+using BankSystem.Common.Repositores;
+using BankSystem.Common.Services;
+using BankSystem.InternetBank.Models.Requests;
+using BankSystem.InternetBank.Repositories;
 
-namespace InternetBank.Services;
+namespace BankSystem.InternetBank.Services;
 
 public interface ITransferService
 {

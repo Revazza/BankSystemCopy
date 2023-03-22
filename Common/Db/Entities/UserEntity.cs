@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using System;
 using Newtonsoft.Json;
 
-namespace CommonServices.Db.Entities;
+namespace BankSystem.Common.Db.Entities;
 
 public class UserEntity : IdentityUser<Guid>
 {

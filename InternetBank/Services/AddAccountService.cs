@@ -1,9 +1,8 @@
-using CommonServices.Db.Entities;
-using CommonServices.Repositores;
-using InternetBank.API.Requests;
-using InternetBank.Models.Requests;
+using BankSystem.Common.Db.Entities;
+using BankSystem.InternetBank.Models.Requests;
+using BankSystem.InternetBank.Repositories;
 
-namespace InternetBank.Services;
+namespace BankSystem.InternetBank.Services;
 
 public interface IAddAccountService
 { 

@@ -1,14 +1,13 @@
-﻿using ATM.Api.Repositories;
-using ATM.Exceptions;
-using ATM.Repositories;
-using ATM.Services.Models;
-using ATM.Services.Models.Requests;
-using CommonServices.Db.Entities;
-using CommonServices.Db.FinancialEnums;
-using CommonServices.Repositores;
-using CommonServices.Services;
+﻿using BankSystem.Atm.Repositories;
+using BankSystem.Atm.Exceptions;
+using BankSystem.Atm.Services.Models;
+using BankSystem.Atm.Services.Models.Requests;
+using BankSystem.Common.Db.Entities;
+using BankSystem.Common.Db.FinancialEnums;
+using BankSystem.Common.Repositores;
+using BankSystem.Common.Services;
 
-namespace ATM.Services
+namespace BankSystem.Atm.Services
 {
     public interface ICashOutService
     {

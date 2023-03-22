@@ -1,4 +1,4 @@
-﻿using EmailService.Extensions;
+﻿using BankSystem.Common.Extensions;
 using Microsoft.Extensions.Configuration;
 using System.Reflection;
 

@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace CommonServices.Db;
-
+namespace BankSystem.Common.Db;
+    
 public class BankSystemDbContextFactory : IDesignTimeDbContextFactory<BankSystemDbContext>
 {
     public BankSystemDbContext CreateDbContext(string[] args)

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommonServices.Db.Entities
+namespace BankSystem.Common.Db.Entities
 {
     public class CurrencyEntity
     {

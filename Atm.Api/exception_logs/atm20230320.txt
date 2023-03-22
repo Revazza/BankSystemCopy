@@ -116,7 +116,7 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
             WHERE (c.CardNumber == @__request_CardNumber_0) && (c.Pin == @__request_Pin_1)), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -196,7 +196,7 @@ WHERE [c].[CardNumber] = @__request_CardNumber_0 AND [c].[Pin] = @__request_Pin_
             WHERE c.Id == @__cardId_0), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -359,7 +359,7 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
             WHERE (c.CardNumber == @__request_CardNumber_0) && (c.Pin == @__request_Pin_1)), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -445,7 +445,7 @@ DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
         FROM Cards AS c), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -475,7 +475,7 @@ FROM [Cards] AS [c]
 2023-03-20 15:14:17.382 +04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
 2023-03-20 15:14:17.384 +04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
 2023-03-20 15:14:17.386 +04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
-2023-03-20 15:14:17.389 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[CommonServices.Db.Entities.CardEntity, Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-03-20 15:14:17.389 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BankSystem.Common.Db.Entities.CardEntity, Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
 2023-03-20 15:14:17.420 +04:00 [INF] Executed action ATM.Api.Controllers.TestController.GetAllCards (ATM.Api) in 167.8436ms
 2023-03-20 15:14:17.422 +04:00 [INF] Executed endpoint 'ATM.Api.Controllers.TestController.GetAllCards (ATM.Api)'
 2023-03-20 15:14:17.423 +04:00 [DBG] 'BankSystemDbContext' disposed.
@@ -672,7 +672,7 @@ WHERE [c].[CardNumber] = @__request_CardNumber_0 AND [c].[Pin] = @__request_Pin_
             WHERE c.Id == @__cardId_0), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -755,7 +755,7 @@ WHERE [c].[Id] = @__cardId_0
         FROM Currencies AS c), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CurrencyEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -856,7 +856,7 @@ WHERE [c].[Id] = @__cardId_0
         WHERE ((t.AccountFromId == @__accountId_0) && (t.CreatedAt > DATEADD(day, CAST(-1.0E0 AS int), GETDATE()))) && (t.TransactionType == 0)), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, TransactionEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -908,7 +908,7 @@ WHERE [t].[AccountFromId] = @__accountId_0 AND [t].[CreatedAt] > DATEADD(day, CA
             ORDER BY t.Id ASC), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -2084,7 +2084,7 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
         FROM Currencies AS c), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CurrencyEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -2168,7 +2168,7 @@ FROM [Currencies] AS [c]
             WHERE c.Id == @__cardId_0), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -2210,7 +2210,7 @@ WHERE [c].[Id] = @__cardId_0
         WHERE ((t.AccountFromId == @__accountId_0) && (t.CreatedAt > DATEADD(day, CAST(-1.0E0 AS int), GETDATE()))) && (t.TransactionType == 0)), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, TransactionEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -2340,7 +2340,7 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
         FROM Currencies AS c), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CurrencyEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -2424,7 +2424,7 @@ FROM [Currencies] AS [c]
             WHERE c.Id == @__cardId_0), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -2565,7 +2565,7 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
         FROM Currencies AS c), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CurrencyEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -2649,7 +2649,7 @@ FROM [Currencies] AS [c]
             WHERE c.Id == @__cardId_0), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -2707,7 +2707,7 @@ WHERE [c].[Id] = @__cardId_0
             ORDER BY t.Id ASC), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -2776,7 +2776,7 @@ ORDER BY [t].[Id]
             WHERE a0.Id == @__entity_equality_user_0_Id), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AccountEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -2808,13 +2808,13 @@ WHERE [a0].[Id] = @__entity_equality_user_0_Id
 2023-03-20 15:52:03.404 +04:00 [INF] Executed action ATM.Api.Controllers.TransactionController.CashOut (ATM.Api) in 6233.2048ms
 2023-03-20 15:52:03.408 +04:00 [INF] Executed endpoint 'ATM.Api.Controllers.TransactionController.CashOut (ATM.Api)'
 2023-03-20 15:52:03.481 +04:00 [ERR] The LINQ expression 'a => (Guid?)a.Id == EntityShaperExpression: 
-    CommonServices.Db.Entities.TransactionEntity
+    BankSystem.Common.Db.Entities.TransactionEntity
     ValueBufferExpression: 
         ProjectionBindingExpression: EmptyProjectionMember
     IsNullable: False
 .AccountFromId' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
 System.InvalidOperationException: The LINQ expression 'a => (Guid?)a.Id == EntityShaperExpression: 
-    CommonServices.Db.Entities.TransactionEntity
+    BankSystem.Common.Db.Entities.TransactionEntity
     ValueBufferExpression: 
         ProjectionBindingExpression: EmptyProjectionMember
     IsNullable: False
@@ -3033,13 +3033,13 @@ WHERE [a0].[Id] = @__entity_equality_user_0_Id
 2023-03-20 15:55:49.269 +04:00 [INF] Executed action ATM.Api.Controllers.TransactionController.CashOut (ATM.Api) in 505.9736ms
 2023-03-20 15:55:49.271 +04:00 [INF] Executed endpoint 'ATM.Api.Controllers.TransactionController.CashOut (ATM.Api)'
 2023-03-20 15:55:49.344 +04:00 [ERR] The LINQ expression 'a => (Guid?)a.Id == EntityShaperExpression: 
-    CommonServices.Db.Entities.TransactionEntity
+    BankSystem.Common.Db.Entities.TransactionEntity
     ValueBufferExpression: 
         ProjectionBindingExpression: EmptyProjectionMember
     IsNullable: False
 .AccountFromId' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
 System.InvalidOperationException: The LINQ expression 'a => (Guid?)a.Id == EntityShaperExpression: 
-    CommonServices.Db.Entities.TransactionEntity
+    BankSystem.Common.Db.Entities.TransactionEntity
     ValueBufferExpression: 
         ProjectionBindingExpression: EmptyProjectionMember
     IsNullable: False
@@ -3193,7 +3193,7 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
         FROM Currencies AS c), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CurrencyEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -3277,7 +3277,7 @@ FROM [Currencies] AS [c]
             WHERE c.Id == @__cardId_0), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -3335,7 +3335,7 @@ WHERE [c].[Id] = @__cardId_0
             ORDER BY t.Id ASC), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -3404,7 +3404,7 @@ ORDER BY [t].[Id]
             WHERE a0.Id == @__entity_equality_user_0_Id), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AccountEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -3437,13 +3437,13 @@ WHERE [a0].[Id] = @__entity_equality_user_0_Id
 2023-03-20 16:00:34.775 +04:00 [INF] Executed endpoint 'ATM.Api.Controllers.TransactionController.CashOut (ATM.Api)'
 2023-03-20 16:00:34.852 +04:00 [DBG] Connection id "0HMP97AOLHEDO" received FIN.
 2023-03-20 16:00:34.853 +04:00 [ERR] The LINQ expression 'a => a.Id == EntityShaperExpression: 
-    CommonServices.Db.Entities.TransactionEntity
+    BankSystem.Common.Db.Entities.TransactionEntity
     ValueBufferExpression: 
         ProjectionBindingExpression: EmptyProjectionMember
     IsNullable: False
 .AccountFromId' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
 System.InvalidOperationException: The LINQ expression 'a => a.Id == EntityShaperExpression: 
-    CommonServices.Db.Entities.TransactionEntity
+    BankSystem.Common.Db.Entities.TransactionEntity
     ValueBufferExpression: 
         ProjectionBindingExpression: EmptyProjectionMember
     IsNullable: False
@@ -3611,7 +3611,7 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
         FROM Currencies AS c), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CurrencyEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -3695,7 +3695,7 @@ FROM [Currencies] AS [c]
             WHERE c.Id == @__cardId_0), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -3753,7 +3753,7 @@ WHERE [c].[Id] = @__cardId_0
             ORDER BY t.Id ASC), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -3822,7 +3822,7 @@ ORDER BY [t].[Id]
             WHERE a0.Id == @__entity_equality_user_0_Id), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AccountEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -3854,13 +3854,13 @@ WHERE [a0].[Id] = @__entity_equality_user_0_Id
 2023-03-20 16:02:48.786 +04:00 [INF] Executed action ATM.Api.Controllers.TransactionController.CashOut (ATM.Api) in 2994.9008ms
 2023-03-20 16:02:48.790 +04:00 [INF] Executed endpoint 'ATM.Api.Controllers.TransactionController.CashOut (ATM.Api)'
 2023-03-20 16:02:48.877 +04:00 [ERR] The LINQ expression 'a => a.Id == EntityShaperExpression: 
-    CommonServices.Db.Entities.TransactionEntity
+    BankSystem.Common.Db.Entities.TransactionEntity
     ValueBufferExpression: 
         ProjectionBindingExpression: EmptyProjectionMember
     IsNullable: False
 .AccountFromId' could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
 System.InvalidOperationException: The LINQ expression 'a => a.Id == EntityShaperExpression: 
-    CommonServices.Db.Entities.TransactionEntity
+    BankSystem.Common.Db.Entities.TransactionEntity
     ValueBufferExpression: 
         ProjectionBindingExpression: EmptyProjectionMember
     IsNullable: False
@@ -4019,7 +4019,7 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
         FROM Currencies AS c), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CurrencyEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -4103,7 +4103,7 @@ FROM [Currencies] AS [c]
             WHERE c.Id == @__cardId_0), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -4161,7 +4161,7 @@ WHERE [c].[Id] = @__cardId_0
             ORDER BY t.Id ASC), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -4230,7 +4230,7 @@ ORDER BY [t].[Id]
             WHERE a0.Id == @__entity_equality_user_0_Id), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AccountEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -4270,7 +4270,7 @@ WHERE [a0].[Id] = @__entity_equality_user_0_Id
         WHERE (t.TransactionType == 0) && t.AccountFromId IN (@__accountIds_0)), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, TransactionEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -4412,7 +4412,7 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
         FROM Currencies AS c), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CurrencyEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -4496,7 +4496,7 @@ FROM [Currencies] AS [c]
             WHERE c.Id == @__cardId_0), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -4554,7 +4554,7 @@ WHERE [c].[Id] = @__cardId_0
             ORDER BY t.Id ASC), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -4623,7 +4623,7 @@ ORDER BY [t].[Id]
             WHERE a0.Id == @__entity_equality_user_0_Id), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AccountEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -4663,7 +4663,7 @@ WHERE [a0].[Id] = @__entity_equality_user_0_Id
         WHERE (t.TransactionType == 0) && t.AccountFromId IN (@__accountIds_0)), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, TransactionEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -4928,7 +4928,7 @@ DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
             WHERE (c.CardNumber == @__request_CardNumber_0) && (c.Pin == @__request_Pin_1)), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -5011,7 +5011,7 @@ WHERE [c].[CardNumber] = @__request_CardNumber_0 AND [c].[Pin] = @__request_Pin_
         FROM Currencies AS c), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CurrencyEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -5095,7 +5095,7 @@ FROM [Currencies] AS [c]
             WHERE c.Id == @__cardId_0), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -5153,7 +5153,7 @@ WHERE [c].[Id] = @__cardId_0
             ORDER BY t.Id ASC), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -5222,7 +5222,7 @@ ORDER BY [t].[Id]
             WHERE a0.Id == @__entity_equality_user_0_Id), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AccountEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -5262,7 +5262,7 @@ WHERE [a0].[Id] = @__entity_equality_user_0_Id
         WHERE (t.TransactionType == 0) && t.AccountFromId IN (@__accountIds_0)), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, TransactionEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -5409,7 +5409,7 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
         FROM Currencies AS c), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CurrencyEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -5493,7 +5493,7 @@ FROM [Currencies] AS [c]
             WHERE c.Id == @__cardId_0), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -5551,7 +5551,7 @@ WHERE [c].[Id] = @__cardId_0
             ORDER BY t.Id ASC), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -5620,7 +5620,7 @@ ORDER BY [t].[Id]
             WHERE a0.Id == @__entity_equality_user_0_Id), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AccountEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -5660,7 +5660,7 @@ WHERE [a0].[Id] = @__entity_equality_user_0_Id
         WHERE (t.TransactionType == 0) && t.AccountFromId IN (@__accountIds_0)), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, TransactionEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -5802,7 +5802,7 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
         FROM Currencies AS c), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CurrencyEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -5886,7 +5886,7 @@ FROM [Currencies] AS [c]
             WHERE c.Id == @__cardId_0), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -5944,7 +5944,7 @@ WHERE [c].[Id] = @__cardId_0
             ORDER BY t.Id ASC), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -6013,7 +6013,7 @@ ORDER BY [t].[Id]
             WHERE a0.Id == @__entity_equality_user_0_Id), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AccountEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -6053,7 +6053,7 @@ WHERE [a0].[Id] = @__entity_equality_user_0_Id
         WHERE (t.TransactionType == 0) && t.AccountFromId IN (@__accountIds_0)), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, TransactionEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -6190,7 +6190,7 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
         FROM Currencies AS c), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CurrencyEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -6274,7 +6274,7 @@ FROM [Currencies] AS [c]
             WHERE c.Id == @__cardId_0), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -6332,7 +6332,7 @@ WHERE [c].[Id] = @__cardId_0
             ORDER BY t.Id ASC), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -6401,7 +6401,7 @@ ORDER BY [t].[Id]
             WHERE a0.Id == @__entity_equality_user_0_Id), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AccountEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -6441,7 +6441,7 @@ WHERE [a0].[Id] = @__entity_equality_user_0_Id
         WHERE (t.TransactionType == 0) && t.AccountFromId IN (@__accountIds_0)), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, TransactionEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -6583,7 +6583,7 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
         FROM Currencies AS c), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CurrencyEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -6667,7 +6667,7 @@ FROM [Currencies] AS [c]
             WHERE c.Id == @__cardId_0), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -6725,7 +6725,7 @@ WHERE [c].[Id] = @__cardId_0
             ORDER BY t.Id ASC), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, UserEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -6794,7 +6794,7 @@ ORDER BY [t].[Id]
             WHERE a0.Id == @__entity_equality_user_0_Id), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AccountEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True
@@ -6834,7 +6834,7 @@ WHERE [a0].[Id] = @__entity_equality_user_0_Id
         WHERE (t.TransactionType == 0) && t.AccountFromId IN (@__accountIds_0)), 
     null, 
     Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, TransactionEntity>, 
-    CommonServices.Db.BankSystemDbContext, 
+    BankSystem.Common.Db.BankSystemDbContext, 
     False, 
     False, 
     True
@@ -7076,7 +7076,7 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
             WHERE (c.CardNumber == @__request_CardNumber_0) && (c.Pin == @__request_Pin_1)), 
         null, 
         Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
-        CommonServices.Db.BankSystemDbContext, 
+        BankSystem.Common.Db.BankSystemDbContext, 
         False, 
         False, 
         True

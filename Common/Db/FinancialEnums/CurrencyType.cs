@@ -1,8 +1,8 @@
-namespace CommonServices.Db.FinancialEnums;
+namespace BankSystem.Common.Db.FinancialEnums; 
 
 public enum CurrencyType
 {
-    GEL = 0, 
+    GEL = 0,    
     USD,
     EUR,
 }

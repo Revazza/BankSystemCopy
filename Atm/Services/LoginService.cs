@@ -1,10 +1,10 @@
-﻿using ATM.Api.Repositories;
-using ATM.Exceptions;
-using ATM.Services.Models.Requests;
-using CommonServices.Auth;
+﻿using BankSystem.Atm.Repositories;
+using BankSystem.Atm.Exceptions;
+using BankSystem.Atm.Services.Models.Requests;
+using BankSystem.Common.Auth;
 using System.Security.Claims;
 
-namespace ATM.Services
+namespace BankSystem.Atm.Services
 {
     public interface ILoginService
     {

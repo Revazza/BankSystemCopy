@@ -37,7 +37,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedSettings", "SharedSet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternetBank.Tests", "InternetBank.Tests\InternetBank.Tests.csproj", "{E145C52C-FFFD-4D2B-A2E6-8B020CDE4608}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternetBank", "InternetBank\InternetBank.csproj", "{19FFD42A-802C-4992-9573-5531702C7A03}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternetBank", "InternetBank\BankSystem.InternetBank.csproj", "{19FFD42A-802C-4992-9573-5531702C7A03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -29,8 +29,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ATM.Services\ATM.csproj" />
-    <ProjectReference Include="..\CommonServices\Common.csproj" />
+    <ProjectReference Include="..\Atm\BankSystem.Atm.csproj" />
   </ItemGroup>
+
 
 </Project>

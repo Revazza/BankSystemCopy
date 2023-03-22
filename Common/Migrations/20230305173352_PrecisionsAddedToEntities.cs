@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace CommonServices.Migrations
+namespace BankSystem.Common.Migrations
 {
     /// <inheritdoc />
     public partial class PrecisionsAddedToEntities : Migration

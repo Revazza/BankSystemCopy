@@ -1,8 +1,8 @@
-using CommonServices.Repositores;
-using InternetBank.Exceptions;
-using InternetBank.Models.Requests;
+using BankSystem.InternetBank.Exceptions;
+using BankSystem.InternetBank.Models.Requests;
+using BankSystem.InternetBank.Repositories;
 
-namespace InternetBank.API.Validations;
+namespace BankSystem.InternetBank.Api.Validations;
 
 
 public class RegisterCardValidator 

@@ -1,12 +1,9 @@
-using System.Security.Claims;
-using CommonServices.Auth;
-using CommonServices.Db;
-using CommonServices.Db.Entities;
-using InternetBank.Models.Requests;
-using Microsoft.AspNetCore.Identity;
+using BankSystem.Common.Db;
+using BankSystem.Common.Db.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace CommonServices.Repositores;
+namespace BankSystem.InternetBank.Repositories;
+
 public interface IUserRepository
 {
     bool UserAlreadyExists(string personalNumber);

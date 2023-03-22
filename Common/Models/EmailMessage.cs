@@ -1,4 +1,4 @@
-﻿namespace CommonServices.Models
+﻿namespace BankSystem.Common.Models
 {
     public class EmailMessage
     {

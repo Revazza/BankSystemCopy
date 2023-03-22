@@ -1,7 +1,6 @@
-﻿ using CommonServices.Db;
+﻿using BankSystem.Common.Db;
 using EmailService;
 using EmailService.Email_Sender;
-using EmailService.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 var appSettings = new AppSettings();

@@ -1,4 +1,4 @@
-namespace InternetBank.Exceptions;
+namespace BankSystem.InternetBank.Exceptions;
     
 public class InvalidPinException : Exception
 {

@@ -1,11 +1,10 @@
 using System.Security.Claims;
-using CommonServices.Auth;
-using CommonServices.Db.Entities;
-using InternetBank.Models.Requests;
+using BankSystem.Common.Auth;
+using BankSystem.Common.Db.Entities;
+using BankSystem.InternetBank.Models.Requests;
 using Microsoft.AspNetCore.Identity;
 
-namespace InternetBank.Services;
-
+namespace BankSystem.InternetBank.Services;
 public interface IUserLoginService
 {
     Task<string> LoginUserAsync(LoginRequest request);

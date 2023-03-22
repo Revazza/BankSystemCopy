@@ -1,7 +1,8 @@
-using CommonServices.Db.Entities;
-using InternetBank.Models.Requests;
+using BankSystem.Common.Db.Entities;
+using BankSystem.InternetBank.Models.Requests;
+using BankSystem.InternetBank.Repositories;
 
-namespace InternetBank.API.Validations;
+namespace BankSystem.InternetBank.Api.Validations;
 
 public class TransactionValidator
 {

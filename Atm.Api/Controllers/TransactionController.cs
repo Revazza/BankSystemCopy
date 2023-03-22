@@ -1,10 +1,8 @@
-﻿using ATM.Api.Repositories;
-using ATM.Exceptions;
-using ATM.Services;
-using ATM.Services.Models;
-using ATM.Services.Models.Requests;
-using CommonServices.Models;
-using CommonServices.Repositores;
+﻿using BankSystem.Atm.Services;
+using BankSystem.Atm.Services.Models;
+using BankSystem.Atm.Services.Models.Requests;
+using BankSystem.Common.Models;
+using BankSystem.Common.Repositores;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

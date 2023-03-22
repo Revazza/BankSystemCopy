@@ -1,7 +1,7 @@
-using CommonServices.Db.FinancialEnums;
+using BankSystem.Common.Db.FinancialEnums;
 using Microsoft.EntityFrameworkCore;
 
-namespace CommonServices.Db.Entities;
+namespace BankSystem.Common.Db.Entities;
 
 public class AccountEntity
 {

@@ -1,10 +1,9 @@
-﻿
-using CommonServices.Db;
-using CommonServices.Db.Entities;
+﻿using BankSystem.Common.Db;
+using BankSystem.Common.Db.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Net.Mail;
 using System.Net;
-using EmailService.Extensions;
+using BankSystem.Common.Extensions;
 
 namespace EmailService.Email_Sender
 {

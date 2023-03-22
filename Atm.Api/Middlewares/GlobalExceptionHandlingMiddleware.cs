@@ -1,4 +1,4 @@
-﻿using ATM.Exceptions;
+﻿using BankSystem.Atm.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net;

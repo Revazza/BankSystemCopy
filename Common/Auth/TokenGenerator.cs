@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
-namespace CommonServices.Auth;
+namespace BankSystem.Common.Auth;
 
 public class TokenGenerator
 {

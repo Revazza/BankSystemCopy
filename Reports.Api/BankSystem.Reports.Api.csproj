@@ -13,8 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CommonServices\Common.csproj" />
-    <ProjectReference Include="..\Reports.Services\Reports.csproj" />
+    <ProjectReference Include="..\Reports\BankSystem.Reports.csproj" />
   </ItemGroup>
 
 </Project>

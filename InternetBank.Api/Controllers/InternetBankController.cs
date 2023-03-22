@@ -1,15 +1,13 @@
-using CommonServices.Db.Entities;
-using CommonServices.Repositores;
-
-using InternetBank.API.Requests;
-using InternetBank.API.Validations;
-using InternetBank.Models.Requests;
-using InternetBank.Services;
+using BankSystem.Common.Db.Entities;
+using BankSystem.InternetBank.Api.Validations;
+using BankSystem.InternetBank.Models.Requests;
+using BankSystem.InternetBank.Repositories;
+using BankSystem.InternetBank.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace InternetBank.API.Controllers;
+namespace BankSystem.InternetBank.Api.Controllers;
 [ApiController]
 [Route("[controller]")]
 public class InternetBankController : ControllerBase

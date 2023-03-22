@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ATM.Services.Models.Requests
+namespace BankSystem.Atm.Services.Models.Requests
 {
     public class ChangePinRequest
     {

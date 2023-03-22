@@ -1,6 +1,6 @@
-﻿using CommonServices.Db.FinancialEnums;
+﻿using BankSystem.Common.Db.FinancialEnums;
 
-namespace ATM.Services.Models
+namespace BankSystem.Atm.Services.Models
 {
     public class CashOutOperation
     {

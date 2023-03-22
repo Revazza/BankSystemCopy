@@ -1,4 +1,4 @@
-﻿using CommonServices.Auth;
+﻿using BankSystem.Common.Auth;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;

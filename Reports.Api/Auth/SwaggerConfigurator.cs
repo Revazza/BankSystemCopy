@@ -1,6 +1,6 @@
 ﻿using Microsoft.OpenApi.Models;
 
-namespace Reports.API.Auth
+namespace BankSystem.Reports.API.Auth
 {
     public static class SwaggerConfigurator
     {

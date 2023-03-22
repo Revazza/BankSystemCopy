@@ -1,7 +1,10 @@
-using CommonServices.Db;
-using CommonServices.Db.Entities;
+using BankSystem.Common.Db;
+using BankSystem.Common.Db.Entities;
 
 using Microsoft.EntityFrameworkCore;
+
+namespace BankSystem.InternetBank.Repositories;
+
 public interface ITransactionRepository
 {
     Task<AccountEntity> FindAccountByIbanAsync(string iban);

@@ -1,8 +1,7 @@
-using CommonServices.Db;
-using CommonServices.Db.Entities;
+using BankSystem.Common.Db;
 using Microsoft.EntityFrameworkCore;
 
-namespace Reports.Repositories;
+namespace BankSystem.Reports.Repositories;
 
 public interface ICustomersStatisticsRepository
 {

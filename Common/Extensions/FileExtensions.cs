@@ -1,5 +1,5 @@
 ﻿
-namespace EmailService.Extensions
+namespace BankSystem.Common.Extensions
 {
     public static class FileExtensions
     {

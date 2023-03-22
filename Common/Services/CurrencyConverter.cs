@@ -1,7 +1,7 @@
-﻿using CommonServices.Db.Entities;
-using CommonServices.Db.FinancialEnums;
+﻿using BankSystem.Common.Db.Entities;
+using BankSystem.Common.Db.FinancialEnums;
 
-namespace CommonServices.Services
+namespace BankSystem.Common.Services
 {
     public static class CurrencyConverter
     {

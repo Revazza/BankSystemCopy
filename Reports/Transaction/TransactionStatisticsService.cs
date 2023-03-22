@@ -1,10 +1,8 @@
-﻿using CommonServices.Db.Entities;
-using CommonServices.Db.FinancialEnums;
-using Reports.Repositories;
+﻿using BankSystem.Common.Db.Entities;
+using BankSystem.Reports.Repositories;
 using System.Globalization;
-using System.Runtime.CompilerServices;
 
-namespace Reports.Services.Transaction
+namespace BankSystem.Reports.Services.Transaction
 {
 
     public interface ITransactionStatisticsService

@@ -1,4 +1,4 @@
-﻿using CommonServices.Db;
+﻿using BankSystem.Common.Db;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ATM.Api.Controllers

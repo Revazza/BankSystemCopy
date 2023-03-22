@@ -1,13 +1,13 @@
 using System.Security.Claims;
 using System.Text;
-using CommonServices.Auth;
-using CommonServices.Db;
-using CommonServices.Db.Entities;
+using BankSystem.Common.Auth;
+using BankSystem.Common.Db;
+using BankSystem.Common.Db.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 
-namespace InternetBank.API.Auth;
+namespace BankSystem.InternetBank.Api.Auth;
 
 public static class AuthConfigurator
 {

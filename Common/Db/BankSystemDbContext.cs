@@ -1,10 +1,10 @@
-using CommonServices.Db.Entities;
-using CommonServices.Seed;
+using BankSystem.Common.Db.Entities;
+using BankSystem.Common.Seed;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace CommonServices.Db;
+namespace BankSystem.Common.Db;
 
 public class BankSystemDbContext : IdentityDbContext<UserEntity, IdentityRole<Guid>, Guid>
 {

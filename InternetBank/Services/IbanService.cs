@@ -2,9 +2,7 @@ using IbanNet;
 using IbanNet.Registry;
 
 
-namespace InternetBank.Services;
-
-
+namespace BankSystem.InternetBank.Services;
 
 public class IbanService
 {

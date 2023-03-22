@@ -1,10 +1,9 @@
-using CommonServices.Db.Entities;
-using CommonServices.Repositores;
-using InternetBank.Exceptions;
-using InternetBank.Models.Requests;
+using BankSystem.Common.Db.Entities;
+using BankSystem.InternetBank.Models.Requests;
+using BankSystem.InternetBank.Repositories;
 using Microsoft.AspNetCore.Identity;
 
-namespace InternetBank.Services;
+namespace BankSystem.InternetBank.Services;
 
 public interface IAddUserService
 {

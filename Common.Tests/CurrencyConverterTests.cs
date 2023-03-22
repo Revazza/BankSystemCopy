@@ -1,9 +1,9 @@
-﻿using CommonServices.Db.Entities;
-using CommonServices.Db.FinancialEnums;
-using CommonServices.Services;
+﻿using BankSystem.Common.Db.Entities;
+using BankSystem.Common.Db.FinancialEnums;
+using BankSystem.Common.Services;
 using NUnit.Framework;
 
-namespace CommonServies.Tests
+namespace BankSystem.Common.Tests
 {
     public class CurrencyConverterTests
     {
@@ -108,8 +108,6 @@ namespace CommonServies.Tests
             Assert.That(result, Is.EqualTo(expectedValue).Within(0.01));
 
         }
-
-
 
     }
 }

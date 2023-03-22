@@ -1,8 +1,8 @@
+using BankSystem.Reports.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Reports.Repositories;
 
-namespace Reports.Controllers;
+namespace BankSystem.Reports.Controllers;
 
 [Authorize("ApiAdmin", AuthenticationSchemes = "Bearer")]
 [Route("api/[controller]")]

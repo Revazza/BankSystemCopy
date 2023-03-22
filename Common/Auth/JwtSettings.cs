@@ -1,4 +1,4 @@
-namespace CommonServices.Auth;
+namespace BankSystem.Common.Auth;
 
 public class JwtSettings
 {

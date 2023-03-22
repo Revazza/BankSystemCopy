@@ -1,9 +1,9 @@
-﻿using CommonServices.Db;
-using CommonServices.Db.Entities;
-using CommonServices.Models;
+﻿using BankSystem.Common.Db;
+using BankSystem.Common.Db.Entities;
+using BankSystem.Common.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CommonServices.Repositores
+namespace BankSystem.Common.Repositores
 {
     public interface IEmailRequestRepository
     {

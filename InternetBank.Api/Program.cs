@@ -1,12 +1,9 @@
-using CommonServices.Db;
-using CommonServices.Db.Entities;
-using CommonServices.Repositores;
-using CommonServices.Seed;
-using InternetBank.API.Auth;
-using InternetBank.API.Requests;
-using InternetBank.API.Validations;
-using InternetBank.Services;
-using Microsoft.AspNetCore.Identity;
+using BankSystem.Common.Db;
+using BankSystem.Common.Repositores;
+using BankSystem.InternetBank.Api.Auth;
+using BankSystem.InternetBank.Api.Validations;
+using BankSystem.InternetBank.Repositories;
+using BankSystem.InternetBank.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 

@@ -1,4 +1,4 @@
-namespace CommonServices.Db.FinancialEnums;
+namespace BankSystem.Common.Db.FinancialEnums;
 
 public enum TransactionType
 {

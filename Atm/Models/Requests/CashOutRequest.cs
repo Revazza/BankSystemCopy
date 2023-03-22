@@ -1,11 +1,6 @@
-﻿using CommonServices.Db.FinancialEnums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BankSystem.Common.Db.FinancialEnums;
 
-namespace ATM.Services.Models.Requests
+namespace BankSystem.Atm.Services.Models.Requests
 {
     public class CashOutRequest
     {

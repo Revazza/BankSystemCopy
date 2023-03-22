@@ -1,4 +1,4 @@
-using CommonServices.Db;
+using BankSystem.Common.Db;
 using Microsoft.EntityFrameworkCore;
 
 namespace InternetBank.Tests;

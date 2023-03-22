@@ -1,9 +1,7 @@
-﻿using ATM.Api.Repositories;
-using ATM.Exceptions;
-using ATM.Services;
-using ATM.Services.Models.Requests;
+﻿using BankSystem.Atm.Repositories;
+using BankSystem.Atm.Services;
+using BankSystem.Atm.Services.Models.Requests;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ATM.Api.Controllers

@@ -1,6 +1,4 @@
-using Microsoft.AspNetCore.Identity;
-
-namespace CommonServices.Db.Entities;
+namespace BankSystem.Common.Db.Entities;
 
 public class OperatorEntity
 { 

@@ -1,10 +1,9 @@
 using ATM.Api.Auth;
 using ATM.Api.Middlewares;
-using ATM.Api.Repositories;
-using ATM.Repositories;
-using ATM.Services;
-using CommonServices.Db;
-using CommonServices.Repositores;
+using BankSystem.Atm.Repositories;
+using BankSystem.Atm.Services;
+using BankSystem.Common.Db;
+using BankSystem.Common.Repositores;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -45,11 +44,11 @@ builder.Services.AddTransient<ICashOutService, CashoutService>();
 builder.Services.AddTransient<ILoginService, LoginService>();
 builder.Services.AddTransient<IChangePinService, ChangePinService>();
 
-builder.Services.AddTransient<IUserRepository,UserRepository>();
+builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<ITransactionRepository, TransactionRepository>();
-builder.Services.AddTransient<ICardRepository,CardRepository>();
+builder.Services.AddTransient<ICardRepository, CardRepository>();
 builder.Services.AddTransient<ICurrencyRepository, CurrencyRepository>();
-builder.Services.AddTransient<IEmailRequestRepository,EmailRequestRepository>();
+builder.Services.AddTransient<IEmailRequestRepository, EmailRequestRepository>();
 
 builder.Services.AddCors(options =>
 {
