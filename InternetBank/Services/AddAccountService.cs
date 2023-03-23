@@ -1,6 +1,7 @@
 using BankSystem.Common.Db.Entities;
 using BankSystem.InternetBank.Models.Requests;
 using BankSystem.InternetBank.Repositories;
+using BankSystem.InternetBank.Validations;
 
 namespace BankSystem.InternetBank.Services;
 
@@ -12,17 +13,20 @@ public class AddAccountService : IAddAccountService
 {
     private readonly IAccountRepository _accountRepository;
     private readonly IUserRepository _userRepository;
+    private readonly RegisterAccountValidator _registerAccountValidator;
 
     public AddAccountService(IAccountRepository accountRepository, 
-        IUserRepository userRepository)
+        IUserRepository userRepository,
+        RegisterAccountValidator registerAccountValidator)
     {
         _accountRepository = accountRepository;
         _userRepository = userRepository;
+        _registerAccountValidator = registerAccountValidator;
     }
     public async Task AddAccountAsync(RegisterAccountRequest request,string iban)
     {
-        var user = await _userRepository.FindUserByPersonalIdAsync(request.PersonalId)
-            ?? throw new Exception("Incorrect Personal Id");
+        _registerAccountValidator.Validate(request);
+        var user = await _userRepository.FindUserByPersonalIdAsync(request.PersonalId);
         var account = new AccountEntity();
         account.Iban = iban;
         account.Amount = request.Amount;
@@ -31,7 +35,4 @@ public class AddAccountService : IAddAccountService
         await _accountRepository.RegisterAccountAsync(account);
         await _accountRepository.SaveChangesAsync();
     }
-
-
-    
 }

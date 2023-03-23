@@ -10,22 +10,23 @@ namespace InternetBank.Tests;
 
 public class TransferServiceTests
 {
+    private readonly ITransferService _transferService;
     private readonly ICurrencyRepository _currencyRepository;
     private readonly ITransactionRepository _transactionRepository;
-    private readonly ITransferService _transferService;
+    private readonly FakeBankSystemDbContext _db;
 
     public TransferServiceTests()
     {
-        _currencyRepository = Mock.Of<ICurrencyRepository>();
-        _transactionRepository = Mock.Of<ITransactionRepository>();
-        _transferService = Mock.Of<ITransferService>();
+        _db = new FakeBankSystemDbContext();
+        _currencyRepository = new CurrencyRepository(_db);
+        _transactionRepository = new TransactionRepository(_db);
+        _transferService = new TransferService(_currencyRepository, _transactionRepository);
     }
+
 
     [Test]
     public async Task InnerTransferMoneyTestAsync()
     {
-        var transferService = new TransferService(_currencyRepository, _transactionRepository);
-        var fakeDb = new FakeBankSystemDbContext();
         var transferor = new AccountEntity
         {
             UserId = Guid.NewGuid(),
@@ -37,11 +38,10 @@ public class TransferServiceTests
         {
             UserId = transferor.UserId,
             Currency = CurrencyType.GEL,
-            Amount = 500,
-            Iban = "GE05VT3774861580071408"
+            Amount = 500, Iban = "GE05VT3774861580071408"
         };
-        await fakeDb.Accounts.AddRangeAsync(transferor, transferee);
-        await fakeDb.SaveChangesAsync();
+        await _db.Accounts.AddRangeAsync(transferor, transferee);
+        await _db.SaveChangesAsync();
         var request = new TranferRequest
         {
             SendFromIban = transferor.Iban,
@@ -49,9 +49,72 @@ public class TransferServiceTests
             Amount = 500
         };
         await _transferService.TransferMoneyAsync(request, transferor.UserId);
-
-        var updatedTransferor = await fakeDb.Accounts.FindAsync(transferor.Id);
-        var updatedTransferee = await fakeDb.Accounts.FindAsync(transferee.Id);
-        Assert.That(transferee.Amount, Is.EqualTo(500));
+        
+        var updatedTransferor = await _db.Accounts.FindAsync(transferor.Id);
+        var updatedTransferee = await _db.Accounts.FindAsync(transferee.Id);
+        Assert.That(updatedTransferee.Amount, Is.EqualTo(1000));
+        Assert.That(updatedTransferor.Amount, Is.EqualTo(500));
+    }
+    [Test]
+    public async Task OuterTransferMoneyTestAsync()
+    {
+        var transferor = new AccountEntity
+        {
+            UserId = Guid.NewGuid(),
+            Currency = CurrencyType.GEL,
+            Amount = 1000,
+            Iban = "GE38AH7580341631433803"
+        };
+        var transferee = new AccountEntity
+        {
+            UserId = Guid.NewGuid(),
+            Currency = CurrencyType.GEL,
+            Amount = 500, Iban = "GE09WB5605287442587704"
+        };
+        await _db.Accounts.AddRangeAsync(transferor, transferee);
+        await _db.SaveChangesAsync();
+        var request = new TranferRequest
+        {
+            SendFromIban = transferor.Iban,
+            Iban = transferee.Iban,
+            Amount = 500
+        };
+        await _transferService.TransferMoneyAsync(request, transferor.UserId);
+        
+        var updatedTransferor = await _db.Accounts.FindAsync(transferor.Id);
+        var updatedTransferee = await _db.Accounts.FindAsync(transferee.Id);
+        Assert.That(updatedTransferee.Amount, Is.EqualTo(1000));
+        Assert.That(updatedTransferor.Amount, Is.EqualTo(494.5));
+    }
+    [Test]
+    public async Task OuterTransferMoneyWithDifferentCurrencyTestAsync()
+    {
+        var transferor = new AccountEntity
+        {
+            UserId = Guid.NewGuid(),
+            Currency = CurrencyType.GEL,
+            Amount = 1000,
+            Iban = "GE38AH75803416314338039"
+        };
+        var transferee = new AccountEntity
+        {
+            UserId = Guid.NewGuid(),
+            Currency = CurrencyType.EUR,
+            Amount = 10, Iban = "GE09WB5605287442587701"
+        };
+        await _db.Accounts.AddRangeAsync(transferor, transferee);
+        await _db.SaveChangesAsync();
+        var request = new TranferRequest
+        {
+            SendFromIban = transferor.Iban,
+            Iban = transferee.Iban,
+            Amount = 18
+        };
+        await _transferService.TransferMoneyAsync(request, transferor.UserId);
+        
+        var updatedTransferor = await _db.Accounts.FindAsync(transferor.Id);
+        var updatedTransferee = await _db.Accounts.FindAsync(transferee.Id);
+        Assert.That(updatedTransferor.Amount, Is.EqualTo(981.64).Within(0.01));
+        Assert.That(updatedTransferee.Amount, Is.EqualTo(16.45).Within(0.1));
     }
 }

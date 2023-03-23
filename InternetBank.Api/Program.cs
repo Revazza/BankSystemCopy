@@ -4,6 +4,7 @@ using BankSystem.InternetBank.Api.Auth;
 using BankSystem.InternetBank.Api.Validations;
 using BankSystem.InternetBank.Repositories;
 using BankSystem.InternetBank.Services;
+using BankSystem.InternetBank.Validations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 

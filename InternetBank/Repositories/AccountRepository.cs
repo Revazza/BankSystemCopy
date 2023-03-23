@@ -9,7 +9,8 @@ public interface IAccountRepository
     Task SaveChangesAsync();
     Task RegisterAccountAsync(AccountEntity account);
     Task<decimal> GetAmountByIbanAsync(string iban);
-  
+    bool AccountExists(string iban);
+
 }
 public class AccountRepository : IAccountRepository
 {
@@ -36,6 +37,13 @@ public class AccountRepository : IAccountRepository
 
         return accountAmount;
     }
+    public bool AccountExists(string iban)
+    {
+        return _context
+            .Accounts
+            .Any(a => a.Iban == iban);
+    }
+
 
 
     

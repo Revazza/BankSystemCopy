@@ -8,7 +8,7 @@ namespace BankSystem.Atm.Services.Models.Requests
 {
     public class ChangePinRequest
     {
-        public short OldPin { get; set; }
-        public short NewPin { get; set; }
+        public string OldPin { get; set; }
+        public string NewPin { get; set; }
     }
 }

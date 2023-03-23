@@ -63,16 +63,16 @@ namespace BankSystem.Common.Seed
                     {
                         Id = new Guid("62e5f726-6070-4326-9a25-c27c6216e35f"),
                         AccountId = new Guid("1ffae49b-5579-4560-bf20-fd3986fd76c0"),
-                        Cvv = 931,
-                        Pin = 1234,
+                        Cvv = "931",
+                        Pin = "1234",
                         FullName = "Ana Mklavashvili"
                     },
                     new CardEntity()
                     {
                         Id = new Guid("d38dc493-fb60-4d75-8930-48dee7dc3f97"),
                         AccountId = new Guid("7b1902d5-c240-49f4-b91f-454d9e19d402"),
-                        Cvv = 931,
-                        Pin = 1234,
+                        Cvv = "931",
+                        Pin = "1234",
                         FullName = "Sandro Revazishvili"
                     }
 

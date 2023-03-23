@@ -14,6 +14,10 @@ public class TransactionValidator
     }
     public void Validate(TranferRequest? request, UserEntity? user)
     {
+        if (user == null)
+        {
+            throw new Exception("User not found;");
+        }
         if (request == null)
         {
             throw new ArgumentNullException(nameof(request));
@@ -39,10 +43,5 @@ public class TransactionValidator
         {
             throw new Exception("Iban does not exist");
         }
-        if (user == null)
-        {
-            throw new Exception("User not found;");
-        }
-
     }
 }

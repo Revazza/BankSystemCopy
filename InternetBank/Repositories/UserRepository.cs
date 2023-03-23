@@ -6,10 +6,11 @@ namespace BankSystem.InternetBank.Repositories;
 
 public interface IUserRepository
 {
-    bool UserAlreadyExists(string personalNumber);
+    bool UserExists(string personalNumber);
     Task SaveChangesAsync();
     Task<UserEntity?> FindUserByPersonalIdAsync(string personalId);
     bool EmailAlreadyExists(string email);
+    
 
 }
 public class UserRepository : IUserRepository
@@ -20,7 +21,7 @@ public class UserRepository : IUserRepository
     { 
         _context = context;
     }
-    public bool UserAlreadyExists(string personalNumber)
+    public bool UserExists(string personalNumber)
     {
         return _context.Users.Any(u => u.PersonalNumber == personalNumber);
     }
@@ -39,6 +40,8 @@ public class UserRepository : IUserRepository
         return await _context.Users
             .FirstOrDefaultAsync(u => u.PersonalNumber == personalId);
     }
+   
+
 
    
 }
