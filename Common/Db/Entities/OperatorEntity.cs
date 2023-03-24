@@ -1,7 +1,8 @@
+using Microsoft.AspNetCore.Identity;
+
 namespace BankSystem.Common.Db.Entities;
 
-public class OperatorEntity
-{ 
-    public Guid Id { get; set; }
-    public string Name { get; set; }
+public class OperatorEntity  : IdentityUser<Guid>
+{
+    
 }

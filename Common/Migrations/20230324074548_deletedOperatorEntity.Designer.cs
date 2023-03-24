@@ -4,6 +4,7 @@ using BankSystem.Common.Db;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BankSystem.Common.Migrations
 {
     [DbContext(typeof(BankSystemDbContext))]
-    partial class BankSystemDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230324074548_deletedOperatorEntity")]
+    partial class deletedOperatorEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,7 +54,7 @@ namespace BankSystem.Common.Migrations
                         new
                         {
                             Id = new Guid("1ffae49b-5579-4560-bf20-fd3986fd76c0"),
-                            Amount = 17482m,
+                            Amount = 16743m,
                             Currency = 0,
                             Iban = "Ana's Iban",
                             UserId = new Guid("4bf7d82a-fca9-4d1d-bbc9-48cfaa109187")
@@ -59,7 +62,7 @@ namespace BankSystem.Common.Migrations
                         new
                         {
                             Id = new Guid("7b1902d5-c240-49f4-b91f-454d9e19d402"),
-                            Amount = 16732m,
+                            Amount = 15029m,
                             Currency = 0,
                             Iban = "Sandro's Iban",
                             UserId = new Guid("0eb288d0-c7cd-4749-ad29-92a9d59e8bf4")
@@ -106,10 +109,10 @@ namespace BankSystem.Common.Migrations
                         {
                             Id = new Guid("62e5f726-6070-4326-9a25-c27c6216e35f"),
                             AccountId = new Guid("1ffae49b-5579-4560-bf20-fd3986fd76c0"),
-                            CardNumber = "897958892390395434",
-                            CreatedAt = new DateTime(2023, 3, 24, 12, 34, 5, 297, DateTimeKind.Local).AddTicks(8313),
+                            CardNumber = "380555904985575874",
+                            CreatedAt = new DateTime(2023, 3, 24, 11, 45, 48, 437, DateTimeKind.Local).AddTicks(5765),
                             Cvv = "931",
-                            ExpiresAt = new DateTime(2028, 3, 24, 12, 34, 5, 297, DateTimeKind.Local).AddTicks(8310),
+                            ExpiresAt = new DateTime(2028, 3, 24, 11, 45, 48, 437, DateTimeKind.Local).AddTicks(5762),
                             FullName = "Ana Mklavashvili",
                             Pin = "1234"
                         },
@@ -117,10 +120,10 @@ namespace BankSystem.Common.Migrations
                         {
                             Id = new Guid("d38dc493-fb60-4d75-8930-48dee7dc3f97"),
                             AccountId = new Guid("7b1902d5-c240-49f4-b91f-454d9e19d402"),
-                            CardNumber = "322185542286128424",
-                            CreatedAt = new DateTime(2023, 3, 24, 12, 34, 5, 297, DateTimeKind.Local).AddTicks(8326),
+                            CardNumber = "66644372658638451",
+                            CreatedAt = new DateTime(2023, 3, 24, 11, 45, 48, 437, DateTimeKind.Local).AddTicks(5779),
                             Cvv = "931",
-                            ExpiresAt = new DateTime(2028, 3, 24, 12, 34, 5, 297, DateTimeKind.Local).AddTicks(8325),
+                            ExpiresAt = new DateTime(2028, 3, 24, 11, 45, 48, 437, DateTimeKind.Local).AddTicks(5778),
                             FullName = "Sandro Revazishvili",
                             Pin = "1234"
                         });
@@ -317,19 +320,18 @@ namespace BankSystem.Common.Migrations
                         {
                             Id = new Guid("4bf7d82a-fca9-4d1d-bbc9-48cfaa109187"),
                             AccessFailedCount = 0,
-                            BirthDate = new DateTime(2013, 3, 24, 12, 34, 5, 296, DateTimeKind.Local).AddTicks(4792),
-                            ConcurrencyStamp = "e8dbf110-ce8c-4539-8c18-c1448b812058",
+                            BirthDate = new DateTime(2013, 3, 24, 11, 45, 48, 436, DateTimeKind.Local).AddTicks(3016),
+                            ConcurrencyStamp = "4bf84c48-eccf-48a2-a602-9f5a5752b369",
                             Email = "anamklavashvili@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Ana",
                             LastName = "Mklavashvili",
                             LockoutEnabled = false,
                             NormalizedEmail = "ANAMKLAVASHVILI@GMAIL.COM",
-                            PasswordHash = "AAgyze9KGcHSaRHWopupBuolEDj+Szu9v1hBNSptZdaBJAj0vc3uUKyi1MEzF+/QKg==",
-                            PersonalNumber = "513177349",
+                            PasswordHash = "ADWrbQTVB9/iBdaYtcX1HjtBdrilpgaitaYza/tPI1adg13F9HfUhdYeR22YOhesXg==",
+                            PersonalNumber = "221281388",
                             PhoneNumberConfirmed = false,
-                            RegisteredAt = new DateTime(2023, 3, 24, 12, 34, 5, 296, DateTimeKind.Local).AddTicks(4834),
-                            SecurityStamp = "8974ab31-17db-4493-88b9-32ad9427e9c3",
+                            RegisteredAt = new DateTime(2023, 3, 24, 11, 45, 48, 436, DateTimeKind.Local).AddTicks(3054),
                             TwoFactorEnabled = false,
                             UserName = "ana"
                         },
@@ -337,19 +339,18 @@ namespace BankSystem.Common.Migrations
                         {
                             Id = new Guid("0eb288d0-c7cd-4749-ad29-92a9d59e8bf4"),
                             AccessFailedCount = 0,
-                            BirthDate = new DateTime(2013, 3, 24, 12, 34, 5, 297, DateTimeKind.Local).AddTicks(1912),
-                            ConcurrencyStamp = "aca5b912-0208-41a1-a112-835e469401b6",
+                            BirthDate = new DateTime(2013, 3, 24, 11, 45, 48, 436, DateTimeKind.Local).AddTicks(9525),
+                            ConcurrencyStamp = "9f5f5e3c-71ec-42c3-b696-4f97a66f4d68",
                             Email = "sandro.revazishviliii@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Sandro",
                             LastName = "Revazishvili",
                             LockoutEnabled = false,
                             NormalizedEmail = "SANDRO.REVAZISHVILIII@GMAIL.COM",
-                            PasswordHash = "AJqxKiMsjo4xitKese4QCZ82lry14vK+Yqy0dt5w+Cx7SEYm00dIH8cknKL723cXew==",
-                            PersonalNumber = "988519492",
+                            PasswordHash = "AN8AbpZy/FKEyyleN4rBLJjaq2ycIKOC0SoBBQgtLIhEDA5oDqEFtsFW+twTKVJ3+w==",
+                            PersonalNumber = "402731798",
                             PhoneNumberConfirmed = false,
-                            RegisteredAt = new DateTime(2023, 3, 24, 12, 34, 5, 297, DateTimeKind.Local).AddTicks(1914),
-                            SecurityStamp = "efb46368-8318-4eee-898b-4f14c4b249c6",
+                            RegisteredAt = new DateTime(2023, 3, 24, 11, 45, 48, 436, DateTimeKind.Local).AddTicks(9527),
                             TwoFactorEnabled = false,
                             UserName = "sandro"
                         });
@@ -381,20 +382,6 @@ namespace BankSystem.Common.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("f5c38744-072b-4785-9c6d-db48ac043b7f"),
-                            Name = "api-user",
-                            NormalizedName = "API-USER"
-                        },
-                        new
-                        {
-                            Id = new Guid("3f66ed5d-b94b-46a7-a9c3-9a564241708f"),
-                            Name = "api-operator",
-                            NormalizedName = "API-OPERATOR"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -445,6 +432,44 @@ namespace BankSystem.Common.Migrations
                     b.ToTable("AspNetUserClaims", (string)null);
                 });
 
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("IdentityUserClaim<string>");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ClaimType = "role",
+                            ClaimValue = "api-user",
+                            UserId = "0eb288d0-c7cd-4749-ad29-92a9d59e8bf4"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ClaimType = "role",
+                            ClaimValue = "api-admin",
+                            UserId = "0eb288d0-c7cd-4749-ad29-92a9d59e8bf4"
+                        });
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
                     b.Property<string>("LoginProvider")
@@ -479,18 +504,6 @@ namespace BankSystem.Common.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = new Guid("4bf7d82a-fca9-4d1d-bbc9-48cfaa109187"),
-                            RoleId = new Guid("3f66ed5d-b94b-46a7-a9c3-9a564241708f")
-                        },
-                        new
-                        {
-                            UserId = new Guid("0eb288d0-c7cd-4749-ad29-92a9d59e8bf4"),
-                            RoleId = new Guid("f5c38744-072b-4785-9c6d-db48ac043b7f")
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>

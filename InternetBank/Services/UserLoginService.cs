@@ -34,10 +34,10 @@ public class UserLoginService : IUserLoginService
             throw new Exception("Incorrect Email or Password");
         }
 
-        var claims = new List<Claim>
+        var userRoles = await _userManager.GetRolesAsync(user);
+        var claims = new List<Claim>()
         {
-            new Claim(new ClaimsIdentityOptions().UserIdClaimType, user.Id.ToString()),
-            new Claim(ClaimTypes.Role, "api-user")
+            new Claim("role",userRoles.First()),
         };
         string token = _tokenGenerator.Generate(claims);
         return token;

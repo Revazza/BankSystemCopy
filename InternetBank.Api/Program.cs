@@ -5,6 +5,7 @@ using BankSystem.InternetBank.Api.Validations;
 using BankSystem.InternetBank.Repositories;
 using BankSystem.InternetBank.Services;
 using BankSystem.InternetBank.Validations;
+using InternetBank.Api.Middlewares;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -68,14 +69,13 @@ builder.Services.AddTransient<IbanService>();
 builder.Services.AddTransient<ICardRepository, CardRepository>();
 builder.Services.AddTransient<IAccountRepository, AccountRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
-builder.Services.AddTransient<IOperatorRepository, OperatorRepository>();
 builder.Services.AddTransient<RegisterUserValidator>();
 builder.Services.AddTransient<RegisterCardValidator>();
 builder.Services.AddTransient<IUserLoginService, UserLoginService>();
 builder.Services.AddTransient<IAddAccountService, AddAccountService>();
 builder.Services.AddTransient<IAddCardService, AddCardService>();
 builder.Services.AddTransient<IAddUserService, AddUserService>();
-
+builder.Services.AddTransient<RegisterAccountValidator>();
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(
@@ -99,7 +99,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors();
-
+app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();
 

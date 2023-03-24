@@ -35,8 +35,8 @@ public class AddUserService : IAddUserService
         user.PersonalNumber = request.PersonalNumber;
         user.Email = request.Email;
         user.UserName = request.Email;
-        
         var result = await _userManager.CreateAsync(user, request.Password);
+            await _userManager.AddToRoleAsync(user, "api-user");
         if (!result.Succeeded)
         {
             var error = result.Errors.First();

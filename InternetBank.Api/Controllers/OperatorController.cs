@@ -9,57 +9,48 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BankSystem.InternetBank.Api.Controllers;
 [ApiController]
+[Authorize("ApiOperator", AuthenticationSchemes = "Bearer")]
 [Route("[controller]")]
 public class OperatorController : ControllerBase
 {
     private readonly UserManager<UserEntity> _userManager;
-    private readonly IOperatorRepository _operatorRepository;
     private readonly IbanService _ibanService;
     private readonly IAddUserService _addUserService;
     private readonly IAddAccountService _addAccountService;
     private readonly IAddCardService _addCardService;
-    
+    private readonly IUserLoginService _userLoginService;
+
 
     public OperatorController(
         UserManager<UserEntity> userManager,
-        IOperatorRepository operatorRepository,
         IbanService ibanService,
         IAddUserService addUserService, 
         IAddAccountService addAccountService,
-        IAddCardService addCardService
+        IAddCardService addCardService,
+        IUserLoginService userLoginService
     )
     {
         _userManager = userManager;
-        _operatorRepository = operatorRepository;
         _ibanService = ibanService;
         _addUserService = addUserService;
         _addAccountService = addAccountService;
         _addCardService = addCardService;
+        _userLoginService = userLoginService;
     }
 
-    [HttpPost("operator-login")]
-    public async Task<string> LoginOperatorAsync(string name)
+    [AllowAnonymous]
+    [HttpPost("login")]
+    public async Task<IActionResult> LoginAsync([FromBody]LoginRequest request)
     {
-        var token = await _operatorRepository.OperatorLoginAsync(name);
-        return token;
+        var token = await _userLoginService.LoginUserAsync(request);
+        return Ok(token);
     }
-
-    [Authorize("ApiAdmin", AuthenticationSchemes = "Bearer")]
     [HttpPost("register-user")]
     public async Task<IActionResult> RegisterUserAsync(RegisterUserRequest request)
     {
-        try
-        {
             await _addUserService.AddUserAsync(request);
             return Ok("User has been Registered successfully");
-        }
-        catch (Exception e)
-        {
-            return BadRequest(e.Message);
-        }
-        
     }
-    [Authorize("ApiAdmin", AuthenticationSchemes = "Bearer")]
     [HttpPost("register-bank-account")]
     public async Task<IActionResult> RegisterAccountAsync(RegisterAccountRequest request)
     {
@@ -68,7 +59,6 @@ public class OperatorController : ControllerBase
         return Ok();
     }
 
-    [Authorize("ApiAdmin", AuthenticationSchemes = "Bearer")]
     [HttpPost("register-card")]
     public async Task<IActionResult> RegisterCardAsync(RegisterCardRequest? request)
     {

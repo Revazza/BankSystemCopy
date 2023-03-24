@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using System.Net;
 using BankSystem.InternetBank.Exceptions;
 
-namespace ATM.Api.Middlewares
+namespace InternetBank.Api.Middlewares
 {
     public class GlobalExceptionHandlingMiddleware : IMiddleware
     {

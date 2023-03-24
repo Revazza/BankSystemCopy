@@ -9,6 +9,42 @@ namespace BankSystem.Common.Seed
 {
     public static class Seeder
     {
+        public static void SeedRoles(this ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<IdentityRole<Guid>>()
+                .HasData(
+                    new IdentityRole<Guid>()
+                    {
+                        Id = new Guid("f5c38744-072b-4785-9c6d-db48ac043b7f"),
+                        Name = "api-user",
+                        NormalizedName = "API-USER",
+                    },
+                    new IdentityRole<Guid>()
+                    {
+                        Id = new Guid("3f66ed5d-b94b-46a7-a9c3-9a564241708f"),
+                        Name = "api-operator",
+                        NormalizedName = "API-OPERATOR",
+                    }
+                );
+        }
+
+        public static void SeedUserEntityRoles(this ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<IdentityUserRole<Guid>>()
+                .HasData(
+                    new IdentityUserRole<Guid>()
+                    {
+                        UserId = new Guid("4bf7d82a-fca9-4d1d-bbc9-48cfaa109187"),
+                        RoleId = new Guid("3f66ed5d-b94b-46a7-a9c3-9a564241708f"),
+                    },
+                    new IdentityUserRole<Guid>()
+                    {
+                        UserId = new Guid("0eb288d0-c7cd-4749-ad29-92a9d59e8bf4"),
+                        RoleId = new Guid("f5c38744-072b-4785-9c6d-db48ac043b7f")
+                    }
+                );
+        }
+
         public static void SeedUserEntity(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UserEntity>()
@@ -19,8 +55,10 @@ namespace BankSystem.Common.Seed
                         FirstName = "Ana",
                         LastName = "Mklavashvili",
                         Email = "anamklavashvili@gmail.com",
+                        NormalizedEmail = "ANAMKLAVASHVILI@GMAIL.COM",
                         UserName = "ana",
                         PasswordHash = HashPassword("ana1234"),
+                        SecurityStamp = Guid.NewGuid().ToString()
                     },
                     new UserEntity()
                     {
@@ -28,16 +66,18 @@ namespace BankSystem.Common.Seed
                         FirstName = "Sandro",
                         LastName = "Revazishvili",
                         Email = "sandro.revazishviliii@gmail.com",
+                        NormalizedEmail = "SANDRO.REVAZISHVILIII@GMAIL.COM",
                         UserName = "sandro",
                         PasswordHash = HashPassword("sandro1234"),
+                        SecurityStamp = Guid.NewGuid().ToString()
                     }
-            );
+                );
         }
 
         public static void SeedAccountEntity(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<AccountEntity>()
-                    .HasData(
+                .HasData(
                     new AccountEntity
                     {
                         Id = new Guid("1ffae49b-5579-4560-bf20-fd3986fd76c0"),
@@ -75,7 +115,6 @@ namespace BankSystem.Common.Seed
                         Pin = "1234",
                         FullName = "Sandro Revazishvili"
                     }
-
                 );
         }
 
@@ -87,17 +126,17 @@ namespace BankSystem.Common.Seed
             {
                 throw new ArgumentNullException("password");
             }
+
             using (var bytes = new Rfc2898DeriveBytes(password, 0x10, 0x3e8))
             {
                 salt = bytes.Salt;
                 buffer2 = bytes.GetBytes(0x20);
             }
+
             byte[] dst = new byte[0x31];
             Buffer.BlockCopy(salt, 0, dst, 1, 0x10);
             Buffer.BlockCopy(buffer2, 0, dst, 0x11, 0x20);
             return Convert.ToBase64String(dst);
         }
-
     }
-
 }

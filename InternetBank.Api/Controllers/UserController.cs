@@ -11,6 +11,7 @@ namespace BankSystem.InternetBank.Api.Controllers;
 
 
 [ApiController]
+[Authorize("ApiUser", AuthenticationSchemes = "Bearer")]
 [Route("[controller]")]
 public class UserController : ControllerBase
 {
@@ -39,13 +40,15 @@ public class UserController : ControllerBase
         _accountRepository = accountRepository;
         _transactionRepository = transactionRepository;
     }
+    
+    
+    [AllowAnonymous]
     [HttpPost("login")]
     public async Task<IActionResult> LoginAsync([FromBody]LoginRequest request)
     {
         var token = await _userLoginService.LoginUserAsync(request);
         return Ok(token);
     }
-    [Authorize("ApiUser", AuthenticationSchemes = "Bearer")]
     [HttpPost("transfer-money")]
     public async Task<IActionResult> TransferMoney(TranferRequest request)
     {
@@ -54,7 +57,6 @@ public class UserController : ControllerBase
         await _transferService.TransferMoneyAsync(request, user.Id);
         return Ok("successful transaction");
     }
-    [Authorize("ApiUser", AuthenticationSchemes = "Bearer")]
     [HttpGet("get-cards")]
     public async Task<IActionResult> GetCards()
     {
@@ -67,7 +69,6 @@ public class UserController : ControllerBase
         var cards = await _cardRepository.GetCardsByUserIdAsync(user.Id);
         return Ok(cards);
     }
-    [Authorize("ApiUser", AuthenticationSchemes = "Bearer")]
     [HttpPost("get-amount-of-account")]
     public async Task<IActionResult> GetAmount(string iban)
     {
@@ -80,7 +81,6 @@ public class UserController : ControllerBase
         return Ok(amount);
     }
     
-    [Authorize("ApiUser", AuthenticationSchemes = "Bearer")]
     [HttpGet("get-transactions")]
     public async Task<IActionResult> GetTransactions(string iban)
     {
