@@ -1,6 +1,6 @@
 ﻿using BankSystem.Common.Db.Entities;
 
-namespace BankSystem.Common.Models.Dto
+namespace BankSystem.Common.Models
 {
     public class ExchangeRate
     {

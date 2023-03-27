@@ -3,7 +3,6 @@ using BankSystem.Common.Seed;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Abstractions;
 
 namespace BankSystem.Common.Db;
 
@@ -37,7 +36,8 @@ public class BankSystemDbContext : IdentityDbContext<UserEntity, IdentityRole<Gu
         modelBuilder.SeedRoles();
         modelBuilder.SeedAccountEntity();
         modelBuilder.SeedCardEntity();
-        modelBuilder.SeedUserEntityRoles();        
+        modelBuilder.SeedUserEntityRoles();
+        modelBuilder.SeedFakeTransactions();
 
         base.OnModelCreating(modelBuilder);
     }

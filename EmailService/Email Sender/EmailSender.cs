@@ -67,7 +67,6 @@ namespace EmailService.Email_Sender
             var to = new MailAddress(request.ToAddress!);
             var from = new MailAddress(_companyEmail);
 
-
             var message = new MailMessage(from, to)
             {
                 Subject = request.Subject,
@@ -86,7 +85,7 @@ namespace EmailService.Email_Sender
 
             var client = new SmtpClient("smtp.gmail.com", 587)
             {
-                Credentials = new NetworkCredential(_companyEmail, "lsjfxszvhoqnrtku"),
+                Credentials = new NetworkCredential(_companyEmail, ""),
                 EnableSsl = true,
             };
 

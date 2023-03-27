@@ -1,14 +1,118 @@
-﻿using BankSystem.Common.Db;
-using BankSystem.Common.Db.Entities;
+﻿using BankSystem.Common.Db.Entities;
+using BankSystem.Common.Db.FinancialEnums;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Abstractions;
 using System.Security.Cryptography;
 
 namespace BankSystem.Common.Seed
 {
     public static class Seeder
     {
+        public static void SeedFakeTransactions(this ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<TransactionEntity>()
+                .HasData(
+                    new TransactionEntity()
+                    {
+                        AccountFromId = Guid.Empty,
+                        AccountToId = Guid.Empty,
+                        Amount = 567.20m,
+                        CreatedAt = new DateTime(2023, 3, 2),
+                        CurrencyFrom = CurrencyType.USD,
+                        CurrencyTo = CurrencyType.EUR,
+                        Fee = 29.80m,
+                        TransactionType = TransactionType.Inner
+                    },
+                    new TransactionEntity()
+                    {
+                        AccountFromId = Guid.Empty,
+                        AccountToId = Guid.Empty,
+                        Amount = 438.10m,
+                        CreatedAt = new DateTime(2023, 3, 10),
+                        CurrencyFrom = CurrencyType.EUR,
+                        CurrencyTo = CurrencyType.GEL,
+                        Fee = 18.50m,
+                        TransactionType = TransactionType.Outer
+                    },
+                    new TransactionEntity()
+                    {
+                        AccountFromId = Guid.Empty,
+                        AccountToId = Guid.Empty,
+                        Amount = 789.40m,
+                        CreatedAt = new DateTime(2023, 3, 18),
+                        CurrencyFrom = CurrencyType.GEL,
+                        CurrencyTo = CurrencyType.USD,
+                        Fee = 33.20m,
+                        TransactionType = TransactionType.ATM
+                    },
+                    new TransactionEntity()
+                    {
+                        AccountFromId = Guid.Empty,
+                        AccountToId = Guid.Empty,
+                        Amount = 312.70m,
+                        CreatedAt = new DateTime(2022, 10, 12),
+                        CurrencyFrom = CurrencyType.USD,
+                        CurrencyTo = CurrencyType.EUR,
+                        Fee = 16.20m,
+                        TransactionType = TransactionType.Outer
+                    },
+                    new TransactionEntity()
+                    {
+                        AccountFromId = Guid.Empty,
+                        AccountToId = Guid.Empty,
+                        Amount = 195.50m,
+                        CreatedAt = new DateTime(2022, 12, 23),
+                        CurrencyFrom = CurrencyType.GEL,
+                        CurrencyTo = CurrencyType.USD,
+                        Fee = 9.80m,
+                        TransactionType = TransactionType.ATM
+                    },
+                    new TransactionEntity()
+                    {
+                        AccountFromId = Guid.Empty,
+                        AccountToId = Guid.Empty,
+                        Amount = 489.80m,
+                        CreatedAt = new DateTime(2022, 8, 7),
+                        CurrencyFrom = CurrencyType.EUR,
+                        CurrencyTo = CurrencyType.GEL,
+                        Fee = 22.40m,
+                        TransactionType = TransactionType.Inner
+                    },
+                    new TransactionEntity()
+                    {
+                        AccountFromId = Guid.Empty,
+                        AccountToId = Guid.Empty,
+                        Amount = 637.90m,
+                        CreatedAt = new DateTime(2022, 1, 2),
+                        CurrencyFrom = CurrencyType.USD,
+                        CurrencyTo = CurrencyType.GEL,
+                        Fee = 31.50m,
+                        TransactionType = TransactionType.Outer
+                    },
+                    new TransactionEntity()
+                    {
+                        AccountFromId = Guid.Empty,
+                        AccountToId = Guid.Empty,
+                        Amount = 573.40m,
+                        CreatedAt = new DateTime(2022, 5, 19),
+                        CurrencyFrom = CurrencyType.GEL,
+                        CurrencyTo = CurrencyType.USD,
+                        Fee = 27.80m,
+                        TransactionType = TransactionType.ATM
+                    },
+                    new TransactionEntity()
+                    {
+                        AccountFromId = Guid.Empty,
+                        AccountToId = Guid.Empty,
+                        Amount = 242.10m,
+                        CreatedAt = new DateTime(2022, 11, 14),
+                        CurrencyFrom = CurrencyType.EUR,
+                        CurrencyTo = CurrencyType.GEL,
+                        Fee = 23.12m,
+                        TransactionType = TransactionType.ATM
+                    }
+                );
+        }
         public static void SeedRoles(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<IdentityRole<Guid>>()

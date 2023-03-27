@@ -1,9 +1,9 @@
 ﻿using BankSystem.Common.Db.Entities;
 using BankSystem.Common.Db;
-using BankSystem.Common.Models.Dto;
 using BankSystem.Common.Services;
 using Newtonsoft.Json;
 using Microsoft.EntityFrameworkCore;
+using BankSystem.Common.Models;
 
 namespace BankSystem.Common.Repositores
 {

@@ -28,20 +28,6 @@ namespace BankSystem.Reports.Services
         }
 
 
-        public async Task<TransactionProfitByTimeframeDto> CalculateProfitAsync(int months)
-        {
-            var transactions = await _transactionRepository.GetLastMonthTransactionsAsync();
-            var transactionsProfit = CalculateProfitPerCurrency(transactions);
-
-            return new TransactionProfitByTimeframeDto()
-            {
-                Date = DateTime.Now.AddMonths(-months),
-                Timeframe = $"{months} months",
-                Profits = transactionsProfit
-            };
-
-        }
-
         private List<TransactionProfitByCurrency> CalculateProfitPerCurrency(
             List<TransactionEntity> transactions)
         {
@@ -60,6 +46,54 @@ namespace BankSystem.Reports.Services
             }
 
             return transactionsProfit;
+
+        }
+
+        private List<TransactionsPerDayDto> CalculateTransactionsPerDay(
+            DateTime date,
+            List<TransactionEntity> transactions)
+        {
+            var transactionsPerDays = new List<TransactionsPerDayDto>();
+
+            while (date <= DateTime.Now)
+            {
+                var timeframe = GetMonthNameAndDay(date);
+                var count = transactions
+                    .Where(t => t.CreatedAt.Date == date.Date)
+                    .Count();
+
+                var transactionsPerDay = new TransactionsPerDayDto
+                {
+                    Timeframe = timeframe,
+                    Count = count
+                };
+
+                transactionsPerDays.Add(transactionsPerDay);
+
+                date = date.AddDays(1);
+            }
+
+            return transactionsPerDays;
+
+        }
+
+        private string GetMonthNameAndDay(DateTime date)
+        {
+            var culture = new CultureInfo("en-US");
+            return $"{date.ToString("MMMM", culture)} {date.Day}";
+        }
+
+        public async Task<TransactionProfitByTimeframeDto> CalculateProfitAsync(int months)
+        {
+            var transactions = await _transactionRepository.GetLastMonthTransactionsAsync();
+            var transactionsProfit = CalculateProfitPerCurrency(transactions);
+
+            return new TransactionProfitByTimeframeDto()
+            {
+                Date = DateTime.Now.AddMonths(-months),
+                Timeframe = $"{months} months",
+                Profits = transactionsProfit
+            };
 
         }
 
@@ -104,38 +138,6 @@ namespace BankSystem.Reports.Services
             return transactionsPerDay;
         }
 
-        private List<TransactionsPerDayDto> CalculateTransactionsPerDay(
-            DateTime date,
-            List<TransactionEntity> transactions)
-        {
-            var transactionsPerDays = new List<TransactionsPerDayDto>();
-
-            while (date <= DateTime.Now)
-            {
-                var timeframe = GetMonthNameAndDay(date);
-                var count = transactions
-                    .Where(t => t.CreatedAt.Date == date.Date)
-                    .Count();
-
-                var transactionsPerDay = new TransactionsPerDayDto
-                {
-                    Timeframe = timeframe,
-                    Count = count
-                };
-
-                transactionsPerDays.Add(transactionsPerDay);
-
-                date = date.AddDays(1);
-            }
-            return transactionsPerDays;
-        }
-
-        private string GetMonthNameAndDay(DateTime date)
-        {
-            var culture = new CultureInfo("en-US");
-            return $"{date.ToString("MMMM", culture)} {date.Day}";
-        }
-
         public async Task<decimal> CalculateTotalCashOutAsync(CurrencyType currencyType)
         {
             var transactions = await _transactionRepository.GetAllTransactionsAsync();
@@ -144,5 +146,6 @@ namespace BankSystem.Reports.Services
                 t.CurrencyFrom == currencyType
                 ? t.Amount : 0);
         }
+
     }
 }
