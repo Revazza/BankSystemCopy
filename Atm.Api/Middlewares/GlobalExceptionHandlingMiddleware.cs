@@ -61,6 +61,7 @@ namespace ATM.Api.Middlewares
                 await HandleExceptionAsync(httpContext, HttpStatusCode.InternalServerError, e);
             }
         }
+
     }
 
 }

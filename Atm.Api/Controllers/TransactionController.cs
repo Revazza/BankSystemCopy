@@ -32,9 +32,7 @@ namespace ATM.Api.Controllers
 
             await _cashOutService.CheckCurrenciesAsync();
 
-            var cashOutOperation = new CashOutOperation();
-
-            cashOutOperation = await _cashOutService.PerformCashoutAsync(request, Guid.Parse(cardId));
+            var cashOutOperation = await _cashOutService.PerformCashoutAsync(request, Guid.Parse(cardId));
 
             var transaction = _cashOutService.CreateTransaction(cashOutOperation);
 

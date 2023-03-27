@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using BankSystem.Reports.Services.Transaction;
+﻿using Microsoft.AspNetCore.Mvc;
+using BankSystem.Reports.Services;
+using BankSystem.Common.Db.FinancialEnums;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BankSystem.Reports.Controllers
 {
@@ -17,45 +18,47 @@ namespace BankSystem.Reports.Controllers
             _transactionStatisticsService = transactionStatisticsService;
         }
 
-
-        [HttpGet("get-monthly-transactions")]
-        public async Task<IActionResult> GetMonthlyTransactions(int months = 1)
+        [HttpGet("count-monthly-transactions")]
+        public async Task<IActionResult> CountMonthlyTransactions(int months)
         {
-            var monthlyTransactions = await _transactionStatisticsService
-                .CountMonthlyTransactionsAsync(months);
-            return Ok(monthlyTransactions); 
+            var countedTransactions = await _transactionStatisticsService.CountTransactionsAsync(months);
+            return Ok(countedTransactions);
+
         }
 
-        [HttpGet("get-monthly-profit")]
-        public async Task<IActionResult> GetMonthlyProfit(int months = 1)
+        [HttpGet("calculate-profit-from-transactions")]
+        public async Task<IActionResult> CalculateProfitFromTransactions(int months)
         {
-            var monthlyProfit = await _transactionStatisticsService
-                .GetMonthlyProfitAsync(months);
-            return Ok(monthlyProfit);
+            var profit = await _transactionStatisticsService.CalculateProfitAsync(months);
+            return Ok(profit);
+
         }
 
-        [HttpGet("get-average-profit-per-transaction")]
-        public async Task<IActionResult> GetAverageProfitPerTransaction()
+        [HttpGet("calculate-average-profit-per-transaction")]
+        public async Task<IActionResult> CalculateAverageProfitPerTransaction(CurrencyType currencyType)
         {
-            var averageProfitPerTransaction = await _transactionStatisticsService
-                .GetAverageProfitPerTransactionAsync();
-            return Ok(averageProfitPerTransaction);
+            var profit = await _transactionStatisticsService
+                .CalculateAverageProfitPerTransactionAsync(currencyType);
+            return Ok(profit);
+
         }
 
-        [HttpGet("get-last-month-transaction-per-day")]
-        public async Task<IActionResult> GetLastMonthTransactionPerDay()
+        [HttpGet("get-last-month-transactions-per-day")]
+        public async Task<IActionResult> GetTransactionsPerDay()
         {
-            var lastMonthTransactionPerDay = await _transactionStatisticsService
-                .GetLastMonthTransactionsPerDayAsync();
-            return Ok(lastMonthTransactionPerDay);
+            var transactionsPerDay = await _transactionStatisticsService
+                .CalculateLastMonthTransactionsPerDayAsync();
+            return Ok(transactionsPerDay);
+
         }
 
-        [HttpGet("get-total-atm-cash-out")]
-        public async Task<IActionResult> GetTotalATMCashOut()
+        [HttpGet("calculate-total-cash-out")]
+        public async Task<IActionResult> CalculateTotalCashOut(CurrencyType currencyType)
         {
-            var totalATMCashOut = await _transactionStatisticsService
-                .GetTotalATMCashOutAsync();
-            return Ok(totalATMCashOut);
+            var totalCashedOut = await _transactionStatisticsService
+                .CalculateTotalCashOutAsync(currencyType);
+            return Ok(totalCashedOut);
+
         }
 
     }

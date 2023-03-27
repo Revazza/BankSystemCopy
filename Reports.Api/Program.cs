@@ -3,7 +3,7 @@ using InternetBank.API.Auth;
 using Microsoft.EntityFrameworkCore;
 using BankSystem.Reports.API.Auth;
 using BankSystem.Reports.Repositories;
-using BankSystem.Reports.Services.Transaction;
+using BankSystem.Reports.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

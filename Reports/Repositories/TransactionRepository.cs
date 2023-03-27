@@ -7,7 +7,7 @@ namespace BankSystem.Reports.Repositories
     public interface ITransactionRepository
     {
         Task<List<TransactionEntity>> GetAllTransactionsAsync();
-        Task<List<TransactionEntity>> GetMonthlyTransactionsAsync(int months);
+        Task<List<TransactionEntity>> GetLastMonthTransactionsAsync();
     }
     public class TransactionRepository : ITransactionRepository
     {
@@ -23,25 +23,11 @@ namespace BankSystem.Reports.Repositories
             return await _context.Transactions.ToListAsync();
         }
 
-        public async Task<List<TransactionEntity>> GetMonthlyTransactionsAsync(int months)
+        public async Task<List<TransactionEntity>> GetLastMonthTransactionsAsync()
         {
-            var passedMonth = CalculatePassedMonthFirstDate(months);
-
-            var transactions = await _context.Transactions
-                .Where(t => t.CreatedAt > passedMonth &&
-                          t.CreatedAt < passedMonth.AddMonths(months))
+            return await _context.Transactions
+                .Where(t => t.CreatedAt >= DateTime.Now.AddMonths(-1))
                 .ToListAsync();
-
-            return transactions;
         }
-
-        private DateTime CalculatePassedMonthFirstDate(int months)
-        {
-            var current = DateTime.Now.AddMonths(-months);
-            var month = new DateTime(current.Year, current.Month, 1);
-
-            return month;
-        }
-
     }
 }

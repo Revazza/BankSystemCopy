@@ -14,8 +14,6 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.File("exception_logs/atm.txt", rollingInterval: RollingInterval.Day)
     .CreateLogger();
 
-
-
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
