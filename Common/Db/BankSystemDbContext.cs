@@ -30,8 +30,6 @@ public class BankSystemDbContext : IdentityDbContext<UserEntity, IdentityRole<Gu
             .WithOne(a => a.Account)
             .HasForeignKey(a => a.AccountId);
 
-      
-
         modelBuilder.SeedUserEntity();
         modelBuilder.SeedRoles();
         modelBuilder.SeedAccountEntity();

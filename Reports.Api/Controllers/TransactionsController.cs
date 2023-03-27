@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace BankSystem.Reports.Controllers
 {
-    [Authorize("ApiAdmin", AuthenticationSchemes = "Bearer")]
+    //[Authorize("ApiAdmin", AuthenticationSchemes = "Bearer")]
     [Route("api/[controller]")]
     [ApiController]
     public class TransactionsController : ControllerBase

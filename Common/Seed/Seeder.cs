@@ -83,7 +83,7 @@ namespace BankSystem.Common.Seed
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
                         Amount = 637.90m,
-                        CreatedAt = new DateTime(2022, 1, 2),
+                        CreatedAt = new DateTime(2022, 4, 2),
                         CurrencyFrom = CurrencyType.USD,
                         CurrencyTo = CurrencyType.GEL,
                         Fee = 31.50m,

@@ -85,12 +85,13 @@ namespace BankSystem.Reports.Services
 
         public async Task<TransactionProfitByTimeframeDto> CalculateProfitAsync(int months)
         {
-            var transactions = await _transactionRepository.GetLastMonthTransactionsAsync();
+            var fromDate = DateTime.Now.AddMonths(-months);
+            var transactions = await _transactionRepository.GetTransactionsByDateAsync(fromDate);
             var transactionsProfit = CalculateProfitPerCurrency(transactions);
 
             return new TransactionProfitByTimeframeDto()
             {
-                Date = DateTime.Now.AddMonths(-months),
+                Date = fromDate,
                 Timeframe = $"{months} months",
                 Profits = transactionsProfit
             };
@@ -110,6 +111,7 @@ namespace BankSystem.Reports.Services
                 {
                     count++;
                 }
+                Console.WriteLine();
             }
 
             return new TransactionsByTimeframeDto
@@ -125,7 +127,7 @@ namespace BankSystem.Reports.Services
         {
             var transactions = await _transactionRepository.GetAllTransactionsAsync();
             var profit = transactions.Sum(t => t.CurrencyFrom == currencyType ? t.Fee : 0);
-            return profit;
+            return profit / transactions.Count;
         }
 
         public async Task<List<TransactionsPerDayDto>> CalculateLastMonthTransactionsPerDayAsync()
