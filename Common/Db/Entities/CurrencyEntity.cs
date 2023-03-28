@@ -10,13 +10,13 @@ namespace BankSystem.Common.Db.Entities
     public class CurrencyEntity
     {
         public Guid Id { get; set; } = Guid.NewGuid();
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public int Quantity { get; set; }
-        public string? RateFormated { get; set; }
-        public string? DiffFormated { get; set; }
+        public string RateFormated { get; set; }
+        public string DiffFormated { get; set; }
         [Precision(18, 3)]
         public decimal Rate { get; set; }
-        public string? Name { get; set; }
+        public string Name { get; set; }
         [Precision(18, 3)]
         public decimal Diff { get; set; }
         public DateTime Date { get; set; }

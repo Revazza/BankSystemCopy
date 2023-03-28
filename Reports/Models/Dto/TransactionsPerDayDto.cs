@@ -2,7 +2,7 @@
 {
     public class TransactionsPerDayDto
     {
-        public string? Timeframe { get; set; }
+        public string Timeframe { get; set; }
         public int Count { get; set; }
 
     }

@@ -58,6 +58,7 @@ namespace ATM.Api.Controllers
         [HttpPost("change-pin")]
         public async Task<IActionResult> ChangePin(ChangePinRequest request)
         {
+            request.Validate();
             var cardId = User.Claims.FirstOrDefault(c => c.Type == "cardId")!.Value;
 
             await _changePinService.ChangePinAsync(request, Guid.Parse(cardId));

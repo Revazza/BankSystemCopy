@@ -6,8 +6,8 @@ namespace EmailService
 {
     public class AppSettings
     {
-        public string? DatabaseConnectionString { get; set; }
-        public string? CompanyEmail { get; set; }
+        public string DatabaseConnectionString { get; set; }
+        public string CompanyEmail { get; set; }
 
         public AppSettings()
         {

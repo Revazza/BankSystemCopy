@@ -28,6 +28,7 @@ namespace ATM.Api.Controllers
         [HttpPost("cash-out")]
         public async Task<IActionResult> CashOut(CashOutRequest request)
         {
+            request.Validate();
             var cardId = User.Claims.First(u => u.Type == "cardId").Value;
 
             await _cashOutService.CheckCurrenciesAsync();
