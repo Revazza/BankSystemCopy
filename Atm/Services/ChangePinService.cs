@@ -3,9 +3,9 @@ using BankSystem.Atm.Services.Models.Requests;
 
 namespace BankSystem.Atm.Services
 {
-    public interface IChangePinService 
+    public interface IChangePinService
     {
-        Task ChangePinAsync(ChangePinRequest request, Guid cardId);
+        Task<string> ChangePinAsync(ChangePinRequest request, Guid cardId);
         Task SaveChangesAsync();
     }
 
@@ -18,7 +18,7 @@ namespace BankSystem.Atm.Services
             _cardRepository = cardRepository;
         }
 
-        public async Task ChangePinAsync(ChangePinRequest request, Guid cardId)
+        public async Task<string> ChangePinAsync(ChangePinRequest request, Guid cardId)
         {
             var card = await _cardRepository.GetCardByIdAsync(cardId)
                 ?? throw new ArgumentException("Can't Identify Card");
@@ -31,6 +31,7 @@ namespace BankSystem.Atm.Services
 
             _cardRepository.UpdateCard(card);
 
+            return request.OldPin;
         }
 
 

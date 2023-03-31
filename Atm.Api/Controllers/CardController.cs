@@ -1,8 +1,11 @@
 ﻿using BankSystem.Atm.Repositories;
 using BankSystem.Atm.Services;
 using BankSystem.Atm.Services.Models.Requests;
+using BankSystem.Common.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace ATM.Api.Controllers
 {
@@ -34,8 +37,9 @@ namespace ATM.Api.Controllers
         public async Task<IActionResult> Login(LoginRequest request)
         {
             var token = await _loginService.LoginAsync(request);
-
-            return Ok(token);
+            var result = new HttpResult();
+            result.Payload.Add("token", token);
+            return Ok(result);
 
         }
 
@@ -46,12 +50,17 @@ namespace ATM.Api.Controllers
 
             var card = await _cardRepository.GetCardByIdAsync(Guid.Parse(cardId));
 
+            var result = new HttpResult();
             if (card == null)
             {
-                return BadRequest("Can't identify card");
+                throw new ArgumentException("Can't identify card");
             }
 
-            return Ok(card.Account!.Amount);
+            result.Status = HttpResultStatus.Ok;
+            result.Payload.Add("balance", card.Account.Amount);
+            result.Payload.Add("currency", card.Account.Currency.ToString());
+            result.Payload.Add("currencyType", card.Account.Currency);
+            return Ok(result);
 
         }
 
@@ -61,10 +70,13 @@ namespace ATM.Api.Controllers
             request.Validate();
             var cardId = User.Claims.FirstOrDefault(c => c.Type == "cardId")!.Value;
 
-            await _changePinService.ChangePinAsync(request, Guid.Parse(cardId));
+            var newPin = await _changePinService.ChangePinAsync(request, Guid.Parse(cardId));
             await _changePinService.SaveChangesAsync();
 
-            return Ok("Pin changed");
+            var result = new HttpResult();
+            result.Payload.Add("newPin", newPin);
+
+            return Ok(result);
         }
 
     }

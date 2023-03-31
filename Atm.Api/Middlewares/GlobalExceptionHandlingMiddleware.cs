@@ -1,4 +1,5 @@
 ﻿using BankSystem.Atm.Exceptions;
+using BankSystem.Common.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net;
@@ -17,15 +18,15 @@ namespace ATM.Api.Middlewares
 
         private async Task HandleExceptionAsync(
             HttpContext httpContext,
-            HttpStatusCode status,
+            HttpResultStatus status,
             Exception e)
         {
             _logger.LogError(e, e.Message);
 
-            var problem = new ProblemDetails
+            var problem = new HttpResult
             {
-                Detail = e.Message,
-                Status = (int)status
+                Status = status,
+                Message = e.Message,
             };
 
             httpContext.Response.StatusCode = (int)status;
@@ -46,19 +47,19 @@ namespace ATM.Api.Middlewares
             }
             catch (ArgumentException e)
             {
-                await HandleExceptionAsync(httpContext, HttpStatusCode.BadRequest, e);
+                await HandleExceptionAsync(httpContext, HttpResultStatus.BadRequest, e);
             }
             catch (CashOutLimitExceededException e)
             {
-                await HandleExceptionAsync(httpContext, HttpStatusCode.BadRequest, e);
+                await HandleExceptionAsync(httpContext, HttpResultStatus.BadRequest, e);
             }
             catch (CardIsDeprecatedException e)
             {
-                await HandleExceptionAsync(httpContext, HttpStatusCode.Gone, e);
+                await HandleExceptionAsync(httpContext, HttpResultStatus.BadRequest, e);
             }
             catch (Exception e)
             {
-                await HandleExceptionAsync(httpContext, HttpStatusCode.InternalServerError, e);
+                await HandleExceptionAsync(httpContext, HttpResultStatus.Error, e);
             }
         }
 
