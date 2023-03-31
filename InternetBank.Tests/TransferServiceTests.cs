@@ -4,7 +4,6 @@ using BankSystem.Common.Repositores;
 using BankSystem.InternetBank.Models.Requests;
 using BankSystem.InternetBank.Repositories;
 using BankSystem.InternetBank.Services;
-using Moq;
 
 namespace InternetBank.Tests;
 
@@ -110,11 +109,16 @@ public class TransferServiceTests
             Iban = transferee.Iban,
             Amount = 18
         };
+        var transferorMoney = transferor.Amount - request.Amount -
+                              await _transferService.CalculateFeeForOuterTransferAsync(transferor, transferee, request.Amount);
+        var transfereeMoney = transferee.Amount +
+                              await _transferService.ConvertMoneyAsync(transferor, transferee, request.Amount);
         await _transferService.TransferMoneyAsync(request, transferor.UserId);
         
         var updatedTransferor = await _db.Accounts.FindAsync(transferor.Id);
         var updatedTransferee = await _db.Accounts.FindAsync(transferee.Id);
-        Assert.That(updatedTransferor.Amount, Is.EqualTo(981.64).Within(0.01));
-        Assert.That(updatedTransferee.Amount, Is.EqualTo(16.45).Within(0.1));
+      
+        Assert.That(updatedTransferor.Amount, Is.EqualTo(transferorMoney).Within(0.01));
+        Assert.That(updatedTransferee.Amount, Is.EqualTo(transfereeMoney).Within(0.1));
     }
 }

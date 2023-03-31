@@ -16,11 +16,12 @@ namespace BankSystem.Atm.Services
         Task AddTransactionAsync(TransactionEntity transaction);
         Task CheckCurrenciesAsync();
         Task SaveChangesAsync();
+        Task<CashOutOperation> CashOutAsync(CashOutRequest request, AccountEntity account);
     }
 
     public class CashoutService : ICashOutService
     {
-        private const decimal CASH_OUT_LIMIT_PER_DAY = 10_000;
+        private const decimal CASH_OUT_LIMIT_PER_DAY = 10000;
         private const decimal CASH_OUT_FEE_PERCENTAGE = 0.02m;
 
         private readonly ITransactionRepository _transactionRepository;
@@ -114,7 +115,7 @@ namespace BankSystem.Atm.Services
 
         }
 
-        private async Task<CashOutOperation> CashOutAsync(CashOutRequest request, AccountEntity account)
+        public async Task<CashOutOperation> CashOutAsync(CashOutRequest request, AccountEntity account)
         {
             var fee = request.Amount * CASH_OUT_FEE_PERCENTAGE;
 
@@ -140,9 +141,6 @@ namespace BankSystem.Atm.Services
             };
 
         }
-
-
-
         public async Task SaveChangesAsync()
         {
             await _transactionRepository.SaveChangesAsync();

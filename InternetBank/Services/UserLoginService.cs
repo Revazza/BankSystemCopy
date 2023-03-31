@@ -38,6 +38,7 @@ public class UserLoginService : IUserLoginService
         var claims = new List<Claim>()
         {
             new Claim("role",userRoles.First()),
+            new Claim(new ClaimsIdentityOptions().UserIdClaimType, user.Id.ToString()),
         };
         string token = _tokenGenerator.Generate(claims);
         return token;

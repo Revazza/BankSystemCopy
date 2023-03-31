@@ -15,6 +15,9 @@ public interface ITransferService
     Task<decimal> ConvertMoneyAsync(
         AccountEntity transferor, AccountEntity transferee, decimal amount
     );
+
+    Task<decimal> CalculateFeeForOuterTransferAsync(AccountEntity transferor,
+        AccountEntity transferee, decimal amount);
 }
 public class TransferService : ITransferService
 {
@@ -88,10 +91,8 @@ public class TransferService : ITransferService
     public async Task<decimal> CalculateFeeForOuterTransferAsync(AccountEntity transferor, 
         AccountEntity transferee, decimal amount)
     {
-        await _currencyService.CheckCurrenciesAsync();
-        var fee = CurrencyConverter.Convert(transferor.Currency, 
-            transferee.Currency, 0.5m);
-        return fee + amount / 100;
+        decimal fee = amount / 100 + 0.5m;
+        return fee;
     }
 
     public async Task<TransactionEntity> CreateTransactionAsync(

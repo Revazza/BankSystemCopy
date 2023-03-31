@@ -1,3 +1,5 @@
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using BankSystem.Common.Db.Entities;
 using BankSystem.InternetBank.Api.Validations;
 using BankSystem.InternetBank.Models.Requests;
@@ -6,7 +8,6 @@ using BankSystem.InternetBank.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-
 namespace BankSystem.InternetBank.Api.Controllers;
 
 
@@ -22,6 +23,7 @@ public class UserController : ControllerBase
     private readonly ICardRepository _cardRepository;
     private readonly IAccountRepository _accountRepository;
     private readonly ITransactionRepository _transactionRepository;
+    private readonly IUserRepository _userRepository;
 
 
     public UserController(TransactionValidator transactionValidator,
@@ -30,7 +32,8 @@ public class UserController : ControllerBase
         IUserLoginService userLoginService,
         ICardRepository cardRepository,
         IAccountRepository accountRepository,
-        ITransactionRepository transactionRepository)
+        ITransactionRepository transactionRepository,
+        IUserRepository userRepository)
     {
         _transactionValidator = transactionValidator;
         _userManager = userManager;
@@ -39,6 +42,7 @@ public class UserController : ControllerBase
         _cardRepository = cardRepository;
         _accountRepository = accountRepository;
         _transactionRepository = transactionRepository;
+        _userRepository = userRepository;
     }
     
     
@@ -86,6 +90,17 @@ public class UserController : ControllerBase
     {
         var transactions = await _transactionRepository.GetTransactionsAsync(iban);
         return Ok(transactions);
+    }
+    [HttpGet("get-accounts")]
+    public async Task<IActionResult> GetAccounts()
+    {
+        var user = await _userManager.GetUserAsync(User);
+        if (user == null)
+        {
+            return BadRequest("User Not Found");
+        }
+        var accounts = await _userRepository.GetUserAccountsAsync(user);
+        return Ok(accounts);
     }
    
 }

@@ -1,6 +1,8 @@
+using System.Text.Json;
 using BankSystem.Common.Db;
 using BankSystem.Common.Db.Entities;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace BankSystem.InternetBank.Repositories;
 
@@ -10,7 +12,7 @@ public interface IUserRepository
     Task SaveChangesAsync();
     Task<UserEntity?> FindUserByPersonalIdAsync(string personalId);
     bool EmailAlreadyExists(string email);
-    
+    Task<Dictionary<string, decimal>> GetUserAccountsAsync(UserEntity user);
 
 }
 public class UserRepository : IUserRepository
@@ -39,6 +41,22 @@ public class UserRepository : IUserRepository
     {
         return await _context.Users
             .FirstOrDefaultAsync(u => u.PersonalNumber == personalId);
+    }
+    public async Task<Dictionary<string, decimal>> GetUserAccountsAsync(UserEntity user)
+    {
+        var accounts =  await _context.Accounts
+            .Include(a => a.UserEntity)
+            .Where(a => a.UserEntity == user)
+            .ToListAsync();
+      
+        Dictionary<string, decimal> dict = new Dictionary<string, decimal> { };
+
+        foreach (var account in accounts)
+        {
+            dict.Add(account.Iban, account.Amount);
+        }
+
+        return dict;
     }
    
 
