@@ -7,8 +7,7 @@ namespace BankSystem.Atm.Repositories;
 
 public interface ITransactionRepository
 {
-    Task<List<TransactionEntity>> GetAccountsTransactionsAsync(List<AccountEntity> accounts);
-    Task<List<TransactionEntity>> GetLast24HourTransactions(Guid accountId);
+    Task<List<TransactionEntity>> GetAccountDailyTransactionsAsync(Guid accountId);
     Task AddTransactionAsync(TransactionEntity transaction);
     Task SaveChangesAsync();
 }
@@ -26,26 +25,14 @@ public class TransactionRepository : ITransactionRepository
         await _context.SaveChangesAsync();
     }
 
-    public async Task<List<TransactionEntity>> GetLast24HourTransactions(Guid accountId)
+    public async Task<List<TransactionEntity>> GetAccountDailyTransactionsAsync(Guid accountId)
     {
         return await _context.Transactions
             .Where(t =>
                 t.AccountFromId == accountId &&
-                t.CreatedAt > DateTime.Now.AddDays(-1) &&
+                t.CreatedAt.Date == DateTime.Now.Date &&
                 t.TransactionType == TransactionType.ATM)
             .ToListAsync();
-    }
-
-    public async Task<List<TransactionEntity>> GetAccountsTransactionsAsync(
-        List<AccountEntity> accounts)
-    {
-        var accountIds = accounts.Select(a => a.Id);
-
-        var transactions = await _context.Transactions
-            .Where(t => t.TransactionType == TransactionType.ATM && accountIds.Contains(t.AccountFromId))
-            .ToListAsync();
-
-        return transactions;
     }
 
     public async Task AddTransactionAsync(TransactionEntity transaction)
