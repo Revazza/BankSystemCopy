@@ -44,7 +44,7 @@ namespace BankSystem.Common.Repositores
             // NOTE: currencies are updating per day
 
             if (currencies.Count == 0 ||
-                DateTime.Now > currencies.First().LastUpdatedAt.AddDays(1))
+                DateTime.Now.Date > currencies.First().LastUpdatedAt.AddDays(1).Date)
             {
                 await ClearCurrencies(currencies);
                 currencies = await FetchCurrenciesAsync();
