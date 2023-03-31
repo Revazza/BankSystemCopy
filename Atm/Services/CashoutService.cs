@@ -6,6 +6,8 @@ using BankSystem.Common.Db.Entities;
 using BankSystem.Common.Db.FinancialEnums;
 using BankSystem.Common.Repositores;
 using BankSystem.Common.Services;
+using Microsoft.EntityFrameworkCore.Query;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace BankSystem.Atm.Services
 {
@@ -40,43 +42,22 @@ namespace BankSystem.Atm.Services
             _currencyRepository = currencyRepository;
         }
 
-        private decimal CalculateCashedOutAmountInGEL(
-            List<TransactionEntity> transactions)
-        {
-            var total = 0m;
-
-            foreach (var transaction in transactions)
-            {
-                if (transaction.CurrencyFrom != CurrencyType.GEL)
-                {
-                    total += CurrencyConverter.Convert(
-                        transaction.CurrencyFrom,
-                        CurrencyType.GEL,
-                        transaction.Amount);
-                    continue;
-                }
-                total += transaction.Amount;
-            }
-
-            return total;
-        }
 
         private async Task<bool> IsCashOutPossibleAsync(
             Guid accountId,
             decimal requestedAmount,
             CurrencyType fromCurrency)
         {
-            var user = await _userRepository.GetUserByAccountIdAsync(accountId);
-            var userAccounts = await _userRepository.GetUserAccountsAsync(user);
-            var transactions = await _transactionRepository.GetAccountsTransactionsAsync(userAccounts);
 
-            var cashOutInGEL = CalculateCashedOutAmountInGEL(transactions);
-            var requestedAmountInGEL = CurrencyConverter.Convert(fromCurrency, CurrencyType.GEL, requestedAmount);
-
+            var transactions = await _transactionRepository.GetAccountDailyTransactionsAsync(accountId);
+            var cashedOutAmountToday = transactions.Sum(t => t.Amount);
             var fee = requestedAmount * CASH_OUT_FEE_PERCENTAGE;
-            var feeInGEL = CurrencyConverter.Convert(fromCurrency, CurrencyType.GEL, fee);
 
-            return cashOutInGEL + requestedAmountInGEL + feeInGEL <= CASH_OUT_LIMIT_PER_DAY;
+            var totalAmount = cashedOutAmountToday + fee + requestedAmount;
+            var totalAmountInGEL = CurrencyConverter
+                .Convert(fromCurrency, CurrencyType.GEL, totalAmount);
+
+            return totalAmount <= CASH_OUT_LIMIT_PER_DAY;
         }
 
         public async Task<CashOutOperation> PerformCashoutAsync(CashOutRequest request, Guid cardId)
@@ -140,7 +121,6 @@ namespace BankSystem.Atm.Services
             };
 
         }
-
 
 
         public async Task SaveChangesAsync()
