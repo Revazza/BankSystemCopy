@@ -2,6 +2,7 @@
 using BankSystem.Reports.Services;
 using BankSystem.Common.Db.FinancialEnums;
 using Microsoft.AspNetCore.Authorization;
+using BankSystem.Common.Models;
 
 namespace BankSystem.Reports.Controllers
 {
@@ -22,7 +23,9 @@ namespace BankSystem.Reports.Controllers
         public async Task<IActionResult> CountMonthlyTransactions(int months)
         {
             var countedTransactions = await _transactionStatisticsService.CountTransactionsAsync(months);
-            return Ok(countedTransactions);
+            var result = new HttpResult();
+            result.Payload.Add("monthlyTransactions", countedTransactions);
+            return Ok(result);
 
         }
 
@@ -30,7 +33,9 @@ namespace BankSystem.Reports.Controllers
         public async Task<IActionResult> CalculateProfitFromTransactions(int months)
         {
             var profit = await _transactionStatisticsService.CalculateProfitAsync(months);
-            return Ok(profit);
+            var result = new HttpResult();
+            result.Payload.Add("profitPerCurrency", profit);
+            return Ok(result);
 
         }
 
@@ -39,7 +44,10 @@ namespace BankSystem.Reports.Controllers
         {
             var profit = await _transactionStatisticsService
                 .CalculateAverageProfitPerTransactionAsync(currencyType);
-            return Ok(profit);
+            var result = new HttpResult();
+            result.Payload.Add("averageProfitPerTransaction", profit);
+
+            return Ok(result);
 
         }
 
@@ -48,7 +56,9 @@ namespace BankSystem.Reports.Controllers
         {
             var transactionsPerDay = await _transactionStatisticsService
                 .CalculateLastMonthTransactionsPerDayAsync();
-            return Ok(transactionsPerDay);
+            var result = new HttpResult();
+            result.Payload.Add("transactionsPerDay", transactionsPerDay);
+            return Ok(result);
 
         }
 
@@ -57,7 +67,11 @@ namespace BankSystem.Reports.Controllers
         {
             var totalCashedOut = await _transactionStatisticsService
                 .CalculateTotalCashOutAsync(currencyType);
-            return Ok(totalCashedOut);
+
+            var result = new HttpResult();
+            result.Payload.Add("totalCashedOut", totalCashedOut);
+            result.Payload.Add("currency", currencyType.ToString());
+            return Ok(result);
 
         }
 

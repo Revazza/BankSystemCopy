@@ -4,7 +4,8 @@ namespace BankSystem.Reports.Models.Dto
 {
     public class TransactionProfitByCurrency
     {
-        public CurrencyType Currency { get; set; }
+        public string Currency { get; set; }
         public decimal Profit { get; set; }
+        public CurrencyType CurrencyType { get; set; }
     }
 }

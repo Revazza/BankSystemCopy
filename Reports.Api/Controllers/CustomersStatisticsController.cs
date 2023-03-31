@@ -1,3 +1,4 @@
+using BankSystem.Common.Models;
 using BankSystem.Reports.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -20,14 +21,20 @@ public class CustomersStatisticsController : ControllerBase
     public async Task<IActionResult> GetCustomersRegisteredThisYear()
     {
         var customersRegisteredThisYear = await _customersStatisticsRepository.GetCustomersRegisteredThisYear();
-        return Ok(customersRegisteredThisYear);
+        var result = new HttpResult();
+        result.Payload.Add("customersRegisteredCurrentYear", customersRegisteredThisYear);
+
+        return Ok(result);
     }
 
     [HttpGet("customers-registered-last-12-months")]
     public async Task<IActionResult> GetUsersRegisteredLast12Months()
     {
-        var customersRegisteredLast12Months =await  _customersStatisticsRepository.GetCustomersRegisteredLast12Months();
-        return Ok(customersRegisteredLast12Months);
+        var customersRegisteredLast12Months = await _customersStatisticsRepository.GetCustomersRegisteredLast12Months();
+        var result = new HttpResult();
+        result.Payload.Add("customersRegisteredLast12Months", customersRegisteredLast12Months);
+
+        return Ok(result);
     }
 
     [HttpGet("customers-registered-last-30-days")]
@@ -35,7 +42,10 @@ public class CustomersStatisticsController : ControllerBase
     {
         var customersRegisteredLast30Days = await _customersStatisticsRepository
             .GetCustomersRegisteredLast30Days();
-        return Ok(customersRegisteredLast30Days);
+        var result = new HttpResult();
+        result.Payload.Add("customersRegisteredLast30Days", customersRegisteredLast30Days);
+
+        return Ok(result);
     }
 
 }

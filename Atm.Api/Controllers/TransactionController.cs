@@ -50,7 +50,11 @@ namespace ATM.Api.Controllers
 
             await _cashOutService.SaveChangesAsync();
 
-            return Ok(cashOutOperation);
+            var result = new HttpResult();
+            result.Message = $"Operation sent to email {message.Email}";
+            result.Payload.Add("cashOut", cashOutOperation);
+
+            return Ok(result);
 
         }
 
