@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace BankSystem.Common.Migrations
 {
     /// <inheritdoc />
@@ -64,11 +66,12 @@ namespace BankSystem.Common.Migrations
                     Quantity = table.Column<int>(type: "int", nullable: false),
                     RateFormated = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     DiffFormated = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Rate = table.Column<double>(type: "float", nullable: false),
+                    Rate = table.Column<decimal>(type: "decimal(18,3)", precision: 18, scale: 3, nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Diff = table.Column<double>(type: "float", nullable: false),
+                    Diff = table.Column<decimal>(type: "decimal(18,3)", precision: 18, scale: 3, nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ValidFromDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    ValidFromDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LastUpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -76,15 +79,41 @@ namespace BankSystem.Common.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Operators",
+                name: "EmailRequests",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Subject = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Body = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ToAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Status = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Operators", x => x.Id);
+                    table.PrimaryKey("PK_EmailRequests", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Transactions",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AccountToId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    AccountFromId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    ReceivedAmount = table.Column<decimal>(type: "decimal(18,3)", precision: 18, scale: 3, nullable: false),
+                    WithDrawnAmount = table.Column<decimal>(type: "decimal(18,3)", precision: 18, scale: 3, nullable: false),
+                    CurrencyFrom = table.Column<int>(type: "int", nullable: false),
+                    CurrencyTo = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    TransactionType = table.Column<int>(type: "int", nullable: false),
+                    Fee = table.Column<decimal>(type: "decimal(18,3)", precision: 18, scale: 3, nullable: false),
+                    AccountFromIban = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AccountToIban = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Transactions", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -113,19 +142,20 @@ namespace BankSystem.Common.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Iban = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Currency = table.Column<int>(type: "int", nullable: false),
-                    UserEntityId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    Amount = table.Column<decimal>(type: "decimal(18,3)", precision: 18, scale: 3, nullable: false),
+                    Currency = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Accounts", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Accounts_AspNetUsers_UserEntityId",
-                        column: x => x.UserEntityId,
+                        name: "FK_Accounts_AspNetUsers_UserId",
+                        column: x => x.UserId,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -218,13 +248,13 @@ namespace BankSystem.Common.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CardNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FullName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ExpiresAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Cvv = table.Column<short>(type: "smallint", nullable: false),
-                    Pin = table.Column<short>(type: "smallint", nullable: false),
-                    AccountId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    Cvv = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Pin = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -233,43 +263,75 @@ namespace BankSystem.Common.Migrations
                         name: "FK_Cards_Accounts_AccountId",
                         column: x => x.AccountId,
                         principalTable: "Accounts",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Transactions",
-                columns: table => new
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    AccountToId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    AccountFromId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    CurrencyFrom = table.Column<int>(type: "int", nullable: false),
-                    CurrencyTo = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    TransactionType = table.Column<int>(type: "int", nullable: false),
-                    Fee = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Rate = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
-                },
-                constraints: table =>
+                    { new Guid("3f66ed5d-b94b-46a7-a9c3-9a564241708f"), null, "api-operator", "API-OPERATOR" },
+                    { new Guid("f5c38744-072b-4785-9c6d-db48ac043b7f"), null, "api-user", "API-USER" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "BirthDate", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PersonalNumber", "PhoneNumber", "PhoneNumberConfirmed", "RegisteredAt", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[,]
                 {
-                    table.PrimaryKey("PK_Transactions", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Transactions_Accounts_AccountFromId",
-                        column: x => x.AccountFromId,
-                        principalTable: "Accounts",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Transactions_Accounts_AccountToId",
-                        column: x => x.AccountToId,
-                        principalTable: "Accounts",
-                        principalColumn: "Id");
+                    { new Guid("0eb288d0-c7cd-4749-ad29-92a9d59e8bf4"), 0, new DateTime(2013, 4, 2, 21, 57, 35, 507, DateTimeKind.Local).AddTicks(1847), "b49ca7da-06fe-4fd5-a969-30cd81413192", "sandro.revazishviliii@gmail.com", false, "Sandro", "Revazishvili", false, null, "SANDRO.REVAZISHVILIII@GMAIL.COM", null, "AKowaa1XIwCQv0eIsXc7sJlZcG3MNdsOzA+C0/NGHK+StVog6ZtJYG9G1BviVpc4yw==", "114081139", null, false, new DateTime(2023, 4, 2, 21, 57, 35, 507, DateTimeKind.Local).AddTicks(1848), "3b8554bb-7c92-4800-a239-5e60deb94866", false, "sandro" },
+                    { new Guid("4bf7d82a-fca9-4d1d-bbc9-48cfaa109187"), 0, new DateTime(2013, 4, 2, 21, 57, 35, 506, DateTimeKind.Local).AddTicks(4956), "5346f2f1-aaa3-4cf9-9a09-2db46ce7574d", "anamklavashvili@gmail.com", false, "Ana", "Mklavashvili", false, null, "ANAMKLAVASHVILI@GMAIL.COM", null, "AOk/EkVS+AS0ViyjZPZ2tv4bIJCMgiC2nf6ZUMJb4WZRFHYPElrgMgQRU4uXdqIF9g==", "682855567", null, false, new DateTime(2023, 4, 2, 21, 57, 35, 506, DateTimeKind.Local).AddTicks(4972), "354a7cbd-82c1-4ed7-abca-cef7f0756215", false, "ana" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Transactions",
+                columns: new[] { "Id", "AccountFromIban", "AccountFromId", "AccountToIban", "AccountToId", "CreatedAt", "CurrencyFrom", "CurrencyTo", "Fee", "ReceivedAmount", "TransactionType", "WithDrawnAmount" },
+                values: new object[,]
+                {
+                    { new Guid("028fd49a-22a4-4b5b-b500-81db87680e73"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2022, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, 1, 9.80m, 195.50m, 0, 0m },
+                    { new Guid("0740567e-966e-4169-a614-1cb0f4fd1b51"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2022, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 0, 22.40m, 489.80m, 1, 0m },
+                    { new Guid("0d3340ed-ccd4-48d2-959f-9847e92151ed"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2023, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, 1, 33.20m, 789.40m, 0, 0m },
+                    { new Guid("1a9b225a-c7fe-4b10-9116-0e100786877f"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2022, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 0, 23.12m, 242.10m, 0, 0m },
+                    { new Guid("352506de-3da2-4a79-8d80-9f28d7ef0e61"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2023, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 0, 18.50m, 438.10m, 2, 0m },
+                    { new Guid("61755345-037b-45b1-82ef-e04c5f1c6646"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2022, 5, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, 1, 27.80m, 573.40m, 0, 0m },
+                    { new Guid("e2ef25c6-fb3d-474d-8233-194870c5d119"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2022, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 0, 31.50m, 637.90m, 2, 0m },
+                    { new Guid("e7e3d51d-7178-446e-875b-92a5e3d7251e"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2023, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 2, 29.80m, 567.20m, 1, 0m },
+                    { new Guid("e9dab853-44e1-47dd-a1f9-30558d6f98f8"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2022, 10, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 2, 16.20m, 312.70m, 2, 0m }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Accounts",
+                columns: new[] { "Id", "Amount", "Currency", "Iban", "UserId" },
+                values: new object[,]
+                {
+                    { new Guid("1ffae49b-5579-4560-bf20-fd3986fd76c0"), 16694m, 0, "Ana's Iban", new Guid("4bf7d82a-fca9-4d1d-bbc9-48cfaa109187") },
+                    { new Guid("7b1902d5-c240-49f4-b91f-454d9e19d402"), 17140m, 0, "Sandro's Iban", new Guid("0eb288d0-c7cd-4749-ad29-92a9d59e8bf4") }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[,]
+                {
+                    { new Guid("f5c38744-072b-4785-9c6d-db48ac043b7f"), new Guid("0eb288d0-c7cd-4749-ad29-92a9d59e8bf4") },
+                    { new Guid("3f66ed5d-b94b-46a7-a9c3-9a564241708f"), new Guid("4bf7d82a-fca9-4d1d-bbc9-48cfaa109187") }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Cards",
+                columns: new[] { "Id", "AccountId", "CardNumber", "CreatedAt", "Cvv", "ExpiresAt", "FullName", "Pin" },
+                values: new object[,]
+                {
+                    { new Guid("62e5f726-6070-4326-9a25-c27c6216e35f"), new Guid("1ffae49b-5579-4560-bf20-fd3986fd76c0"), "219711935828488849", new DateTime(2023, 4, 2, 21, 57, 35, 507, DateTimeKind.Local).AddTicks(8616), "931", new DateTime(2028, 4, 2, 21, 57, 35, 507, DateTimeKind.Local).AddTicks(8615), "Ana Mklavashvili", "1234" },
+                    { new Guid("d38dc493-fb60-4d75-8930-48dee7dc3f97"), new Guid("7b1902d5-c240-49f4-b91f-454d9e19d402"), "958230543307670388", new DateTime(2023, 4, 2, 21, 57, 35, 507, DateTimeKind.Local).AddTicks(8624), "931", new DateTime(2028, 4, 2, 21, 57, 35, 507, DateTimeKind.Local).AddTicks(8624), "Sandro Revazishvili", "1234" }
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Accounts_UserEntityId",
+                name: "IX_Accounts_UserId",
                 table: "Accounts",
-                column: "UserEntityId");
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -314,16 +376,6 @@ namespace BankSystem.Common.Migrations
                 name: "IX_Cards_AccountId",
                 table: "Cards",
                 column: "AccountId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Transactions_AccountFromId",
-                table: "Transactions",
-                column: "AccountFromId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Transactions_AccountToId",
-                table: "Transactions",
-                column: "AccountToId");
         }
 
         /// <inheritdoc />
@@ -351,7 +403,7 @@ namespace BankSystem.Common.Migrations
                 name: "Currencies");
 
             migrationBuilder.DropTable(
-                name: "Operators");
+                name: "EmailRequests");
 
             migrationBuilder.DropTable(
                 name: "Transactions");

@@ -20770,3 +20770,237 @@ VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22);
 2023-04-02 17:57:42.404 +04:00 [DBG] Connection id "0HMPJG7KEG6MT" disconnecting.
 2023-04-02 17:57:42.405 +04:00 [DBG] Connection id "0HMPJG7KEG6MT" stopped.
 2023-04-02 17:57:42.406 +04:00 [DBG] Connection id "0HMPJG7KEG6MT" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-04-02 21:04:56.087 +04:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-04-02 21:04:56.158 +04:00 [DBG] Hosting starting
+2023-04-02 21:04:56.185 +04:00 [INF] User profile is available. Using 'C:\Users\srevazishvili\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-02 21:04:56.191 +04:00 [DBG] Reading data from file 'C:\Users\srevazishvili\AppData\Local\ASP.NET\DataProtection-Keys\key-298957ac-1947-4690-b38f-95802ef792d5.xml'.
+2023-04-02 21:04:56.208 +04:00 [DBG] Reading data from file 'C:\Users\srevazishvili\AppData\Local\ASP.NET\DataProtection-Keys\key-6b67ca3e-ca56-48ef-abcb-f08bc91b8c44.xml'.
+2023-04-02 21:04:56.215 +04:00 [DBG] Found key {298957ac-1947-4690-b38f-95802ef792d5}.
+2023-04-02 21:04:56.222 +04:00 [DBG] Found key {6b67ca3e-ca56-48ef-abcb-f08bc91b8c44}.
+2023-04-02 21:04:56.228 +04:00 [DBG] Considering key {298957ac-1947-4690-b38f-95802ef792d5} with expiration date 2023-06-02 19:40:18Z as default key.
+2023-04-02 21:04:56.231 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-04-02 21:04:56.234 +04:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-04-02 21:04:56.236 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-04-02 21:04:56.240 +04:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-04-02 21:04:56.244 +04:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-04-02 21:04:56.248 +04:00 [DBG] Using key {298957ac-1947-4690-b38f-95802ef792d5} as the default key.
+2023-04-02 21:04:56.249 +04:00 [DBG] Key ring with default key {298957ac-1947-4690-b38f-95802ef792d5} was loaded during application startup.
+2023-04-02 21:04:56.384 +04:00 [INF] Now listening on: https://localhost:7261
+2023-04-02 21:04:56.385 +04:00 [INF] Now listening on: http://localhost:5059
+2023-04-02 21:04:56.386 +04:00 [DBG] Loaded hosting startup assembly BankSystem.Atm.Api
+2023-04-02 21:04:56.387 +04:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-04-02 21:04:56.388 +04:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-04-02 21:04:56.389 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-02 21:04:56.390 +04:00 [INF] Hosting environment: Development
+2023-04-02 21:04:56.391 +04:00 [INF] Content root path: C:\Users\srevazishvili\source\repos\BankSystemMain\BankSystemCopy\Atm.Api
+2023-04-02 21:04:56.392 +04:00 [DBG] Hosting started
+2023-04-02 21:04:56.540 +04:00 [DBG] Connection id "0HMPJJHH9P600" received FIN.
+2023-04-02 21:04:56.540 +04:00 [DBG] Connection id "0HMPJJHH9P601" received FIN.
+2023-04-02 21:04:56.544 +04:00 [DBG] Connection id "0HMPJJHH9P600" accepted.
+2023-04-02 21:04:56.544 +04:00 [DBG] Connection id "0HMPJJHH9P601" accepted.
+2023-04-02 21:04:56.545 +04:00 [DBG] Connection id "0HMPJJHH9P600" started.
+2023-04-02 21:04:56.546 +04:00 [DBG] Connection id "0HMPJJHH9P601" started.
+2023-04-02 21:04:56.558 +04:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-04-02 21:04:56.558 +04:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-04-02 21:04:56.579 +04:00 [DBG] Connection id "0HMPJJHH9P601" stopped.
+2023-04-02 21:04:56.579 +04:00 [DBG] Connection id "0HMPJJHH9P600" stopped.
+2023-04-02 21:04:56.581 +04:00 [DBG] Connection id "0HMPJJHH9P600" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-04-02 21:04:56.581 +04:00 [DBG] Connection id "0HMPJJHH9P601" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-04-02 21:04:56.855 +04:00 [DBG] Connection id "0HMPJJHH9P602" accepted.
+2023-04-02 21:04:56.857 +04:00 [DBG] Connection id "0HMPJJHH9P602" started.
+2023-04-02 21:04:57.065 +04:00 [DBG] Connection 0HMPJJHH9P602 established using the following protocol: "Tls12"
+2023-04-02 21:04:57.182 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/index.html - -
+2023-04-02 21:04:57.202 +04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-04-02 21:04:57.227 +04:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2023-04-02 21:04:57.229 +04:00 [DBG] Request did not match any endpoints
+2023-04-02 21:04:57.453 +04:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2023-04-02 21:04:57.467 +04:00 [DBG] Response markup was updated to include browser refresh script injection.
+2023-04-02 21:04:57.470 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/index.html - - - 200 - text/html;charset=utf-8 291.2538ms
+2023-04-02 21:04:57.499 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/_framework/aspnetcore-browser-refresh.js - -
+2023-04-02 21:04:57.504 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/_framework/aspnetcore-browser-refresh.js - - - 200 12006 application/javascript;+charset=utf-8 4.6614ms
+2023-04-02 21:04:57.522 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/_vs/browserLink - -
+2023-04-02 21:04:57.566 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 44.2481ms
+2023-04-02 21:04:57.649 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/v1/swagger.json - -
+2023-04-02 21:04:57.650 +04:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2023-04-02 21:04:57.651 +04:00 [DBG] Request did not match any endpoints
+2023-04-02 21:04:57.741 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 91.2864ms
+2023-04-02 21:05:06.966 +04:00 [DBG] Connection id "0HMPJJHH9P602" received FIN.
+2023-04-02 21:05:06.969 +04:00 [DBG] The connection queue processing loop for 0HMPJJHH9P602 completed.
+2023-04-02 21:05:06.971 +04:00 [DBG] Connection id "0HMPJJHH9P602" is closed. The last processed stream ID was 7.
+2023-04-02 21:05:06.972 +04:00 [DBG] Connection id "0HMPJJHH9P602" sending FIN because: "The client closed the connection."
+2023-04-02 21:05:06.982 +04:00 [DBG] Connection id "0HMPJJHH9P602" stopped.
+2023-04-02 21:59:39.469 +04:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-04-02 21:59:39.539 +04:00 [DBG] Hosting starting
+2023-04-02 21:59:39.567 +04:00 [INF] User profile is available. Using 'C:\Users\srevazishvili\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-02 21:59:39.574 +04:00 [DBG] Reading data from file 'C:\Users\srevazishvili\AppData\Local\ASP.NET\DataProtection-Keys\key-298957ac-1947-4690-b38f-95802ef792d5.xml'.
+2023-04-02 21:59:39.591 +04:00 [DBG] Reading data from file 'C:\Users\srevazishvili\AppData\Local\ASP.NET\DataProtection-Keys\key-6b67ca3e-ca56-48ef-abcb-f08bc91b8c44.xml'.
+2023-04-02 21:59:39.598 +04:00 [DBG] Found key {298957ac-1947-4690-b38f-95802ef792d5}.
+2023-04-02 21:59:39.603 +04:00 [DBG] Found key {6b67ca3e-ca56-48ef-abcb-f08bc91b8c44}.
+2023-04-02 21:59:39.608 +04:00 [DBG] Considering key {298957ac-1947-4690-b38f-95802ef792d5} with expiration date 2023-06-02 19:40:18Z as default key.
+2023-04-02 21:59:39.613 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-04-02 21:59:39.615 +04:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-04-02 21:59:39.617 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-04-02 21:59:39.620 +04:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-04-02 21:59:39.624 +04:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-04-02 21:59:39.627 +04:00 [DBG] Using key {298957ac-1947-4690-b38f-95802ef792d5} as the default key.
+2023-04-02 21:59:39.628 +04:00 [DBG] Key ring with default key {298957ac-1947-4690-b38f-95802ef792d5} was loaded during application startup.
+2023-04-02 21:59:39.790 +04:00 [INF] Now listening on: https://localhost:7261
+2023-04-02 21:59:39.791 +04:00 [INF] Now listening on: http://localhost:5059
+2023-04-02 21:59:39.793 +04:00 [DBG] Loaded hosting startup assembly BankSystem.Atm.Api
+2023-04-02 21:59:39.794 +04:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-04-02 21:59:39.795 +04:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-04-02 21:59:39.796 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-02 21:59:39.797 +04:00 [INF] Hosting environment: Development
+2023-04-02 21:59:39.798 +04:00 [INF] Content root path: C:\Users\srevazishvili\source\repos\BankSystemMain\BankSystemCopy\Atm.Api
+2023-04-02 21:59:39.799 +04:00 [DBG] Hosting started
+2023-04-02 21:59:39.867 +04:00 [DBG] Connection id "0HMPJKG3Q126A" received FIN.
+2023-04-02 21:59:39.872 +04:00 [DBG] Connection id "0HMPJKG3Q126A" accepted.
+2023-04-02 21:59:39.873 +04:00 [DBG] Connection id "0HMPJKG3Q126A" started.
+2023-04-02 21:59:39.889 +04:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-04-02 21:59:39.920 +04:00 [DBG] Connection id "0HMPJKG3Q126A" stopped.
+2023-04-02 21:59:39.922 +04:00 [DBG] Connection id "0HMPJKG3Q126A" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-04-02 21:59:40.066 +04:00 [DBG] Connection id "0HMPJKG3Q126B" accepted.
+2023-04-02 21:59:40.069 +04:00 [DBG] Connection id "0HMPJKG3Q126B" started.
+2023-04-02 21:59:40.313 +04:00 [DBG] Connection 0HMPJKG3Q126B established using the following protocol: "Tls12"
+2023-04-02 21:59:40.409 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/index.html - -
+2023-04-02 21:59:40.454 +04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-04-02 21:59:40.484 +04:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2023-04-02 21:59:40.486 +04:00 [DBG] Request did not match any endpoints
+2023-04-02 21:59:40.736 +04:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2023-04-02 21:59:40.752 +04:00 [DBG] Response markup was updated to include browser refresh script injection.
+2023-04-02 21:59:40.755 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/index.html - - - 200 - text/html;charset=utf-8 348.8891ms
+2023-04-02 21:59:40.774 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/_framework/aspnetcore-browser-refresh.js - -
+2023-04-02 21:59:40.779 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/_framework/aspnetcore-browser-refresh.js - - - 200 12006 application/javascript;+charset=utf-8 3.4795ms
+2023-04-02 21:59:40.794 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/_vs/browserLink - -
+2023-04-02 21:59:40.812 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 17.1256ms
+2023-04-02 21:59:40.933 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/v1/swagger.json - -
+2023-04-02 21:59:40.934 +04:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2023-04-02 21:59:40.935 +04:00 [DBG] Request did not match any endpoints
+2023-04-02 21:59:41.074 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 140.7007ms
+2023-04-02 21:59:42.247 +04:00 [DBG] Connection id "0HMPJKG3Q126B" received FIN.
+2023-04-02 21:59:42.251 +04:00 [DBG] The connection queue processing loop for 0HMPJKG3Q126B completed.
+2023-04-02 21:59:42.253 +04:00 [DBG] Connection id "0HMPJKG3Q126B" is closed. The last processed stream ID was 7.
+2023-04-02 21:59:42.255 +04:00 [DBG] Connection id "0HMPJKG3Q126B" sending FIN because: "The client closed the connection."
+2023-04-02 21:59:42.262 +04:00 [DBG] Connection id "0HMPJKG3Q126B" stopped.
+2023-04-02 21:59:59.883 +04:00 [DBG] Connection id "0HMPJKG3Q126C" accepted.
+2023-04-02 21:59:59.885 +04:00 [DBG] Connection id "0HMPJKG3Q126C" started.
+2023-04-02 21:59:59.885 +04:00 [DBG] Connection id "0HMPJKG3Q126D" accepted.
+2023-04-02 21:59:59.886 +04:00 [DBG] Connection id "0HMPJKG3Q126C" received FIN.
+2023-04-02 21:59:59.887 +04:00 [DBG] Connection id "0HMPJKG3Q126D" started.
+2023-04-02 21:59:59.888 +04:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-04-02 21:59:59.892 +04:00 [DBG] Connection id "0HMPJKG3Q126C" stopped.
+2023-04-02 21:59:59.893 +04:00 [DBG] Connection id "0HMPJKG3Q126C" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-04-02 21:59:59.900 +04:00 [DBG] Connection 0HMPJKG3Q126D established using the following protocol: "Tls12"
+2023-04-02 21:59:59.909 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7261/api/Card/Login application/json 58
+2023-04-02 21:59:59.913 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Card/Login'
+2023-04-02 21:59:59.916 +04:00 [DBG] Endpoint 'ATM.Api.Controllers.CardController.Login (BankSystem.Atm.Api)' with route pattern 'api/Card/login' is valid for the request path '/api/Card/Login'
+2023-04-02 21:59:59.918 +04:00 [DBG] Request matched endpoint 'ATM.Api.Controllers.CardController.Login (BankSystem.Atm.Api)'
+2023-04-02 21:59:59.922 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-02 21:59:59.951 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-04-02 21:59:59.959 +04:00 [INF] Executing endpoint 'ATM.Api.Controllers.CardController.Login (BankSystem.Atm.Api)'
+2023-04-02 21:59:59.995 +04:00 [INF] Route matched with {action = "Login", controller = "Card"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BankSystem.Atm.Services.Models.Requests.LoginRequest) on controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api).
+2023-04-02 21:59:59.998 +04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-04-02 22:00:00.000 +04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-04-02 22:00:00.001 +04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-04-02 22:00:00.003 +04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-04-02 22:00:00.005 +04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-04-02 22:00:00.008 +04:00 [DBG] Executing controller factory for controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api)
+2023-04-02 22:00:00.166 +04:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-04-02 22:00:00.206 +04:00 [DBG] Executed controller factory for controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api)
+2023-04-02 22:00:00.220 +04:00 [DBG] Attempting to bind parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.LoginRequest' ...
+2023-04-02 22:00:00.226 +04:00 [DBG] Attempting to bind parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.LoginRequest' using the name '' in request data ...
+2023-04-02 22:00:00.230 +04:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-04-02 22:00:00.241 +04:00 [DBG] Connection id "0HMPJKG3Q126D", Request id "0HMPJKG3Q126D:00000001": started reading request body.
+2023-04-02 22:00:00.242 +04:00 [DBG] Connection id "0HMPJKG3Q126D", Request id "0HMPJKG3Q126D:00000001": done reading request body.
+2023-04-02 22:00:00.249 +04:00 [DBG] JSON input formatter succeeded, deserializing to type 'BankSystem.Atm.Services.Models.Requests.LoginRequest'
+2023-04-02 22:00:00.251 +04:00 [DBG] Done attempting to bind parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.LoginRequest'.
+2023-04-02 22:00:00.253 +04:00 [DBG] Done attempting to bind parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.LoginRequest'.
+2023-04-02 22:00:00.255 +04:00 [DBG] Attempting to validate the bound parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.LoginRequest' ...
+2023-04-02 22:00:00.267 +04:00 [DBG] Done attempting to validate the bound parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.LoginRequest'.
+2023-04-02 22:00:00.787 +04:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<Guid>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2023-04-02 22:00:00.790 +04:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<Guid>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2023-04-02 22:00:01.151 +04:00 [DBG] Entity Framework Core 7.0.3 initialized 'BankSystemDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.3' with options: None
+2023-04-02 22:00:01.246 +04:00 [DBG] Compiling query expression: 
+'DbSet<CardEntity>()
+    .Include(c => c.Account)
+    .FirstOrDefault(c => c.CardNumber == __request_CardNumber_0 && c.Pin == __request_Pin_1)'
+2023-04-02 22:00:01.312 +04:00 [DBG] Including navigation: 'CardEntity.Account'.
+2023-04-02 22:00:01.456 +04:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<CardEntity>(
+    asyncEnumerable: new SingleQueryingEnumerable<CardEntity>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.QueryExpression(
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: CardEntity.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: CardEntity.AccountId (Guid) Required FK Index, 1], [Property: CardEntity.CardNumber (string), 2], [Property: CardEntity.CreatedAt (DateTime) Required, 3], [Property: CardEntity.Cvv (string), 4], [Property: CardEntity.ExpiresAt (DateTime) Required, 5], [Property: CardEntity.FullName (string), 6], [Property: CardEntity.Pin (string), 7] }
+                1 -> Dictionary<IProperty, int> { [Property: AccountEntity.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 8], [Property: AccountEntity.Amount (decimal) Required, 9], [Property: AccountEntity.Currency (CurrencyType) Required, 10], [Property: AccountEntity.Iban (string), 11], [Property: AccountEntity.UserId (Guid) Required FK Index, 12] }
+            SELECT TOP(1) c.Id, c.AccountId, c.CardNumber, c.CreatedAt, c.Cvv, c.ExpiresAt, c.FullName, c.Pin, a.Id, a.Amount, a.Currency, a.Iban, a.UserId
+            FROM Cards AS c
+            INNER JOIN Accounts AS a ON c.AccountId == a.Id
+            WHERE (c.CardNumber == @__request_CardNumber_0) && (c.Pin == @__request_Pin_1)), 
+        null, 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
+        BankSystem.Common.Db.BankSystemDbContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2023-04-02 22:00:01.489 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-04-02 22:00:01.492 +04:00 [DBG] Creating DbConnection.
+2023-04-02 22:00:01.516 +04:00 [DBG] Created DbConnection. (21ms).
+2023-04-02 22:00:01.522 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (33ms).
+2023-04-02 22:00:01.533 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (46ms).
+2023-04-02 22:00:01.537 +04:00 [DBG] Opening connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-02 22:00:02.141 +04:00 [DBG] Opened connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-02 22:00:02.150 +04:00 [DBG] Executing DbCommand [Parameters=[@__request_CardNumber_0='?' (Size = 4000), @__request_Pin_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccountId], [c].[CardNumber], [c].[CreatedAt], [c].[Cvv], [c].[ExpiresAt], [c].[FullName], [c].[Pin], [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId]
+FROM [Cards] AS [c]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[Id]
+WHERE [c].[CardNumber] = @__request_CardNumber_0 AND [c].[Pin] = @__request_Pin_1
+2023-04-02 22:00:02.209 +04:00 [INF] Executed DbCommand (61ms) [Parameters=[@__request_CardNumber_0='?' (Size = 4000), @__request_Pin_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccountId], [c].[CardNumber], [c].[CreatedAt], [c].[Cvv], [c].[ExpiresAt], [c].[FullName], [c].[Pin], [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId]
+FROM [Cards] AS [c]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[Id]
+WHERE [c].[CardNumber] = @__request_CardNumber_0 AND [c].[Pin] = @__request_Pin_1
+2023-04-02 22:00:02.222 +04:00 [DBG] Closing data reader to 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-02 22:00:02.228 +04:00 [DBG] A data reader for 'BankSystem' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 12ms reading results.
+2023-04-02 22:00:02.233 +04:00 [DBG] Closing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-02 22:00:02.238 +04:00 [DBG] Closed connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB' (5ms).
+2023-04-02 22:00:02.246 +04:00 [INF] Executed action ATM.Api.Controllers.CardController.Login (BankSystem.Atm.Api) in 2236.9109ms
+2023-04-02 22:00:02.248 +04:00 [INF] Executed endpoint 'ATM.Api.Controllers.CardController.Login (BankSystem.Atm.Api)'
+2023-04-02 22:00:02.256 +04:00 [ERR] Can't identify card
+System.ArgumentException: Can't identify card
+   at BankSystem.Atm.Services.LoginService.LoginAsync(LoginRequest request) in C:\Users\srevazishvili\source\repos\BankSystemMain\BankSystemCopy\Atm\Services\LoginService.cs:line 28
+   at ATM.Api.Controllers.CardController.Login(LoginRequest request) in C:\Users\srevazishvili\source\repos\BankSystemMain\BankSystemCopy\Atm.Api\Controllers\CardController.cs:line 37
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at ATM.Api.Middlewares.GlobalExceptionHandlingMiddleware.InvokeAsync(HttpContext httpContext, RequestDelegate next) in C:\Users\srevazishvili\source\repos\BankSystemMain\BankSystemCopy\Atm.Api\Middlewares\GlobalExceptionHandlingMiddleware.cs:line 46
+2023-04-02 22:00:02.360 +04:00 [DBG] Connection id "0HMPJKG3Q126D" completed keep alive response.
+2023-04-02 22:00:02.365 +04:00 [DBG] 'BankSystemDbContext' disposed.
+2023-04-02 22:00:02.369 +04:00 [DBG] Disposing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-02 22:00:02.371 +04:00 [DBG] Disposed connection to database '' on server '' (2ms).
+2023-04-02 22:00:02.374 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7261/api/Card/Login application/json 58 - 1 - application/json 2464.4685ms
