@@ -11,21 +11,20 @@ public interface ITransferService
 {
     Task TransferMoneyAsync(TranferRequest request, Guid id);
   
-    Task<decimal> CalculateFeeForOuterTransferAsync();
+    Task<decimal> CalculateFeeForOuterTransferAsync(AccountEntity transferor,
+        AccountEntity transferee, decimal amount);
 
     Task<decimal> ConvertMoneyAsync(
-       
-        );
+        AccountEntity transferor,
+        AccountEntity transferee,
+        decimal amount);
 }
 public class TransferService : ITransferService
 {
     private readonly ICurrencyRepository _currencyService;
     private const decimal FEE_FOR_INNER_TRANSFER = 0;
     private readonly ITransactionRepository _transactionRepository;
-    
-    private AccountEntity transferor;
-    private AccountEntity transferee;
-    private decimal requestedAmount;
+
     public TransferService(
         ICurrencyRepository currencyService, 
         ITransactionRepository transactionRepository)
@@ -34,46 +33,48 @@ public class TransferService : ITransferService
         _transactionRepository = transactionRepository;
     }
 
-    public async Task TransferMoneyAsync(TranferRequest request, Guid userId)
+    public async Task TransferMoneyAsync(TranferRequest request, Guid id)
     {
-        transferor = await _transactionRepository.FindAccountByIbanAsync(request.SendFromIban);
-        if (transferor.UserId != userId)
+        var transferor = await _transactionRepository.FindAccountByIbanAsync(request.SendFromIban);
+        if (transferor.UserId != id)
         {
             throw new Exception("Incorrect Iban");
         }
-         transferee = await _transactionRepository.FindAccountByIbanAsync(request.Iban);
-         requestedAmount = request.Amount;
+        var transferee = await _transactionRepository.FindAccountByIbanAsync(request.Iban);
+
         if (transferor.UserId == transferee.UserId)
         {
-            await PerformInnerTransferAsync();
+            await InnerTransferAsync(transferor, transferee, request.Amount);
         }
         else
         {
-            await PerformOuterTransferAsync();
+            await OuterTransferAsync(transferor, transferee, request.Amount);
         }
 
     } 
-    private async Task PerformInnerTransferAsync()
+    private async Task InnerTransferAsync(AccountEntity transferor, AccountEntity transferee, decimal amount)
     {
-        if (transferor.Amount < requestedAmount)
+        if (transferor.Amount < amount)
         {
             throw new InvalidOperationException("Not enough money on your bank account");
         }
-        transferor.Amount -= requestedAmount;
-        decimal amount = 0;
+        transferor.Amount -= amount;
         if (transferor.Currency != transferee.Currency)
         {
-            amount = await ConvertMoneyAsync();
+            amount = await ConvertMoneyAsync(transferor, transferee, amount);
         }
         transferee.Amount += amount;
 
-       await CreateTransactionAsync( FEE_FOR_INNER_TRANSFER, TransactionType.Inner);
+       await CreateTransactionAsync(transferor, transferee, amount, FEE_FOR_INNER_TRANSFER, TransactionType.Inner);
         await _transactionRepository.SaveChangesAsync();
+       
+
     }
 
-    private async Task PerformOuterTransferAsync()
+    private async Task OuterTransferAsync(AccountEntity transferor, AccountEntity transferee,
+        decimal requestedAmount)
     {
-        decimal fee = await CalculateFeeForOuterTransferAsync();
+        decimal fee = await CalculateFeeForOuterTransferAsync(transferor, transferee, requestedAmount);
         if (transferor.Amount < requestedAmount + fee)
         {
             throw new InvalidOperationException("Not enough money on your bank account");
@@ -82,29 +83,31 @@ public class TransferService : ITransferService
         var amount = requestedAmount;
         if (transferor.Currency != transferee.Currency)
         {
-            amount = await ConvertMoneyAsync();
+            amount = await ConvertMoneyAsync(transferor, transferee, requestedAmount);
         }
         transferee.Amount += amount;
-        await CreateTransactionAsync( fee, TransactionType.Outer);
+        await CreateTransactionAsync(transferor, transferee, requestedAmount, fee, TransactionType.Outer);
         await _transactionRepository.SaveChangesAsync();
       
     }
 
-    public async Task<decimal> CalculateFeeForOuterTransferAsync()
+    public async Task<decimal> CalculateFeeForOuterTransferAsync(AccountEntity transferor, 
+        AccountEntity transferee, decimal amount)
     {
-        decimal fee = requestedAmount / 100 + 0.5m;
+        decimal fee = amount / 100 + 0.5m;
         return fee;
     }
 
     private async Task<TransactionEntity> CreateTransactionAsync(
-        
+        AccountEntity transferor, 
+        AccountEntity transferee,
+        decimal amount,
         decimal fee,
-        TransactionType transactionType,
-        decimal? withdrawnAmount=null)
+        TransactionType transactionType)
     {
         var transaction = new TransactionEntity();
         transaction.TransactionType = transactionType;
-        transaction.Amount = requestedAmount;
+        transaction.ReceivedAmount = amount;
         transaction.CurrencyFrom = transferor.Currency;
         transaction.CurrencyTo = transferee.Currency;
         transaction.CreatedAt = DateTime.UtcNow;
@@ -115,14 +118,17 @@ public class TransferService : ITransferService
         return transaction;
     }
 
-    public async Task<decimal> ConvertMoneyAsync()
+    public async Task<decimal> ConvertMoneyAsync(
+        AccountEntity transferor,
+        AccountEntity transferee,
+        decimal amount)
     {
         await _currencyService.CheckCurrenciesAsync();
 
         var convertedMoney = CurrencyConverter.Convert(
             transferor.Currency,
             transferee.Currency,
-            requestedAmount);
+            amount);
 
         return convertedMoney;
     }

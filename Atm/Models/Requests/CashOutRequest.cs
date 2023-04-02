@@ -9,11 +9,14 @@ namespace BankSystem.Atm.Services.Models.Requests
 
         public void Validate()
         {
-            if (Amount <= 0)
+            if(Amount == 0 || Amount % 5 != 0)
             {
-                throw new ArgumentException("Incorrect Amount Provided");
+                throw new ArgumentException(
+                    "Invalid cash out amount. " +
+                    "Please enter amount that is a " +
+                    "multiple of 5, except zero " +
+                    "such as 5, 10, 15, etc. ");
             }
-
         }
 
     }

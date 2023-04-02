@@ -1,6 +1,6 @@
 using BankSystem.Common.Db.Entities;
 using BankSystem.Common.Seed;
-
+//using BankSystem.Common.Seed;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;

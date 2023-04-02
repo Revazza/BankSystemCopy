@@ -96,7 +96,7 @@ public class UserController : ControllerBase
                 fee = t.Fee,
                 SendFromIban = t.AccountFromIban,
                 SendToIban = t.AccountToIban,
-                RequestedAmount = t.Amount,
+                RequestedAmount = t.ReceivedAmount,
                 TransactionType = t.TransactionType
 
             });

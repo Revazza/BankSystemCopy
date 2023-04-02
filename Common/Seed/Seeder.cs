@@ -16,7 +16,7 @@ namespace BankSystem.Common.Seed
                     {
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
-                        Amount = 567.20m,
+                        ReceivedAmount = 567.20m,
                         CreatedAt = new DateTime(2023, 3, 2),
                         CurrencyFrom = CurrencyType.USD,
                         CurrencyTo = CurrencyType.EUR,
@@ -27,7 +27,7 @@ namespace BankSystem.Common.Seed
                     {
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
-                        Amount = 438.10m,
+                        ReceivedAmount = 438.10m,
                         CreatedAt = new DateTime(2023, 3, 10),
                         CurrencyFrom = CurrencyType.EUR,
                         CurrencyTo = CurrencyType.GEL,
@@ -38,7 +38,7 @@ namespace BankSystem.Common.Seed
                     {
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
-                        Amount = 789.40m,
+                        ReceivedAmount = 789.40m,
                         CreatedAt = new DateTime(2023, 3, 18),
                         CurrencyFrom = CurrencyType.GEL,
                         CurrencyTo = CurrencyType.USD,
@@ -49,7 +49,7 @@ namespace BankSystem.Common.Seed
                     {
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
-                        Amount = 312.70m,
+                        ReceivedAmount = 312.70m,
                         CreatedAt = new DateTime(2022, 10, 12),
                         CurrencyFrom = CurrencyType.USD,
                         CurrencyTo = CurrencyType.EUR,
@@ -60,7 +60,7 @@ namespace BankSystem.Common.Seed
                     {
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
-                        Amount = 195.50m,
+                        ReceivedAmount = 195.50m,
                         CreatedAt = new DateTime(2022, 12, 23),
                         CurrencyFrom = CurrencyType.GEL,
                         CurrencyTo = CurrencyType.USD,
@@ -71,7 +71,7 @@ namespace BankSystem.Common.Seed
                     {
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
-                        Amount = 489.80m,
+                        ReceivedAmount = 489.80m,
                         CreatedAt = new DateTime(2022, 8, 7),
                         CurrencyFrom = CurrencyType.EUR,
                         CurrencyTo = CurrencyType.GEL,
@@ -82,7 +82,7 @@ namespace BankSystem.Common.Seed
                     {
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
-                        Amount = 637.90m,
+                        ReceivedAmount = 637.90m,
                         CreatedAt = new DateTime(2022, 4, 2),
                         CurrencyFrom = CurrencyType.USD,
                         CurrencyTo = CurrencyType.GEL,
@@ -93,7 +93,7 @@ namespace BankSystem.Common.Seed
                     {
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
-                        Amount = 573.40m,
+                        ReceivedAmount = 573.40m,
                         CreatedAt = new DateTime(2022, 5, 19),
                         CurrencyFrom = CurrencyType.GEL,
                         CurrencyTo = CurrencyType.USD,
@@ -104,7 +104,7 @@ namespace BankSystem.Common.Seed
                     {
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
-                        Amount = 242.10m,
+                        ReceivedAmount = 242.10m,
                         CreatedAt = new DateTime(2022, 11, 14),
                         CurrencyFrom = CurrencyType.EUR,
                         CurrencyTo = CurrencyType.GEL,
