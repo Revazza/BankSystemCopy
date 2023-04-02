@@ -5,7 +5,7 @@ using BankSystem.Atm.Services.Models.Requests;
 using BankSystem.Common.Db.Entities;
 using BankSystem.Common.Db.FinancialEnums;
 using BankSystem.Common.Repositores;
-using Microsoft.Identity.Client;
+using NUnit.Framework;
 
 namespace Atm.Tests;
 
@@ -32,7 +32,7 @@ public class AtmCashOutTests
     [Test]
     public async Task TestCashOutOperation()
     {
-        var user = new UserEntity { Email = "testuser@test.com" , Id = Guid.NewGuid()};
+        var user = new UserEntity { Email = "testuser@test.com", Id = Guid.NewGuid() };
         var account = new AccountEntity { Amount = 10000, Currency = CurrencyType.USD, UserId = user.Id };
         var request = new CashOutRequest { Amount = 1000, CurrencyTo = CurrencyType.GEL };
         var card = new CardEntity()
@@ -48,8 +48,8 @@ public class AtmCashOutTests
         await _db.Users.AddAsync(user);
         await _db.Accounts.AddAsync(account);
         await _db.Cards.AddAsync(card);
-       await  _db.SaveChangesAsync();
-                    var cashOutOperation = await _cashOutService.PerformCashoutAsync(request, card.Id);
+        await _db.SaveChangesAsync();
+        var cashOutOperation = await _cashOutService.PerformCashoutAsync(request, card.Id);
         Assert.IsNotNull(cashOutOperation);
         Assert.That(cashOutOperation.RequestedAmount, Is.EqualTo(request.Amount));
         Assert.That(cashOutOperation.CurrencyTo, Is.EqualTo(request.CurrencyTo));
@@ -59,8 +59,8 @@ public class AtmCashOutTests
     [Test]
     public async Task PerformCashoutAsync_Should_ThrowCashOutLimitExceededException_When_ExceedsLimit()
     {
-        var user = new UserEntity { Email = "testuser1@test.com" , Id = Guid.NewGuid()};
-        var account = new AccountEntity {Id = Guid.NewGuid(),Amount = 100, Currency = CurrencyType.USD, UserId = user.Id };
+        var user = new UserEntity { Email = "testuser1@test.com", Id = Guid.NewGuid() };
+        var account = new AccountEntity { Id = Guid.NewGuid(), Amount = 100, Currency = CurrencyType.USD, UserId = user.Id };
         var request = new CashOutRequest { Amount = 10, CurrencyTo = CurrencyType.USD };
         var card = new CardEntity()
         {
@@ -75,11 +75,11 @@ public class AtmCashOutTests
         await _db.Users.AddAsync(user);
         await _db.Accounts.AddAsync(account);
         await _db.Cards.AddAsync(card);
-        await  _db.SaveChangesAsync();
+        await _db.SaveChangesAsync();
         var fee = request.Amount * CASH_OUT_FEE_PERCENTAGE;
         var result = account.Amount - request.Amount - fee;
         var cashOutOperation = await _cashOutService.CashOutAsync(request, account);
         Assert.AreEqual(result, account.Amount);
     }
-    
+
 }

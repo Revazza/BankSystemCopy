@@ -33,6 +33,7 @@ public class TransactionRepository : ITransactionRepository
                 t.CreatedAt.Date == DateTime.Now.Date &&
                 t.TransactionType == TransactionType.ATM)
             .ToListAsync();
+
     }
 
     public async Task AddTransactionAsync(TransactionEntity transaction)
