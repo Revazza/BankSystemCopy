@@ -8,8 +8,9 @@ namespace BankSystem.InternetBank.Services;
 
 public interface IAddUserService
 {
-    Task AddUserAsync(RegisterUserRequest request);
+    Task<UserEntity> AddUserAsync(RegisterUserRequest request);
 }
+
 public class AddUserService : IAddUserService
 {
     private readonly UserManager<UserEntity> _userManager;
@@ -25,7 +26,8 @@ public class AddUserService : IAddUserService
         _userManager = userManager;
         _registerUserValidator = registerUserValidator;
     }
-    public async Task AddUserAsync(RegisterUserRequest request)
+
+    public async Task<UserEntity> AddUserAsync(RegisterUserRequest request)
     {
         _registerUserValidator.Validate(request);
         var user = new UserEntity();
@@ -36,12 +38,14 @@ public class AddUserService : IAddUserService
         user.Email = request.Email;
         user.UserName = request.Email;
         var result = await _userManager.CreateAsync(user, request.Password);
-            await _userManager.AddToRoleAsync(user, "api-user");
+        await _userManager.AddToRoleAsync(user, "api-user");
         if (!result.Succeeded)
         {
             var error = result.Errors.First();
             throw new Exception(error.Description);
         }
+
         await _userRepository.SaveChangesAsync();
+        return user;
     }
 }

@@ -1,5 +1,7 @@
 using BankSystem.Common.Db.Entities;
+using BankSystem.Common.Models;
 using BankSystem.InternetBank.Api.Validations;
+using BankSystem.InternetBank.Models.Dto;
 using BankSystem.InternetBank.Models.Requests;
 using BankSystem.InternetBank.Repositories;
 using BankSystem.InternetBank.Services;
@@ -8,6 +10,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BankSystem.InternetBank.Api.Controllers;
+
 [ApiController]
 [Authorize("ApiOperator", AuthenticationSchemes = "Bearer")]
 [Route("[controller]")]
@@ -24,7 +27,7 @@ public class OperatorController : ControllerBase
     public OperatorController(
         UserManager<UserEntity> userManager,
         IbanService ibanService,
-        IAddUserService addUserService, 
+        IAddUserService addUserService,
         IAddAccountService addAccountService,
         IAddCardService addCardService,
         IUserLoginService userLoginService
@@ -40,29 +43,56 @@ public class OperatorController : ControllerBase
 
     [AllowAnonymous]
     [HttpPost("login")]
-    public async Task<IActionResult> LoginAsync([FromBody]LoginRequest request)
+    public async Task<IActionResult> LoginAsync([FromBody] LoginRequest request)
     {
         var token = await _userLoginService.LoginUserAsync(request);
-        return Ok(token);
+        var result = new HttpResult();
+        result.Payload.Add("token", token);
+
+        return Ok(result);
     }
+
     [HttpPost("register-user")]
     public async Task<IActionResult> RegisterUserAsync(RegisterUserRequest request)
     {
-            await _addUserService.AddUserAsync(request);
-            return Ok("User has been Registered successfully");
+        var newUser = await _addUserService.AddUserAsync(request);
+        var result = new HttpResult();
+        result.Payload.Add("user", newUser);
+
+        return Ok(result);
     }
+
     [HttpPost("register-bank-account")]
     public async Task<IActionResult> RegisterAccountAsync(RegisterAccountRequest request)
     {
         var iban = _ibanService.GenerateIBan();
-        await _addAccountService.AddAccountAsync(request, iban);
-        return Ok();
+        var account = await _addAccountService.AddAccountAsync(request, iban);
+        var accountDto = new AccountDto()
+        {
+            Amount = account.Amount,
+            Iban = account.Iban,
+            Currency = account.Currency
+        };
+        var result = new HttpResult();
+        result.Payload.Add("account", accountDto);
+        return Ok(result);
     }
 
     [HttpPost("register-card")]
     public async Task<IActionResult> RegisterCardAsync(RegisterCardRequest? request)
     {
-        await _addCardService.AddCardAsync(request);
-        return Ok("Card has been Added successfully");
+        var card = await _addCardService.AddCardAsync(request);
+        var cardDto = new CardDto()
+        {
+            CardNumber = card.CardNumber,
+            Cvv = card.Cvv,
+            Pin = card.Pin,
+            ExpiresAt = card.ExpiresAt,
+            CreatedAt = card.CreatedAt,
+            FullName = card.FullName
+        };
+        var result = new HttpResult();
+        result.Payload.Add("card", cardDto);
+        return Ok(result);
     }
 }

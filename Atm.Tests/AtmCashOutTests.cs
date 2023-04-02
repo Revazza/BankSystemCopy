@@ -78,7 +78,7 @@ public class AtmCashOutTests
         await  _db.SaveChangesAsync();
         var fee = request.Amount * CASH_OUT_FEE_PERCENTAGE;
         var result = account.Amount - request.Amount - fee;
-        var cashOutOperation = await _cashOutService.CashOutAsync(request, account);
+        var cashOutOperation = await _cashOutService.PerformCashoutAsync(request, card.Id);
         Assert.AreEqual(result, account.Amount);
     }
     

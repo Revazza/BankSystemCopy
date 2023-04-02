@@ -1,7 +1,9 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using BankSystem.Common.Db.Entities;
+using BankSystem.Common.Models;
 using BankSystem.InternetBank.Api.Validations;
+using BankSystem.InternetBank.Models.Dto;
 using BankSystem.InternetBank.Models.Requests;
 using BankSystem.InternetBank.Repositories;
 using BankSystem.InternetBank.Services;
@@ -51,7 +53,10 @@ public class UserController : ControllerBase
     public async Task<IActionResult> LoginAsync([FromBody]LoginRequest request)
     {
         var token = await _userLoginService.LoginUserAsync(request);
-        return Ok(token);
+        var result = new HttpResult();
+        result.Payload.Add("token", token);
+        
+        return Ok(result);
     }
     [HttpPost("transfer-money")]
     public async Task<IActionResult> TransferMoney(TranferRequest request)
@@ -59,7 +64,10 @@ public class UserController : ControllerBase
         var user = await _userManager.GetUserAsync(User);
         _transactionValidator.Validate(request, user);
         await _transferService.TransferMoneyAsync(request, user.Id);
-        return Ok("successful transaction");
+        var result = new HttpResult();
+        result.Payload.Add("Result", "Successful transaction");
+        
+        return Ok(result);
     }
     [HttpGet("get-cards")]
     public async Task<IActionResult> GetCards()
@@ -71,25 +79,29 @@ public class UserController : ControllerBase
         }
 
         var cards = await _cardRepository.GetCardsByUserIdAsync(user.Id);
-        return Ok(cards);
-    }
-    [HttpPost("get-amount-of-account")]
-    public async Task<IActionResult> GetAmount(string iban)
-    {
-        var user = await _userManager.GetUserAsync(User);
-        if (user == null)
-        {
-            return BadRequest("User Not Found");
-        }
-        var amount = await _accountRepository.GetAmountByIbanAsync(iban);
-        return Ok(amount);
+        var result = new HttpResult();
+        result.Payload.Add("cards",cards);
+        return Ok(result);
     }
     
     [HttpGet("get-transactions")]
     public async Task<IActionResult> GetTransactions(string iban)
     {
         var transactions = await _transactionRepository.GetTransactionsAsync(iban);
-        return Ok(transactions);
+        var result = new HttpResult();
+        var transactionList = transactions
+            .Select(t => new TransactionDto()
+            {
+                CreatedAt = t.CreatedAt,
+                fee = t.Fee,
+                SendFromIban = t.AccountFromIban,
+                SendToIban = t.AccountToIban,
+                RequestedAmount = t.Amount,
+                TransactionType = t.TransactionType
+
+            });
+        result.Payload.Add("transactions",transactions);
+        return Ok(result);
     }
     [HttpGet("get-accounts")]
     public async Task<IActionResult> GetAccounts()
@@ -100,7 +112,19 @@ public class UserController : ControllerBase
             return BadRequest("User Not Found");
         }
         var accounts = await _userRepository.GetUserAccountsAsync(user);
-        return Ok(accounts);
+        var result = new HttpResult();
+        var accountList = accounts
+            .Select(a =>
+                new AccountDto()
+                {
+                    Amount = a.Amount,
+                    Currency = a.Currency,
+                    Iban = a.Iban
+                })
+            .ToList();
+        result.Payload.Add("accounts",accountList);
+
+        return Ok(result);
     }
    
 }

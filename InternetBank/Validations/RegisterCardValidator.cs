@@ -79,12 +79,12 @@ public class RegisterCardValidator
             throw new ArgumentException("Pin must contain 4 digits");
         }
 
-        if (!_cardRepository.CvvAlreadyExists(request.Cvv))
+        if (_cardRepository.CvvAlreadyExists(request.Cvv))
         {
             throw new ArgumentException("Enter different Cvv, It's already used");
         }
 
-        if (!_cardRepository.PinAlreadyExists(request.Pin))
+        if (_cardRepository.PinAlreadyExists(request.Pin))
         {
             throw new ArgumentException("Enter different pin, It's already used");
         }

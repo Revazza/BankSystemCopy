@@ -18,6 +18,7 @@ namespace BankSystem.Atm.Services
         Task AddTransactionAsync(TransactionEntity transaction);
         Task CheckCurrenciesAsync();
         Task SaveChangesAsync();
+      
     }
 
     public class CashoutService : ICashOutService

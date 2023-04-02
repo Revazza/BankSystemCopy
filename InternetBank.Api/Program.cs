@@ -56,7 +56,6 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-
 AuthConfigurator.Configure(builder);
 
 builder.Services.AddDbContext<BankSystemDbContext>(c =>

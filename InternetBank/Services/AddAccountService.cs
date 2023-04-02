@@ -7,7 +7,7 @@ namespace BankSystem.InternetBank.Services;
 
 public interface IAddAccountService
 { 
-    Task AddAccountAsync(RegisterAccountRequest request,  string iban);
+    Task<AccountEntity> AddAccountAsync(RegisterAccountRequest request,  string iban);
 }
 public class AddAccountService : IAddAccountService
 {
@@ -23,7 +23,7 @@ public class AddAccountService : IAddAccountService
         _userRepository = userRepository;
         _registerAccountValidator = registerAccountValidator;
     }
-    public async Task AddAccountAsync(RegisterAccountRequest request,string iban)
+    public async Task<AccountEntity>AddAccountAsync(RegisterAccountRequest request,string iban)
     {
         _registerAccountValidator.Validate(request);
         var user = await _userRepository.FindUserByPersonalIdAsync(request.PersonalId);
@@ -34,5 +34,6 @@ public class AddAccountService : IAddAccountService
         account.UserId = user.Id;
         await _accountRepository.RegisterAccountAsync(account);
         await _accountRepository.SaveChangesAsync();
+        return account;
     }
 }

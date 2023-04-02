@@ -8,7 +8,7 @@ namespace BankSystem.InternetBank.Services;
 
 public interface IAddCardService
 {
-    Task AddCardAsync(RegisterCardRequest request);
+    Task<CardEntity> AddCardAsync(RegisterCardRequest request);
 }
 public class AddCardService : IAddCardService
 {
@@ -21,7 +21,7 @@ public class AddCardService : IAddCardService
         _cardRepository = cardRepository;
         _registerCardValidator = registerCardValidator;
     }
-    public async Task AddCardAsync(RegisterCardRequest request)
+    public async Task<CardEntity> AddCardAsync(RegisterCardRequest request)
     {
         _registerCardValidator.Validate(request);
         var account = await _cardRepository.GetAccountByIbanAsync(request.Iban);
@@ -35,6 +35,7 @@ public class AddCardService : IAddCardService
         card.CreatedAt = DateTime.UtcNow;
         await _cardRepository.RegisterCardAsync(card);
         await _cardRepository.SaveChangesAsync();
+        return card;
     }
     
 }

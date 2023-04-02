@@ -12,7 +12,7 @@ public interface IUserRepository
     Task SaveChangesAsync();
     Task<UserEntity?> FindUserByPersonalIdAsync(string personalId);
     bool EmailAlreadyExists(string email);
-    Task<Dictionary<string, decimal>> GetUserAccountsAsync(UserEntity user);
+    Task<List<AccountEntity>> GetUserAccountsAsync(UserEntity user);
 
 }
 public class UserRepository : IUserRepository
@@ -42,21 +42,14 @@ public class UserRepository : IUserRepository
         return await _context.Users
             .FirstOrDefaultAsync(u => u.PersonalNumber == personalId);
     }
-    public async Task<Dictionary<string, decimal>> GetUserAccountsAsync(UserEntity user)
+    public async Task<List<AccountEntity>> GetUserAccountsAsync(UserEntity user)
     {
         var accounts =  await _context.Accounts
             .Include(a => a.UserEntity)
             .Where(a => a.UserEntity == user)
             .ToListAsync();
-      
-        Dictionary<string, decimal> dict = new Dictionary<string, decimal> { };
 
-        foreach (var account in accounts)
-        {
-            dict.Add(account.Iban, account.Amount);
-        }
-
-        return dict;
+        return accounts;
     }
    
 
