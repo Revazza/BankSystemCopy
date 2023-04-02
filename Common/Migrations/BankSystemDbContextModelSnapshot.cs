@@ -46,6 +46,24 @@ namespace BankSystem.Common.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Accounts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("1ffae49b-5579-4560-bf20-fd3986fd76c0"),
+                            Amount = 12867m,
+                            Currency = 0,
+                            Iban = "Ana's Iban",
+                            UserId = new Guid("4bf7d82a-fca9-4d1d-bbc9-48cfaa109187")
+                        },
+                        new
+                        {
+                            Id = new Guid("7b1902d5-c240-49f4-b91f-454d9e19d402"),
+                            Amount = 10072m,
+                            Currency = 0,
+                            Iban = "Sandro's Iban",
+                            UserId = new Guid("0eb288d0-c7cd-4749-ad29-92a9d59e8bf4")
+                        });
                 });
 
             modelBuilder.Entity("BankSystem.Common.Db.Entities.CardEntity", b =>
@@ -80,6 +98,30 @@ namespace BankSystem.Common.Migrations
                     b.HasIndex("AccountId");
 
                     b.ToTable("Cards");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("62e5f726-6070-4326-9a25-c27c6216e35f"),
+                            AccountId = new Guid("1ffae49b-5579-4560-bf20-fd3986fd76c0"),
+                            CardNumber = "272152392190131336",
+                            CreatedAt = new DateTime(2023, 4, 2, 18, 50, 28, 677, DateTimeKind.Local).AddTicks(4331),
+                            Cvv = "931",
+                            ExpiresAt = new DateTime(2028, 4, 2, 18, 50, 28, 677, DateTimeKind.Local).AddTicks(4330),
+                            FullName = "Ana Mklavashvili",
+                            Pin = "1234"
+                        },
+                        new
+                        {
+                            Id = new Guid("d38dc493-fb60-4d75-8930-48dee7dc3f97"),
+                            AccountId = new Guid("7b1902d5-c240-49f4-b91f-454d9e19d402"),
+                            CardNumber = "133151641843461703",
+                            CreatedAt = new DateTime(2023, 4, 2, 18, 50, 28, 677, DateTimeKind.Local).AddTicks(4342),
+                            Cvv = "931",
+                            ExpiresAt = new DateTime(2028, 4, 2, 18, 50, 28, 677, DateTimeKind.Local).AddTicks(4341),
+                            FullName = "Sandro Revazishvili",
+                            Pin = "1234"
+                        });
                 });
 
             modelBuilder.Entity("BankSystem.Common.Db.Entities.CurrencyEntity", b =>
@@ -169,10 +211,6 @@ namespace BankSystem.Common.Migrations
                     b.Property<Guid?>("AccountToId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("Amount")
-                        .HasPrecision(18, 3)
-                        .HasColumnType("decimal(18,3)");
-
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
@@ -186,12 +224,139 @@ namespace BankSystem.Common.Migrations
                         .HasPrecision(18, 3)
                         .HasColumnType("decimal(18,3)");
 
+                    b.Property<decimal>("ReceivedAmount")
+                        .HasPrecision(18, 3)
+                        .HasColumnType("decimal(18,3)");
+
                     b.Property<int>("TransactionType")
                         .HasColumnType("int");
+
+                    b.Property<decimal>("WithDrawnAmount")
+                        .HasPrecision(18, 3)
+                        .HasColumnType("decimal(18,3)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Transactions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("c4492066-3215-4554-8ae7-5df93a1c199c"),
+                            AccountFromId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            AccountToId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedAt = new DateTime(2023, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrencyFrom = 1,
+                            CurrencyTo = 2,
+                            Fee = 29.80m,
+                            ReceivedAmount = 567.20m,
+                            TransactionType = 1,
+                            WithDrawnAmount = 0m
+                        },
+                        new
+                        {
+                            Id = new Guid("5fc3901f-a206-4f61-aea7-2801ea3b3daa"),
+                            AccountFromId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            AccountToId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedAt = new DateTime(2023, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrencyFrom = 2,
+                            CurrencyTo = 0,
+                            Fee = 18.50m,
+                            ReceivedAmount = 438.10m,
+                            TransactionType = 2,
+                            WithDrawnAmount = 0m
+                        },
+                        new
+                        {
+                            Id = new Guid("ccced3be-5451-4e41-8d39-dd1a8b84d493"),
+                            AccountFromId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            AccountToId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedAt = new DateTime(2023, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrencyFrom = 0,
+                            CurrencyTo = 1,
+                            Fee = 33.20m,
+                            ReceivedAmount = 789.40m,
+                            TransactionType = 0,
+                            WithDrawnAmount = 0m
+                        },
+                        new
+                        {
+                            Id = new Guid("52563fc7-9aac-4477-9516-3c0e27e9b41d"),
+                            AccountFromId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            AccountToId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedAt = new DateTime(2022, 10, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrencyFrom = 1,
+                            CurrencyTo = 2,
+                            Fee = 16.20m,
+                            ReceivedAmount = 312.70m,
+                            TransactionType = 2,
+                            WithDrawnAmount = 0m
+                        },
+                        new
+                        {
+                            Id = new Guid("cb8dc11e-9e3d-4f49-95c5-675ef4b84f9f"),
+                            AccountFromId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            AccountToId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedAt = new DateTime(2022, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrencyFrom = 0,
+                            CurrencyTo = 1,
+                            Fee = 9.80m,
+                            ReceivedAmount = 195.50m,
+                            TransactionType = 0,
+                            WithDrawnAmount = 0m
+                        },
+                        new
+                        {
+                            Id = new Guid("2870a1f9-6fc3-4de9-8cd4-8e6ea2448338"),
+                            AccountFromId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            AccountToId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedAt = new DateTime(2022, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrencyFrom = 2,
+                            CurrencyTo = 0,
+                            Fee = 22.40m,
+                            ReceivedAmount = 489.80m,
+                            TransactionType = 1,
+                            WithDrawnAmount = 0m
+                        },
+                        new
+                        {
+                            Id = new Guid("cb6742df-9937-4286-adeb-b9824e8b9f97"),
+                            AccountFromId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            AccountToId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedAt = new DateTime(2022, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrencyFrom = 1,
+                            CurrencyTo = 0,
+                            Fee = 31.50m,
+                            ReceivedAmount = 637.90m,
+                            TransactionType = 2,
+                            WithDrawnAmount = 0m
+                        },
+                        new
+                        {
+                            Id = new Guid("5e8d34de-c5b1-48a7-bd06-2289b18bfe1b"),
+                            AccountFromId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            AccountToId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedAt = new DateTime(2022, 5, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrencyFrom = 0,
+                            CurrencyTo = 1,
+                            Fee = 27.80m,
+                            ReceivedAmount = 573.40m,
+                            TransactionType = 0,
+                            WithDrawnAmount = 0m
+                        },
+                        new
+                        {
+                            Id = new Guid("e135b074-44ca-459c-b540-985625ce6936"),
+                            AccountFromId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            AccountToId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            CreatedAt = new DateTime(2022, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CurrencyFrom = 2,
+                            CurrencyTo = 0,
+                            Fee = 23.12m,
+                            ReceivedAmount = 242.10m,
+                            TransactionType = 0,
+                            WithDrawnAmount = 0m
+                        });
                 });
 
             modelBuilder.Entity("BankSystem.Common.Db.Entities.UserEntity", b =>
@@ -273,6 +438,48 @@ namespace BankSystem.Common.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("4bf7d82a-fca9-4d1d-bbc9-48cfaa109187"),
+                            AccessFailedCount = 0,
+                            BirthDate = new DateTime(2013, 4, 2, 18, 50, 28, 676, DateTimeKind.Local).AddTicks(95),
+                            ConcurrencyStamp = "59045f95-4727-4093-9fc9-504df96981ec",
+                            Email = "anamklavashvili@gmail.com",
+                            EmailConfirmed = false,
+                            FirstName = "Ana",
+                            LastName = "Mklavashvili",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ANAMKLAVASHVILI@GMAIL.COM",
+                            PasswordHash = "AOfbb7srSRJAIWBPOq97nIzAxCcO676R7NqKJHZh0coXPvpufy7kVRe5XRFmrdhdpQ==",
+                            PersonalNumber = "489710105",
+                            PhoneNumberConfirmed = false,
+                            RegisteredAt = new DateTime(2023, 4, 2, 18, 50, 28, 676, DateTimeKind.Local).AddTicks(115),
+                            SecurityStamp = "77bc0369-a9fd-45b0-a520-d94eeab6493b",
+                            TwoFactorEnabled = false,
+                            UserName = "ana"
+                        },
+                        new
+                        {
+                            Id = new Guid("0eb288d0-c7cd-4749-ad29-92a9d59e8bf4"),
+                            AccessFailedCount = 0,
+                            BirthDate = new DateTime(2013, 4, 2, 18, 50, 28, 676, DateTimeKind.Local).AddTicks(7144),
+                            ConcurrencyStamp = "a623bed3-85ba-4190-945f-875516296bbc",
+                            Email = "sandro.revazishviliii@gmail.com",
+                            EmailConfirmed = false,
+                            FirstName = "Sandro",
+                            LastName = "Revazishvili",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "SANDRO.REVAZISHVILIII@GMAIL.COM",
+                            PasswordHash = "AIcOgEdMy9xj71RubM1yxWRMLyCTWx4uJpja4/WoKtk0HlOUzO3KSSaDZyKYaSSE7w==",
+                            PersonalNumber = "550841006",
+                            PhoneNumberConfirmed = false,
+                            RegisteredAt = new DateTime(2023, 4, 2, 18, 50, 28, 676, DateTimeKind.Local).AddTicks(7146),
+                            SecurityStamp = "d868a9c8-d8e9-4a4a-9ca2-b1347b892d2f",
+                            TwoFactorEnabled = false,
+                            UserName = "sandro"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", b =>
@@ -301,6 +508,20 @@ namespace BankSystem.Common.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("f5c38744-072b-4785-9c6d-db48ac043b7f"),
+                            Name = "api-user",
+                            NormalizedName = "API-USER"
+                        },
+                        new
+                        {
+                            Id = new Guid("3f66ed5d-b94b-46a7-a9c3-9a564241708f"),
+                            Name = "api-operator",
+                            NormalizedName = "API-OPERATOR"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
@@ -385,6 +606,18 @@ namespace BankSystem.Common.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = new Guid("4bf7d82a-fca9-4d1d-bbc9-48cfaa109187"),
+                            RoleId = new Guid("3f66ed5d-b94b-46a7-a9c3-9a564241708f")
+                        },
+                        new
+                        {
+                            UserId = new Guid("0eb288d0-c7cd-4749-ad29-92a9d59e8bf4"),
+                            RoleId = new Guid("f5c38744-072b-4785-9c6d-db48ac043b7f")
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>

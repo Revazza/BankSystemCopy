@@ -1,5 +1,4 @@
 ﻿using BankSystem.Atm.Services;
-using BankSystem.Atm.Services.Models;
 using BankSystem.Atm.Services.Models.Requests;
 using BankSystem.Common.Models;
 using BankSystem.Common.Repositores;
@@ -33,17 +32,17 @@ namespace ATM.Api.Controllers
 
             await _cashOutService.CheckCurrenciesAsync();
 
-            var cashOutOperation = await _cashOutService.PerformCashoutAsync(request, Guid.Parse(cardId));
+            var cashOutDetails = await _cashOutService.PerformCashoutAsync(request, Guid.Parse(cardId));
 
-            var transaction = _cashOutService.CreateTransaction(cashOutOperation);
+            var transaction = _cashOutService.CreateTransaction(cashOutDetails);
 
             await _cashOutService.AddTransactionAsync(transaction);
 
             var message = new EmailMessage
             {
                 Subject = "Cash Out",
-                Body = cashOutOperation.ToString(),
-                Email = cashOutOperation.UserEmail
+                Body = cashOutDetails.ToString(),
+                Email = cashOutDetails.UserEmail
             };
 
             await _emailSender.AddEmailRequestAsync(message);
@@ -52,7 +51,7 @@ namespace ATM.Api.Controllers
 
             var result = new HttpResult();
             result.Message = $"Operation sent to email {message.Email}";
-            result.Payload.Add("cashOut", cashOutOperation);
+            result.Payload.Add("details", cashOutDetails);
 
             return Ok(result);
 

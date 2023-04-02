@@ -107,7 +107,7 @@ public class TransferService : ITransferService
     {
         var transaction = new TransactionEntity();
         transaction.TransactionType = transactionType;
-        transaction.Amount = amount;
+        transaction.ReceivedAmount = amount;
         transaction.CurrencyFrom = transferor.Currency;
         transaction.CurrencyTo = transferee.Currency;
         transaction.CreatedAt = DateTime.UtcNow;

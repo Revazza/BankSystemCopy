@@ -149,7 +149,7 @@ namespace BankSystem.Reports.Services
             return transactions.Sum(t =>
                 t.TransactionType == TransactionType.ATM &&
                 t.CurrencyFrom == currencyType
-                ? t.Amount : 0);
+                ? t.ReceivedAmount : 0);
         }
 
     }

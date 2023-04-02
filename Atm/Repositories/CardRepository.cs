@@ -1,4 +1,5 @@
-﻿using BankSystem.Atm.Services.Models.Requests;
+﻿using BankSystem.Atm.Models.Dto;
+using BankSystem.Atm.Services.Models.Requests;
 using BankSystem.Common.Db;
 using BankSystem.Common.Db.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -11,7 +12,9 @@ public interface ICardRepository
     Task SaveChangesAsync();
 #nullable enable
     Task<CardEntity?> GetCardByIdAsync(Guid cardId);
+    Task<CardEntityDto?> GetCardDtoByIdAsync(Guid cardId);
     Task<CardEntity?> AuthorizeCardAsync(LoginRequest request);
+    Task<CardEntity?> GetCardWithAccountById(Guid cardId);
 }
 
 public class CardRepository : ICardRepository
@@ -26,9 +29,23 @@ public class CardRepository : ICardRepository
     public async Task<CardEntity?> GetCardByIdAsync(Guid cardId)
     {
         return await _context.Cards
-            .Include(c => c.Account)
-            .ThenInclude(a => a.UserEntity)
             .FirstOrDefaultAsync(c => c.Id == cardId);
+    }
+
+    public async Task<CardEntityDto?> GetCardDtoByIdAsync(Guid cardId)
+    {
+        return await _context.Cards
+            .Include(c => c.Account)
+                .ThenInclude(a => a.UserEntity)
+            .Where(c => c.Id == cardId)
+            .Select(c => new CardEntityDto
+            {
+                AccountId = c.Account.Id,
+                AccountOwnerEmail = c.Account.UserEntity.Email,
+                AccountCurrency = c.Account.Currency,
+                AccountIban = c.Account.Iban,
+            })
+            .FirstOrDefaultAsync();
     }
 
     public void UpdateCard(CardEntity card)
@@ -49,4 +66,10 @@ public class CardRepository : ICardRepository
                 c.CardNumber == request.CardNumber && c.Pin == request.Pin);
     }
 
+    public async Task<CardEntity?> GetCardWithAccountById(Guid cardId)
+    {
+        return await _context.Cards
+            .Include(c => c.Account)
+            .FirstOrDefaultAsync(c => c.Id == cardId);
+    }
 }

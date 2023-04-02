@@ -46,7 +46,7 @@ namespace ATM.Api.Controllers
         {
             var cardId = User.Claims.First(u => u.Type == "cardId").Value;
 
-            var card = await _cardRepository.GetCardByIdAsync(Guid.Parse(cardId));
+            var card = await _cardRepository.GetCardWithAccountById(Guid.Parse(cardId));
 
             var result = new HttpResult();
             if (card == null)

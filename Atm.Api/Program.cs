@@ -42,6 +42,7 @@ builder.Services.AddTransient<ICashOutService, CashoutService>();
 builder.Services.AddTransient<ILoginService, LoginService>();
 builder.Services.AddTransient<IChangePinService, ChangePinService>();
 
+builder.Services.AddTransient<IAccountRepository, AccountRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<ITransactionRepository, TransactionRepository>();
 builder.Services.AddTransient<ICardRepository, CardRepository>();
