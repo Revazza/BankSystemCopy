@@ -1,5 +1,6 @@
 using BankSystem.Common.Db.Entities;
-//using BankSystem.Common.Seed;
+using BankSystem.Common.Seed;
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -30,12 +31,12 @@ public class BankSystemDbContext : IdentityDbContext<UserEntity, IdentityRole<Gu
             .WithOne(a => a.Account)
             .HasForeignKey(a => a.AccountId);
 
-        /*modelBuilder.SeedUserEntity();
+        modelBuilder.SeedUserEntity();
         modelBuilder.SeedRoles();
         modelBuilder.SeedAccountEntity();
         modelBuilder.SeedCardEntity();
         modelBuilder.SeedUserEntityRoles();
-        modelBuilder.SeedFakeTransactions();*/
+        modelBuilder.SeedFakeTransactions();
 
         base.OnModelCreating(modelBuilder);
     }

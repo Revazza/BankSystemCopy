@@ -25,7 +25,11 @@ public class RegisterAccountValidator
         {
             throw new ArgumentException("Amount must at least 0");
         }
-        
+
+        if (request.PersonalId.Length != 11)
+        {
+            throw new ArgumentException("Personal number must contain 11 digits");
+        }
         if (!numberRegex.IsMatch(request.PersonalId))
         {
             throw new ArgumentException("Irrelevant personal id");

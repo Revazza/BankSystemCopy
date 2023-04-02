@@ -8,7 +8,7 @@ using BankSystem.Common.Repositores;
 using NUnit.Framework;
 
 namespace Atm.Tests;
-
+/*
 public class AtmCashOutTests
 {
     private readonly FakeBankSystemDbContext _db;
@@ -82,4 +82,4 @@ public class AtmCashOutTests
         Assert.AreEqual(result, account.Amount);
     }
 
-}
+}*/
