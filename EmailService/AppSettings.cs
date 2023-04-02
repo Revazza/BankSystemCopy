@@ -11,7 +11,7 @@ namespace EmailService
 
         public AppSettings()
         {
-            var baseFolderPath = FileExtensions.GetParentFolderPath("BankSystem");
+            var baseFolderPath = FileExtensions.GetParentFolderPath("BankSystemCopy");
             var configuration = GetConfiguration(baseFolderPath);
 
             CompanyEmail = configuration["CompanyEmail"];

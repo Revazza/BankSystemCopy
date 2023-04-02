@@ -14,7 +14,6 @@ IConfiguration config = new ConfigurationBuilder()
     .AddJsonFile($"appsettings.{os}.json", optional: true)
     .Build();
 
-
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 SwaggerConfigurator.Configure(builder);

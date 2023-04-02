@@ -7,10 +7,11 @@ namespace BankSystem.Atm.Repositories;
 
 public interface ICardRepository
 {
-    Task<CardEntity?> AuthorizeCardAsync(LoginRequest request);
     void UpdateCard(CardEntity card);
-    Task<CardEntity?> GetCardByIdAsync(Guid cardId);
     Task SaveChangesAsync();
+#nullable enable
+    Task<CardEntity?> GetCardByIdAsync(Guid cardId);
+    Task<CardEntity?> AuthorizeCardAsync(LoginRequest request);
 }
 
 public class CardRepository : ICardRepository
@@ -26,6 +27,7 @@ public class CardRepository : ICardRepository
     {
         return await _context.Cards
             .Include(c => c.Account)
+            .ThenInclude(a => a.UserEntity)
             .FirstOrDefaultAsync(c => c.Id == cardId);
     }
 

@@ -6,8 +6,9 @@ using BankSystem.Common.Db.Entities;
 using BankSystem.Common.Db.FinancialEnums;
 using BankSystem.Common.Repositores;
 using BankSystem.Common.Services;
-using Microsoft.EntityFrameworkCore.Query;
-using Microsoft.Extensions.DependencyInjection;
+using Azure.Core;
+using Microsoft.Identity.Client;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace BankSystem.Atm.Services
 {
@@ -28,37 +29,55 @@ namespace BankSystem.Atm.Services
 
         private readonly ITransactionRepository _transactionRepository;
         private readonly ICardRepository _cardRepository;
-        private readonly IUserRepository _userRepository;
         private readonly ICurrencyRepository _currencyRepository;
 
         public CashoutService(
             ITransactionRepository transactionRepository,
             ICardRepository cardRepository,
-            IUserRepository userRepository,
             ICurrencyRepository currencyRepository)
         {
             _transactionRepository = transactionRepository;
             _cardRepository = cardRepository;
-            _userRepository = userRepository;
             _currencyRepository = currencyRepository;
         }
 
+        private async Task<decimal> CalculateDailyCashedOutAmountAsync(
+            Guid accountId)
+        {
+            var dailyTransactions = await _transactionRepository.GetAccountDailyTransactionsAsync(accountId);
+            var dailyCashedOutAmount = dailyTransactions.Sum(t => t.Amount + t.Fee);
+
+            return dailyCashedOutAmount;
+        }
+
+        private decimal CalculateRequestedCashOutAmount(
+            CashOutRequest request,
+            AccountEntity account)
+        {
+            //USD -> EUR
+            var convertedRequestAmount = CurrencyConverter
+                .Convert(request.CurrencyTo, account.Currency, request.Amount);
+
+            var fee = convertedRequestAmount * CASH_OUT_FEE_PERCENTAGE;
+
+            return convertedRequestAmount + fee;
+        }
 
         private async Task<bool> IsCashOutPossibleAsync(
-            Guid accountId,
-            decimal requestedAmount,
-            CurrencyType fromCurrency)
+            CashOutRequest request,
+            AccountEntity account)
         {
+            var dailyCashedOutAmount = await CalculateDailyCashedOutAmountAsync(account.Id);
 
-            var transactions = await _transactionRepository.GetAccountDailyTransactionsAsync(accountId);
-            var cashedOutAmountToday = transactions.Sum(t => t.Amount);
-            var fee = requestedAmount * CASH_OUT_FEE_PERCENTAGE;
+            var requestedCashOutAmount = CalculateRequestedCashOutAmount(request, account);
 
-            var totalAmount = cashedOutAmountToday + fee + requestedAmount;
+            var totalAmount = dailyCashedOutAmount + requestedCashOutAmount;
+
             var totalAmountInGEL = CurrencyConverter
-                .Convert(fromCurrency, CurrencyType.GEL, totalAmount);
+                .Convert(account.Currency, CurrencyType.GEL, totalAmount);
 
-            return totalAmount <= CASH_OUT_LIMIT_PER_DAY;
+            return totalAmountInGEL <= CASH_OUT_LIMIT_PER_DAY;
+
         }
 
         public async Task<CashOutOperation> PerformCashoutAsync(CashOutRequest request, Guid cardId)
@@ -67,16 +86,15 @@ namespace BankSystem.Atm.Services
                 ?? throw new ArgumentException("Can't identify card");
 
             var isCashOutPossible = await IsCashOutPossibleAsync(
-                card.AccountId,
-                request.Amount,
-                card.Account!.Currency);
+                request,
+                card.Account);
 
             if (!isCashOutPossible)
             {
                 throw new CashOutLimitExceededException(CASH_OUT_LIMIT_PER_DAY);
             }
 
-            var cashOutOperation = await CashOutAsync(request, card.Account!);
+            var cashOutOperation = CashOut(request, card.Account!);
 
             return cashOutOperation;
 
@@ -96,17 +114,16 @@ namespace BankSystem.Atm.Services
 
         }
 
-        private async Task<CashOutOperation> CashOutAsync(CashOutRequest request, AccountEntity account)
+        private CashOutOperation CashOut(CashOutRequest request, AccountEntity account)
         {
-            var fee = request.Amount * CASH_OUT_FEE_PERCENTAGE;
-
             var totalCashOut = CurrencyConverter.Convert(
-                account.Currency,
                 request.CurrencyTo,
+                account.Currency,
                 request.Amount);
 
+            var fee = totalCashOut * CASH_OUT_FEE_PERCENTAGE;
+
             account.Amount -= request.Amount + fee;
-            var user = await _userRepository.GetUserByAccountIdAsync(account.Id);
 
             return new CashOutOperation
             {
@@ -116,13 +133,12 @@ namespace BankSystem.Atm.Services
                 Fee = fee,
                 CurrencyFrom = account.Currency,
                 CurrencyTo = request.CurrencyTo,
-                TotalPayment = request.Amount + fee,
+                TotalPayment = totalCashOut + fee,
                 RequestedAmount = request.Amount,
-                UserEmail = user.Email
+                UserEmail = account.UserEntity.Email
             };
 
         }
-
 
         public async Task SaveChangesAsync()
         {

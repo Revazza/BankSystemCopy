@@ -40,7 +40,8 @@ namespace BankSystem.Reports.Services
                 var profit = new TransactionProfitByCurrency()
                 {
                     Profit = transactions.Sum(t => t.CurrencyFrom == currencyType ? t.Fee : 0),
-                    Currency = currencyType,
+                    Currency = currencyType.ToString(),
+                    CurrencyType = currencyType,
                 };
                 transactionsProfit.Add(profit);
             }
@@ -127,6 +128,7 @@ namespace BankSystem.Reports.Services
         {
             var transactions = await _transactionRepository.GetAllTransactionsAsync();
             var profit = transactions.Sum(t => t.CurrencyFrom == currencyType ? t.Fee : 0);
+
             return profit / transactions.Count;
         }
 
@@ -143,6 +145,7 @@ namespace BankSystem.Reports.Services
         public async Task<decimal> CalculateTotalCashOutAsync(CurrencyType currencyType)
         {
             var transactions = await _transactionRepository.GetAllTransactionsAsync();
+
             return transactions.Sum(t =>
                 t.TransactionType == TransactionType.ATM &&
                 t.CurrencyFrom == currencyType
