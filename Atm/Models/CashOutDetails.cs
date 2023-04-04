@@ -1,6 +1,5 @@
 ﻿using BankSystem.Atm.Models.Dto;
 using BankSystem.Atm.Services.Models.Requests;
-using BankSystem.Common.Db.Entities;
 using BankSystem.Common.Db.FinancialEnums;
 
 namespace BankSystem.Atm.Models

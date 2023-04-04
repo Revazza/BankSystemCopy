@@ -87,6 +87,11 @@ namespace BankSystem.Atm.Services
             var account = await _accountRepository
                 .GetAccountByIdAsync(details.AccountId);
 
+            if(account.Amount < details.TotalPayment)
+            {
+                throw new NotEnoughMoneyOnAccountException();
+            }
+
             account.Amount -= details.TotalPayment;
             _accountRepository.UpdateAccount(account);
         }

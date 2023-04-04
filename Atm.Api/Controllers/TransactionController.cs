@@ -1,5 +1,6 @@
 ﻿using BankSystem.Atm.Services;
 using BankSystem.Atm.Services.Models.Requests;
+using BankSystem.Common.Db.FinancialEnums;
 using BankSystem.Common.Models;
 using BankSystem.Common.Repositores;
 using Microsoft.AspNetCore.Authorization;
@@ -28,6 +29,7 @@ namespace ATM.Api.Controllers
         public async Task<IActionResult> CashOut(CashOutRequest request)
         {
             request.Validate();
+            request.CurrencyTo = (CurrencyType)request.Currency;
             var cardId = User.Claims.First(u => u.Type == "cardId").Value;
 
             await _cashOutService.CheckCurrenciesAsync();
