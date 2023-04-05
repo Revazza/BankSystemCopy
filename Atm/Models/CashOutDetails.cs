@@ -1,5 +1,5 @@
-﻿using BankSystem.Atm.Models.Dto;
-using BankSystem.Atm.Services.Models.Requests;
+﻿using BankSystem.Atm.Services.Models.Requests;
+using BankSystem.Common.Db.Entities;
 using BankSystem.Common.Db.FinancialEnums;
 
 namespace BankSystem.Atm.Models
@@ -15,14 +15,15 @@ namespace BankSystem.Atm.Models
         public string UserEmail { get; set; }
         public string AccountIban { get; set; }
 
-        public CashOutDetails(CashOutRequest request, CardEntityDto cardDto)
+
+        public CashOutDetails(AccountEntity account,CashOutRequest request)
         {
             RequestedAmount = request.Amount;
-            RequestedCurrency = request.CurrencyTo;
-            AccountId = cardDto.AccountId;
-            UserEmail = cardDto.AccountOwnerEmail;
-            AccountCurrency = cardDto.AccountCurrency;
-            AccountIban = cardDto.AccountIban;
+            RequestedCurrency = request.RequestedCurrency;
+            AccountId = account.Id;
+            UserEmail = account.UserEntity.Email;
+            AccountCurrency = account.Currency;
+            AccountIban = account.Iban;
         }
 
         public CashOutDetails()

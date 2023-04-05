@@ -29,12 +29,12 @@ namespace ATM.Api.Controllers
         public async Task<IActionResult> CashOut(CashOutRequest request)
         {
             request.Validate();
-            request.CurrencyTo = (CurrencyType)request.Currency;
+            request.RequestedCurrency = (CurrencyType)request.Currency;
             var cardId = User.Claims.First(u => u.Type == "cardId").Value;
 
             await _cashOutService.CheckCurrenciesAsync();
 
-            var cashOutDetails = await _cashOutService.PerformCashoutAsync(request, Guid.Parse(cardId));
+            var cashOutDetails = await _cashOutService.PerformCashOutAsync(request, Guid.Parse(cardId));
 
             var transaction = _cashOutService.CreateTransaction(cashOutDetails);
 

@@ -24,4 +24,8 @@
     <ProjectReference Include="..\Common\BankSystem.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Dto\" />
+  </ItemGroup>
+
 </Project>

@@ -5,7 +5,7 @@ namespace BankSystem.Atm.Services.Models.Requests
     public class CashOutRequest
     {
         public decimal Amount { get; set; }
-        public CurrencyType CurrencyTo { get; set; }
+        public CurrencyType RequestedCurrency { get; set; }
         public int Currency { get; set; }
 
         public void Validate()

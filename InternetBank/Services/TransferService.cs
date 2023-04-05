@@ -68,7 +68,6 @@ public class TransferService : ITransferService
        await CreateTransactionAsync(transferor, transferee, amount, FEE_FOR_INNER_TRANSFER, TransactionType.Inner);
         await _transactionRepository.SaveChangesAsync();
        
-
     }
 
     private async Task OuterTransferAsync(AccountEntity transferor, AccountEntity transferee,
@@ -86,6 +85,7 @@ public class TransferService : ITransferService
             amount = await ConvertMoneyAsync(transferor, transferee, requestedAmount);
         }
         transferee.Amount += amount;
+
         await CreateTransactionAsync(transferor, transferee, requestedAmount, fee, TransactionType.Outer);
         await _transactionRepository.SaveChangesAsync();
       

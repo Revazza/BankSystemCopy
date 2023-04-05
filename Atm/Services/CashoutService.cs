@@ -12,7 +12,7 @@ namespace BankSystem.Atm.Services
 {
     public interface ICashOutService
     {
-        Task<CashOutDetails> PerformCashoutAsync(CashOutRequest request, Guid cardId);
+        Task<CashOutDetails> PerformCashOutAsync(CashOutRequest request, Guid cardId);
         TransactionEntity CreateTransaction(CashOutDetails cashOutOperation);
         Task AddTransactionAsync(TransactionEntity transaction);
         Task CheckCurrenciesAsync();
@@ -42,38 +42,47 @@ namespace BankSystem.Atm.Services
             _accountRepository = accountRepository;
         }
 
+
         private async Task<decimal> CalculateDailyCashedOutAmountAsync(
             Guid accountId)
         {
-            var dailyTransactions = await _transactionRepository.GetAccountDailyTransactionsAsync(accountId);
+            var dailyTransactions = await _transactionRepository
+                .GetAccountDailyTransactionsAsync(accountId);
             var dailyCashedOutAmount = dailyTransactions.Sum(t => t.ReceivedAmount + t.Fee);
 
             return dailyCashedOutAmount;
         }
 
-        private void CalculateTotalPayment(CashOutDetails details)
+        private decimal CalculateTotalPayment(decimal amount, decimal fee)
         {
-            var convertedRequestAmount = CurrencyConverter
-                .Convert(
-                    details.RequestedCurrency,
-                    details.AccountCurrency,
-                    details.RequestedAmount);
-
-            details.Fee = convertedRequestAmount * CASH_OUT_FEE_PERCENTAGE;
-            details.TotalPayment = convertedRequestAmount + details.Fee;
-
+            return amount + fee;
         }
 
-        private async Task IsCashOutPossibleAsync(CashOutDetails details)
+        private decimal CalculateFee(decimal amount)
         {
-            var dailyCashedOutAmount = await CalculateDailyCashedOutAmountAsync(details.AccountId);
+            return amount * CASH_OUT_FEE_PERCENTAGE;
+        }
 
-            CalculateTotalPayment(details);
+        private void CashOut(AccountEntity account, decimal totalPayment)
+        {
+            account.Amount -= totalPayment;
+        }
 
-            var totalAmount = dailyCashedOutAmount + details.TotalPayment;
+        private async Task ValidateCashOutAsync(
+            AccountEntity account,
+            decimal totalPayment)
+        {
+            if (account.Amount < totalPayment)
+            {
+                throw new NotEnoughMoneyOnAccountException();
+            }
+
+            var dailyCashedOutAmount = await CalculateDailyCashedOutAmountAsync(account.Id);
+
+            var totalAmount = dailyCashedOutAmount + totalPayment;
 
             var totalAmountInGEL = CurrencyConverter
-                .Convert(details.AccountCurrency, CurrencyType.GEL, totalAmount);
+                .Convert(account.Currency, CurrencyType.GEL, totalAmount);
 
             if (totalAmountInGEL >= CASH_OUT_LIMIT_PER_DAY)
             {
@@ -82,32 +91,31 @@ namespace BankSystem.Atm.Services
 
         }
 
-        private async Task CashOutAsync(CashOutDetails details)
+        public async Task<CashOutDetails> PerformCashOutAsync(CashOutRequest request, Guid cardId)
         {
             var account = await _accountRepository
-                .GetAccountByIdAsync(details.AccountId);
+                .GetAccountByCardIdAsync(cardId)
+                ?? throw new ArgumentException("Can't find related account for the card");
 
-            if(account.Amount < details.TotalPayment)
-            {
-                throw new NotEnoughMoneyOnAccountException();
-            }
+            var convertedRequestAmount = CurrencyConverter.Convert(
+                request.RequestedCurrency,
+                account.Currency,
+                request.Amount);
 
-            account.Amount -= details.TotalPayment;
+            var fee = CalculateFee(convertedRequestAmount);
+            var totalPayment = CalculateTotalPayment(convertedRequestAmount, fee);
+
+            await ValidateCashOutAsync(account, totalPayment);
+
+            CashOut(account, totalPayment);
+
             _accountRepository.UpdateAccount(account);
-        }
 
-        public async Task<CashOutDetails> PerformCashoutAsync(CashOutRequest request, Guid cardId)
-        {
-            var cardDto = await _cardRepository.GetCardDtoByIdAsync(cardId)
-                ?? throw new ArgumentException("Couldn't identify card");
-
-            var details = new CashOutDetails(request, cardDto);
-
-            await IsCashOutPossibleAsync(details);
-
-            await CashOutAsync(details);
-
-            return details;
+            return new CashOutDetails(account, request)
+            {
+                Fee = fee,
+                TotalPayment = totalPayment,
+            };
 
         }
 
