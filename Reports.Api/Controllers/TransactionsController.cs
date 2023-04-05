@@ -6,7 +6,7 @@ using BankSystem.Common.Models;
 
 namespace BankSystem.Reports.Controllers
 {
-    //[Authorize("ApiAdmin", AuthenticationSchemes = "Bearer")]
+    [Authorize("ApiAdmin", AuthenticationSchemes = "Bearer")]
     [Route("api/[controller]")]
     [ApiController]
     public class TransactionsController : ControllerBase
@@ -69,7 +69,7 @@ namespace BankSystem.Reports.Controllers
                 .CalculateTotalCashOutAsync(currencyType);
 
             var result = new HttpResult();
-            result.Payload.Add("totalCashedOut", totalCashedOut);
+            result.Payload.Add("totalCashOut", totalCashedOut);
             result.Payload.Add("currency", currencyType.ToString());
             return Ok(result);
 

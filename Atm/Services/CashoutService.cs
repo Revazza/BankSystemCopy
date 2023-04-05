@@ -6,14 +6,14 @@ using BankSystem.Common.Db.Entities;
 using BankSystem.Common.Db.FinancialEnums;
 using BankSystem.Common.Repositores;
 using BankSystem.Common.Services;
-using BankSystem.Atm.Models;
+using BankSystem.Atm.Models.Dto;
 
 namespace BankSystem.Atm.Services
 {
     public interface ICashOutService
     {
-        Task<CashOutDetails> PerformCashOutAsync(CashOutRequest request, Guid cardId);
-        TransactionEntity CreateTransaction(CashOutDetails cashOutOperation);
+        Task<CashOutDetailsDto> PerformCashOutAsync(CashOutRequest request, Guid cardId);
+        TransactionEntity CreateTransaction(CashOutDetailsDto cashOutOperation);
         Task AddTransactionAsync(TransactionEntity transaction);
         Task CheckCurrenciesAsync();
         Task SaveChangesAsync();
@@ -26,18 +26,15 @@ namespace BankSystem.Atm.Services
         private const decimal CASH_OUT_FEE_PERCENTAGE = 0.02m;
 
         private readonly ITransactionRepository _transactionRepository;
-        private readonly ICardRepository _cardRepository;
         private readonly ICurrencyRepository _currencyRepository;
         private readonly IAccountRepository _accountRepository;
 
         public CashoutService(
             ITransactionRepository transactionRepository,
-            ICardRepository cardRepository,
             ICurrencyRepository currencyRepository,
             IAccountRepository accountRepository)
         {
             _transactionRepository = transactionRepository;
-            _cardRepository = cardRepository;
             _currencyRepository = currencyRepository;
             _accountRepository = accountRepository;
         }
@@ -91,7 +88,7 @@ namespace BankSystem.Atm.Services
 
         }
 
-        public async Task<CashOutDetails> PerformCashOutAsync(CashOutRequest request, Guid cardId)
+        public async Task<CashOutDetailsDto> PerformCashOutAsync(CashOutRequest request, Guid cardId)
         {
             var account = await _accountRepository
                 .GetAccountByCardIdAsync(cardId)
@@ -111,7 +108,7 @@ namespace BankSystem.Atm.Services
 
             _accountRepository.UpdateAccount(account);
 
-            return new CashOutDetails(account, request)
+            return new CashOutDetailsDto(account, request)
             {
                 Fee = fee,
                 TotalPayment = totalPayment,
@@ -119,7 +116,7 @@ namespace BankSystem.Atm.Services
 
         }
 
-        public TransactionEntity CreateTransaction(CashOutDetails details)
+        public TransactionEntity CreateTransaction(CashOutDetailsDto details)
         {
             return new TransactionEntity
             {

@@ -33,8 +33,8 @@ public static class AuthConfigurator
 
         builder.Services.AddAuthorization(options =>
         {
-            options.AddPolicy("ApiAdmin",
-                policy => policy.RequireClaim(ClaimTypes.Role, "api-admin"));
+            options.AddPolicy("ApiOperator",
+                policy => policy.RequireClaim(ClaimTypes.Role, "api-operator"));
         });
         
     }

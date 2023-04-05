@@ -2,9 +2,9 @@
 using BankSystem.Common.Db.Entities;
 using BankSystem.Common.Db.FinancialEnums;
 
-namespace BankSystem.Atm.Models
+namespace BankSystem.Atm.Models.Dto
 {
-    public class CashOutDetails
+    public class CashOutDetailsDto
     {
         public Guid AccountId { get; set; }
         public decimal RequestedAmount { get; set; }
@@ -16,7 +16,7 @@ namespace BankSystem.Atm.Models
         public string AccountIban { get; set; }
 
 
-        public CashOutDetails(AccountEntity account,CashOutRequest request)
+        public CashOutDetailsDto(AccountEntity account, CashOutRequest request)
         {
             RequestedAmount = request.Amount;
             RequestedCurrency = request.RequestedCurrency;
@@ -26,7 +26,7 @@ namespace BankSystem.Atm.Models
             AccountIban = account.Iban;
         }
 
-        public CashOutDetails()
+        public CashOutDetailsDto()
         {
 
         }
