@@ -85,8 +85,7 @@ public class OperatorController : ControllerBase
         var cardDto = new CardDto()
         {
             CardNumber = card.CardNumber,
-            Cvv = card.Cvv,
-            Pin = card.Pin,
+           
             ExpiresAt = card.ExpiresAt,
             CreatedAt = card.CreatedAt,
             FullName = card.FullName

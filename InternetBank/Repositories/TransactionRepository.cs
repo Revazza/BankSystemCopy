@@ -47,12 +47,10 @@ public class TransactionRepository : ITransactionRepository
 
     public async Task<List<TransactionEntity>> GetTransactionsAsync(string iban)
     {
-        var account = await  _context.Accounts
-            .Where(a => a.Iban == iban)
-            .FirstOrDefaultAsync();
+     
         var transactions = await _context.Transactions
-            .Where(t => t.AccountFromId == account.Id
-                        || t.AccountToId == account.Id)
+            .Where(t => t.AccountFromIban == iban
+                        || t.AccountToIban == iban)
             .ToListAsync();
         return transactions;
     }

@@ -51,44 +51,7 @@ public class RegisterCardValidator
             throw new ArgumentException("Incorrect Iban");
         }
 
-        if (string.IsNullOrEmpty(request.FullName))
-        {
-            throw new ArgumentNullException(nameof(request));
-        }
-
-        if (!letterRegex.IsMatch(request.FullName))
-        {
-            throw new ArgumentException("Name must contain only letters");
-        }
-
-        if (request.Cvv.Length !=3)
-        {
-            throw new ArgumentException("Cvv must contain 3 digits");
-        }
-        if (!numberRegex.IsMatch(request.Cvv))
-        {
-            throw new ArgumentException("Cvv must contain only numbers");
-        }
-        if (!numberRegex.IsMatch(request.Pin))
-        {
-            throw new ArgumentException("Pin must contain only numbers");
-        }
-
-        if (request.Pin.Length != 4)
-        {
-            throw new ArgumentException("Pin must contain 4 digits");
-        }
-
-        if (_cardRepository.CvvAlreadyExists(request.Cvv))
-        {
-            throw new ArgumentException("Enter different Cvv, It's already used");
-        }
-
-        if (_cardRepository.PinAlreadyExists(request.Pin))
-        {
-            throw new ArgumentException("Enter different pin, It's already used");
-        }
-
+       
         if (request.ExpirationDate < DateTime.Now.AddYears(5))
         {
             throw new ArgumentException("Incorrect Expiration date");

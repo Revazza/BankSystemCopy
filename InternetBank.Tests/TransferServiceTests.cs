@@ -28,110 +28,107 @@ public class TransferServiceTests
     [Test]
     public async Task InnerTransferMoneyTestAsync()
     {
-        var transferor = new AccountEntity
+        var sender = new AccountEntity
         {
             UserId = Guid.NewGuid(),
             Currency = CurrencyType.GEL,
             Amount = 1000,
             Iban = "GE51DX6331467770865217"
         };
-        var transferee = new AccountEntity
+        var receiver = new AccountEntity
         {
-            UserId = transferor.UserId,
+            UserId = sender.UserId,
             Currency = CurrencyType.GEL,
             Amount = 500, Iban = "GE05VT3774861580071408"
         };
-        await _db.Accounts.AddRangeAsync(transferor, transferee);
+        await _db.Accounts.AddRangeAsync(sender, receiver);
         await _db.SaveChangesAsync();
         var request = new TranferRequest
         {
-            SendFromIban = transferor.Iban,
-            Iban = transferee.Iban,
+            SendFromIban = sender.Iban,
+            Iban = receiver.Iban,
             Amount = 500
         };
-        await _transferService.TransferMoneyAsync(request, transferor.UserId);
+        await _transferService.TransferMoneyAsync(request, sender.UserId);
         
-        var updatedTransferor = await _db.Accounts.FindAsync(transferor.Id);
-        var updatedTransferee = await _db.Accounts.FindAsync(transferee.Id);
-        Assert.That(updatedTransferee.Amount, Is.EqualTo(1000));
-        Assert.That(updatedTransferor.Amount, Is.EqualTo(500));
+        var updatedSender = await _db.Accounts.FindAsync(sender.Id);
+        var updatedReceiver = await _db.Accounts.FindAsync(receiver.Id);
+        Assert.That(updatedSender.Amount, Is.EqualTo(500));
+        Assert.That(updatedReceiver.Amount, Is.EqualTo(1000));
     }
     [Test]
     public async Task OuterTransferMoneyTestAsync()
     {
-        var transferor = new AccountEntity
+        var sender = new AccountEntity
         {
             UserId = Guid.NewGuid(),
             Currency = CurrencyType.GEL,
             Amount = 1000,
             Iban = "GE38AH7580341631433803"
         };
-        var transferee = new AccountEntity
+        var receiver = new AccountEntity
         {
             UserId = Guid.NewGuid(),
             Currency = CurrencyType.GEL,
             Amount = 500, Iban = "GE09WB5605287442587704"
         };
-        await _db.Accounts.AddRangeAsync(transferor, transferee);
+        await _db.Accounts.AddRangeAsync(sender, receiver);
         await _db.SaveChangesAsync();
         var request = new TranferRequest
         {
-            SendFromIban = transferor.Iban,
-            Iban = transferee.Iban,
+            SendFromIban = sender.Iban,
+            Iban = receiver.Iban,
             Amount = 500
         };
-        await _transferService.TransferMoneyAsync(request, transferor.UserId);
+        await _transferService.TransferMoneyAsync(request, sender.UserId);
         
-        var updatedTransferor = await _db.Accounts.FindAsync(transferor.Id);
-        var updatedTransferee = await _db.Accounts.FindAsync(transferee.Id);
-        Assert.That(updatedTransferee.Amount, Is.EqualTo(1000));
-        Assert.That(updatedTransferor.Amount, Is.EqualTo(494.5));
+        var updatedSender = await _db.Accounts.FindAsync(sender.Id);
+        var updatedReceiver = await _db.Accounts.FindAsync(receiver.Id);
+        Assert.That(updatedReceiver.Amount, Is.EqualTo(1000));
+        Assert.That(updatedSender.Amount, Is.EqualTo(494.5));
     }
     [Test]
     public async Task OuterTransferMoneyWithDifferentCurrencyTestAsync()
     {
-        var transferor = new AccountEntity
+        var sender = new AccountEntity
         {
             UserId = Guid.NewGuid(),
             Currency = CurrencyType.GEL,
             Amount = 1000,
             Iban = "GE38AH75803416314338039"
         };
-        var transferee = new AccountEntity
+        var receiver = new AccountEntity
         {
             UserId = Guid.NewGuid(),
             Currency = CurrencyType.EUR,
             Amount = 10, Iban = "GE09WB5605287442587701"
         };
-        await _db.Accounts.AddRangeAsync(transferor, transferee);
+        await _db.Accounts.AddRangeAsync(sender, receiver);
         await _db.SaveChangesAsync();
         var request = new TranferRequest
         {
-            SendFromIban = transferor.Iban,
-            Iban = transferee.Iban,
+            SendFromIban = sender.Iban,
+            Iban = receiver.Iban,
             Amount = 18
         };
-        var transferorMoney = transferor.Amount - request.Amount -
-                              await _transferService.CalculateFeeForOuterTransferAsync();
+        var senderMoney = sender.Amount - request.Amount -
+                              await _transferService.CalculateFeeForOuterTransferAsync(request.Amount);
         await _currencyRepository.CheckCurrenciesAsync();
         var convertedMoney = CurrencyConverter.Convert(
-            transferor.Currency,
-            transferee.Currency,
+            sender.Currency,
+            receiver.Currency,
             request.Amount);
-        var transfereeMoney = transferee.Amount + convertedMoney;
-                              ;
+        var receiverMoney = receiver.Amount + convertedMoney;
+                              
         
-        await _transferService.TransferMoneyAsync(request, transferor.UserId);
+        await _transferService.TransferMoneyAsync(request, sender.UserId);
         
-        var updatedTransferor = await _db.Accounts.FindAsync(transferor.Id);
-        var updatedTransferee = await _db.Accounts.FindAsync(transferee.Id);
+        var updatedSender = await _db.Accounts.FindAsync(sender.Id);
+        var updatedReceiver = await _db.Accounts.FindAsync(receiver.Id);
       
-        //Assert.That(updatedTransferor.Amount, Is.EqualTo(transferorMoney).Within(0.01));
-       // Assert.That(updatedTransferee.Amount, Is.EqualTo(transfereeMoney).Within(0.1));
-        Console.WriteLine(updatedTransferor.Amount);
-        Console.WriteLine(transferorMoney);
-        Console.WriteLine(updatedTransferee.Amount);
-        Console.WriteLine(transfereeMoney);
+        Assert.That(updatedSender.Amount, Is.EqualTo(senderMoney).Within(0.01));
+        Assert.That(updatedReceiver.Amount, Is.EqualTo(receiverMoney).Within(0.1));
+     
 
     }
 }

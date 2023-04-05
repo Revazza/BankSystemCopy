@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Text;
 using BankSystem.Common.Db.Entities;
 using BankSystem.InternetBank.Api.Validations;
 using BankSystem.InternetBank.Models.Requests;
@@ -26,16 +27,33 @@ public class AddCardService : IAddCardService
         _registerCardValidator.Validate(request);
         var account = await _cardRepository.GetAccountByIbanAsync(request.Iban);
         var card = new CardEntity();
-        card.FullName = request.FullName;
+        card.FullName = account.UserEntity.FirstName + account.UserEntity.LastName;
         card.CardNumber = request.CardNumber;
-        card.Cvv = request.Cvv;
-        card.Pin = request.Pin;
+        card.Cvv = GenerateCvv();
+        card.Pin = GeneratePin();
         card.AccountId = account.Id;
         card.ExpiresAt = request.ExpirationDate;
         card.CreatedAt = DateTime.UtcNow;
         await _cardRepository.RegisterCardAsync(card);
         await _cardRepository.SaveChangesAsync();
         return card;
+    }
+
+    private string GenerateCvv()
+    {
+        Random rand = new Random();
+        return rand.Next(100, 1000).ToString();
+    }
+
+    private string GeneratePin()
+    {
+        Random rand = new Random();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 4; i++)
+        {
+            sb.Append(rand.Next(0, 10));
+        }
+        return sb.ToString();
     }
     
 }

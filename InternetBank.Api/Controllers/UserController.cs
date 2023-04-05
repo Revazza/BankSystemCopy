@@ -26,6 +26,7 @@ public class UserController : ControllerBase
     private readonly IAccountRepository _accountRepository;
     private readonly ITransactionRepository _transactionRepository;
     private readonly IUserRepository _userRepository;
+    private readonly IUserService _userService;
 
 
     public UserController(TransactionValidator transactionValidator,
@@ -35,7 +36,7 @@ public class UserController : ControllerBase
         ICardRepository cardRepository,
         IAccountRepository accountRepository,
         ITransactionRepository transactionRepository,
-        IUserRepository userRepository)
+        IUserRepository userRepository,IUserService userService)
     {
         _transactionValidator = transactionValidator;
         _userManager = userManager;
@@ -45,6 +46,7 @@ public class UserController : ControllerBase
         _accountRepository = accountRepository;
         _transactionRepository = transactionRepository;
         _userRepository = userRepository;
+        _userService = userService;
     }
     
     
@@ -78,28 +80,17 @@ public class UserController : ControllerBase
             return BadRequest("User Not Found");
         }
 
-        var cards = await _cardRepository.GetCardsByUserIdAsync(user.Id);
+        var cards = await _userService.GetUserCardsAsync(user.Id);
         var result = new HttpResult();
-        result.Payload.Add("cards",cards);
+        result.Payload.Add("Cards",cards);
         return Ok(result);
     }
     
     [HttpGet("get-transactions")]
     public async Task<IActionResult> GetTransactions(string iban)
     {
-        var transactions = await _transactionRepository.GetTransactionsAsync(iban);
         var result = new HttpResult();
-        var transactionList = transactions
-            .Select(t => new TransactionDto()
-            {
-                CreatedAt = t.CreatedAt,
-                fee = t.Fee,
-                SendFromIban = t.AccountFromIban,
-                SendToIban = t.AccountToIban,
-                RequestedAmount = t.ReceivedAmount,
-                TransactionType = t.TransactionType
-
-            });
+        var transactions = await _userService.GetUserTransactionsDtoAsync(iban);
         result.Payload.Add("transactions",transactions);
         return Ok(result);
     }
@@ -111,18 +102,10 @@ public class UserController : ControllerBase
         {
             return BadRequest("User Not Found");
         }
-        var accounts = await _userRepository.GetUserAccountsAsync(user);
+
+        var accounts = await _userService.GetUserAccountsAsync(user);
         var result = new HttpResult();
-        var accountList = accounts
-            .Select(a =>
-                new AccountDto()
-                {
-                    Amount = a.Amount,
-                    Currency = a.Currency,
-                    Iban = a.Iban
-                })
-            .ToList();
-        result.Payload.Add("accounts",accountList);
+        result.Payload.Add("accounts",accounts);
 
         return Ok(result);
     }

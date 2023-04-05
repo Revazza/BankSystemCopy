@@ -29,6 +29,7 @@ public class CardRepository : ICardRepository
     public async Task<AccountEntity> GetAccountByIbanAsync(string iban)
     {
         var account = await _context.Accounts
+            .Include(c=>c.UserEntity)
             .Where(a => a.Iban == iban)
             .FirstAsync();
         return account;
