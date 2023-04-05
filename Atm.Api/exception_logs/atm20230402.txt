@@ -21004,3 +21004,6 @@ System.ArgumentException: Can't identify card
 2023-04-02 22:00:02.369 +04:00 [DBG] Disposing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
 2023-04-02 22:00:02.371 +04:00 [DBG] Disposed connection to database '' on server '' (2ms).
 2023-04-02 22:00:02.374 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7261/api/Card/Login application/json 58 - 1 - application/json 2464.4685ms
+2023-04-02 22:02:12.937 +04:00 [DBG] Connection id "0HMPJKG3Q126D" disconnecting.
+2023-04-02 22:02:12.939 +04:00 [DBG] Connection id "0HMPJKG3Q126D" stopped.
+2023-04-02 22:02:12.940 +04:00 [DBG] Connection id "0HMPJKG3Q126D" sending FIN because: "The Socket transport's send loop completed gracefully."

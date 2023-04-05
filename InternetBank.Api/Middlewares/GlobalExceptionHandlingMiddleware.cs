@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net;
 using BankSystem.InternetBank.Exceptions;
+using BankSystem.Common.Models;
 
 namespace InternetBank.Api.Middlewares
 {
@@ -18,15 +19,15 @@ namespace InternetBank.Api.Middlewares
 
         private async Task HandleExceptionAsync(
             HttpContext httpContext,
-            HttpStatusCode status,
+            HttpResultStatus status,
             Exception e)
         {
             _logger.LogError(e, e.Message);
 
-            var problem = new ProblemDetails
+            var problem = new HttpResult
             {
-                Detail = e.Message,
-                Status = (int)status
+                Message = e.Message,
+                Status = status
             };
 
             httpContext.Response.StatusCode = (int)status;
@@ -47,23 +48,23 @@ namespace InternetBank.Api.Middlewares
             }
             catch (CardAlreadyExistsException e)
             {
-                await HandleExceptionAsync(httpContext, HttpStatusCode.BadRequest, e);
+                await HandleExceptionAsync(httpContext, HttpResultStatus.BadRequest, e);
             }
             catch (UserAlreadyExistsException e)
             {
-                await HandleExceptionAsync(httpContext, HttpStatusCode.BadRequest, e);
+                await HandleExceptionAsync(httpContext, HttpResultStatus.BadRequest, e);
             }
             catch (ArgumentNullException e)
             {
-                await HandleExceptionAsync(httpContext, HttpStatusCode.BadRequest, e);
+                await HandleExceptionAsync(httpContext, HttpResultStatus.BadRequest, e);
             }
             catch (ArgumentException e)
             {
-                await HandleExceptionAsync(httpContext, HttpStatusCode.BadRequest, e);
+                await HandleExceptionAsync(httpContext, HttpResultStatus.BadRequest, e);
             }
             catch (Exception e)
             {
-                await HandleExceptionAsync(httpContext, HttpStatusCode.InternalServerError, e);
+                await HandleExceptionAsync(httpContext, HttpResultStatus.Error, e);
             }
         }
     }

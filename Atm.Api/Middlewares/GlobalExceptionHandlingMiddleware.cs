@@ -57,6 +57,10 @@ namespace ATM.Api.Middlewares
             {
                 await HandleExceptionAsync(httpContext, HttpResultStatus.BadRequest, e);
             }
+            catch (NotEnoughMoneyOnAccountException e)
+            {
+                await HandleExceptionAsync(httpContext, HttpResultStatus.Error, e);
+            }
             catch (Exception e)
             {
                 await HandleExceptionAsync(httpContext, HttpResultStatus.Error, e);

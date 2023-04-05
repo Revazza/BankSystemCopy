@@ -17,6 +17,7 @@ namespace BankSystem.Common.Seed
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
                         ReceivedAmount = 567.20m,
+                        WithDrawnAmount = 325,
                         CreatedAt = new DateTime(2023, 3, 2),
                         CurrencyFrom = CurrencyType.USD,
                         CurrencyTo = CurrencyType.EUR,
@@ -28,6 +29,7 @@ namespace BankSystem.Common.Seed
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
                         ReceivedAmount = 438.10m,
+                        WithDrawnAmount = 217.23m,
                         CreatedAt = new DateTime(2023, 3, 10),
                         CurrencyFrom = CurrencyType.EUR,
                         CurrencyTo = CurrencyType.GEL,
@@ -38,11 +40,12 @@ namespace BankSystem.Common.Seed
                     {
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
-                        ReceivedAmount = 789.40m,
+                        ReceivedAmount = 900m,
+                        WithDrawnAmount = 1034.23m,
                         CreatedAt = new DateTime(2023, 3, 18),
                         CurrencyFrom = CurrencyType.GEL,
                         CurrencyTo = CurrencyType.USD,
-                        Fee = 33.20m,
+                        Fee = 34.23m,
                         TransactionType = TransactionType.ATM
                     },
                     new TransactionEntity()
@@ -50,6 +53,7 @@ namespace BankSystem.Common.Seed
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
                         ReceivedAmount = 312.70m,
+                        WithDrawnAmount = 100.87m,
                         CreatedAt = new DateTime(2022, 10, 12),
                         CurrencyFrom = CurrencyType.USD,
                         CurrencyTo = CurrencyType.EUR,
@@ -60,11 +64,12 @@ namespace BankSystem.Common.Seed
                     {
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
-                        ReceivedAmount = 195.50m,
+                        ReceivedAmount = 200m,
+                        WithDrawnAmount = 223.12m,
                         CreatedAt = new DateTime(2022, 12, 23),
                         CurrencyFrom = CurrencyType.GEL,
                         CurrencyTo = CurrencyType.USD,
-                        Fee = 9.80m,
+                        Fee = 23.12m,
                         TransactionType = TransactionType.ATM
                     },
                     new TransactionEntity()
@@ -72,6 +77,7 @@ namespace BankSystem.Common.Seed
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
                         ReceivedAmount = 489.80m,
+                        WithDrawnAmount = 354.23m,
                         CreatedAt = new DateTime(2022, 8, 7),
                         CurrencyFrom = CurrencyType.EUR,
                         CurrencyTo = CurrencyType.GEL,
@@ -83,6 +89,7 @@ namespace BankSystem.Common.Seed
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
                         ReceivedAmount = 637.90m,
+                        WithDrawnAmount = 152.73m,
                         CreatedAt = new DateTime(2022, 4, 2),
                         CurrencyFrom = CurrencyType.USD,
                         CurrencyTo = CurrencyType.GEL,
@@ -93,18 +100,20 @@ namespace BankSystem.Common.Seed
                     {
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
-                        ReceivedAmount = 573.40m,
+                        ReceivedAmount = 600m,
+                        WithDrawnAmount = 627.87m,
                         CreatedAt = new DateTime(2022, 5, 19),
                         CurrencyFrom = CurrencyType.GEL,
                         CurrencyTo = CurrencyType.USD,
-                        Fee = 27.80m,
+                        Fee = 27.87m,
                         TransactionType = TransactionType.ATM
                     },
                     new TransactionEntity()
                     {
                         AccountFromId = Guid.Empty,
                         AccountToId = Guid.Empty,
-                        ReceivedAmount = 242.10m,
+                        ReceivedAmount = 230m,
+                        WithDrawnAmount = 253.12m,
                         CreatedAt = new DateTime(2022, 11, 14),
                         CurrencyFrom = CurrencyType.EUR,
                         CurrencyTo = CurrencyType.GEL,
