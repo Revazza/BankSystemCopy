@@ -30,7 +30,7 @@ public class RegisterAccountValidatorTests
     [Test]
     public void Validate_ValidRequest_NoExceptionThrown()
     {
-        // Arrange
+       
         var validator = new RegisterAccountValidator(_userRepository);
         var request = new RegisterAccountRequest
         {
@@ -38,13 +38,13 @@ public class RegisterAccountValidatorTests
             PersonalId = "12345678917"
         };
 
-        // Act and Assert
+    
         Assert.DoesNotThrow(() => validator.Validate(request));
     }
     [Test]
     public void Validate_InValidRequestIncorrectPersonalid_ArgumentExceptionThrown()
     {
-        // Arrange
+       
         var validator = new RegisterAccountValidator(_userRepository);
         var request = new RegisterAccountRequest
         {
@@ -52,44 +52,42 @@ public class RegisterAccountValidatorTests
             PersonalId = "12345678901"
         };
 
-        // Act and Assert
+      
         Assert.Throws<ArgumentException>(() => validator.Validate(request), "Incorrect personal Id");
     }
     [Test]
     public void Validate_NullRequest_ArgumentNullExceptionThrown()
     {
-        // Arrange
+        
         var validator = new RegisterAccountValidator(_userRepository);
 
-        // Act and Assert
+        
         Assert.Throws<ArgumentNullException>(() => validator.Validate(null));
     }
     [Test]
     public void Validate_InvalidPersonalId_ArgumentExceptionThrown()
     {
-        // Arrange
+        
         var validator = new RegisterAccountValidator(_userRepository);
         var request = new RegisterAccountRequest
         {
             Amount = 100,
             PersonalId = "abcd"
         };
-
-        // Act and Assert
+        
         Assert.Throws<ArgumentException>(() => validator.Validate(request), "Irrelevant personal id");
     }
     [Test]
     public void Validate_NegativeAmount_ArgumentExceptionThrown()
     {
-        // Arrange
+      
         var validator = new RegisterAccountValidator(_userRepository);
         var request = new RegisterAccountRequest
         {
             Amount = -100,
             PersonalId = "1234567891"
         };
-
-        // Act and Assert
+        
         Assert.Throws<ArgumentException>(() => validator.Validate(request), "Amount must at least 0");
     }
     [Test]
@@ -107,7 +105,7 @@ public class RegisterAccountValidatorTests
     [Test]
     public void Validate_PersonalIdWithLengthLessThan10_ArgumentExceptionThrown()
     {
-        // Arrange
+        
         var validator = new RegisterAccountValidator(_userRepository);
         var request = new RegisterAccountRequest
         {
@@ -115,7 +113,6 @@ public class RegisterAccountValidatorTests
             PersonalId = "123456789"
         };
 
-        // Act and Assert
         Assert.Throws<ArgumentException>(() => validator.Validate(request), "Personal number must contain 11 digits");
     }
 }

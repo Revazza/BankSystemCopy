@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using BankSystem.Common.Db.FinancialEnums;
 using BankSystem.InternetBank.Models.Requests;
 using BankSystem.InternetBank.Repositories;
 
@@ -24,6 +25,11 @@ public class RegisterAccountValidator
         if (request.Amount < 0)
         {
             throw new ArgumentException("Amount must at least 0");
+        }
+
+        if (request.Currency < 0 || request.Currency > (CurrencyType)2)
+        {
+            throw new ArgumentException("Incorrect currency");
         }
 
         if (request.PersonalId.Length != 11)
