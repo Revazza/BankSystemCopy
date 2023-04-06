@@ -18,7 +18,7 @@ public class UserService : IUserService
     private readonly ICardRepository _cardRepository;
     private readonly IUserRepository _userRepository;
 
-    public UserService(ITransactionRepository transactionRepository, 
+    public UserService(ITransactionRepository transactionRepository,
         ICardRepository cardRepository,
         IUserRepository userRepository)
     {
@@ -26,7 +26,7 @@ public class UserService : IUserService
         _cardRepository = cardRepository;
         _userRepository = userRepository;
     }
-    public async Task<List<TransactionDto>>GetUserTransactionsDtoAsync(string iban)
+    public async Task<List<TransactionDto>> GetUserTransactionsDtoAsync(string iban)
     {
         var transactions = await _transactionRepository.GetTransactionsAsync(iban);
         var transactionList = transactions
@@ -53,7 +53,8 @@ public class UserService : IUserService
                 CardNumber = c.CardNumber,
                 CreatedAt = c.CreatedAt,
                 ExpiresAt = c.ExpiresAt,
-                FullName = c.FullName
+                FullName = c.FullName,
+                Cvv = c.Cvv,
             }).ToList();
 
         return cardsList;
@@ -62,7 +63,7 @@ public class UserService : IUserService
     public async Task<List<AccountDto>> GetUserAccountsAsync(UserEntity user)
     {
         var accounts = await _userRepository.GetUserAccountsAsync(user);
-        
+
         var accountList = accounts
             .Select(a =>
                 new AccountDto()

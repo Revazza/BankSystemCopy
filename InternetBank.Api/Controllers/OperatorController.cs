@@ -1,12 +1,7 @@
-using BankSystem.Common.Db.Entities;
 using BankSystem.Common.Models;
-using BankSystem.InternetBank.Api.Validations;
-using BankSystem.InternetBank.Models.Dto;
 using BankSystem.InternetBank.Models.Requests;
-using BankSystem.InternetBank.Repositories;
 using BankSystem.InternetBank.Services;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BankSystem.InternetBank.Api.Controllers;
@@ -16,7 +11,6 @@ namespace BankSystem.InternetBank.Api.Controllers;
 [Route("[controller]")]
 public class OperatorController : ControllerBase
 {
-    private readonly UserManager<UserEntity> _userManager;
     private readonly IbanService _ibanService;
     private readonly IAddUserService _addUserService;
     private readonly IAddAccountService _addAccountService;
@@ -26,7 +20,6 @@ public class OperatorController : ControllerBase
 
 
     public OperatorController(
-        UserManager<UserEntity> userManager,
         IbanService ibanService,
         IAddUserService addUserService,
         IAddAccountService addAccountService,
@@ -35,7 +28,6 @@ public class OperatorController : ControllerBase
         IOperatorService operatorService
     )
     {
-        _userManager = userManager;
         _ibanService = ibanService;
         _addUserService = addUserService;
         _addAccountService = addAccountService;
