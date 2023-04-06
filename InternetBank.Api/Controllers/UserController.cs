@@ -67,7 +67,7 @@ public class UserController : ControllerBase
         _transactionValidator.Validate(request, user);
         await _transferService.TransferMoneyAsync(request, user.Id);
         var result = new HttpResult();
-        result.Payload.Add("Result", "Successful transaction");
+        result.Payload.Add("result", "successful transaction");
         
         return Ok(result);
     }
@@ -82,7 +82,7 @@ public class UserController : ControllerBase
 
         var cards = await _userService.GetUserCardsAsync(user.Id);
         var result = new HttpResult();
-        result.Payload.Add("Cards",cards);
+        result.Payload.Add("cards",cards);
         return Ok(result);
     }
     
@@ -106,6 +106,21 @@ public class UserController : ControllerBase
         var accounts = await _userService.GetUserAccountsAsync(user);
         var result = new HttpResult();
         result.Payload.Add("accounts",accounts);
+
+        return Ok(result);
+    }
+    [HttpGet("get-account-cards")]
+    public async Task<IActionResult> GetAccountCards(string iban)
+    {
+        var user = await _userManager.GetUserAsync(User);
+        if (user == null)
+        {
+            return BadRequest("User Not Found");
+        }
+
+        var cards = await _userService.GetAccountCards(iban);
+        var result = new HttpResult();
+        result.Payload.Add("cards",cards);
 
         return Ok(result);
     }

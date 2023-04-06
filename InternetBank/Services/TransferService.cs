@@ -77,7 +77,8 @@ public class TransferService : ITransferService
         
         if (sender.Amount < request.Amount + fee)
         {
-            throw new InvalidOperationException("Not enough money on your bank account");
+            throw new InvalidOperationException(
+                $"Your account balance is {sender.Amount}, which is not enough to complete this transaction.");
         }
         
         sender.Amount = sender.Amount - fee - request.Amount;

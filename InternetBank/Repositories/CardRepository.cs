@@ -14,6 +14,7 @@ public interface ICardRepository
     Task<AccountEntity> GetAccountByIbanAsync(string iban);
     bool PinAlreadyExists(string pin);
     bool CvvAlreadyExists(string cvv);
+    Task<List<CardEntity>> getAccountCards(string iban);
 
 }
 public class CardRepository : ICardRepository
@@ -69,8 +70,18 @@ public class CardRepository : ICardRepository
     {
         return _context.Cards.Any(c => c.Pin == pin);
     }
+
     public bool CvvAlreadyExists(string cvv)
     {
         return _context.Cards.Any(c => c.Cvv == cvv);
+    }
+
+    public async Task<List<CardEntity>> getAccountCards(string iban)
+    {
+        var cards = await _context.Accounts
+            .Where(a => a.Iban == iban)
+            .SelectMany(a => a.Cards)
+            .ToListAsync();
+        return cards;
     }
 }

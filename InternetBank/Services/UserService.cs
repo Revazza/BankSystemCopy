@@ -10,6 +10,7 @@ public interface IUserService
     Task<List<TransactionDto>> GetUserTransactionsDtoAsync(string iban);
     Task<List<CardDto>> GetUserCardsAsync(Guid userId);
     Task<List<AccountDto>> GetUserAccountsAsync(UserEntity user);
+    Task<List<CardDto>> GetAccountCards(string iban);
 }
 public class UserService : IUserService
 {
@@ -71,5 +72,19 @@ public class UserService : IUserService
                 })
             .ToList();
         return accountList;
+    }
+
+    public async Task<List<CardDto>> GetAccountCards(string iban)
+    {
+        var cards = await _cardRepository.getAccountCards(iban);
+        var cardList = cards.Select(c => new CardDto()
+        {
+            CardNumber = c.CardNumber,
+            CreatedAt = c.CreatedAt,
+            ExpiresAt = c.ExpiresAt,
+            FullName = c.FullName,
+            Cvv = c.Cvv
+        }).ToList();
+        return cardList;
     }
 }
