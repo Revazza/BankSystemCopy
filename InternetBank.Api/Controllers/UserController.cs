@@ -58,6 +58,7 @@ public class UserController : ControllerBase
         
         return Ok(result);
     }
+
     [HttpGet("get-cards")]
     public async Task<IActionResult> GetCards()
     {
@@ -81,6 +82,7 @@ public class UserController : ControllerBase
         result.Payload.Add("transactions",transactions);
         return Ok(result);
     }
+
     [HttpGet("get-accounts")]
     public async Task<IActionResult> GetAccounts()
     {

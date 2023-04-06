@@ -195,14 +195,14 @@ namespace BankSystem.Common.Seed
                     {
                         Id = new Guid("1ffae49b-5579-4560-bf20-fd3986fd76c0"),
                         Amount = new Random().Next(10000, 20000),
-                        Iban = "Ana's Iban",
+                        Iban = "AnaIban",
                         UserId = new Guid("4bf7d82a-fca9-4d1d-bbc9-48cfaa109187")
                     },
                     new AccountEntity
                     {
                         Id = new Guid("7b1902d5-c240-49f4-b91f-454d9e19d402"),
                         Amount = new Random().Next(10000, 20000),
-                        Iban = "Sandro's Iban",
+                        Iban = "SandroIban",
                         UserId = new Guid("0eb288d0-c7cd-4749-ad29-92a9d59e8bf4")
                     }
                 );

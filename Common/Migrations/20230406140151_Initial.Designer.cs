@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BankSystem.Common.Migrations
 {
     [DbContext(typeof(BankSystemDbContext))]
-    [Migration("20230403201713_new")]
-    partial class @new
+    [Migration("20230406140151_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,17 +54,17 @@ namespace BankSystem.Common.Migrations
                         new
                         {
                             Id = new Guid("1ffae49b-5579-4560-bf20-fd3986fd76c0"),
-                            Amount = 18483m,
+                            Amount = 12493m,
                             Currency = 0,
-                            Iban = "Ana's Iban",
+                            Iban = "AnaIban",
                             UserId = new Guid("4bf7d82a-fca9-4d1d-bbc9-48cfaa109187")
                         },
                         new
                         {
                             Id = new Guid("7b1902d5-c240-49f4-b91f-454d9e19d402"),
-                            Amount = 13134m,
+                            Amount = 16500m,
                             Currency = 0,
-                            Iban = "Sandro's Iban",
+                            Iban = "SandroIban",
                             UserId = new Guid("0eb288d0-c7cd-4749-ad29-92a9d59e8bf4")
                         });
                 });
@@ -107,10 +107,10 @@ namespace BankSystem.Common.Migrations
                         {
                             Id = new Guid("62e5f726-6070-4326-9a25-c27c6216e35f"),
                             AccountId = new Guid("1ffae49b-5579-4560-bf20-fd3986fd76c0"),
-                            CardNumber = "714388007953249323",
-                            CreatedAt = new DateTime(2023, 4, 4, 0, 17, 13, 161, DateTimeKind.Local).AddTicks(2745),
+                            CardNumber = "386858338391088506",
+                            CreatedAt = new DateTime(2023, 4, 6, 18, 1, 51, 235, DateTimeKind.Local).AddTicks(6817),
                             Cvv = "931",
-                            ExpiresAt = new DateTime(2028, 4, 4, 0, 17, 13, 161, DateTimeKind.Local).AddTicks(2740),
+                            ExpiresAt = new DateTime(2028, 4, 6, 18, 1, 51, 235, DateTimeKind.Local).AddTicks(6812),
                             FullName = "Ana Mklavashvili",
                             Pin = "1234"
                         },
@@ -118,10 +118,10 @@ namespace BankSystem.Common.Migrations
                         {
                             Id = new Guid("d38dc493-fb60-4d75-8930-48dee7dc3f97"),
                             AccountId = new Guid("7b1902d5-c240-49f4-b91f-454d9e19d402"),
-                            CardNumber = "468416914218937572",
-                            CreatedAt = new DateTime(2023, 4, 4, 0, 17, 13, 161, DateTimeKind.Local).AddTicks(2760),
+                            CardNumber = "160517223745590333",
+                            CreatedAt = new DateTime(2023, 4, 6, 18, 1, 51, 235, DateTimeKind.Local).AddTicks(6834),
                             Cvv = "931",
-                            ExpiresAt = new DateTime(2028, 4, 4, 0, 17, 13, 161, DateTimeKind.Local).AddTicks(2759),
+                            ExpiresAt = new DateTime(2028, 4, 6, 18, 1, 51, 235, DateTimeKind.Local).AddTicks(6834),
                             FullName = "Sandro Revazishvili",
                             Pin = "1234"
                         });
@@ -245,7 +245,7 @@ namespace BankSystem.Common.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("d26accb2-2d25-403e-a139-829278714301"),
+                            Id = new Guid("c243eaab-327b-4615-b4f7-0a013428fb8f"),
                             AccountFromId = new Guid("00000000-0000-0000-0000-000000000000"),
                             AccountToId = new Guid("00000000-0000-0000-0000-000000000000"),
                             CreatedAt = new DateTime(2023, 3, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -254,11 +254,11 @@ namespace BankSystem.Common.Migrations
                             Fee = 29.80m,
                             ReceivedAmount = 567.20m,
                             TransactionType = 1,
-                            WithDrawnAmount = 0m
+                            WithDrawnAmount = 325m
                         },
                         new
                         {
-                            Id = new Guid("03c5f4b4-2caf-4879-9865-b1bef5b16817"),
+                            Id = new Guid("0b47f3b9-bfeb-4427-a197-b0ba07ca1173"),
                             AccountFromId = new Guid("00000000-0000-0000-0000-000000000000"),
                             AccountToId = new Guid("00000000-0000-0000-0000-000000000000"),
                             CreatedAt = new DateTime(2023, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -267,24 +267,24 @@ namespace BankSystem.Common.Migrations
                             Fee = 18.50m,
                             ReceivedAmount = 438.10m,
                             TransactionType = 2,
-                            WithDrawnAmount = 0m
+                            WithDrawnAmount = 217.23m
                         },
                         new
                         {
-                            Id = new Guid("ed4bb2ff-f941-43a3-ba20-5ea233a1133f"),
+                            Id = new Guid("9bb3c9ec-cd81-4fb3-8d6a-9d6b572c72a7"),
                             AccountFromId = new Guid("00000000-0000-0000-0000-000000000000"),
                             AccountToId = new Guid("00000000-0000-0000-0000-000000000000"),
                             CreatedAt = new DateTime(2023, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CurrencyFrom = 0,
                             CurrencyTo = 1,
-                            Fee = 33.20m,
-                            ReceivedAmount = 789.40m,
+                            Fee = 34.23m,
+                            ReceivedAmount = 900m,
                             TransactionType = 0,
-                            WithDrawnAmount = 0m
+                            WithDrawnAmount = 1034.23m
                         },
                         new
                         {
-                            Id = new Guid("15f12e0c-28d7-4edd-a4d7-c93a17713be2"),
+                            Id = new Guid("5b2e174d-93cc-487f-9f2f-a0d940ea068b"),
                             AccountFromId = new Guid("00000000-0000-0000-0000-000000000000"),
                             AccountToId = new Guid("00000000-0000-0000-0000-000000000000"),
                             CreatedAt = new DateTime(2022, 10, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -293,24 +293,24 @@ namespace BankSystem.Common.Migrations
                             Fee = 16.20m,
                             ReceivedAmount = 312.70m,
                             TransactionType = 2,
-                            WithDrawnAmount = 0m
+                            WithDrawnAmount = 100.87m
                         },
                         new
                         {
-                            Id = new Guid("cd4c8e31-96b9-4e2a-9708-e20396ab8655"),
+                            Id = new Guid("5e313a35-a1bb-47a2-b912-7e6b9a3469fa"),
                             AccountFromId = new Guid("00000000-0000-0000-0000-000000000000"),
                             AccountToId = new Guid("00000000-0000-0000-0000-000000000000"),
                             CreatedAt = new DateTime(2022, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CurrencyFrom = 0,
                             CurrencyTo = 1,
-                            Fee = 9.80m,
-                            ReceivedAmount = 195.50m,
+                            Fee = 23.12m,
+                            ReceivedAmount = 200m,
                             TransactionType = 0,
-                            WithDrawnAmount = 0m
+                            WithDrawnAmount = 223.12m
                         },
                         new
                         {
-                            Id = new Guid("5b7e3adb-6029-4f74-8d37-420f128ec98f"),
+                            Id = new Guid("4b64f0ff-06e9-4bcb-b18c-8cb2b9e47f4c"),
                             AccountFromId = new Guid("00000000-0000-0000-0000-000000000000"),
                             AccountToId = new Guid("00000000-0000-0000-0000-000000000000"),
                             CreatedAt = new DateTime(2022, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -319,11 +319,11 @@ namespace BankSystem.Common.Migrations
                             Fee = 22.40m,
                             ReceivedAmount = 489.80m,
                             TransactionType = 1,
-                            WithDrawnAmount = 0m
+                            WithDrawnAmount = 354.23m
                         },
                         new
                         {
-                            Id = new Guid("33b1ac8c-77b3-44a7-b6d7-0134cdeb2097"),
+                            Id = new Guid("25c9bf70-8757-4ee1-9d4a-32a8b8bf9ec4"),
                             AccountFromId = new Guid("00000000-0000-0000-0000-000000000000"),
                             AccountToId = new Guid("00000000-0000-0000-0000-000000000000"),
                             CreatedAt = new DateTime(2022, 4, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -332,33 +332,33 @@ namespace BankSystem.Common.Migrations
                             Fee = 31.50m,
                             ReceivedAmount = 637.90m,
                             TransactionType = 2,
-                            WithDrawnAmount = 0m
+                            WithDrawnAmount = 152.73m
                         },
                         new
                         {
-                            Id = new Guid("3d67fad6-bbd8-4ec6-9257-3ece878d3605"),
+                            Id = new Guid("ccdc3193-5eba-47c1-b609-99b75327a022"),
                             AccountFromId = new Guid("00000000-0000-0000-0000-000000000000"),
                             AccountToId = new Guid("00000000-0000-0000-0000-000000000000"),
                             CreatedAt = new DateTime(2022, 5, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CurrencyFrom = 0,
                             CurrencyTo = 1,
-                            Fee = 27.80m,
-                            ReceivedAmount = 573.40m,
+                            Fee = 27.87m,
+                            ReceivedAmount = 600m,
                             TransactionType = 0,
-                            WithDrawnAmount = 0m
+                            WithDrawnAmount = 627.87m
                         },
                         new
                         {
-                            Id = new Guid("1dde388a-85e3-45b9-a2e0-af85b909a287"),
+                            Id = new Guid("568fd023-ba0d-4437-a01f-bb64f810b1cf"),
                             AccountFromId = new Guid("00000000-0000-0000-0000-000000000000"),
                             AccountToId = new Guid("00000000-0000-0000-0000-000000000000"),
                             CreatedAt = new DateTime(2022, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             CurrencyFrom = 2,
                             CurrencyTo = 0,
                             Fee = 23.12m,
-                            ReceivedAmount = 242.10m,
+                            ReceivedAmount = 230m,
                             TransactionType = 0,
-                            WithDrawnAmount = 0m
+                            WithDrawnAmount = 253.12m
                         });
                 });
 
@@ -447,19 +447,19 @@ namespace BankSystem.Common.Migrations
                         {
                             Id = new Guid("4bf7d82a-fca9-4d1d-bbc9-48cfaa109187"),
                             AccessFailedCount = 0,
-                            BirthDate = new DateTime(2013, 4, 4, 0, 17, 13, 159, DateTimeKind.Local).AddTicks(9750),
-                            ConcurrencyStamp = "4dc8a08d-70e3-47c6-abd7-e2ee8dad622f",
+                            BirthDate = new DateTime(2013, 4, 6, 18, 1, 51, 234, DateTimeKind.Local).AddTicks(1613),
+                            ConcurrencyStamp = "0ed503d7-0038-4a8e-9f9b-97a674fb0584",
                             Email = "anamklavashvili@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Ana",
                             LastName = "Mklavashvili",
                             LockoutEnabled = false,
                             NormalizedEmail = "ANAMKLAVASHVILI@GMAIL.COM",
-                            PasswordHash = "ACqBS0tlqvaEvLXcmdM1hAJEuwsCtOXc1eTGTpSNgKJITPrE6LkL+nfUBZKDcNdXPQ==",
-                            PersonalNumber = "686367743",
+                            PasswordHash = "ABq+vdJdssC4GqOFgmsOp9RNV5pdXZvjLferDpjD8bvmWiKeZEFfocaQEb2W+zEL3Q==",
+                            PersonalNumber = "200042959",
                             PhoneNumberConfirmed = false,
-                            RegisteredAt = new DateTime(2023, 4, 4, 0, 17, 13, 159, DateTimeKind.Local).AddTicks(9788),
-                            SecurityStamp = "583a221f-fad8-44cf-b007-2f6060c0b047",
+                            RegisteredAt = new DateTime(2023, 4, 6, 18, 1, 51, 234, DateTimeKind.Local).AddTicks(1633),
+                            SecurityStamp = "1a2cd3af-efed-4ebb-bcf2-ba305a6b27c4",
                             TwoFactorEnabled = false,
                             UserName = "ana"
                         },
@@ -467,19 +467,19 @@ namespace BankSystem.Common.Migrations
                         {
                             Id = new Guid("0eb288d0-c7cd-4749-ad29-92a9d59e8bf4"),
                             AccessFailedCount = 0,
-                            BirthDate = new DateTime(2013, 4, 4, 0, 17, 13, 160, DateTimeKind.Local).AddTicks(6328),
-                            ConcurrencyStamp = "6c96acaf-fb53-420a-961d-92e2ab8c37af",
+                            BirthDate = new DateTime(2013, 4, 6, 18, 1, 51, 234, DateTimeKind.Local).AddTicks(8821),
+                            ConcurrencyStamp = "121171b7-2257-4042-b95a-d3343d890455",
                             Email = "sandro.revazishviliii@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Sandro",
                             LastName = "Revazishvili",
                             LockoutEnabled = false,
                             NormalizedEmail = "SANDRO.REVAZISHVILIII@GMAIL.COM",
-                            PasswordHash = "ANuqLVemFwXnkLTCOYTwL3xNm9mwyikE+JfQ6MBPcmyvm/FD01jmAcdK1fKWMESZKA==",
-                            PersonalNumber = "955903007",
+                            PasswordHash = "ANn2ovR5HuNQtLPIbjJJg1o0ttrQbBE/pGP5yI7ypOsYE/0ZJLAcd3kTOxqIgDWlQQ==",
+                            PersonalNumber = "519515495",
                             PhoneNumberConfirmed = false,
-                            RegisteredAt = new DateTime(2023, 4, 4, 0, 17, 13, 160, DateTimeKind.Local).AddTicks(6330),
-                            SecurityStamp = "68acc943-a174-47f4-9305-639cb574c086",
+                            RegisteredAt = new DateTime(2023, 4, 6, 18, 1, 51, 234, DateTimeKind.Local).AddTicks(8829),
+                            SecurityStamp = "d488f35f-38c5-4456-9b77-5fdc56086e29",
                             TwoFactorEnabled = false,
                             UserName = "sandro"
                         });

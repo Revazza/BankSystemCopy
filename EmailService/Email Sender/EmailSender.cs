@@ -85,7 +85,7 @@ namespace EmailService.Email_Sender
 
             var client = new SmtpClient("smtp.gmail.com", 587)
             {
-                Credentials = new NetworkCredential(_companyEmail, ""),
+                Credentials = new NetworkCredential(_companyEmail, "zlblctxyglhujvmm"),
                 EnableSsl = true,
             };
 

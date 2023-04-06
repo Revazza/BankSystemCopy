@@ -27,7 +27,7 @@ public class AddCardService : IAddCardService
         _registerCardValidator.Validate(request);
         var account = await _cardRepository.GetAccountByIbanAsync(request.Iban);
         var card = new CardEntity();
-        card.FullName = account.UserEntity.FirstName + account.UserEntity.LastName;
+        card.FullName = $"{account.UserEntity.FirstName} {account.UserEntity.LastName}";
         card.CardNumber = GenerateCardNumber();
         card.Cvv = GenerateCvv();
         card.Pin = GeneratePin();

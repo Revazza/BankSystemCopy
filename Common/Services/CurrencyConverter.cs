@@ -1,11 +1,12 @@
-﻿using BankSystem.Common.Db.Entities;
+﻿using BankSystem.Common.Db.Dto;
+using BankSystem.Common.Db.Entities;
 using BankSystem.Common.Db.FinancialEnums;
 
 namespace BankSystem.Common.Services
 {
     public static class CurrencyConverter
     {
-        private static Dictionary<(string, string), decimal>? ExchangeRates = new();
+        private static Dictionary<(string, string), ExchangeRateDto>? ExchangeRates = new();
 
         public static decimal Convert(
             CurrencyType from,
@@ -17,23 +18,27 @@ namespace BankSystem.Common.Services
                 return amount;
             }
 
-            ExchangeRates!.TryGetValue(("GEL", to.ToString()), out decimal currencyToExchangeRate);
+            // RUB
+            // GEL
+            // 200
+
+            ExchangeRates!.TryGetValue(("GEL", to.ToString()), out ExchangeRateDto toExchangeRate);
 
             if (from == CurrencyType.GEL)
             {
-                return amount / currencyToExchangeRate;
+                return amount / toExchangeRate.ExchangeRate * toExchangeRate.Quantity;
             }
 
-            ExchangeRates.TryGetValue(("GEL", from.ToString()), out decimal currencyFromExchangeRate);
+            ExchangeRates.TryGetValue(("GEL", from.ToString()), out ExchangeRateDto fromExchangeRate);
 
-            var amountInGEL = amount * currencyFromExchangeRate;
+            var amountInGEL = amount * fromExchangeRate.ExchangeRate / fromExchangeRate.Quantity;
 
             if (to == CurrencyType.GEL)
             {
                 return amountInGEL;
             }
 
-            return amountInGEL / currencyToExchangeRate;
+            return amountInGEL / toExchangeRate.ExchangeRate * toExchangeRate.Quantity;
 
         }
 
@@ -46,13 +51,18 @@ namespace BankSystem.Common.Services
         {
             var availableCurrencies = GetAvailableCurrencies();
 
-            var newExchangeRates = new Dictionary<(string, string), decimal>();
+            var newExchangeRates = new Dictionary<(string, string), ExchangeRateDto>();
 
             foreach (var currency in currencies)
             {
                 if (availableCurrencies.Contains(currency.Code!))
                 {
-                    newExchangeRates.TryAdd(("GEL", currency.Code)!, currency.Rate);
+                    var exchangeRateDto = new ExchangeRateDto()
+                    {
+                        ExchangeRate = currency.Rate,
+                        Quantity = currency.Quantity,
+                    };
+                    newExchangeRates.TryAdd(("GEL", currency.Code)!, exchangeRateDto);
                 }
             }
 
