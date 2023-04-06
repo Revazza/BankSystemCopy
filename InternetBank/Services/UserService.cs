@@ -79,7 +79,7 @@ public class UserService : IUserService
 
     public async Task<List<CardDto>> GetAccountCards(string iban)
     {
-        var cards = await _cardRepository.getAccountCards(iban);
+        var cards = await _cardRepository.GetAccountCards(iban);
         var cardList = cards.Select(c => new CardDto()
         {
             CardNumber = c.CardNumber,

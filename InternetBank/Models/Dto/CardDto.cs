@@ -11,5 +11,4 @@ public class CardDto
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public string Cvv { get; set; }
 
-   public string Cvv { get; set; }
 }
