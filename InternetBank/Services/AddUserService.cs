@@ -31,8 +31,8 @@ public class AddUserService : IAddUserService
     {
         _registerUserValidator.Validate(request);
         var user = new UserEntity();
-        user.FirstName = request.FirstName;
-        user.LastName = request.LastName;
+        user.FirstName = request.FirstName.ToLower();
+        user.LastName = request.LastName.ToLower();
         user.BirthDate = request.BirthDate;
         user.PersonalNumber = request.PersonalNumber;
         user.Email = request.Email;
