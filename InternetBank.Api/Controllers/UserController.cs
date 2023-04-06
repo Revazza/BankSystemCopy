@@ -67,7 +67,7 @@ public class UserController : ControllerBase
         _transactionValidator.Validate(request, user);
         await _transferService.TransferMoneyAsync(request, user.Id);
         var result = new HttpResult();
-        result.Payload.Add("Result", "Successful transaction");
+        result.Payload.Add("result", "Successful transaction");
         
         return Ok(result);
     }
@@ -82,7 +82,7 @@ public class UserController : ControllerBase
 
         var cards = await _userService.GetUserCardsAsync(user.Id);
         var result = new HttpResult();
-        result.Payload.Add("Cards",cards);
+        result.Payload.Add("cards",cards);
         return Ok(result);
     }
     

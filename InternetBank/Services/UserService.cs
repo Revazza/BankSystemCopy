@@ -32,7 +32,7 @@ public class UserService : IUserService
             .Select(t => new TransactionDto()
             {
                 CreatedAt = t.CreatedAt,
-                fee = t.Fee,
+                Fee = t.Fee,
                 SendFromIban = t.AccountFromIban,
                 SendToIban = t.AccountToIban,
                 Amount = t.AccountFromIban == iban ? t.ReceivedAmount : t.WithDrawnAmount,
@@ -54,6 +54,7 @@ public class UserService : IUserService
                 ExpiresAt = c.ExpiresAt,
                 FullName = c.FullName
             }).ToList();
+
         return cardsList;
     }
 
@@ -67,7 +68,8 @@ public class UserService : IUserService
                 {
                     Amount = a.Amount,
                     Currency = a.Currency,
-                    Iban = a.Iban
+                    Iban = a.Iban,
+                    CurrencyValue = a.Currency.ToString()
                 })
             .ToList();
         return accountList;
