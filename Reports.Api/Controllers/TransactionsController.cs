@@ -22,7 +22,7 @@ namespace BankSystem.Reports.Controllers
         [HttpGet("count-monthly-transactions")]
         public async Task<IActionResult> CountMonthlyTransactions(int months)
         {
-            var countedTransactions = await _transactionStatisticsService.CountTransactionsAsync(months);
+            var countedTransactions = await _transactionStatisticsService.CountTransactionsByMonthAsync(months);
             var result = new HttpResult();
             result.Payload.Add("monthlyTransactions", countedTransactions);
             return Ok(result);
@@ -32,7 +32,7 @@ namespace BankSystem.Reports.Controllers
         [HttpGet("calculate-profit-from-transactions")]
         public async Task<IActionResult> CalculateProfitFromTransactions(int months)
         {
-            var profit = await _transactionStatisticsService.CalculateProfitAsync(months);
+            var profit = await _transactionStatisticsService.CalculateProfitByMonthAsync(months);
             var result = new HttpResult();
             result.Payload.Add("profitPerCurrency", profit);
             return Ok(result);

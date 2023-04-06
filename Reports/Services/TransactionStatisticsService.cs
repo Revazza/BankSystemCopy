@@ -10,8 +10,8 @@ namespace BankSystem.Reports.Services
 
     public interface ITransactionStatisticsService
     {
-        Task<TransactionsByTimeframeDto> CountTransactionsAsync(int months);
-        Task<TransactionProfitByTimeframeDto> CalculateProfitAsync(int months);
+        Task<TransactionsByTimeframeDto> CountTransactionsByMonthAsync(int months);
+        Task<TransactionProfitByTimeframeDto> CalculateProfitByMonthAsync(int months);
         Task<decimal> CalculateAverageProfitPerTransactionAsync(CurrencyType currencyType);
         Task<List<TransactionsPerDayDto>> CalculateLastMonthTransactionsPerDayAsync();
         Task<decimal> CalculateTotalCashOutAsync(CurrencyType currencyType);
@@ -54,6 +54,7 @@ namespace BankSystem.Reports.Services
             DateTime date,
             List<TransactionEntity> transactions)
         {
+            // 6 april 6 aprils
             var transactionsPerDays = new List<TransactionsPerDayDto>();
 
             while (date <= DateTime.Now)
@@ -84,7 +85,7 @@ namespace BankSystem.Reports.Services
             return $"{date.ToString("MMMM", culture)} {date.Day}";
         }
 
-        public async Task<TransactionProfitByTimeframeDto> CalculateProfitAsync(int months)
+        public async Task<TransactionProfitByTimeframeDto> CalculateProfitByMonthAsync(int months)
         {
             var fromDate = DateTime.Now.AddMonths(-months);
             var transactions = await _transactionRepository.GetTransactionsByDateAsync(fromDate);
@@ -99,7 +100,7 @@ namespace BankSystem.Reports.Services
 
         }
 
-        public async Task<TransactionsByTimeframeDto> CountTransactionsAsync(int months)
+        public async Task<TransactionsByTimeframeDto> CountTransactionsByMonthAsync(int months)
         {
             var transactions = await _transactionRepository.GetAllTransactionsAsync();
 

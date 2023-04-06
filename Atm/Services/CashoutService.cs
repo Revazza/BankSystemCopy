@@ -50,16 +50,6 @@ namespace BankSystem.Atm.Services
             return dailyCashedOutAmount;
         }
 
-        private decimal CalculateTotalPayment(decimal amount, decimal fee)
-        {
-            return amount + fee;
-        }
-
-        private decimal CalculateFee(decimal amount)
-        {
-            return amount * CASH_OUT_FEE_PERCENTAGE;
-        }
-
         private void CashOut(AccountEntity account, decimal totalPayment)
         {
             account.Amount -= totalPayment;
@@ -99,8 +89,8 @@ namespace BankSystem.Atm.Services
                 account.Currency,
                 request.Amount);
 
-            var fee = CalculateFee(convertedRequestAmount);
-            var totalPayment = CalculateTotalPayment(convertedRequestAmount, fee);
+            var fee = convertedRequestAmount * CASH_OUT_FEE_PERCENTAGE;
+            var totalPayment = convertedRequestAmount + fee;
 
             await ValidateCashOutAsync(account, totalPayment);
 

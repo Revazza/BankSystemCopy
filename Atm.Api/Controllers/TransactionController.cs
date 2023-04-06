@@ -30,6 +30,7 @@ namespace ATM.Api.Controllers
         {
             request.Validate();
             request.RequestedCurrency = (CurrencyType)request.Currency;
+
             var cardId = User.Claims.First(u => u.Type == "cardId").Value;
 
             await _cashOutService.CheckCurrenciesAsync();
