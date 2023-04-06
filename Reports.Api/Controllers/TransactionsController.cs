@@ -6,7 +6,7 @@ using BankSystem.Common.Models;
 
 namespace BankSystem.Reports.Controllers
 {
-    [Authorize("ApiAdmin", AuthenticationSchemes = "Bearer")]
+    [Authorize("ApiOperator", AuthenticationSchemes = "Bearer")]
     [Route("api/[controller]")]
     [ApiController]
     public class TransactionsController : ControllerBase
