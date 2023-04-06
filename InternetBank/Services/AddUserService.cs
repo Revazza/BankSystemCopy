@@ -30,6 +30,7 @@ public class AddUserService : IAddUserService
     public async Task<UserEntity> AddUserAsync(RegisterUserRequest request)
     {
         _registerUserValidator.Validate(request);
+
         var user = new UserEntity();
         user.FirstName = request.FirstName.ToLower();
         user.LastName = request.LastName.ToLower();

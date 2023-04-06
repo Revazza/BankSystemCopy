@@ -15,7 +15,6 @@ public class OperatorController : ControllerBase
     private readonly IAddUserService _addUserService;
     private readonly IAddAccountService _addAccountService;
     private readonly IAddCardService _addCardService;
-    private readonly IUserLoginService _userLoginService;
     private readonly IOperatorService _operatorService;
 
 
@@ -24,7 +23,6 @@ public class OperatorController : ControllerBase
         IAddUserService addUserService,
         IAddAccountService addAccountService,
         IAddCardService addCardService,
-        IUserLoginService userLoginService,
         IOperatorService operatorService
     )
     {
@@ -32,19 +30,7 @@ public class OperatorController : ControllerBase
         _addUserService = addUserService;
         _addAccountService = addAccountService;
         _addCardService = addCardService;
-        _userLoginService = userLoginService;
         _operatorService = operatorService;
-    }
-
-    [AllowAnonymous]
-    [HttpPost("login")]
-    public async Task<IActionResult> LoginAsync([FromBody] LoginRequest request)
-    {
-        var token = await _userLoginService.LoginUserAsync(request);
-        var result = new HttpResult();
-        result.Payload.Add("token", token);
-
-        return Ok(result);
     }
 
     [HttpPost("register-user")]

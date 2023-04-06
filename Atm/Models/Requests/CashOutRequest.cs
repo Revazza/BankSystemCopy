@@ -18,10 +18,7 @@ namespace BankSystem.Atm.Services.Models.Requests
                     "multiple of 5, except zero " +
                     "such as 5, 10, 15, etc. ");
             }
-            if (Currency < 0 || Currency > 3)
-            {
-                throw new ArgumentException("Invalid currency");
-            }
+
         }
 
     }

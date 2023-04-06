@@ -6,7 +6,7 @@ namespace BankSystem.Common.Services
 {
     public static class CurrencyConverter
     {
-        private static Dictionary<(string, string), ExchangeRateDto>? ExchangeRates = new();
+        private static Dictionary<(string, string), ExchangeRateDto> ExchangeRates = new();
 
         public static decimal Convert(
             CurrencyType from,
@@ -17,10 +17,6 @@ namespace BankSystem.Common.Services
             {
                 return amount;
             }
-
-            // RUB
-            // GEL
-            // 200
 
             ExchangeRates!.TryGetValue(("GEL", to.ToString()), out ExchangeRateDto toExchangeRate);
 
