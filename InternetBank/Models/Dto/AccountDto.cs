@@ -7,4 +7,5 @@ public class AccountDto
     public string Iban { get; set; }
     public decimal Amount { get; set; }
     public CurrencyType Currency { get; set; } = CurrencyType.GEL;
+    public string CurrencyValue { get; set; } 
 }

@@ -9,6 +9,7 @@ public class CardDto
     public string FullName { get; set; }
     public DateTime ExpiresAt { get; set; } = DateTime.Now.AddYears(5);
     public DateTime CreatedAt { get; set; } = DateTime.Now;
+    public string Cvv { get; set; }
 
    public string Cvv { get; set; }
 }
