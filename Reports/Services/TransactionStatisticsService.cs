@@ -104,16 +104,10 @@ namespace BankSystem.Reports.Services
             var transactions = await _transactionRepository.GetAllTransactionsAsync();
 
             var fromDate = DateTime.Now.AddMonths(-months);
-            var count = 0;
 
-            foreach (var transaction in transactions)
-            {
-                if (transaction.CreatedAt >= fromDate)
-                {
-                    count++;
-                }
-                Console.WriteLine();
-            }
+            var count = transactions
+                .Where(t => t.CreatedAt.Date >= fromDate.Date)
+                .Count();
 
             return new TransactionsByTimeframeDto
             {

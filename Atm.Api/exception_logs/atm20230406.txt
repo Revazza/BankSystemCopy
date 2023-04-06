@@ -8267,3 +8267,70 @@ WHERE [c].[Id] = @__cardId_0
 2023-04-06 21:42:19.883 +04:00 [DBG] The connection queue processing loop for 0HMPMOM09HCB2 completed.
 2023-04-06 21:42:19.884 +04:00 [DBG] Connection id "0HMPMOM09HCB2" sending FIN because: "The client closed the connection."
 2023-04-06 21:42:19.895 +04:00 [DBG] Connection id "0HMPMOM09HCB2" stopped.
+2023-04-06 21:57:33.523 +04:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-04-06 21:57:33.611 +04:00 [DBG] Hosting starting
+2023-04-06 21:57:33.637 +04:00 [INF] User profile is available. Using 'C:\Users\srevazishvili\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-06 21:57:33.644 +04:00 [DBG] Reading data from file 'C:\Users\srevazishvili\AppData\Local\ASP.NET\DataProtection-Keys\key-298957ac-1947-4690-b38f-95802ef792d5.xml'.
+2023-04-06 21:57:33.650 +04:00 [DBG] Reading data from file 'C:\Users\srevazishvili\AppData\Local\ASP.NET\DataProtection-Keys\key-6b67ca3e-ca56-48ef-abcb-f08bc91b8c44.xml'.
+2023-04-06 21:57:33.655 +04:00 [DBG] Found key {298957ac-1947-4690-b38f-95802ef792d5}.
+2023-04-06 21:57:33.659 +04:00 [DBG] Found key {6b67ca3e-ca56-48ef-abcb-f08bc91b8c44}.
+2023-04-06 21:57:33.665 +04:00 [DBG] Considering key {298957ac-1947-4690-b38f-95802ef792d5} with expiration date 2023-06-02 19:40:18Z as default key.
+2023-04-06 21:57:33.669 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-04-06 21:57:33.672 +04:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-04-06 21:57:33.675 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-04-06 21:57:33.678 +04:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-04-06 21:57:33.682 +04:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-04-06 21:57:33.687 +04:00 [DBG] Using key {298957ac-1947-4690-b38f-95802ef792d5} as the default key.
+2023-04-06 21:57:33.690 +04:00 [DBG] Key ring with default key {298957ac-1947-4690-b38f-95802ef792d5} was loaded during application startup.
+2023-04-06 21:57:33.804 +04:00 [INF] Now listening on: https://localhost:7261
+2023-04-06 21:57:33.805 +04:00 [INF] Now listening on: http://localhost:5059
+2023-04-06 21:57:33.806 +04:00 [DBG] Loaded hosting startup assembly BankSystem.Atm.Api
+2023-04-06 21:57:33.807 +04:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-04-06 21:57:33.808 +04:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-04-06 21:57:33.809 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-06 21:57:33.809 +04:00 [INF] Hosting environment: Development
+2023-04-06 21:57:33.810 +04:00 [INF] Content root path: C:\Users\srevazishvili\source\repos\BankSystemMain\BankSystemCopy\Atm.Api
+2023-04-06 21:57:33.811 +04:00 [DBG] Hosting started
+2023-04-06 21:57:33.933 +04:00 [DBG] Connection id "0HMPMP1J3F4FN" accepted.
+2023-04-06 21:57:33.935 +04:00 [DBG] Connection id "0HMPMP1J3F4FN" started.
+2023-04-06 21:57:33.941 +04:00 [DBG] Connection id "0HMPMP1J3F4FN" received FIN.
+2023-04-06 21:57:33.941 +04:00 [DBG] Connection id "0HMPMP1J3F4FO" received FIN.
+2023-04-06 21:57:33.944 +04:00 [DBG] Connection id "0HMPMP1J3F4FO" accepted.
+2023-04-06 21:57:33.946 +04:00 [DBG] Connection id "0HMPMP1J3F4FO" started.
+2023-04-06 21:57:33.948 +04:00 [DBG] Connection id "0HMPMP1J3F4FP" accepted.
+2023-04-06 21:57:33.949 +04:00 [DBG] Connection id "0HMPMP1J3F4FP" started.
+2023-04-06 21:57:33.953 +04:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-04-06 21:57:33.953 +04:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-04-06 21:57:33.987 +04:00 [DBG] Connection id "0HMPMP1J3F4FO" stopped.
+2023-04-06 21:57:33.987 +04:00 [DBG] Connection id "0HMPMP1J3F4FN" stopped.
+2023-04-06 21:57:33.989 +04:00 [DBG] Connection id "0HMPMP1J3F4FO" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-04-06 21:57:33.989 +04:00 [DBG] Connection id "0HMPMP1J3F4FN" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-04-06 21:57:34.001 +04:00 [DBG] Connection 0HMPMP1J3F4FP established using the following protocol: "Tls12"
+2023-04-06 21:57:34.054 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/index.html - -
+2023-04-06 21:57:34.073 +04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-04-06 21:57:34.096 +04:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2023-04-06 21:57:34.098 +04:00 [DBG] Request did not match any endpoints
+2023-04-06 21:57:34.275 +04:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2023-04-06 21:57:34.287 +04:00 [DBG] Response markup was updated to include browser refresh script injection.
+2023-04-06 21:57:34.289 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/index.html - - - 200 - text/html;charset=utf-8 237.3247ms
+2023-04-06 21:57:34.307 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/_framework/aspnetcore-browser-refresh.js - -
+2023-04-06 21:57:34.307 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/_vs/browserLink - -
+2023-04-06 21:57:34.314 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/_framework/aspnetcore-browser-refresh.js - - - 200 12006 application/javascript;+charset=utf-8 6.2654ms
+2023-04-06 21:57:34.330 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 22.8556ms
+2023-04-06 21:57:34.595 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/v1/swagger.json - -
+2023-04-06 21:57:34.599 +04:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2023-04-06 21:57:34.601 +04:00 [DBG] Request did not match any endpoints
+2023-04-06 21:57:34.704 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 109.0796ms
+2023-04-06 21:57:38.570 +04:00 [DBG] Connection id "0HMPMP1J3F4FP" received FIN.
+2023-04-06 21:57:38.575 +04:00 [DBG] The connection queue processing loop for 0HMPMP1J3F4FP completed.
+2023-04-06 21:57:38.577 +04:00 [DBG] Connection id "0HMPMP1J3F4FP" is closed. The last processed stream ID was 7.
+2023-04-06 21:57:38.579 +04:00 [DBG] Connection id "0HMPMP1J3F4FP" sending FIN because: "The client closed the connection."
+2023-04-06 21:57:38.585 +04:00 [DBG] Connection id "0HMPMP1J3F4FP" stopped.

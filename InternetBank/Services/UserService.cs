@@ -36,9 +36,9 @@ public class UserService : IUserService
                 Fee = t.Fee,
                 SendFromIban = t.AccountFromIban,
                 SendToIban = t.AccountToIban,
-                Amount = t.AccountFromIban == iban ? t.ReceivedAmount : t.WithDrawnAmount,
+                Amount = t.AccountFromIban == iban ? t.WithDrawnAmount + t.Fee : t.ReceivedAmount,
                 TransactionStatus = t.AccountFromIban == iban ? "Withdrawal" : "Received",
-                TransactionType = t.TransactionType,
+                TransactionType = t.TransactionType.ToString(),
             }).ToList();
         return transactionList;
     }

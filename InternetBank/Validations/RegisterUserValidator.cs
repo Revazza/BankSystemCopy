@@ -6,9 +6,9 @@ using BankSystem.InternetBank.Repositories;
 namespace BankSystem.InternetBank.Validations;
 
 
-public class RegisterUserValidator 
+public class RegisterUserValidator
 {
-        private readonly IUserRepository _userRepositry;
+    private readonly IUserRepository _userRepositry;
     public RegisterUserValidator(IUserRepository userRepository)
     {
         _userRepositry = userRepository;
@@ -17,12 +17,12 @@ public class RegisterUserValidator
     {
         Regex numberRegex = new Regex(@"^[0-9]+$");
         Regex letterRegex = new Regex(@"^[a-zA-Z]+$");
-        Regex emailRegex = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+        Regex emailRegex = new Regex(@"^([\w.-]+)@([\w-]+)((.(\w){2,3})+)$");
+
         if (request == null)
         {
             throw new ArgumentNullException(nameof(request));
         }
-
         if (string.IsNullOrEmpty(request.FirstName))
         {
             throw new ArgumentNullException(nameof(request.FirstName));
@@ -31,7 +31,6 @@ public class RegisterUserValidator
         {
             throw new ArgumentException("first name must contain only letters");
         }
-        
         if (string.IsNullOrEmpty(request.LastName))
         {
             throw new ArgumentNullException(nameof(request.LastName));
@@ -44,26 +43,7 @@ public class RegisterUserValidator
         {
             throw new ArgumentNullException(nameof(request.PersonalNumber));
         }
-        if (string.IsNullOrEmpty(request.Email))
-        {
-            throw new ArgumentNullException(nameof(request.Email));
-        }
-        if (string.IsNullOrEmpty(request.Password))
-        {
-            throw new ArgumentNullException(nameof(request.Password));
-        }
-        if (request.BirthDate==null|| 
-            request.BirthDate==DateTime.MinValue 
-            )
-        {
-            throw new ArgumentNullException(nameof(request.BirthDate));
-        }
-        if (request.BirthDate > DateTime.Now.AddYears(-18) 
-           )
-        {
-            throw new ArgumentException("User must be at least 18 years old");
-        }
-        if (request.PersonalNumber.Length !=11)
+        if (request.PersonalNumber.Length != 11)
         {
             throw new ArgumentException("Personal Number must contain 11 digits");
         }
@@ -71,19 +51,33 @@ public class RegisterUserValidator
         {
             throw new ArgumentException("Personal Number must contain only numbers");
         }
-
         if (_userRepositry.UserExists(request.PersonalNumber))
         {
             throw new UserAlreadyExistsException("User With this PersonalId Already Exists ");
+        }
+        if (request.BirthDate == DateTime.MinValue)
+        {
+            throw new ArgumentNullException(nameof(request.BirthDate));
+        }
+        if (request.BirthDate > DateTime.Now.AddYears(-18))
+        {
+            throw new ArgumentException("User must be at least 18 years old");
+        }
+        if (string.IsNullOrEmpty(request.Email))
+        {
+            throw new ArgumentNullException(nameof(request.Email));
         }
         if (_userRepositry.EmailAlreadyExists(request.Email))
         {
             throw new UserAlreadyExistsException("User With this Email Already Exists ");
         }
-
         if (!emailRegex.IsMatch(request.Email))
         {
             throw new ArgumentException("Incorrect email format");
+        }
+        if (string.IsNullOrEmpty(request.Password))
+        {
+            throw new ArgumentNullException(nameof(request.Password));
         }
 
     }
