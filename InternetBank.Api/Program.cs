@@ -76,6 +76,7 @@ builder.Services.AddTransient<IAddCardService, AddCardService>();
 builder.Services.AddTransient<IAddUserService, AddUserService>();
 builder.Services.AddTransient<RegisterAccountValidator>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IOperatorService, OperatorService>();
 builder.Services.AddTransient<GlobalExceptionHandlingMiddleware>();
 builder.Services.AddCors(options =>
 {

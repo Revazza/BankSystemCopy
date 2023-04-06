@@ -22,6 +22,7 @@ public class OperatorController : ControllerBase
     private readonly IAddAccountService _addAccountService;
     private readonly IAddCardService _addCardService;
     private readonly IUserLoginService _userLoginService;
+    private readonly IOperatorService _operatorService;
 
 
     public OperatorController(
@@ -30,7 +31,8 @@ public class OperatorController : ControllerBase
         IAddUserService addUserService,
         IAddAccountService addAccountService,
         IAddCardService addCardService,
-        IUserLoginService userLoginService
+        IUserLoginService userLoginService,
+        IOperatorService operatorService
     )
     {
         _userManager = userManager;
@@ -39,6 +41,7 @@ public class OperatorController : ControllerBase
         _addAccountService = addAccountService;
         _addCardService = addCardService;
         _userLoginService = userLoginService;
+        _operatorService = operatorService;
     }
 
     [AllowAnonymous]
@@ -67,12 +70,7 @@ public class OperatorController : ControllerBase
     {
         var iban = _ibanService.GenerateIBan();
         var account = await _addAccountService.AddAccountAsync(request, iban);
-        var accountDto = new AccountDto()
-        {
-            Amount = account.Amount,
-            Iban = account.Iban,
-            Currency = account.Currency
-        };
+        var accountDto = _operatorService.GetAccountDetails(account);
         var result = new HttpResult();
         result.Payload.Add("account", accountDto);
         return Ok(result);
@@ -82,14 +80,7 @@ public class OperatorController : ControllerBase
     public async Task<IActionResult> RegisterCardAsync(RegisterCardRequest? request)
     {
         var card = await _addCardService.AddCardAsync(request);
-        var cardDto = new CardDto()
-        {
-            CardNumber = card.CardNumber,
-           
-            ExpiresAt = card.ExpiresAt,
-            CreatedAt = card.CreatedAt,
-            FullName = card.FullName
-        };
+        var cardDto = _operatorService.GetCardDetails(card);
         var result = new HttpResult();
         result.Payload.Add("card", cardDto);
         return Ok(result);

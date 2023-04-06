@@ -28,11 +28,11 @@ public class AddCardService : IAddCardService
         var account = await _cardRepository.GetAccountByIbanAsync(request.Iban);
         var card = new CardEntity();
         card.FullName = account.UserEntity.FirstName + account.UserEntity.LastName;
-        card.CardNumber = request.CardNumber;
+        card.CardNumber = GenerateCardNumber();
         card.Cvv = GenerateCvv();
         card.Pin = GeneratePin();
         card.AccountId = account.Id;
-        card.ExpiresAt = request.ExpirationDate;
+        card.ExpiresAt = DateTime.Now.AddYears(5);
         card.CreatedAt = DateTime.UtcNow;
         await _cardRepository.RegisterCardAsync(card);
         await _cardRepository.SaveChangesAsync();
@@ -48,12 +48,23 @@ public class AddCardService : IAddCardService
     private string GeneratePin()
     {
         Random rand = new Random();
-        StringBuilder sb = new StringBuilder();
+        StringBuilder pin = new StringBuilder();
         for (int i = 0; i < 4; i++)
         {
-            sb.Append(rand.Next(0, 10));
+            pin.Append(rand.Next(0, 10));
         }
-        return sb.ToString();
+        return pin.ToString();
+    }
+
+    private string GenerateCardNumber()
+    {
+        Random rand = new Random();
+        StringBuilder cardNumber = new StringBuilder();
+        for (int i = 0; i < 15; i++)
+        {
+            cardNumber.Append(rand.Next(0, 10));
+        }
+        return cardNumber.ToString();
     }
     
 }

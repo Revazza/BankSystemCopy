@@ -27,20 +27,6 @@ public class RegisterCardValidator
             throw new ArgumentNullException(nameof(request));
         }
 
-        if (string.IsNullOrEmpty(request.CardNumber))
-        {
-            throw new ArgumentNullException(nameof(request));
-        }
-
-        if (!numberRegex.IsMatch(request.CardNumber))
-        {
-            throw new ArgumentException("Card Number must contain only digits");
-        }
-        if (request.CardNumber.Length != 16)
-        {
-            throw new ArgumentException("Card Number must contain 16 digits");
-        }
-
         if (string.IsNullOrEmpty(request.Iban))
         {
             throw new ArgumentNullException(nameof(request));
@@ -49,16 +35,6 @@ public class RegisterCardValidator
         if (!_accountRepository.AccountExists(request.Iban))
         {
             throw new ArgumentException("Incorrect Iban");
-        }
-
-       
-        if (request.ExpirationDate < DateTime.Now.AddYears(5))
-        {
-            throw new ArgumentException("Incorrect Expiration date");
-        }
-        if (_cardRepository.CardAlreadyExists(request.CardNumber))
-        {
-            throw new CardAlreadyExistsException($"Card with number {request.CardNumber} already exists");
         }
     }
 }
