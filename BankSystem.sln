@@ -37,9 +37,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SharedSettings", "SharedSet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InternetBank.Tests", "InternetBank.Tests\InternetBank.Tests.csproj", "{E145C52C-FFFD-4D2B-A2E6-8B020CDE4608}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InternetBank", "InternetBank\BankSystem.InternetBank.csproj", "{19FFD42A-802C-4992-9573-5531702C7A03}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atm.Tests", "Atm.Tests\Atm.Tests.csproj", "{3CBED604-62F3-4921-8D35-67CB10D03518}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankSystem.InternetBank", "InternetBank\BankSystem.InternetBank.csproj", "{19FFD42A-802C-4992-9573-5531702C7A03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,10 +85,6 @@ Global
 		{19FFD42A-802C-4992-9573-5531702C7A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19FFD42A-802C-4992-9573-5531702C7A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19FFD42A-802C-4992-9573-5531702C7A03}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3CBED604-62F3-4921-8D35-67CB10D03518}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3CBED604-62F3-4921-8D35-67CB10D03518}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3CBED604-62F3-4921-8D35-67CB10D03518}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3CBED604-62F3-4921-8D35-67CB10D03518}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -106,7 +100,6 @@ Global
 		{2397AA78-590F-41DF-AC3A-39B40F0F24CF} = {9D848EB3-13E9-4F17-A867-EEB7F79774EA}
 		{E145C52C-FFFD-4D2B-A2E6-8B020CDE4608} = {C36D98E9-5A65-4538-B48C-F79856315177}
 		{19FFD42A-802C-4992-9573-5531702C7A03} = {C36D98E9-5A65-4538-B48C-F79856315177}
-		{3CBED604-62F3-4921-8D35-67CB10D03518} = {7065DE3F-2958-47D1-8CE6-DD639E91BD62}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A893F652-84A8-43E6-9335-05497E5E9E71}

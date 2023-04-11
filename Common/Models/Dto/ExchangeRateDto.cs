@@ -1,4 +1,4 @@
-﻿namespace BankSystem.Common.Db.Dto
+﻿namespace BankSystem.Common.Models.Dto
 {
     public class ExchangeRateDto
     {

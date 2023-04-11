@@ -31,11 +31,6 @@ public class TransferServiceTests
     [TestCase(55, 3, 1)]
     [TestCase(5000, 54, 777)]
     [TestCase(100, 56, 55)]
-    //[TestCase(600, 43.3, 5)]
-   // [TestCase(600.56,55.55, 6.45)]
-   // [TestCase(500.456, 43, 67)]
-    //[TestCase(54, 60, 1.2)]
-    //[TestCase(678, 60.56, 6.7)]
     public async Task InnerTransferMoneyTestAsync(decimal senderAmount, 
         decimal receiverAmount, decimal requestedAmount)
     {
@@ -74,11 +69,6 @@ public class TransferServiceTests
     [TestCase(55, 3, 1)]
     [TestCase(5000, 54, 777)]
     [TestCase(100, 56, 55)]
-    //[TestCase(600, 43.3, 5)]
-    //[TestCase(600.56,55.55, 6.45)]
-    //[TestCase(500.456, 43, 67)]
-    //[TestCase(54, 60, 1.2)]
-    //[TestCase(678, 60.56, 6.7)]
     public async Task OuterTransferMoneyTestAsync(decimal senderAmount, 
         decimal receiverAmount, decimal requestedAmount)
     {
@@ -119,11 +109,6 @@ public class TransferServiceTests
     [TestCase(55, 3, 1)]
     [TestCase(5000, 54, 777)]
     [TestCase(100, 56, 55)]
-    //[TestCase(600, 43.3, 5)]
-    //[TestCase(600.56,55.55, 6.45)]
-    //[TestCase(500.456, 43, 67)]
-    //[TestCase(54, 60, 1.2)]
-    //[TestCase(678, 60.56, 6.7)]
     public async Task OuterTransferMoneyWithDifferentCurrencyTestAsync(decimal senderAmount, 
         decimal receiverAmount, decimal requestedAmount)
     {

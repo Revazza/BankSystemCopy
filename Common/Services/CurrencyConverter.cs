@@ -1,6 +1,6 @@
-﻿using BankSystem.Common.Db.Dto;
-using BankSystem.Common.Db.Entities;
+﻿using BankSystem.Common.Db.Entities;
 using BankSystem.Common.Db.FinancialEnums;
+using BankSystem.Common.Models.Dto;
 
 namespace BankSystem.Common.Services
 {
