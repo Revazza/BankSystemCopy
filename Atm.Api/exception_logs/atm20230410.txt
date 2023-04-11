@@ -1,0 +1,170 @@
+2023-04-10 00:51:06.060 +04:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-04-10 00:51:06.136 +04:00 [DBG] Hosting starting
+2023-04-10 00:51:06.144 +04:00 [INF] User profile is available. Using '/home/ana/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-04-10 00:51:06.148 +04:00 [DBG] Reading data from file '/home/ana/.aspnet/DataProtection-Keys/key-e188b912-05a9-43be-9954-20bc169a2d47.xml'.
+2023-04-10 00:51:06.155 +04:00 [DBG] Found key {e188b912-05a9-43be-9954-20bc169a2d47}.
+2023-04-10 00:51:06.163 +04:00 [DBG] Considering key {e188b912-05a9-43be-9954-20bc169a2d47} with expiration date 2023-04-16 19:10:03Z as default key.
+2023-04-10 00:51:06.165 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-04-10 00:51:06.168 +04:00 [DBG] Using managed symmetric algorithm 'System.Security.Cryptography.Aes'.
+2023-04-10 00:51:06.168 +04:00 [DBG] Using managed keyed hash algorithm 'System.Security.Cryptography.HMACSHA256'.
+2023-04-10 00:51:06.173 +04:00 [DBG] Using key {e188b912-05a9-43be-9954-20bc169a2d47} as the default key.
+2023-04-10 00:51:06.174 +04:00 [DBG] Key ring with default key {e188b912-05a9-43be-9954-20bc169a2d47} was loaded during application startup.
+2023-04-10 00:51:06.207 +04:00 [INF] Now listening on: http://localhost:5059
+2023-04-10 00:51:06.207 +04:00 [DBG] Loaded hosting startup assembly BankSystem.Atm.Api
+2023-04-10 00:51:06.208 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-10 00:51:06.208 +04:00 [INF] Hosting environment: Development
+2023-04-10 00:51:06.208 +04:00 [INF] Content root path: /home/ana/RiderProjects/BankSystemCopy/Atm.Api
+2023-04-10 00:51:06.208 +04:00 [DBG] Hosting started
+2023-04-10 00:51:06.319 +04:00 [DBG] Connection id "0HMPP7GHRHK8F" received FIN.
+2023-04-10 00:51:06.323 +04:00 [DBG] Connection id "0HMPP7GHRHK8F" accepted.
+2023-04-10 00:51:06.323 +04:00 [DBG] Connection id "0HMPP7GHRHK8F" started.
+2023-04-10 00:51:06.335 +04:00 [DBG] Connection id "0HMPP7GHRHK8F" sending FIN because: "The client closed the connection."
+2023-04-10 00:51:06.342 +04:00 [DBG] Connection id "0HMPP7GHRHK8F" disconnecting.
+2023-04-10 00:51:06.346 +04:00 [DBG] Connection id "0HMPP7GHRHK8F" stopped.
+2023-04-10 00:51:06.546 +04:00 [DBG] Connection id "0HMPP7GHRHK8G" accepted.
+2023-04-10 00:51:06.546 +04:00 [DBG] Connection id "0HMPP7GHRHK8G" started.
+2023-04-10 00:51:06.546 +04:00 [DBG] Connection id "0HMPP7GHRHK8H" accepted.
+2023-04-10 00:51:06.547 +04:00 [DBG] Connection id "0HMPP7GHRHK8H" started.
+2023-04-10 00:51:06.580 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/swagger/index.html - -
+2023-04-10 00:51:06.583 +04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-04-10 00:51:06.601 +04:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2023-04-10 00:51:06.602 +04:00 [DBG] Request did not match any endpoints
+2023-04-10 00:51:06.704 +04:00 [DBG] Connection id "0HMPP7GHRHK8G" completed keep alive response.
+2023-04-10 00:51:06.705 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/swagger/index.html - - - 200 - text/html;charset=utf-8 125.7147ms
+2023-04-10 00:51:06.713 +04:00 [DBG] Connection id "0HMPP7GHRHK8I" accepted.
+2023-04-10 00:51:06.713 +04:00 [DBG] Connection id "0HMPP7GHRHK8I" started.
+2023-04-10 00:51:06.713 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/swagger/swagger-ui-bundle.js - -
+2023-04-10 00:51:06.713 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/swagger/swagger-ui-standalone-preset.js - -
+2023-04-10 00:51:06.713 +04:00 [DBG] No candidates found for the request path '/swagger/swagger-ui-standalone-preset.js'
+2023-04-10 00:51:06.713 +04:00 [DBG] No candidates found for the request path '/swagger/swagger-ui-bundle.js'
+2023-04-10 00:51:06.713 +04:00 [DBG] Request did not match any endpoints
+2023-04-10 00:51:06.713 +04:00 [DBG] Request did not match any endpoints
+2023-04-10 00:51:06.715 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/swagger/swagger-ui.css - -
+2023-04-10 00:51:06.716 +04:00 [DBG] No candidates found for the request path '/swagger/swagger-ui.css'
+2023-04-10 00:51:06.717 +04:00 [DBG] Request did not match any endpoints
+2023-04-10 00:51:06.740 +04:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-04-10 00:51:06.740 +04:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-04-10 00:51:06.740 +04:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-04-10 00:51:06.744 +04:00 [DBG] Connection id "0HMPP7GHRHK8H" completed keep alive response.
+2023-04-10 00:51:06.743 +04:00 [DBG] Connection id "0HMPP7GHRHK8G" completed keep alive response.
+2023-04-10 00:51:06.743 +04:00 [DBG] Connection id "0HMPP7GHRHK8I" completed keep alive response.
+2023-04-10 00:51:06.745 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/swagger/swagger-ui-bundle.js - - - 200 1061536 text/javascript 31.6170ms
+2023-04-10 00:51:06.746 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/swagger/swagger-ui.css - - - 200 144929 text/css 30.3106ms
+2023-04-10 00:51:06.746 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/swagger/swagger-ui-standalone-preset.js - - - 200 312163 text/javascript 32.7285ms
+2023-04-10 00:51:06.899 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/swagger/v1/swagger.json - -
+2023-04-10 00:51:06.899 +04:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2023-04-10 00:51:06.899 +04:00 [DBG] Request did not match any endpoints
+2023-04-10 00:51:06.915 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/swagger/favicon-32x32.png - -
+2023-04-10 00:51:06.916 +04:00 [DBG] No candidates found for the request path '/swagger/favicon-32x32.png'
+2023-04-10 00:51:06.916 +04:00 [DBG] Request did not match any endpoints
+2023-04-10 00:51:06.919 +04:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-04-10 00:51:06.919 +04:00 [DBG] Connection id "0HMPP7GHRHK8G" completed keep alive response.
+2023-04-10 00:51:06.919 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/swagger/favicon-32x32.png - - - 200 628 image/png 4.0567ms
+2023-04-10 00:51:07.002 +04:00 [DBG] Connection id "0HMPP7GHRHK8H" completed keep alive response.
+2023-04-10 00:51:07.002 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 103.3711ms
+2023-04-10 00:52:07.223 +04:00 [INF] Application is shutting down...
+2023-04-10 00:52:07.224 +04:00 [DBG] Hosting stopping
+2023-04-10 00:52:07.233 +04:00 [DBG] Connection id "0HMPP7GHRHK8I" disconnecting.
+2023-04-10 00:52:07.233 +04:00 [DBG] Connection id "0HMPP7GHRHK8G" disconnecting.
+2023-04-10 00:52:07.233 +04:00 [DBG] Connection id "0HMPP7GHRHK8H" disconnecting.
+2023-04-10 00:52:07.235 +04:00 [DBG] Connection id "0HMPP7GHRHK8I" stopped.
+2023-04-10 00:52:07.235 +04:00 [DBG] Connection id "0HMPP7GHRHK8G" stopped.
+2023-04-10 00:52:07.235 +04:00 [DBG] Connection id "0HMPP7GHRHK8H" stopped.
+2023-04-10 00:52:07.235 +04:00 [DBG] Connection id "0HMPP7GHRHK8I" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-04-10 00:52:07.235 +04:00 [DBG] Connection id "0HMPP7GHRHK8G" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-04-10 00:52:07.237 +04:00 [DBG] Connection id "0HMPP7GHRHK8H" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-04-10 00:52:07.239 +04:00 [DBG] Hosting stopped
+2023-04-10 01:06:38.924 +04:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-04-10 01:06:39.002 +04:00 [DBG] Hosting starting
+2023-04-10 01:06:39.010 +04:00 [INF] User profile is available. Using '/home/ana/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-04-10 01:06:39.015 +04:00 [DBG] Reading data from file '/home/ana/.aspnet/DataProtection-Keys/key-e188b912-05a9-43be-9954-20bc169a2d47.xml'.
+2023-04-10 01:06:39.023 +04:00 [DBG] Found key {e188b912-05a9-43be-9954-20bc169a2d47}.
+2023-04-10 01:06:39.030 +04:00 [DBG] Considering key {e188b912-05a9-43be-9954-20bc169a2d47} with expiration date 2023-04-16 19:10:03Z as default key.
+2023-04-10 01:06:39.032 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-04-10 01:06:39.035 +04:00 [DBG] Using managed symmetric algorithm 'System.Security.Cryptography.Aes'.
+2023-04-10 01:06:39.035 +04:00 [DBG] Using managed keyed hash algorithm 'System.Security.Cryptography.HMACSHA256'.
+2023-04-10 01:06:39.042 +04:00 [DBG] Using key {e188b912-05a9-43be-9954-20bc169a2d47} as the default key.
+2023-04-10 01:06:39.043 +04:00 [DBG] Key ring with default key {e188b912-05a9-43be-9954-20bc169a2d47} was loaded during application startup.
+2023-04-10 01:06:39.077 +04:00 [INF] Now listening on: http://localhost:5059
+2023-04-10 01:06:39.077 +04:00 [DBG] Loaded hosting startup assembly BankSystem.Atm.Api
+2023-04-10 01:06:39.077 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-10 01:06:39.077 +04:00 [INF] Hosting environment: Development
+2023-04-10 01:06:39.077 +04:00 [INF] Content root path: /home/ana/RiderProjects/BankSystemCopy/Atm.Api
+2023-04-10 01:06:39.077 +04:00 [DBG] Hosting started
+2023-04-10 01:06:39.196 +04:00 [DBG] Connection id "0HMPP7P7S4TPK" received FIN.
+2023-04-10 01:06:39.203 +04:00 [DBG] Connection id "0HMPP7P7S4TPK" accepted.
+2023-04-10 01:06:39.204 +04:00 [DBG] Connection id "0HMPP7P7S4TPK" started.
+2023-04-10 01:06:39.215 +04:00 [DBG] Connection id "0HMPP7P7S4TPK" sending FIN because: "The client closed the connection."
+2023-04-10 01:06:39.222 +04:00 [DBG] Connection id "0HMPP7P7S4TPK" disconnecting.
+2023-04-10 01:06:39.225 +04:00 [DBG] Connection id "0HMPP7P7S4TPK" stopped.
+2023-04-10 01:06:39.421 +04:00 [DBG] Connection id "0HMPP7P7S4TPL" accepted.
+2023-04-10 01:06:39.421 +04:00 [DBG] Connection id "0HMPP7P7S4TPL" started.
+2023-04-10 01:06:39.421 +04:00 [DBG] Connection id "0HMPP7P7S4TPM" accepted.
+2023-04-10 01:06:39.422 +04:00 [DBG] Connection id "0HMPP7P7S4TPM" started.
+2023-04-10 01:06:39.456 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/swagger/index.html - -
+2023-04-10 01:06:39.459 +04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-04-10 01:06:39.485 +04:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2023-04-10 01:06:39.486 +04:00 [DBG] Request did not match any endpoints
+2023-04-10 01:06:39.589 +04:00 [DBG] Connection id "0HMPP7P7S4TPL" completed keep alive response.
+2023-04-10 01:06:39.591 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/swagger/index.html - - - 200 - text/html;charset=utf-8 136.3196ms
+2023-04-10 01:06:39.782 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/swagger/v1/swagger.json - -
+2023-04-10 01:06:39.782 +04:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2023-04-10 01:06:39.783 +04:00 [DBG] Request did not match any endpoints
+2023-04-10 01:06:39.886 +04:00 [DBG] Connection id "0HMPP7P7S4TPL" completed keep alive response.
+2023-04-10 01:06:39.887 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 104.5418ms
+2023-04-10 01:06:46.931 +04:00 [INF] Application is shutting down...
+2023-04-10 01:06:46.932 +04:00 [DBG] Hosting stopping
+2023-04-10 01:06:46.942 +04:00 [DBG] Connection id "0HMPP7P7S4TPM" disconnecting.
+2023-04-10 01:06:46.942 +04:00 [DBG] Connection id "0HMPP7P7S4TPL" disconnecting.
+2023-04-10 01:06:46.943 +04:00 [DBG] Connection id "0HMPP7P7S4TPM" stopped.
+2023-04-10 01:06:46.943 +04:00 [DBG] Connection id "0HMPP7P7S4TPL" stopped.
+2023-04-10 01:06:46.944 +04:00 [DBG] Connection id "0HMPP7P7S4TPL" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-04-10 01:06:46.944 +04:00 [DBG] Connection id "0HMPP7P7S4TPM" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-04-10 01:06:46.949 +04:00 [DBG] Hosting stopped
+2023-04-10 01:06:48.142 +04:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-04-10 01:06:48.213 +04:00 [DBG] Hosting starting
+2023-04-10 01:06:48.219 +04:00 [INF] User profile is available. Using '/home/ana/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-04-10 01:06:48.224 +04:00 [DBG] Reading data from file '/home/ana/.aspnet/DataProtection-Keys/key-e188b912-05a9-43be-9954-20bc169a2d47.xml'.
+2023-04-10 01:06:48.231 +04:00 [DBG] Found key {e188b912-05a9-43be-9954-20bc169a2d47}.
+2023-04-10 01:06:48.239 +04:00 [DBG] Considering key {e188b912-05a9-43be-9954-20bc169a2d47} with expiration date 2023-04-16 19:10:03Z as default key.
+2023-04-10 01:06:48.240 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-04-10 01:06:48.241 +04:00 [DBG] Using managed symmetric algorithm 'System.Security.Cryptography.Aes'.
+2023-04-10 01:06:48.241 +04:00 [DBG] Using managed keyed hash algorithm 'System.Security.Cryptography.HMACSHA256'.
+2023-04-10 01:06:48.246 +04:00 [DBG] Using key {e188b912-05a9-43be-9954-20bc169a2d47} as the default key.
+2023-04-10 01:06:48.246 +04:00 [DBG] Key ring with default key {e188b912-05a9-43be-9954-20bc169a2d47} was loaded during application startup.
+2023-04-10 01:06:48.280 +04:00 [INF] Now listening on: http://localhost:5059
+2023-04-10 01:06:48.280 +04:00 [DBG] Loaded hosting startup assembly BankSystem.Atm.Api
+2023-04-10 01:06:48.280 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-10 01:06:48.281 +04:00 [INF] Hosting environment: Development
+2023-04-10 01:06:48.281 +04:00 [INF] Content root path: /home/ana/RiderProjects/BankSystemCopy/Atm.Api
+2023-04-10 01:06:48.281 +04:00 [DBG] Hosting started
+2023-04-10 01:06:48.464 +04:00 [DBG] Connection id "0HMPP7PAKHGLD" received FIN.
+2023-04-10 01:06:48.468 +04:00 [DBG] Connection id "0HMPP7PAKHGLD" accepted.
+2023-04-10 01:06:48.469 +04:00 [DBG] Connection id "0HMPP7PAKHGLD" started.
+2023-04-10 01:06:48.476 +04:00 [DBG] Connection id "0HMPP7PAKHGLD" sending FIN because: "The client closed the connection."
+2023-04-10 01:06:48.481 +04:00 [DBG] Connection id "0HMPP7PAKHGLD" disconnecting.
+2023-04-10 01:06:48.484 +04:00 [DBG] Connection id "0HMPP7PAKHGLD" stopped.
+2023-04-10 01:06:48.635 +04:00 [DBG] Connection id "0HMPP7PAKHGLE" accepted.
+2023-04-10 01:06:48.635 +04:00 [DBG] Connection id "0HMPP7PAKHGLE" started.
+2023-04-10 01:06:48.635 +04:00 [DBG] Connection id "0HMPP7PAKHGLF" accepted.
+2023-04-10 01:06:48.635 +04:00 [DBG] Connection id "0HMPP7PAKHGLF" started.
+2023-04-10 01:06:48.691 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/swagger/index.html - -
+2023-04-10 01:06:48.694 +04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-04-10 01:06:48.723 +04:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2023-04-10 01:06:48.724 +04:00 [DBG] Request did not match any endpoints
+2023-04-10 01:06:48.847 +04:00 [DBG] Connection id "0HMPP7PAKHGLE" completed keep alive response.
+2023-04-10 01:06:48.848 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/swagger/index.html - - - 200 - text/html;charset=utf-8 159.4213ms
+2023-04-10 01:06:48.936 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/swagger/v1/swagger.json - -
+2023-04-10 01:06:48.936 +04:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2023-04-10 01:06:48.936 +04:00 [DBG] Request did not match any endpoints
+2023-04-10 01:06:49.025 +04:00 [DBG] Connection id "0HMPP7PAKHGLE" completed keep alive response.
+2023-04-10 01:06:49.025 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 89.4091ms
+2023-04-10 01:06:51.842 +04:00 [INF] Application is shutting down...
+2023-04-10 01:06:51.845 +04:00 [DBG] Hosting stopping
+2023-04-10 01:06:51.856 +04:00 [DBG] Connection id "0HMPP7PAKHGLF" disconnecting.
+2023-04-10 01:06:51.856 +04:00 [DBG] Connection id "0HMPP7PAKHGLE" disconnecting.
+2023-04-10 01:06:51.857 +04:00 [DBG] Connection id "0HMPP7PAKHGLE" stopped.
+2023-04-10 01:06:51.857 +04:00 [DBG] Connection id "0HMPP7PAKHGLF" stopped.
+2023-04-10 01:06:51.857 +04:00 [DBG] Connection id "0HMPP7PAKHGLE" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-04-10 01:06:51.857 +04:00 [DBG] Connection id "0HMPP7PAKHGLF" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-04-10 01:06:51.862 +04:00 [DBG] Hosting stopped

@@ -47,6 +47,45 @@ public class UserController : ControllerBase
         
         return Ok(result);
     }
+    [AllowAnonymous]
+    [HttpPost("reset-password-request")]
+    public async Task<IActionResult> ResetPasswordRequest(RequestPasswordResetRequest request)
+    {
+        var user = await _userManager.FindByEmailAsync(request.Email);
+        if (user == null)
+        {
+            return NotFound("User not found");
+        }
+        
+        var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+        var result = new HttpResult();
+        result.Payload.Add("token", token);
+        
+        return Ok(result);
+    
+    }
+    [AllowAnonymous]
+    [HttpPost("reset-password")]
+    public async Task<IActionResult> ResetPassword(ResetPasswordRequest request)
+    {
+        var user = await _userManager.FindByEmailAsync(request.Email);
+        if (user == null)
+        {
+            return NotFound("User not found");
+        }
+        var resetResult = await _userManager.ResetPasswordAsync(user, request.Token, request.Password);
+      
+        if (!resetResult.Succeeded)
+        {
+            var firstError = resetResult.Errors.First();
+            return StatusCode(500, firstError.Description);
+        }
+        var result = new HttpResult();
+        result.Payload.Add("result", "Password reset successfully");
+        
+        return Ok(result);
+
+    }
     [HttpPost("transfer-money")]
     public async Task<IActionResult> TransferMoney(TranferRequest request)
     {
@@ -55,7 +94,6 @@ public class UserController : ControllerBase
         await _transferService.TransferMoneyAsync(request, user.Id);
         var result = new HttpResult();
         result.Payload.Add("result", "successful transaction");
-        
         return Ok(result);
     }
 

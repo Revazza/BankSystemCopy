@@ -20,7 +20,7 @@ public class RegisterAccountValidatorTests
     {
         var user = new UserEntity()
         {
-           PersonalNumber = "1234567891",
+           PersonalNumber = "12345678911",
            FirstName = "Ana",
            LastName = "Mk"
         };
@@ -35,7 +35,7 @@ public class RegisterAccountValidatorTests
         var request = new RegisterAccountRequest
         {
             Amount = 100,
-            PersonalId = "12345678917"
+            PersonalId = "12345678911"
         };
 
     

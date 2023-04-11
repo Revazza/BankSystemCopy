@@ -5,6 +5,7 @@ using BankSystem.Common.Services;
 using BankSystem.InternetBank.Models.Requests;
 using BankSystem.InternetBank.Repositories;
 using BankSystem.InternetBank.Services;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 
 namespace InternetBank.Tests;
 
@@ -14,6 +15,7 @@ public class TransferServiceTests
     private readonly ICurrencyRepository _currencyRepository;
     private readonly ITransactionRepository _transactionRepository;
     private readonly FakeBankSystemDbContext _db;
+    private readonly IbanService _ibanService;
 
     public TransferServiceTests()
     {
@@ -21,25 +23,34 @@ public class TransferServiceTests
         _currencyRepository = new CurrencyRepository(_db);
         _transactionRepository = new TransactionRepository(_db);
         _transferService = new TransferService(_currencyRepository, _transactionRepository);
-      
+        _ibanService = new IbanService();
+
     }
-
-
-    [Test]
-    public async Task InnerTransferMoneyTestAsync()
+    [TestCase(1000, 500, 500)]
+    [TestCase(20, 10, 5)]
+    [TestCase(55, 3, 1)]
+    [TestCase(5000, 54, 777)]
+    [TestCase(100, 56, 55)]
+    //[TestCase(600, 43.3, 5)]
+   // [TestCase(600.56,55.55, 6.45)]
+   // [TestCase(500.456, 43, 67)]
+    //[TestCase(54, 60, 1.2)]
+    //[TestCase(678, 60.56, 6.7)]
+    public async Task InnerTransferMoneyTestAsync(decimal senderAmount, 
+        decimal receiverAmount, decimal requestedAmount)
     {
         var sender = new AccountEntity
         {
             UserId = Guid.NewGuid(),
             Currency = CurrencyType.GEL,
-            Amount = 1000,
-            Iban = "GE51DX6331467770865217"
+            Amount = senderAmount,
+            Iban = _ibanService.GenerateIBan()
         };
         var receiver = new AccountEntity
         {
             UserId = sender.UserId,
             Currency = CurrencyType.GEL,
-            Amount = 500, Iban = "GE05VT3774861580071408"
+            Amount = receiverAmount, Iban = _ibanService.GenerateIBan()
         };
         await _db.Accounts.AddRangeAsync(sender, receiver);
         await _db.SaveChangesAsync();
@@ -47,30 +58,42 @@ public class TransferServiceTests
         {
             SendFromIban = sender.Iban,
             Iban = receiver.Iban,
-            Amount = 500
+            Amount = requestedAmount
         };
+        var AccountFromAmount =  sender.Amount - requestedAmount;
+        var AccountToAmount = receiver.Amount + requestedAmount;
         await _transferService.TransferMoneyAsync(request, sender.UserId);
         
         var updatedSender = await _db.Accounts.FindAsync(sender.Id);
         var updatedReceiver = await _db.Accounts.FindAsync(receiver.Id);
-        Assert.That(updatedSender.Amount, Is.EqualTo(500));
-        Assert.That(updatedReceiver.Amount, Is.EqualTo(1000));
+        Assert.That(updatedSender.Amount, Is.EqualTo(AccountFromAmount));
+        Assert.That(updatedReceiver.Amount, Is.EqualTo(AccountToAmount));
     }
-    [Test]
-    public async Task OuterTransferMoneyTestAsync()
+    [TestCase(1000, 500, 500)]
+    [TestCase(20, 10, 5)]
+    [TestCase(55, 3, 1)]
+    [TestCase(5000, 54, 777)]
+    [TestCase(100, 56, 55)]
+    //[TestCase(600, 43.3, 5)]
+    //[TestCase(600.56,55.55, 6.45)]
+    //[TestCase(500.456, 43, 67)]
+    //[TestCase(54, 60, 1.2)]
+    //[TestCase(678, 60.56, 6.7)]
+    public async Task OuterTransferMoneyTestAsync(decimal senderAmount, 
+        decimal receiverAmount, decimal requestedAmount)
     {
         var sender = new AccountEntity
         {
             UserId = Guid.NewGuid(),
             Currency = CurrencyType.GEL,
-            Amount = 1000,
-            Iban = "GE38AH7580341631433803"
+            Amount = senderAmount,
+            Iban = _ibanService.GenerateIBan()
         };
         var receiver = new AccountEntity
         {
             UserId = Guid.NewGuid(),
             Currency = CurrencyType.GEL,
-            Amount = 500, Iban = "GE09WB5605287442587704"
+            Amount = receiverAmount, Iban = _ibanService.GenerateIBan()
         };
         await _db.Accounts.AddRangeAsync(sender, receiver);
         await _db.SaveChangesAsync();
@@ -78,30 +101,44 @@ public class TransferServiceTests
         {
             SendFromIban = sender.Iban,
             Iban = receiver.Iban,
-            Amount = 500
+            Amount = requestedAmount
         };
+        decimal fee = requestedAmount / 100 + 0.5m;
+       
+        var AccountFromAmount =  sender.Amount - requestedAmount- fee;
+        var AccountToAmount = receiver.Amount + requestedAmount;
         await _transferService.TransferMoneyAsync(request, sender.UserId);
         
         var updatedSender = await _db.Accounts.FindAsync(sender.Id);
         var updatedReceiver = await _db.Accounts.FindAsync(receiver.Id);
-        Assert.That(updatedReceiver.Amount, Is.EqualTo(1000));
-        Assert.That(updatedSender.Amount, Is.EqualTo(494.5));
+        Assert.That(updatedReceiver.Amount, Is.EqualTo(AccountToAmount));
+        Assert.That(updatedSender.Amount, Is.EqualTo(AccountFromAmount));
     }
-    [Test]
-    public async Task OuterTransferMoneyWithDifferentCurrencyTestAsync()
+    [TestCase(1000, 500, 500)]
+    [TestCase(20, 10, 5)]
+    [TestCase(55, 3, 1)]
+    [TestCase(5000, 54, 777)]
+    [TestCase(100, 56, 55)]
+    //[TestCase(600, 43.3, 5)]
+    //[TestCase(600.56,55.55, 6.45)]
+    //[TestCase(500.456, 43, 67)]
+    //[TestCase(54, 60, 1.2)]
+    //[TestCase(678, 60.56, 6.7)]
+    public async Task OuterTransferMoneyWithDifferentCurrencyTestAsync(decimal senderAmount, 
+        decimal receiverAmount, decimal requestedAmount)
     {
         var sender = new AccountEntity
         {
             UserId = Guid.NewGuid(),
             Currency = CurrencyType.GEL,
-            Amount = 1000,
-            Iban = "GE38AH75803416314338039"
+            Amount = senderAmount,
+            Iban = _ibanService.GenerateIBan()
         };
         var receiver = new AccountEntity
         {
             UserId = Guid.NewGuid(),
             Currency = CurrencyType.EUR,
-            Amount = 10, Iban = "GE09WB5605287442587701"
+            Amount = receiverAmount, Iban = _ibanService.GenerateIBan()
         };
         await _db.Accounts.AddRangeAsync(sender, receiver);
         await _db.SaveChangesAsync();
@@ -109,7 +146,7 @@ public class TransferServiceTests
         {
             SendFromIban = sender.Iban,
             Iban = receiver.Iban,
-            Amount = 18
+            Amount = requestedAmount
         };
         var senderMoney = sender.Amount - request.Amount -
                               await _transferService.CalculateFeeForOuterTransferAsync(request.Amount);
@@ -128,7 +165,5 @@ public class TransferServiceTests
       
         Assert.That(updatedSender.Amount, Is.EqualTo(senderMoney).Within(0.01));
         Assert.That(updatedReceiver.Amount, Is.EqualTo(receiverMoney).Within(0.1));
-     
-
     }
 }
