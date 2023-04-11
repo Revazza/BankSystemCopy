@@ -53,7 +53,6 @@ namespace BankSystem.Atm.Services
         private void CashOut(AccountEntity account, decimal totalPayment)
         {
             account.Amount -= totalPayment;
-
             _accountRepository.UpdateAccount(account);
 
         }

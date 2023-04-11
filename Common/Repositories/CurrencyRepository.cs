@@ -10,7 +10,6 @@ namespace BankSystem.Common.Repositores
     public interface ICurrencyRepository
     {
         Task CheckCurrenciesAsync();
-        Task SaveChangesAsync();
     }
 
     public class CurrencyRepository : ICurrencyRepository
@@ -49,7 +48,7 @@ namespace BankSystem.Common.Repositores
                 await ClearCurrencies(currencies);
                 currencies = await FetchCurrenciesAsync();
 
-                await _context.AddRangeAsync(currencies);
+                await _context.Currencies.AddRangeAsync(currencies);
                 await _context.SaveChangesAsync();
 
                 return currencies!;
