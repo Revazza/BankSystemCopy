@@ -281,8 +281,8 @@ namespace BankSystem.Common.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "BirthDate", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PersonalNumber", "PhoneNumber", "PhoneNumberConfirmed", "RegisteredAt", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { new Guid("0eb288d0-c7cd-4749-ad29-92a9d59e8bf4"), 0, new DateTime(2013, 4, 6, 23, 5, 52, 781, DateTimeKind.Local).AddTicks(8771), "f5b9257a-25db-44e1-96bd-b29f1e8ecb22", "sandro.revazishviliii@gmail.com", false, "Sandro", "Revazishvili", false, null, "SANDRO.REVAZISHVILIII@GMAIL.COM", null, "ACd+sMp4Kpk26kxOWsimkM66wN6rbavYhfIbWyoSGWsVkILF8cctIBIkq/IMiO876Q==", "01001088032", null, false, new DateTime(2023, 4, 6, 23, 5, 52, 781, DateTimeKind.Local).AddTicks(8772), "88c58ea5-1206-4082-afc4-a1b8ef235bca", false, "sandro" },
-                    { new Guid("4bf7d82a-fca9-4d1d-bbc9-48cfaa109187"), 0, new DateTime(2013, 4, 6, 23, 5, 52, 781, DateTimeKind.Local).AddTicks(1870), "55b85231-1dbf-4dfc-8f95-5364ee1683a9", "anamklavashvili@gmail.com", false, "Ana", "Mklavashvili", false, null, "ANAMKLAVASHVILI@GMAIL.COM", null, "AFF+Qf+tOVfsSZIVU2NFKuiJVHjINOac4Srs9Ynxh3poW0i0cnU0O1YXm61MXN5PPQ==", "14001025322", null, false, new DateTime(2023, 4, 6, 23, 5, 52, 781, DateTimeKind.Local).AddTicks(1888), "d9fee231-4090-45a7-804d-772f6d36bea2", false, "ana" }
+                    { new Guid("0eb288d0-c7cd-4749-ad29-92a9d59e8bf4"), 0, new DateTime(2013, 4, 7, 10, 57, 34, 600, DateTimeKind.Local).AddTicks(1473), "aaf7fa62-7520-4836-b801-f08811ff0fba", "sandro.revazishviliii@gmail.com", false, "Sandro", "Revazishvili", false, null, "SANDRO.REVAZISHVILIII@GMAIL.COM", null, "AMa6h0POWoEor1fwdKWHOQxifkS61zm7d9bgTCT5pzzMkrR/ISKn686QhsKtkoIqHg==", "01001088032", null, false, new DateTime(2023, 4, 7, 10, 57, 34, 600, DateTimeKind.Local).AddTicks(1498), "81b0a16b-e6ef-4964-ab43-993d57615641", false, "sandro" },
+                    { new Guid("4bf7d82a-fca9-4d1d-bbc9-48cfaa109187"), 0, new DateTime(2013, 4, 7, 10, 57, 34, 599, DateTimeKind.Local).AddTicks(3147), "fead15c6-69af-485b-aa21-5cc2d481c12b", "anamklavashvili@gmail.com", false, "Ana", "Mklavashvili", false, null, "ANAMKLAVASHVILI@GMAIL.COM", null, "AFDAu0xtIHN49SKJofO3JWem5A1aWTSr/MEjH68hvVCla+p4OzcEIlSlKyMoez4QcQ==", "14001025322", null, false, new DateTime(2023, 4, 7, 10, 57, 34, 599, DateTimeKind.Local).AddTicks(3171), "82d1a096-64b6-4c81-9279-778db7b1719f", false, "ana" }
                 });
 
             migrationBuilder.InsertData(
@@ -290,15 +290,15 @@ namespace BankSystem.Common.Migrations
                 columns: new[] { "Id", "AccountFromIban", "AccountFromId", "AccountToIban", "AccountToId", "CreatedAt", "CurrencyFrom", "CurrencyTo", "Fee", "ReceivedAmount", "TransactionType", "WithDrawnAmount" },
                 values: new object[,]
                 {
-                    { new Guid("16550b58-0719-498b-9380-7f1288d5525b"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2023, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, 1, 34.23m, 900m, 0, 1034.23m },
-                    { new Guid("60a6e3c1-feee-418f-8751-c04f439fc02a"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2022, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, 1, 23.12m, 200m, 0, 223.12m },
-                    { new Guid("6a964969-0926-4159-8e8b-845821ac30eb"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2023, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 0, 18.50m, 438.10m, 2, 217.23m },
-                    { new Guid("7c58dfec-8497-4143-9960-56fd6a04be97"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2022, 5, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, 1, 27.87m, 600m, 0, 627.87m },
-                    { new Guid("9c2e8d17-0646-4af6-aa20-3e95c24b2c31"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2022, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 0, 31.50m, 637.90m, 2, 152.73m },
-                    { new Guid("b170443e-e5c7-41f5-b0f3-b3c53a44d875"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2022, 10, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 2, 16.20m, 312.70m, 2, 100.87m },
-                    { new Guid("df68909f-f239-4065-88f6-ba9bbe356765"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2022, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 0, 22.40m, 489.80m, 1, 354.23m },
-                    { new Guid("f33de5c7-471d-45a8-9835-c91a59c760f9"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2022, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 0, 23.12m, 230m, 0, 253.12m },
-                    { new Guid("fe224bad-808e-455d-98f5-06e53f0bde9f"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2023, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 2, 29.80m, 567.20m, 1, 325m }
+                    { new Guid("1dfb36d6-922e-4f8b-b46d-838bc87ef93e"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2022, 12, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, 1, 23.12m, 200m, 0, 223.12m },
+                    { new Guid("51a5b332-5573-4a37-a022-9b7a05da9b1a"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2023, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 2, 29.80m, 567.20m, 1, 325m },
+                    { new Guid("592e8097-d39f-4a99-a1d2-f932be321f95"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2022, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 0, 31.50m, 637.90m, 2, 152.73m },
+                    { new Guid("7a48d6a4-53f1-416e-8644-519baf7a3272"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2023, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, 1, 34.23m, 900m, 0, 1034.23m },
+                    { new Guid("894b08c9-0a0a-4f83-a90e-8fda0b38911d"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2023, 3, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 0, 18.50m, 438.10m, 2, 217.23m },
+                    { new Guid("a7919672-9625-40a0-a19c-8c0976e7775c"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2022, 11, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 0, 23.12m, 230m, 0, 253.12m },
+                    { new Guid("c8033c88-b015-45c9-b8bc-7c1460502693"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2022, 10, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, 2, 16.20m, 312.70m, 2, 100.87m },
+                    { new Guid("d1bae497-ec3c-43d0-8b74-6b54fef8732d"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2022, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, 0, 22.40m, 489.80m, 1, 354.23m },
+                    { new Guid("ff3bff34-3333-4723-ba19-7a5054b7e9a0"), null, new Guid("00000000-0000-0000-0000-000000000000"), null, new Guid("00000000-0000-0000-0000-000000000000"), new DateTime(2022, 5, 19, 0, 0, 0, 0, DateTimeKind.Unspecified), 0, 1, 27.87m, 600m, 0, 627.87m }
                 });
 
             migrationBuilder.InsertData(
@@ -306,8 +306,8 @@ namespace BankSystem.Common.Migrations
                 columns: new[] { "Id", "Amount", "Currency", "Iban", "UserId" },
                 values: new object[,]
                 {
-                    { new Guid("1ffae49b-5579-4560-bf20-fd3986fd76c0"), 15662m, 0, "AnaIban", new Guid("4bf7d82a-fca9-4d1d-bbc9-48cfaa109187") },
-                    { new Guid("7b1902d5-c240-49f4-b91f-454d9e19d402"), 16494m, 0, "SandroIban", new Guid("0eb288d0-c7cd-4749-ad29-92a9d59e8bf4") }
+                    { new Guid("1ffae49b-5579-4560-bf20-fd3986fd76c0"), 13555m, 0, "AnaIban", new Guid("4bf7d82a-fca9-4d1d-bbc9-48cfaa109187") },
+                    { new Guid("7b1902d5-c240-49f4-b91f-454d9e19d402"), 19131m, 0, "SandroIban", new Guid("0eb288d0-c7cd-4749-ad29-92a9d59e8bf4") }
                 });
 
             migrationBuilder.InsertData(
@@ -324,8 +324,8 @@ namespace BankSystem.Common.Migrations
                 columns: new[] { "Id", "AccountId", "CardNumber", "CreatedAt", "Cvv", "ExpiresAt", "FullName", "Pin" },
                 values: new object[,]
                 {
-                    { new Guid("62e5f726-6070-4326-9a25-c27c6216e35f"), new Guid("1ffae49b-5579-4560-bf20-fd3986fd76c0"), "207044791472222431", new DateTime(2023, 4, 6, 23, 5, 52, 782, DateTimeKind.Local).AddTicks(5610), "931", new DateTime(2028, 4, 6, 23, 5, 52, 782, DateTimeKind.Local).AddTicks(5609), "Ana Mklavashvili", "1234" },
-                    { new Guid("d38dc493-fb60-4d75-8930-48dee7dc3f97"), new Guid("7b1902d5-c240-49f4-b91f-454d9e19d402"), "257627616766205833", new DateTime(2023, 4, 6, 23, 5, 52, 782, DateTimeKind.Local).AddTicks(5617), "931", new DateTime(2028, 4, 6, 23, 5, 52, 782, DateTimeKind.Local).AddTicks(5617), "Sandro Revazishvili", "1234" }
+                    { new Guid("62e5f726-6070-4326-9a25-c27c6216e35f"), new Guid("1ffae49b-5579-4560-bf20-fd3986fd76c0"), "273525361259132791", new DateTime(2023, 4, 7, 10, 57, 34, 601, DateTimeKind.Local).AddTicks(211), "931", new DateTime(2028, 4, 7, 10, 57, 34, 601, DateTimeKind.Local).AddTicks(187), "Ana Mklavashvili", "1234" },
+                    { new Guid("d38dc493-fb60-4d75-8930-48dee7dc3f97"), new Guid("7b1902d5-c240-49f4-b91f-454d9e19d402"), "663511083436562936", new DateTime(2023, 4, 7, 10, 57, 34, 601, DateTimeKind.Local).AddTicks(223), "931", new DateTime(2028, 4, 7, 10, 57, 34, 601, DateTimeKind.Local).AddTicks(222), "Sandro Revazishvili", "1234" }
                 });
 
             migrationBuilder.CreateIndex(

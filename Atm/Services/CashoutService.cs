@@ -53,6 +53,9 @@ namespace BankSystem.Atm.Services
         private void CashOut(AccountEntity account, decimal totalPayment)
         {
             account.Amount -= totalPayment;
+
+            _accountRepository.UpdateAccount(account);
+
         }
 
         private async Task ValidateCashOutAsync(
@@ -95,8 +98,6 @@ namespace BankSystem.Atm.Services
             await ValidateCashOutAsync(account, totalPayment);
 
             CashOut(account, totalPayment);
-
-            _accountRepository.UpdateAccount(account);
 
             return new CashOutDetailsDto(account, request)
             {

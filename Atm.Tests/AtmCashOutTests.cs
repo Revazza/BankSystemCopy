@@ -29,16 +29,14 @@ public class AtmCashOutTests
         _cashOutService = new CashoutService(_transactionRepository,
              _currencyRepository, _accountRepository);
     }
-    [TestCase(1000, 10)]
-    [TestCase(500, 45.5)]
-    [TestCase(600, 45 )]
-    [TestCase(657, 45)]
-    [TestCase(456, 11)]
-    public async Task TestCashOutOperation(decimal amount, decimal requestedAmount)
+
+    [Test]
+    public async Task TestCashOutOperation()
     {
         var user = new UserEntity { Email = "testuser@test.com", Id = Guid.NewGuid() };
-        var account = new AccountEntity { Amount = amount, Currency = CurrencyType.GEL, UserId = user.Id };
-        var request = new CashOutRequest { Amount = requestedAmount, Currency = 0, RequestedCurrency = CurrencyType.GEL};
+        var account = new AccountEntity { Amount = 10000, Currency = CurrencyType.USD, UserId = user.Id };
+        var request = new CashOutRequest { Amount = 1000, CurrencyTo = CurrencyType.GEL };
+
         var card = new CardEntity()
         {
             Id = Guid.NewGuid(),

@@ -76,6 +76,7 @@ namespace EmailService.Email_Sender
             message.Headers.Add("Content-Type", "text/html");
             
             return message;
+
         }
 
         public void SendEmail(EmailRequestEntity request)
@@ -85,7 +86,7 @@ namespace EmailService.Email_Sender
 
             var client = new SmtpClient("smtp.gmail.com", 587)
             {
-                Credentials = new NetworkCredential(_companyEmail, "zlblctxyglhujvmm"),
+                Credentials = new NetworkCredential(_companyEmail, "mpgxkmdghrdddzxz"),
                 EnableSsl = true,
             };
 

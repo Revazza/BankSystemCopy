@@ -74,6 +74,7 @@ namespace BankSystem.Common.Services
                 "GEL",
                 "EUR",
                 "USD",
+                "RUB"
             };
         }
 
