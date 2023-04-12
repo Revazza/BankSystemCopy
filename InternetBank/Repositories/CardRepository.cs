@@ -8,12 +8,9 @@ namespace BankSystem.InternetBank.Repositories;
 public interface ICardRepository
 {
     Task RegisterCardAsync(CardEntity cardEntity);
-    bool CardAlreadyExists(string cardNumber);
     Task<List<CardEntity>> GetCardsByUserIdAsync(Guid userId);
     Task SaveChangesAsync();
     Task<AccountEntity> GetAccountByIbanAsync(string iban);
-    bool PinAlreadyExists(string pin);
-    bool CvvAlreadyExists(string cvv);
     Task<List<CardEntity>> GetAccountCards(string iban);
 
 }
@@ -36,10 +33,6 @@ public class CardRepository : ICardRepository
         return account;
     }
 
-    public bool CardAlreadyExists(string cardNumber)
-    {
-        return _context.Cards.Any(c => c.CardNumber == cardNumber);
-    }
     public async Task SaveChangesAsync()
     {
         await _context.SaveChangesAsync();
@@ -52,7 +45,6 @@ public class CardRepository : ICardRepository
             .ToListAsync();
         return cards;
     }
-
     public async Task RegisterCardAsync(CardEntity cardEntity)
     {
         await _context.Cards.AddAsync(cardEntity);
@@ -65,15 +57,6 @@ public class CardRepository : ICardRepository
             .SelectMany(a => a.Cards)
             .ToListAsync();
         return cards;
-    }
-    public bool PinAlreadyExists(string pin)
-    {
-        return _context.Cards.Any(c => c.Pin == pin);
-    }
-
-    public bool CvvAlreadyExists(string cvv)
-    {
-        return _context.Cards.Any(c => c.Cvv == cvv);
     }
 
     public async Task<List<CardEntity>> GetAccountCards(string iban)

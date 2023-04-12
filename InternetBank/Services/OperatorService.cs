@@ -7,6 +7,7 @@ public interface IOperatorService
 {
     CardDto GetCardDetails(CardEntity card);
     AccountDto GetAccountDetails(AccountEntity account);
+    UserDto GetUserDetails(UserEntity user);
 }
 public class OperatorService : IOperatorService
 {
@@ -32,5 +33,18 @@ public class OperatorService : IOperatorService
             Currency = account.Currency
         };
         return accountDto;
+    }
+
+    public UserDto GetUserDetails(UserEntity user)
+    {
+        var userDto = new UserDto()
+        {
+            BirthDate = user.BirthDate,
+            Email = user.Email,
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            PersonalNumber = user.PersonalNumber
+        };
+        return userDto;
     }
 }

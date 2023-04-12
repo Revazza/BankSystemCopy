@@ -110,7 +110,7 @@ public class TransferService : ITransferService
         var transaction = new TransactionEntity
         {
             TransactionType = transactionData.TransactionType,
-            WithDrawnAmount = transactionData.Request.Amount,
+            WithDrawnAmount = transactionData.Request.Amount + transactionData.Fee,
             CurrencyFrom = transactionData.Sender.Currency,
             CurrencyTo = transactionData.Receiver.Currency,
             CreatedAt = DateTime.UtcNow,

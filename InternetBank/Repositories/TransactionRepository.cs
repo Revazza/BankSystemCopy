@@ -13,6 +13,8 @@ public interface ITransactionRepository
     Task InsertTransactionAsync(TransactionEntity transactionEntity);
     bool IbanExists(string iban);
     Task<List<TransactionEntity>> GetTransactionsAsync(string iban);
+    Task<List<TransactionEntity>> GetWithdrawalTransactionByIbanAsync(string iban);
+    Task<List<TransactionEntity>> GetReceivedTransactionByIbanAsync(string iban);
 }
 public class TransactionRepository : ITransactionRepository
 {
@@ -50,7 +52,22 @@ public class TransactionRepository : ITransactionRepository
      
         var transactions = await _context.Transactions
             .Where(t => t.AccountFromIban == iban
-                        || t.AccountToIban == iban)
+                        || t.AccountToIban == iban).OrderBy(t=>t.CreatedAt)
+            .ToListAsync();
+        return transactions;
+    }
+
+    public async Task<List<TransactionEntity>> GetWithdrawalTransactionByIbanAsync(string iban)
+    {
+        var transactions = await _context.Transactions
+            .Where(t => t.AccountFromIban == iban)
+            .ToListAsync();
+        return transactions;
+    }
+    public async Task<List<TransactionEntity>> GetReceivedTransactionByIbanAsync(string iban)
+    {
+        var transactions = await _context.Transactions
+            .Where(t => t.AccountToIban == iban)
             .ToListAsync();
         return transactions;
     }

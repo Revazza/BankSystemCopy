@@ -38,7 +38,8 @@ public class OperatorController : ControllerBase
     {
         var newUser = await _addUserService.AddUserAsync(request);
         var result = new HttpResult();
-        result.Payload.Add("user", newUser);
+        var userDto = _operatorService.GetUserDetails(newUser);
+        result.Payload.Add("user", userDto);
 
         return Ok(result);
     }

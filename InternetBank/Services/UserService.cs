@@ -11,6 +11,9 @@ public interface IUserService
     Task<List<CardDto>> GetUserCardsAsync(Guid userId);
     Task<List<AccountDto>> GetUserAccountsAsync(UserEntity user);
     Task<List<CardDto>> GetAccountCards(string iban);
+    Task<decimal> GetTotalWithdrawalAmountByIbanAsync(string iban);
+    Task<decimal> GetTotalReceivedAmountByIbanAsync(string iban);
+
 }
 public class UserService : IUserService
 {
@@ -89,6 +92,20 @@ public class UserService : IUserService
             Cvv = c.Cvv
         }).ToList();
         return cardList;
+    }
+
+    public async Task<decimal> GetTotalWithdrawalAmountByIbanAsync(string iban)
+    {
+        var transactions = await _transactionRepository
+            .GetWithdrawalTransactionByIbanAsync(iban);
+        var totalWithdrawal = transactions.Sum(t => t.WithDrawnAmount);
+        return totalWithdrawal;
+    }
+    public async Task<decimal> GetTotalReceivedAmountByIbanAsync(string iban)
+    {
+        var transactions = await _transactionRepository.GetReceivedTransactionByIbanAsync(iban);
+        var totalReceived = transactions.Sum(t => t.ReceivedAmount);
+        return totalReceived;
     }
 
 }

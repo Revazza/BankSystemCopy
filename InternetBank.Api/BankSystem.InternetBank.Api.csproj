@@ -29,6 +29,9 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Serilog" Version="3.0.0-dev-01958" />
+    <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.1-dev-10338" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="4.1.1-dev-00910" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
@@ -38,6 +41,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\InternetBank\BankSystem.InternetBank.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Serilog.Sinks.File">
+      <HintPath>..\..\..\.nuget\packages\serilog.sinks.file\5.0.0\lib\net5.0\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

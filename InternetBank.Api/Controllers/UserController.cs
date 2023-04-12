@@ -151,5 +151,36 @@ public class UserController : ControllerBase
 
         return Ok(result);
     }
+
+    [HttpGet("get-total-withdrawal-amount")]
+    public async Task<IActionResult> GetTotalWithdrawalAmount(string iban)
+    {
+        var user = await _userManager.GetUserAsync(User);
+        if (user == null)
+        {
+            return BadRequest("User Not Found");
+        }
+
+        var totalAmount = await _userService.GetTotalWithdrawalAmountByIbanAsync(iban);
+        var result = new HttpResult();
+        result.Payload.Add("withdrawalAmount",totalAmount);
+
+        return Ok(result);
+    }
+    [HttpGet("get-total-received-amount")]
+    public async Task<IActionResult> GetTotalReceivedAmount(string iban)
+    {
+        var user = await _userManager.GetUserAsync(User);
+        if (user == null)
+        {
+            return BadRequest("User Not Found");
+        }
+
+        var totalAmount = await _userService.GetTotalReceivedAmountByIbanAsync(iban);
+        var result = new HttpResult();
+        result.Payload.Add("receivedAmount",totalAmount);
+
+        return Ok(result);
+    }
    
 }
