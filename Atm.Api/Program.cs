@@ -42,12 +42,12 @@ builder.Services.AddTransient<ICashOutService, CashoutService>();
 builder.Services.AddTransient<ILoginService, LoginService>();
 builder.Services.AddTransient<IChangePinService, ChangePinService>();
 
-builder.Services.AddTransient<IAccountRepository, AccountRepository>();
-builder.Services.AddTransient<IUserRepository, UserRepository>();
-builder.Services.AddTransient<ITransactionRepository, TransactionRepository>();
-builder.Services.AddTransient<ICardRepository, CardRepository>();
-builder.Services.AddTransient<ICurrencyRepository, CurrencyRepository>();
-builder.Services.AddTransient<IEmailRequestRepository, EmailRequestRepository>();
+builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
+builder.Services.AddScoped<ICardRepository, CardRepository>();
+builder.Services.AddScoped<ICurrencyRepository, CurrencyRepository>();
+builder.Services.AddScoped<IEmailRequestRepository, EmailRequestRepository>();
 
 builder.Services.AddCors(options =>
 {

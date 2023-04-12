@@ -1,0 +1,1054 @@
+2023-04-12 12:30:52.452 +04:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-04-12 12:30:52.536 +04:00 [DBG] Hosting starting
+2023-04-12 12:30:52.557 +04:00 [INF] User profile is available. Using 'C:\Users\srevazishvili\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-04-12 12:30:52.564 +04:00 [DBG] Reading data from file 'C:\Users\srevazishvili\AppData\Local\ASP.NET\DataProtection-Keys\key-298957ac-1947-4690-b38f-95802ef792d5.xml'.
+2023-04-12 12:30:52.569 +04:00 [DBG] Reading data from file 'C:\Users\srevazishvili\AppData\Local\ASP.NET\DataProtection-Keys\key-6b67ca3e-ca56-48ef-abcb-f08bc91b8c44.xml'.
+2023-04-12 12:30:52.575 +04:00 [DBG] Found key {298957ac-1947-4690-b38f-95802ef792d5}.
+2023-04-12 12:30:52.579 +04:00 [DBG] Found key {6b67ca3e-ca56-48ef-abcb-f08bc91b8c44}.
+2023-04-12 12:30:52.586 +04:00 [DBG] Considering key {298957ac-1947-4690-b38f-95802ef792d5} with expiration date 2023-06-02 19:40:18Z as default key.
+2023-04-12 12:30:52.589 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-04-12 12:30:52.592 +04:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-04-12 12:30:52.594 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-04-12 12:30:52.598 +04:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-04-12 12:30:52.603 +04:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-04-12 12:30:52.608 +04:00 [DBG] Using key {298957ac-1947-4690-b38f-95802ef792d5} as the default key.
+2023-04-12 12:30:52.610 +04:00 [DBG] Key ring with default key {298957ac-1947-4690-b38f-95802ef792d5} was loaded during application startup.
+2023-04-12 12:30:52.728 +04:00 [INF] Now listening on: https://localhost:7261
+2023-04-12 12:30:52.729 +04:00 [INF] Now listening on: http://localhost:5059
+2023-04-12 12:30:52.730 +04:00 [DBG] Loaded hosting startup assembly BankSystem.Atm.Api
+2023-04-12 12:30:52.731 +04:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-04-12 12:30:52.732 +04:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-04-12 12:30:52.734 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-12 12:30:52.734 +04:00 [INF] Hosting environment: Development
+2023-04-12 12:30:52.735 +04:00 [INF] Content root path: C:\Users\srevazishvili\source\repos\BankSystemMain\BankSystemCopy\Atm.Api
+2023-04-12 12:30:52.736 +04:00 [DBG] Hosting started
+2023-04-12 12:30:53.006 +04:00 [DBG] Connection id "0HMPR60T90KTJ" accepted.
+2023-04-12 12:30:53.008 +04:00 [DBG] Connection id "0HMPR60T90KTJ" started.
+2023-04-12 12:30:53.012 +04:00 [DBG] Connection id "0HMPR60T90KTK" accepted.
+2023-04-12 12:30:53.013 +04:00 [DBG] Connection id "0HMPR60T90KTK" started.
+2023-04-12 12:30:53.022 +04:00 [DBG] Connection id "0HMPR60T90KTJ" received FIN.
+2023-04-12 12:30:53.022 +04:00 [DBG] Connection id "0HMPR60T90KTK" received FIN.
+2023-04-12 12:30:53.028 +04:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-04-12 12:30:53.028 +04:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-04-12 12:30:53.052 +04:00 [DBG] Connection id "0HMPR60T90KTJ" stopped.
+2023-04-12 12:30:53.052 +04:00 [DBG] Connection id "0HMPR60T90KTK" stopped.
+2023-04-12 12:30:53.055 +04:00 [DBG] Connection id "0HMPR60T90KTK" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-04-12 12:30:53.055 +04:00 [DBG] Connection id "0HMPR60T90KTJ" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-04-12 12:30:53.238 +04:00 [DBG] Connection id "0HMPR60T90KTL" accepted.
+2023-04-12 12:30:53.239 +04:00 [DBG] Connection id "0HMPR60T90KTL" started.
+2023-04-12 12:30:53.279 +04:00 [DBG] Connection 0HMPR60T90KTL established using the following protocol: "Tls12"
+2023-04-12 12:30:53.329 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/index.html - -
+2023-04-12 12:30:53.356 +04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-04-12 12:30:53.388 +04:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2023-04-12 12:30:53.390 +04:00 [DBG] Request did not match any endpoints
+2023-04-12 12:30:53.551 +04:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2023-04-12 12:30:53.568 +04:00 [DBG] Response markup was updated to include browser refresh script injection.
+2023-04-12 12:30:53.572 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/index.html - - - 200 - text/html;charset=utf-8 244.1305ms
+2023-04-12 12:30:53.600 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/_framework/aspnetcore-browser-refresh.js - -
+2023-04-12 12:30:53.606 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/_framework/aspnetcore-browser-refresh.js - - - 200 12006 application/javascript;+charset=utf-8 5.4375ms
+2023-04-12 12:30:53.642 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/_vs/browserLink - -
+2023-04-12 12:30:53.667 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 25.4612ms
+2023-04-12 12:30:53.756 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/swagger/v1/swagger.json - -
+2023-04-12 12:30:53.757 +04:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2023-04-12 12:30:53.758 +04:00 [DBG] Request did not match any endpoints
+2023-04-12 12:30:53.903 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 147.4300ms
+2023-04-12 12:31:03.166 +04:00 [DBG] Connection id "0HMPR60T90KTL" received FIN.
+2023-04-12 12:31:03.169 +04:00 [DBG] The connection queue processing loop for 0HMPR60T90KTL completed.
+2023-04-12 12:31:03.172 +04:00 [DBG] Connection id "0HMPR60T90KTL" is closed. The last processed stream ID was 7.
+2023-04-12 12:31:03.174 +04:00 [DBG] Connection id "0HMPR60T90KTL" sending FIN because: "The client closed the connection."
+2023-04-12 12:31:03.176 +04:00 [DBG] Connection id "0HMPR60T90KTL" stopped.
+2023-04-12 12:33:23.968 +04:00 [DBG] Connection id "0HMPR60T90KTM" accepted.
+2023-04-12 12:33:23.970 +04:00 [DBG] Connection id "0HMPR60T90KTM" started.
+2023-04-12 12:33:23.977 +04:00 [DBG] Connection 0HMPR60T90KTM established using the following protocol: "Tls12"
+2023-04-12 12:33:23.980 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7261/api/Card/login - -
+2023-04-12 12:33:23.986 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Card/login'
+2023-04-12 12:33:23.987 +04:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-04-12 12:33:23.990 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-12 12:33:23.994 +04:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-04-12 12:33:23.996 +04:00 [INF] CORS policy execution successful.
+2023-04-12 12:33:23.998 +04:00 [DBG] The request is a preflight request.
+2023-04-12 12:33:24.000 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7261/api/Card/login - - - 204 - - 19.4720ms
+2023-04-12 12:33:24.002 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7261/api/Card/login application/json 45
+2023-04-12 12:33:24.005 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Card/login'
+2023-04-12 12:33:24.008 +04:00 [DBG] Endpoint 'ATM.Api.Controllers.CardController.Login (BankSystem.Atm.Api)' with route pattern 'api/Card/login' is valid for the request path '/api/Card/login'
+2023-04-12 12:33:24.010 +04:00 [DBG] Request matched endpoint 'ATM.Api.Controllers.CardController.Login (BankSystem.Atm.Api)'
+2023-04-12 12:33:24.011 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-12 12:33:24.013 +04:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-04-12 12:33:24.014 +04:00 [INF] CORS policy execution successful.
+2023-04-12 12:33:24.112 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-04-12 12:33:24.120 +04:00 [INF] Executing endpoint 'ATM.Api.Controllers.CardController.Login (BankSystem.Atm.Api)'
+2023-04-12 12:33:24.154 +04:00 [INF] Route matched with {action = "Login", controller = "Card"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BankSystem.Atm.Services.Models.Requests.LoginRequest) on controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api).
+2023-04-12 12:33:24.158 +04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-04-12 12:33:24.159 +04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-04-12 12:33:24.161 +04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-04-12 12:33:24.164 +04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-04-12 12:33:24.166 +04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-04-12 12:33:24.169 +04:00 [DBG] Executing controller factory for controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api)
+2023-04-12 12:33:24.364 +04:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-04-12 12:33:24.389 +04:00 [DBG] Executed controller factory for controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api)
+2023-04-12 12:33:24.400 +04:00 [DBG] Attempting to bind parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.LoginRequest' ...
+2023-04-12 12:33:24.403 +04:00 [DBG] Attempting to bind parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.LoginRequest' using the name '' in request data ...
+2023-04-12 12:33:24.407 +04:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-04-12 12:33:24.414 +04:00 [DBG] Connection id "0HMPR60T90KTM", Request id "0HMPR60T90KTM:00000003": started reading request body.
+2023-04-12 12:33:24.415 +04:00 [DBG] Connection id "0HMPR60T90KTM", Request id "0HMPR60T90KTM:00000003": done reading request body.
+2023-04-12 12:33:24.420 +04:00 [DBG] JSON input formatter succeeded, deserializing to type 'BankSystem.Atm.Services.Models.Requests.LoginRequest'
+2023-04-12 12:33:24.421 +04:00 [DBG] Done attempting to bind parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.LoginRequest'.
+2023-04-12 12:33:24.423 +04:00 [DBG] Done attempting to bind parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.LoginRequest'.
+2023-04-12 12:33:24.425 +04:00 [DBG] Attempting to validate the bound parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.LoginRequest' ...
+2023-04-12 12:33:24.435 +04:00 [DBG] Done attempting to validate the bound parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.LoginRequest'.
+2023-04-12 12:33:25.008 +04:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<Guid>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2023-04-12 12:33:25.010 +04:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<Guid>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2023-04-12 12:33:25.318 +04:00 [DBG] Entity Framework Core 7.0.3 initialized 'BankSystemDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.3' with options: None
+2023-04-12 12:33:25.428 +04:00 [DBG] Compiling query expression: 
+'DbSet<CardEntity>()
+    .Include(c => c.Account)
+    .FirstOrDefault(c => c.CardNumber == __request_CardNumber_0 && c.Pin == __request_Pin_1)'
+2023-04-12 12:33:25.476 +04:00 [DBG] Including navigation: 'CardEntity.Account'.
+2023-04-12 12:33:25.606 +04:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<CardEntity>(
+    asyncEnumerable: new SingleQueryingEnumerable<CardEntity>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.QueryExpression(
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: CardEntity.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: CardEntity.AccountId (Guid) Required FK Index, 1], [Property: CardEntity.CardNumber (string), 2], [Property: CardEntity.CreatedAt (DateTime) Required, 3], [Property: CardEntity.Cvv (string), 4], [Property: CardEntity.ExpiresAt (DateTime) Required, 5], [Property: CardEntity.FullName (string), 6], [Property: CardEntity.Pin (string), 7] }
+                1 -> Dictionary<IProperty, int> { [Property: AccountEntity.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 8], [Property: AccountEntity.Amount (decimal) Required, 9], [Property: AccountEntity.Currency (CurrencyType) Required, 10], [Property: AccountEntity.Iban (string), 11], [Property: AccountEntity.UserId (Guid) Required FK Index, 12] }
+            SELECT TOP(1) c.Id, c.AccountId, c.CardNumber, c.CreatedAt, c.Cvv, c.ExpiresAt, c.FullName, c.Pin, a.Id, a.Amount, a.Currency, a.Iban, a.UserId
+            FROM Cards AS c
+            INNER JOIN Accounts AS a ON c.AccountId == a.Id
+            WHERE (c.CardNumber == @__request_CardNumber_0) && (c.Pin == @__request_Pin_1)), 
+        null, 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
+        BankSystem.Common.Db.BankSystemDbContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2023-04-12 12:33:25.645 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-04-12 12:33:25.647 +04:00 [DBG] Creating DbConnection.
+2023-04-12 12:33:25.672 +04:00 [DBG] Created DbConnection. (22ms).
+2023-04-12 12:33:25.680 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (35ms).
+2023-04-12 12:33:25.689 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (46ms).
+2023-04-12 12:33:25.695 +04:00 [DBG] Opening connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:25.895 +04:00 [DBG] Opened connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:25.903 +04:00 [DBG] Executing DbCommand [Parameters=[@__request_CardNumber_0='?' (Size = 4000), @__request_Pin_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccountId], [c].[CardNumber], [c].[CreatedAt], [c].[Cvv], [c].[ExpiresAt], [c].[FullName], [c].[Pin], [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId]
+FROM [Cards] AS [c]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[Id]
+WHERE [c].[CardNumber] = @__request_CardNumber_0 AND [c].[Pin] = @__request_Pin_1
+2023-04-12 12:33:25.969 +04:00 [INF] Executed DbCommand (68ms) [Parameters=[@__request_CardNumber_0='?' (Size = 4000), @__request_Pin_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccountId], [c].[CardNumber], [c].[CreatedAt], [c].[Cvv], [c].[ExpiresAt], [c].[FullName], [c].[Pin], [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId]
+FROM [Cards] AS [c]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[Id]
+WHERE [c].[CardNumber] = @__request_CardNumber_0 AND [c].[Pin] = @__request_Pin_1
+2023-04-12 12:33:25.998 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CardEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:26.039 +04:00 [DBG] The navigation 'CardEntity.Account' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:26.049 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'AccountEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:26.066 +04:00 [DBG] Closing data reader to 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:26.073 +04:00 [DBG] A data reader for 'BankSystem' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 96ms reading results.
+2023-04-12 12:33:26.077 +04:00 [DBG] Closing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:26.083 +04:00 [DBG] Closed connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB' (5ms).
+2023-04-12 12:33:26.211 +04:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-04-12 12:33:26.215 +04:00 [DBG] No information found on request to perform content negotiation.
+2023-04-12 12:33:26.216 +04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-04-12 12:33:26.217 +04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-04-12 12:33:26.219 +04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-04-12 12:33:26.220 +04:00 [INF] Executing OkObjectResult, writing value of type 'BankSystem.Common.Models.HttpResult'.
+2023-04-12 12:33:26.234 +04:00 [INF] Executed action ATM.Api.Controllers.CardController.Login (BankSystem.Atm.Api) in 2063.8703ms
+2023-04-12 12:33:26.236 +04:00 [INF] Executed endpoint 'ATM.Api.Controllers.CardController.Login (BankSystem.Atm.Api)'
+2023-04-12 12:33:26.239 +04:00 [DBG] 'BankSystemDbContext' disposed.
+2023-04-12 12:33:26.243 +04:00 [DBG] Disposing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:26.245 +04:00 [DBG] Disposed connection to database '' on server '' (2ms).
+2023-04-12 12:33:26.248 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7261/api/Card/login application/json 45 - 200 - application/json;+charset=utf-8 2245.8214ms
+2023-04-12 12:33:27.310 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7261/api/Card/see-balance - -
+2023-04-12 12:33:27.310 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7261/api/Card/see-balance - -
+2023-04-12 12:33:27.311 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Card/see-balance'
+2023-04-12 12:33:27.313 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Card/see-balance'
+2023-04-12 12:33:27.314 +04:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-04-12 12:33:27.315 +04:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-04-12 12:33:27.316 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-12 12:33:27.317 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-12 12:33:27.319 +04:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-04-12 12:33:27.319 +04:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-04-12 12:33:27.320 +04:00 [INF] CORS policy execution successful.
+2023-04-12 12:33:27.321 +04:00 [INF] CORS policy execution successful.
+2023-04-12 12:33:27.322 +04:00 [DBG] The request is a preflight request.
+2023-04-12 12:33:27.323 +04:00 [DBG] The request is a preflight request.
+2023-04-12 12:33:27.324 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7261/api/Card/see-balance - - - 204 - - 13.5407ms
+2023-04-12 12:33:27.324 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7261/api/Card/see-balance - - - 204 - - 14.4519ms
+2023-04-12 12:33:27.326 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/api/Card/see-balance - -
+2023-04-12 12:33:27.327 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Card/see-balance'
+2023-04-12 12:33:27.329 +04:00 [DBG] Endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)' with route pattern 'api/Card/see-balance' is valid for the request path '/api/Card/see-balance'
+2023-04-12 12:33:27.330 +04:00 [DBG] Request matched endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)'
+2023-04-12 12:33:27.332 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-12 12:33:27.333 +04:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-04-12 12:33:27.334 +04:00 [INF] CORS policy execution successful.
+2023-04-12 12:33:27.370 +04:00 [DBG] Successfully validated the token.
+2023-04-12 12:33:27.373 +04:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-04-12 12:33:27.379 +04:00 [DBG] Authorization was successful.
+2023-04-12 12:33:27.381 +04:00 [INF] Executing endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)'
+2023-04-12 12:33:27.385 +04:00 [INF] Route matched with {action = "SeeBalance", controller = "Card"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SeeBalance() on controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api).
+2023-04-12 12:33:27.387 +04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-04-12 12:33:27.389 +04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-04-12 12:33:27.390 +04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-04-12 12:33:27.392 +04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-04-12 12:33:27.393 +04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-04-12 12:33:27.395 +04:00 [DBG] Executing controller factory for controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api)
+2023-04-12 12:33:27.398 +04:00 [DBG] Executed controller factory for controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api)
+2023-04-12 12:33:27.412 +04:00 [DBG] Entity Framework Core 7.0.3 initialized 'BankSystemDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.3' with options: None
+2023-04-12 12:33:27.415 +04:00 [DBG] Compiling query expression: 
+'DbSet<CardEntity>()
+    .Include(c => c.Account)
+    .FirstOrDefault(c => c.Id == __cardId_0)'
+2023-04-12 12:33:27.417 +04:00 [DBG] Including navigation: 'CardEntity.Account'.
+2023-04-12 12:33:27.425 +04:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<CardEntity>(
+    asyncEnumerable: new SingleQueryingEnumerable<CardEntity>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.QueryExpression(
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: CardEntity.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: CardEntity.AccountId (Guid) Required FK Index, 1], [Property: CardEntity.CardNumber (string), 2], [Property: CardEntity.CreatedAt (DateTime) Required, 3], [Property: CardEntity.Cvv (string), 4], [Property: CardEntity.ExpiresAt (DateTime) Required, 5], [Property: CardEntity.FullName (string), 6], [Property: CardEntity.Pin (string), 7] }
+                1 -> Dictionary<IProperty, int> { [Property: AccountEntity.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 8], [Property: AccountEntity.Amount (decimal) Required, 9], [Property: AccountEntity.Currency (CurrencyType) Required, 10], [Property: AccountEntity.Iban (string), 11], [Property: AccountEntity.UserId (Guid) Required FK Index, 12] }
+            SELECT TOP(1) c.Id, c.AccountId, c.CardNumber, c.CreatedAt, c.Cvv, c.ExpiresAt, c.FullName, c.Pin, a.Id, a.Amount, a.Currency, a.Iban, a.UserId
+            FROM Cards AS c
+            INNER JOIN Accounts AS a ON c.AccountId == a.Id
+            WHERE c.Id == @__cardId_0), 
+        null, 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CardEntity>, 
+        BankSystem.Common.Db.BankSystemDbContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2023-04-12 12:33:27.429 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-04-12 12:33:27.431 +04:00 [DBG] Creating DbConnection.
+2023-04-12 12:33:27.433 +04:00 [DBG] Created DbConnection. (1ms).
+2023-04-12 12:33:27.434 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (4ms).
+2023-04-12 12:33:27.436 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (6ms).
+2023-04-12 12:33:27.437 +04:00 [DBG] Opening connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:27.439 +04:00 [DBG] Opened connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:27.441 +04:00 [DBG] Executing DbCommand [Parameters=[@__cardId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccountId], [c].[CardNumber], [c].[CreatedAt], [c].[Cvv], [c].[ExpiresAt], [c].[FullName], [c].[Pin], [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId]
+FROM [Cards] AS [c]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[Id]
+WHERE [c].[Id] = @__cardId_0
+2023-04-12 12:33:27.451 +04:00 [INF] Executed DbCommand (10ms) [Parameters=[@__cardId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccountId], [c].[CardNumber], [c].[CreatedAt], [c].[Cvv], [c].[ExpiresAt], [c].[FullName], [c].[Pin], [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId]
+FROM [Cards] AS [c]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[Id]
+WHERE [c].[Id] = @__cardId_0
+2023-04-12 12:33:27.454 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CardEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:27.456 +04:00 [DBG] The navigation 'CardEntity.Account' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:27.458 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'AccountEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:27.459 +04:00 [DBG] Closing data reader to 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:27.461 +04:00 [DBG] A data reader for 'BankSystem' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 7ms reading results.
+2023-04-12 12:33:27.463 +04:00 [DBG] Closing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:27.465 +04:00 [DBG] Closed connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB' (1ms).
+2023-04-12 12:33:27.467 +04:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-04-12 12:33:27.470 +04:00 [DBG] No information found on request to perform content negotiation.
+2023-04-12 12:33:27.470 +04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-04-12 12:33:27.471 +04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-04-12 12:33:27.473 +04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-04-12 12:33:27.474 +04:00 [INF] Executing OkObjectResult, writing value of type 'BankSystem.Common.Models.HttpResult'.
+2023-04-12 12:33:27.480 +04:00 [INF] Executed action ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api) in 84.7792ms
+2023-04-12 12:33:27.482 +04:00 [INF] Executed endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)'
+2023-04-12 12:33:27.482 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/api/Card/see-balance - -
+2023-04-12 12:33:27.483 +04:00 [DBG] 'BankSystemDbContext' disposed.
+2023-04-12 12:33:27.484 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Card/see-balance'
+2023-04-12 12:33:27.486 +04:00 [DBG] Disposing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:27.487 +04:00 [DBG] Endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)' with route pattern 'api/Card/see-balance' is valid for the request path '/api/Card/see-balance'
+2023-04-12 12:33:27.488 +04:00 [DBG] Disposed connection to database '' on server '' (2ms).
+2023-04-12 12:33:27.490 +04:00 [DBG] Request matched endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)'
+2023-04-12 12:33:27.491 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/api/Card/see-balance - - - 200 - application/json;+charset=utf-8 164.6224ms
+2023-04-12 12:33:27.492 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-12 12:33:27.495 +04:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-04-12 12:33:27.496 +04:00 [INF] CORS policy execution successful.
+2023-04-12 12:33:27.500 +04:00 [DBG] Successfully validated the token.
+2023-04-12 12:33:27.501 +04:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-04-12 12:33:27.504 +04:00 [DBG] Authorization was successful.
+2023-04-12 12:33:27.506 +04:00 [INF] Executing endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)'
+2023-04-12 12:33:27.507 +04:00 [INF] Route matched with {action = "SeeBalance", controller = "Card"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SeeBalance() on controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api).
+2023-04-12 12:33:27.510 +04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-04-12 12:33:27.511 +04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-04-12 12:33:27.513 +04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-04-12 12:33:27.515 +04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-04-12 12:33:27.516 +04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-04-12 12:33:27.518 +04:00 [DBG] Executing controller factory for controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api)
+2023-04-12 12:33:27.521 +04:00 [DBG] Executed controller factory for controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api)
+2023-04-12 12:33:27.573 +04:00 [DBG] Entity Framework Core 7.0.3 initialized 'BankSystemDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.3' with options: None
+2023-04-12 12:33:27.578 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-04-12 12:33:27.579 +04:00 [DBG] Creating DbConnection.
+2023-04-12 12:33:27.580 +04:00 [DBG] Created DbConnection. (0ms).
+2023-04-12 12:33:27.581 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2023-04-12 12:33:27.582 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (4ms).
+2023-04-12 12:33:27.584 +04:00 [DBG] Opening connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:27.585 +04:00 [DBG] Opened connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:27.586 +04:00 [DBG] Executing DbCommand [Parameters=[@__cardId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccountId], [c].[CardNumber], [c].[CreatedAt], [c].[Cvv], [c].[ExpiresAt], [c].[FullName], [c].[Pin], [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId]
+FROM [Cards] AS [c]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[Id]
+WHERE [c].[Id] = @__cardId_0
+2023-04-12 12:33:27.591 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__cardId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccountId], [c].[CardNumber], [c].[CreatedAt], [c].[Cvv], [c].[ExpiresAt], [c].[FullName], [c].[Pin], [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId]
+FROM [Cards] AS [c]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[Id]
+WHERE [c].[Id] = @__cardId_0
+2023-04-12 12:33:27.594 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CardEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:27.596 +04:00 [DBG] The navigation 'CardEntity.Account' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:27.597 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'AccountEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:27.599 +04:00 [DBG] Closing data reader to 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:27.600 +04:00 [DBG] A data reader for 'BankSystem' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 6ms reading results.
+2023-04-12 12:33:27.602 +04:00 [DBG] Closing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:27.603 +04:00 [DBG] Closed connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB' (1ms).
+2023-04-12 12:33:27.605 +04:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-04-12 12:33:27.608 +04:00 [DBG] No information found on request to perform content negotiation.
+2023-04-12 12:33:27.609 +04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-04-12 12:33:27.610 +04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-04-12 12:33:27.611 +04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-04-12 12:33:27.613 +04:00 [INF] Executing OkObjectResult, writing value of type 'BankSystem.Common.Models.HttpResult'.
+2023-04-12 12:33:27.614 +04:00 [INF] Executed action ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api) in 96.4027ms
+2023-04-12 12:33:27.616 +04:00 [INF] Executed endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)'
+2023-04-12 12:33:27.617 +04:00 [DBG] 'BankSystemDbContext' disposed.
+2023-04-12 12:33:27.618 +04:00 [DBG] Disposing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:27.620 +04:00 [DBG] Disposed connection to database '' on server '' (1ms).
+2023-04-12 12:33:27.621 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/api/Card/see-balance - - - 200 - application/json;+charset=utf-8 139.3790ms
+2023-04-12 12:33:31.795 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7261/api/Transaction/cash-out - -
+2023-04-12 12:33:31.796 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Transaction/cash-out'
+2023-04-12 12:33:31.798 +04:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-04-12 12:33:31.798 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-12 12:33:31.799 +04:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-04-12 12:33:31.800 +04:00 [INF] CORS policy execution successful.
+2023-04-12 12:33:31.801 +04:00 [DBG] The request is a preflight request.
+2023-04-12 12:33:31.802 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7261/api/Transaction/cash-out - - - 204 - - 6.8279ms
+2023-04-12 12:33:31.803 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7261/api/Transaction/cash-out application/json 26
+2023-04-12 12:33:31.804 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Transaction/cash-out'
+2023-04-12 12:33:31.805 +04:00 [DBG] Endpoint 'ATM.Api.Controllers.TransactionController.CashOut (BankSystem.Atm.Api)' with route pattern 'api/Transaction/cash-out' is valid for the request path '/api/Transaction/cash-out'
+2023-04-12 12:33:31.807 +04:00 [DBG] Request matched endpoint 'ATM.Api.Controllers.TransactionController.CashOut (BankSystem.Atm.Api)'
+2023-04-12 12:33:31.808 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-12 12:33:31.808 +04:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-04-12 12:33:31.809 +04:00 [INF] CORS policy execution successful.
+2023-04-12 12:33:31.810 +04:00 [DBG] Successfully validated the token.
+2023-04-12 12:33:31.811 +04:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-04-12 12:33:31.813 +04:00 [DBG] Authorization was successful.
+2023-04-12 12:33:31.814 +04:00 [INF] Executing endpoint 'ATM.Api.Controllers.TransactionController.CashOut (BankSystem.Atm.Api)'
+2023-04-12 12:33:31.818 +04:00 [INF] Route matched with {action = "CashOut", controller = "Transaction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CashOut(BankSystem.Atm.Services.Models.Requests.CashOutRequest) on controller ATM.Api.Controllers.TransactionController (BankSystem.Atm.Api).
+2023-04-12 12:33:31.820 +04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-04-12 12:33:31.821 +04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-04-12 12:33:31.823 +04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-04-12 12:33:31.825 +04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-04-12 12:33:31.826 +04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-04-12 12:33:31.828 +04:00 [DBG] Executing controller factory for controller ATM.Api.Controllers.TransactionController (BankSystem.Atm.Api)
+2023-04-12 12:33:31.831 +04:00 [DBG] Executed controller factory for controller ATM.Api.Controllers.TransactionController (BankSystem.Atm.Api)
+2023-04-12 12:33:31.833 +04:00 [DBG] Attempting to bind parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.CashOutRequest' ...
+2023-04-12 12:33:31.835 +04:00 [DBG] Attempting to bind parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.CashOutRequest' using the name '' in request data ...
+2023-04-12 12:33:31.837 +04:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-04-12 12:33:31.843 +04:00 [DBG] Connection id "0HMPR60T90KTM", Request id "0HMPR60T90KTM:0000000F": started reading request body.
+2023-04-12 12:33:31.844 +04:00 [DBG] Connection id "0HMPR60T90KTM", Request id "0HMPR60T90KTM:0000000F": done reading request body.
+2023-04-12 12:33:31.849 +04:00 [DBG] JSON input formatter succeeded, deserializing to type 'BankSystem.Atm.Services.Models.Requests.CashOutRequest'
+2023-04-12 12:33:31.850 +04:00 [DBG] Done attempting to bind parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.CashOutRequest'.
+2023-04-12 12:33:31.852 +04:00 [DBG] Done attempting to bind parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.CashOutRequest'.
+2023-04-12 12:33:31.853 +04:00 [DBG] Attempting to validate the bound parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.CashOutRequest' ...
+2023-04-12 12:33:31.859 +04:00 [DBG] Done attempting to validate the bound parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.CashOutRequest'.
+2023-04-12 12:33:31.868 +04:00 [DBG] Entity Framework Core 7.0.3 initialized 'BankSystemDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.3' with options: None
+2023-04-12 12:33:31.871 +04:00 [DBG] Compiling query expression: 
+'DbSet<CurrencyEntity>()'
+2023-04-12 12:33:31.878 +04:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<CurrencyEntity>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: CurrencyEntity.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: CurrencyEntity.Code (string), 1], [Property: CurrencyEntity.Date (DateTime) Required, 2], [Property: CurrencyEntity.Diff (decimal) Required, 3], [Property: CurrencyEntity.DiffFormated (string), 4], [Property: CurrencyEntity.LastUpdatedAt (DateTime) Required, 5], [Property: CurrencyEntity.Name (string), 6], [Property: CurrencyEntity.Quantity (int) Required, 7], [Property: CurrencyEntity.Rate (decimal) Required, 8], [Property: CurrencyEntity.RateFormated (string), 9], [Property: CurrencyEntity.ValidFromDate (DateTime) Required, 10] }
+        SELECT c.Id, c.Code, c.Date, c.Diff, c.DiffFormated, c.LastUpdatedAt, c.Name, c.Quantity, c.Rate, c.RateFormated, c.ValidFromDate
+        FROM Currencies AS c), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, CurrencyEntity>, 
+    BankSystem.Common.Db.BankSystemDbContext, 
+    False, 
+    False, 
+    True
+)'
+2023-04-12 12:33:31.881 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-04-12 12:33:31.883 +04:00 [DBG] Creating DbConnection.
+2023-04-12 12:33:31.884 +04:00 [DBG] Created DbConnection. (0ms).
+2023-04-12 12:33:31.885 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (3ms).
+2023-04-12 12:33:31.886 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (4ms).
+2023-04-12 12:33:31.887 +04:00 [DBG] Opening connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:31.888 +04:00 [DBG] Opened connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:31.889 +04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Code], [c].[Date], [c].[Diff], [c].[DiffFormated], [c].[LastUpdatedAt], [c].[Name], [c].[Quantity], [c].[Rate], [c].[RateFormated], [c].[ValidFromDate]
+FROM [Currencies] AS [c]
+2023-04-12 12:33:31.896 +04:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Code], [c].[Date], [c].[Diff], [c].[DiffFormated], [c].[LastUpdatedAt], [c].[Name], [c].[Quantity], [c].[Rate], [c].[RateFormated], [c].[ValidFromDate]
+FROM [Currencies] AS [c]
+2023-04-12 12:33:31.902 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.921 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.923 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.925 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.927 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.928 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.930 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.932 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.934 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.936 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.937 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.939 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.940 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.942 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.944 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.946 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.948 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.949 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.951 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.952 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.954 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.956 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.957 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.958 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.960 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.961 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.963 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.965 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.966 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.968 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.969 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.970 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.972 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.973 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.975 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.976 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.978 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.979 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.981 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.982 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.984 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.987 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.989 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:31.990 +04:00 [DBG] Closing data reader to 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:31.991 +04:00 [DBG] A data reader for 'BankSystem' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 92ms reading results.
+2023-04-12 12:33:31.992 +04:00 [DBG] Closing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:31.994 +04:00 [DBG] Closed connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB' (1ms).
+2023-04-12 12:33:32.001 +04:00 [DBG] Compiling query expression: 
+'DbSet<AccountEntity>()
+    .Include(a => a.UserEntity)
+    .FirstOrDefault(a => a.Cards
+        .Any(c => c.Id == __cardId_0))'
+2023-04-12 12:33:32.008 +04:00 [DBG] Including navigation: 'AccountEntity.UserEntity'.
+2023-04-12 12:33:32.041 +04:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<AccountEntity>(
+    asyncEnumerable: new SingleQueryingEnumerable<AccountEntity>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.QueryExpression(
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: AccountEntity.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: AccountEntity.Amount (decimal) Required, 1], [Property: AccountEntity.Currency (CurrencyType) Required, 2], [Property: AccountEntity.Iban (string), 3], [Property: AccountEntity.UserId (Guid) Required FK Index, 4] }
+                1 -> Dictionary<IProperty, int> { [Property: UserEntity.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 5], [Property: UserEntity.AccessFailedCount (int) Required, 6], [Property: UserEntity.BirthDate (DateTime) Required, 7], [Property: UserEntity.ConcurrencyStamp (string) Concurrency, 8], [Property: UserEntity.Email (string) MaxLength(256), 9], [Property: UserEntity.EmailConfirmed (bool) Required, 10], [Property: UserEntity.FirstName (string), 11], [Property: UserEntity.LastName (string), 12], [Property: UserEntity.LockoutEnabled (bool) Required, 13], [Property: UserEntity.LockoutEnd (DateTimeOffset?), 14], [Property: UserEntity.NormalizedEmail (string) Index MaxLength(256), 15], [Property: UserEntity.NormalizedUserName (string) Index MaxLength(256), 16], [Property: UserEntity.PasswordHash (string), 17], [Property: UserEntity.PersonalNumber (string), 18], [Property: UserEntity.PhoneNumber (string), 19], [Property: UserEntity.PhoneNumberConfirmed (bool) Required, 20], [Property: UserEntity.RegisteredAt (DateTime) Required, 21], [Property: UserEntity.SecurityStamp (string), 22], [Property: UserEntity.TwoFactorEnabled (bool) Required, 23], [Property: UserEntity.UserName (string) MaxLength(256), 24] }
+            SELECT TOP(1) a.Id, a.Amount, a.Currency, a.Iban, a.UserId, a0.Id, a0.AccessFailedCount, a0.BirthDate, a0.ConcurrencyStamp, a0.Email, a0.EmailConfirmed, a0.FirstName, a0.LastName, a0.LockoutEnabled, a0.LockoutEnd, a0.NormalizedEmail, a0.NormalizedUserName, a0.PasswordHash, a0.PersonalNumber, a0.PhoneNumber, a0.PhoneNumberConfirmed, a0.RegisteredAt, a0.SecurityStamp, a0.TwoFactorEnabled, a0.UserName
+            FROM Accounts AS a
+            INNER JOIN AspNetUsers AS a0 ON a.UserId == a0.Id
+            WHERE EXISTS (
+                SELECT 1
+                FROM Cards AS c
+                WHERE ((a.Id != NULL) && (a.Id == c.AccountId)) && (c.Id == @__cardId_0))), 
+        null, 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, AccountEntity>, 
+        BankSystem.Common.Db.BankSystemDbContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2023-04-12 12:33:32.048 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-04-12 12:33:32.049 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-04-12 12:33:32.051 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (2ms).
+2023-04-12 12:33:32.053 +04:00 [DBG] Opening connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:32.054 +04:00 [DBG] Opened connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:32.055 +04:00 [DBG] Executing DbCommand [Parameters=[@__cardId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId], [a0].[Id], [a0].[AccessFailedCount], [a0].[BirthDate], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PersonalNumber], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[RegisteredAt], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+FROM [Accounts] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Cards] AS [c]
+    WHERE [a].[Id] = [c].[AccountId] AND [c].[Id] = @__cardId_0)
+2023-04-12 12:33:32.067 +04:00 [INF] Executed DbCommand (12ms) [Parameters=[@__cardId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId], [a0].[Id], [a0].[AccessFailedCount], [a0].[BirthDate], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PersonalNumber], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[RegisteredAt], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+FROM [Accounts] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Cards] AS [c]
+    WHERE [a].[Id] = [c].[AccountId] AND [c].[Id] = @__cardId_0)
+2023-04-12 12:33:32.071 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'AccountEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:32.087 +04:00 [DBG] The navigation 'AccountEntity.UserEntity' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:32.090 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'UserEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:32.125 +04:00 [DBG] Closing data reader to 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:32.126 +04:00 [DBG] A data reader for 'BankSystem' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 55ms reading results.
+2023-04-12 12:33:32.128 +04:00 [DBG] Closing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:32.129 +04:00 [DBG] Closed connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB' (1ms).
+2023-04-12 12:33:32.139 +04:00 [DBG] Compiling query expression: 
+'DbSet<TransactionEntity>()
+    .Where(t => t.AccountFromId == __accountId_0 && t.CreatedAt.Date == DateTime.Now.Date && (int)t.TransactionType == 0)'
+2023-04-12 12:33:32.152 +04:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<TransactionEntity>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: TransactionEntity.Id (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: TransactionEntity.AccountFromIban (string), 1], [Property: TransactionEntity.AccountFromId (Guid?), 2], [Property: TransactionEntity.AccountToIban (string), 3], [Property: TransactionEntity.AccountToId (Guid?), 4], [Property: TransactionEntity.CreatedAt (DateTime) Required, 5], [Property: TransactionEntity.CurrencyFrom (CurrencyType) Required, 6], [Property: TransactionEntity.CurrencyTo (CurrencyType) Required, 7], [Property: TransactionEntity.Fee (decimal) Required, 8], [Property: TransactionEntity.ReceivedAmount (decimal) Required, 9], [Property: TransactionEntity.TransactionType (TransactionType) Required, 10], [Property: TransactionEntity.WithDrawnAmount (decimal) Required, 11] }
+        SELECT t.Id, t.AccountFromIban, t.AccountFromId, t.AccountToIban, t.AccountToId, t.CreatedAt, t.CurrencyFrom, t.CurrencyTo, t.Fee, t.ReceivedAmount, t.TransactionType, t.WithDrawnAmount
+        FROM Transactions AS t
+        WHERE ((t.AccountFromId == @__accountId_0) && (CONVERT(date, t.CreatedAt) == CONVERT(date, GETDATE()))) && (t.TransactionType == 0)), 
+    null, 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, TransactionEntity>, 
+    BankSystem.Common.Db.BankSystemDbContext, 
+    False, 
+    False, 
+    True
+)'
+2023-04-12 12:33:32.159 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-04-12 12:33:32.160 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-04-12 12:33:32.161 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (2ms).
+2023-04-12 12:33:32.163 +04:00 [DBG] Opening connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:32.165 +04:00 [DBG] Opened connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:32.166 +04:00 [DBG] Executing DbCommand [Parameters=[@__accountId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccountFromIban], [t].[AccountFromId], [t].[AccountToIban], [t].[AccountToId], [t].[CreatedAt], [t].[CurrencyFrom], [t].[CurrencyTo], [t].[Fee], [t].[ReceivedAmount], [t].[TransactionType], [t].[WithDrawnAmount]
+FROM [Transactions] AS [t]
+WHERE [t].[AccountFromId] = @__accountId_0 AND CONVERT(date, [t].[CreatedAt]) = CONVERT(date, GETDATE()) AND [t].[TransactionType] = 0
+2023-04-12 12:33:32.174 +04:00 [INF] Executed DbCommand (8ms) [Parameters=[@__accountId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccountFromIban], [t].[AccountFromId], [t].[AccountToIban], [t].[AccountToId], [t].[CreatedAt], [t].[CurrencyFrom], [t].[CurrencyTo], [t].[Fee], [t].[ReceivedAmount], [t].[TransactionType], [t].[WithDrawnAmount]
+FROM [Transactions] AS [t]
+WHERE [t].[AccountFromId] = @__accountId_0 AND CONVERT(date, [t].[CreatedAt]) = CONVERT(date, GETDATE()) AND [t].[TransactionType] = 0
+2023-04-12 12:33:32.177 +04:00 [DBG] Closing data reader to 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:32.178 +04:00 [DBG] A data reader for 'BankSystem' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 1ms reading results.
+2023-04-12 12:33:32.180 +04:00 [DBG] Closing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:32.182 +04:00 [DBG] Closed connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB' (1ms).
+2023-04-12 12:33:32.194 +04:00 [DBG] An entity of type 'AccountEntity' tracked by 'BankSystemDbContext' changed state from '"Unchanged"' to '"Modified"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:32.239 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'TransactionEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:32.257 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'EmailRequestEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:32.262 +04:00 [DBG] SaveChanges starting for 'BankSystemDbContext'.
+2023-04-12 12:33:32.265 +04:00 [DBG] DetectChanges starting for 'BankSystemDbContext'.
+2023-04-12 12:33:32.317 +04:00 [DBG] DetectChanges completed for 'BankSystemDbContext'.
+2023-04-12 12:33:32.432 +04:00 [DBG] Executing 3 update commands as a batch.
+2023-04-12 12:33:32.437 +04:00 [DBG] Opening connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:32.438 +04:00 [DBG] Opened connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:32.441 +04:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2023-04-12 12:33:32.451 +04:00 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2023-04-12 12:33:32.456 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-04-12 12:33:32.457 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-04-12 12:33:32.462 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (6ms).
+2023-04-12 12:33:32.464 +04:00 [DBG] Executing DbCommand [Parameters=[@p4='?' (DbType = Guid), @p0='?' (Precision = 18) (Scale = 3) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (DbType = Int32), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Guid), @p12='?' (Size = 4000), @p13='?' (DbType = Guid), @p14='?' (Size = 4000), @p15='?' (DbType = Guid), @p16='?' (DbType = DateTime2), @p17='?' (DbType = Int32), @p18='?' (DbType = Int32), @p19='?' (Precision = 18) (Scale = 3) (DbType = Decimal), @p20='?' (Precision = 18) (Scale = 3) (DbType = Decimal), @p21='?' (DbType = Int32), @p22='?' (Precision = 18) (Scale = 3) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Accounts] SET [Amount] = @p0, [Currency] = @p1, [Iban] = @p2, [UserId] = @p3
+OUTPUT 1
+WHERE [Id] = @p4;
+INSERT INTO [EmailRequests] ([Id], [Body], [CreatedAt], [Status], [Subject], [ToAddress])
+VALUES (@p5, @p6, @p7, @p8, @p9, @p10);
+INSERT INTO [Transactions] ([Id], [AccountFromIban], [AccountFromId], [AccountToIban], [AccountToId], [CreatedAt], [CurrencyFrom], [CurrencyTo], [Fee], [ReceivedAmount], [TransactionType], [WithDrawnAmount])
+VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22);
+2023-04-12 12:33:32.482 +04:00 [INF] Executed DbCommand (18ms) [Parameters=[@p4='?' (DbType = Guid), @p0='?' (Precision = 18) (Scale = 3) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (DbType = Int32), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Guid), @p12='?' (Size = 4000), @p13='?' (DbType = Guid), @p14='?' (Size = 4000), @p15='?' (DbType = Guid), @p16='?' (DbType = DateTime2), @p17='?' (DbType = Int32), @p18='?' (DbType = Int32), @p19='?' (Precision = 18) (Scale = 3) (DbType = Decimal), @p20='?' (Precision = 18) (Scale = 3) (DbType = Decimal), @p21='?' (DbType = Int32), @p22='?' (Precision = 18) (Scale = 3) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Accounts] SET [Amount] = @p0, [Currency] = @p1, [Iban] = @p2, [UserId] = @p3
+OUTPUT 1
+WHERE [Id] = @p4;
+INSERT INTO [EmailRequests] ([Id], [Body], [CreatedAt], [Status], [Subject], [ToAddress])
+VALUES (@p5, @p6, @p7, @p8, @p9, @p10);
+INSERT INTO [Transactions] ([Id], [AccountFromIban], [AccountFromId], [AccountToIban], [AccountToId], [CreatedAt], [CurrencyFrom], [CurrencyTo], [Fee], [ReceivedAmount], [TransactionType], [WithDrawnAmount])
+VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22);
+2023-04-12 12:33:32.489 +04:00 [DBG] Closing data reader to 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:32.491 +04:00 [DBG] A data reader for 'BankSystem' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 5ms reading results.
+2023-04-12 12:33:32.495 +04:00 [DBG] Committing transaction.
+2023-04-12 12:33:32.499 +04:00 [DBG] Committed transaction.
+2023-04-12 12:33:32.502 +04:00 [DBG] Closing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:32.503 +04:00 [DBG] Closed connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB' (1ms).
+2023-04-12 12:33:32.506 +04:00 [DBG] Disposing transaction.
+2023-04-12 12:33:32.511 +04:00 [DBG] An entity of type 'TransactionEntity' tracked by 'BankSystemDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:32.514 +04:00 [DBG] An entity of type 'EmailRequestEntity' tracked by 'BankSystemDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:32.516 +04:00 [DBG] An entity of type 'AccountEntity' tracked by 'BankSystemDbContext' changed state from '"Modified"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:32.519 +04:00 [DBG] SaveChanges completed for 'BankSystemDbContext' with 3 entities written to the database.
+2023-04-12 12:33:32.521 +04:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-04-12 12:33:32.523 +04:00 [DBG] No information found on request to perform content negotiation.
+2023-04-12 12:33:32.524 +04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-04-12 12:33:32.526 +04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-04-12 12:33:32.526 +04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-04-12 12:33:32.528 +04:00 [INF] Executing OkObjectResult, writing value of type 'BankSystem.Common.Models.HttpResult'.
+2023-04-12 12:33:32.536 +04:00 [INF] Executed action ATM.Api.Controllers.TransactionController.CashOut (BankSystem.Atm.Api) in 708.5171ms
+2023-04-12 12:33:32.538 +04:00 [INF] Executed endpoint 'ATM.Api.Controllers.TransactionController.CashOut (BankSystem.Atm.Api)'
+2023-04-12 12:33:32.539 +04:00 [DBG] 'BankSystemDbContext' disposed.
+2023-04-12 12:33:32.541 +04:00 [DBG] Disposing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:32.542 +04:00 [DBG] Disposed connection to database '' on server '' (1ms).
+2023-04-12 12:33:32.543 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7261/api/Transaction/cash-out application/json 26 - 200 - application/json;+charset=utf-8 740.0075ms
+2023-04-12 12:33:33.412 +04:00 [DBG] Connection id "0HMPR60T90KTM" received FIN.
+2023-04-12 12:33:33.414 +04:00 [DBG] Connection id "0HMPR60T90KTM" is closed. The last processed stream ID was 15.
+2023-04-12 12:33:33.414 +04:00 [DBG] Connection id "0HMPR60T90KTM" sending FIN because: "The client closed the connection."
+2023-04-12 12:33:33.417 +04:00 [DBG] The connection queue processing loop for 0HMPR60T90KTM completed.
+2023-04-12 12:33:33.418 +04:00 [DBG] Connection id "0HMPR60T90KTM" stopped.
+2023-04-12 12:33:33.954 +04:00 [DBG] Connection id "0HMPR60T90KTN" accepted.
+2023-04-12 12:33:33.955 +04:00 [DBG] Connection id "0HMPR60T90KTN" started.
+2023-04-12 12:33:33.957 +04:00 [DBG] Connection 0HMPR60T90KTN established using the following protocol: "Tls12"
+2023-04-12 12:33:33.959 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7261/api/Card/see-balance - -
+2023-04-12 12:33:33.959 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7261/api/Card/see-balance - -
+2023-04-12 12:33:33.959 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Card/see-balance'
+2023-04-12 12:33:33.960 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Card/see-balance'
+2023-04-12 12:33:33.962 +04:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-04-12 12:33:33.964 +04:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-04-12 12:33:33.965 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-12 12:33:33.966 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-12 12:33:33.967 +04:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-04-12 12:33:33.968 +04:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-04-12 12:33:33.969 +04:00 [INF] CORS policy execution successful.
+2023-04-12 12:33:33.970 +04:00 [INF] CORS policy execution successful.
+2023-04-12 12:33:33.971 +04:00 [DBG] The request is a preflight request.
+2023-04-12 12:33:33.972 +04:00 [DBG] The request is a preflight request.
+2023-04-12 12:33:33.973 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7261/api/Card/see-balance - - - 204 - - 14.2479ms
+2023-04-12 12:33:33.974 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7261/api/Card/see-balance - - - 204 - - 15.2693ms
+2023-04-12 12:33:33.974 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/api/Card/see-balance - -
+2023-04-12 12:33:33.977 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Card/see-balance'
+2023-04-12 12:33:33.978 +04:00 [DBG] Endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)' with route pattern 'api/Card/see-balance' is valid for the request path '/api/Card/see-balance'
+2023-04-12 12:33:33.980 +04:00 [DBG] Request matched endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)'
+2023-04-12 12:33:33.981 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-12 12:33:33.982 +04:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-04-12 12:33:33.983 +04:00 [INF] CORS policy execution successful.
+2023-04-12 12:33:33.984 +04:00 [DBG] Successfully validated the token.
+2023-04-12 12:33:33.985 +04:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-04-12 12:33:33.986 +04:00 [DBG] Authorization was successful.
+2023-04-12 12:33:33.987 +04:00 [INF] Executing endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)'
+2023-04-12 12:33:33.988 +04:00 [INF] Route matched with {action = "SeeBalance", controller = "Card"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SeeBalance() on controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api).
+2023-04-12 12:33:33.990 +04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-04-12 12:33:33.992 +04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-04-12 12:33:33.993 +04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-04-12 12:33:33.996 +04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-04-12 12:33:33.997 +04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-04-12 12:33:33.999 +04:00 [DBG] Executing controller factory for controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api)
+2023-04-12 12:33:34.000 +04:00 [DBG] Executed controller factory for controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api)
+2023-04-12 12:33:34.002 +04:00 [DBG] Entity Framework Core 7.0.3 initialized 'BankSystemDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.3' with options: None
+2023-04-12 12:33:34.004 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-04-12 12:33:34.005 +04:00 [DBG] Creating DbConnection.
+2023-04-12 12:33:34.006 +04:00 [DBG] Created DbConnection. (0ms).
+2023-04-12 12:33:34.007 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2023-04-12 12:33:34.008 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+2023-04-12 12:33:34.009 +04:00 [DBG] Opening connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:34.011 +04:00 [DBG] Opened connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:34.012 +04:00 [DBG] Executing DbCommand [Parameters=[@__cardId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccountId], [c].[CardNumber], [c].[CreatedAt], [c].[Cvv], [c].[ExpiresAt], [c].[FullName], [c].[Pin], [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId]
+FROM [Cards] AS [c]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[Id]
+WHERE [c].[Id] = @__cardId_0
+2023-04-12 12:33:34.017 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__cardId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccountId], [c].[CardNumber], [c].[CreatedAt], [c].[Cvv], [c].[ExpiresAt], [c].[FullName], [c].[Pin], [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId]
+FROM [Cards] AS [c]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[Id]
+WHERE [c].[Id] = @__cardId_0
+2023-04-12 12:33:34.020 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CardEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:34.022 +04:00 [DBG] The navigation 'CardEntity.Account' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:34.023 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'AccountEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:34.024 +04:00 [DBG] Closing data reader to 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:34.025 +04:00 [DBG] A data reader for 'BankSystem' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 5ms reading results.
+2023-04-12 12:33:34.027 +04:00 [DBG] Closing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:34.028 +04:00 [DBG] Closed connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB' (1ms).
+2023-04-12 12:33:34.030 +04:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-04-12 12:33:34.033 +04:00 [DBG] No information found on request to perform content negotiation.
+2023-04-12 12:33:34.034 +04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-04-12 12:33:34.035 +04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-04-12 12:33:34.036 +04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-04-12 12:33:34.037 +04:00 [INF] Executing OkObjectResult, writing value of type 'BankSystem.Common.Models.HttpResult'.
+2023-04-12 12:33:34.039 +04:00 [INF] Executed action ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api) in 40.1071ms
+2023-04-12 12:33:34.040 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/api/Card/see-balance - -
+2023-04-12 12:33:34.040 +04:00 [INF] Executed endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)'
+2023-04-12 12:33:34.041 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Card/see-balance'
+2023-04-12 12:33:34.042 +04:00 [DBG] 'BankSystemDbContext' disposed.
+2023-04-12 12:33:34.043 +04:00 [DBG] Endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)' with route pattern 'api/Card/see-balance' is valid for the request path '/api/Card/see-balance'
+2023-04-12 12:33:34.044 +04:00 [DBG] Disposing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:34.046 +04:00 [DBG] Request matched endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)'
+2023-04-12 12:33:34.047 +04:00 [DBG] Disposed connection to database '' on server '' (3ms).
+2023-04-12 12:33:34.048 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-12 12:33:34.050 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/api/Card/see-balance - - - 200 - application/json;+charset=utf-8 75.4074ms
+2023-04-12 12:33:34.051 +04:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-04-12 12:33:34.053 +04:00 [INF] CORS policy execution successful.
+2023-04-12 12:33:34.054 +04:00 [DBG] Successfully validated the token.
+2023-04-12 12:33:34.054 +04:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-04-12 12:33:34.055 +04:00 [DBG] Authorization was successful.
+2023-04-12 12:33:34.056 +04:00 [INF] Executing endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)'
+2023-04-12 12:33:34.057 +04:00 [INF] Route matched with {action = "SeeBalance", controller = "Card"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SeeBalance() on controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api).
+2023-04-12 12:33:34.059 +04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-04-12 12:33:34.060 +04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-04-12 12:33:34.062 +04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-04-12 12:33:34.064 +04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-04-12 12:33:34.065 +04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-04-12 12:33:34.067 +04:00 [DBG] Executing controller factory for controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api)
+2023-04-12 12:33:34.068 +04:00 [DBG] Executed controller factory for controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api)
+2023-04-12 12:33:34.070 +04:00 [DBG] Entity Framework Core 7.0.3 initialized 'BankSystemDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.3' with options: None
+2023-04-12 12:33:34.072 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-04-12 12:33:34.074 +04:00 [DBG] Creating DbConnection.
+2023-04-12 12:33:34.074 +04:00 [DBG] Created DbConnection. (0ms).
+2023-04-12 12:33:34.075 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2023-04-12 12:33:34.077 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (4ms).
+2023-04-12 12:33:34.078 +04:00 [DBG] Opening connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:34.080 +04:00 [DBG] Opened connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:34.081 +04:00 [DBG] Executing DbCommand [Parameters=[@__cardId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccountId], [c].[CardNumber], [c].[CreatedAt], [c].[Cvv], [c].[ExpiresAt], [c].[FullName], [c].[Pin], [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId]
+FROM [Cards] AS [c]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[Id]
+WHERE [c].[Id] = @__cardId_0
+2023-04-12 12:33:34.084 +04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__cardId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccountId], [c].[CardNumber], [c].[CreatedAt], [c].[Cvv], [c].[ExpiresAt], [c].[FullName], [c].[Pin], [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId]
+FROM [Cards] AS [c]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[Id]
+WHERE [c].[Id] = @__cardId_0
+2023-04-12 12:33:34.086 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CardEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:34.088 +04:00 [DBG] The navigation 'CardEntity.Account' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:34.089 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'AccountEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:34.090 +04:00 [DBG] Closing data reader to 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:34.091 +04:00 [DBG] A data reader for 'BankSystem' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 5ms reading results.
+2023-04-12 12:33:34.093 +04:00 [DBG] Closing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:34.094 +04:00 [DBG] Closed connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB' (1ms).
+2023-04-12 12:33:34.096 +04:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-04-12 12:33:34.099 +04:00 [DBG] No information found on request to perform content negotiation.
+2023-04-12 12:33:34.099 +04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-04-12 12:33:34.100 +04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-04-12 12:33:34.101 +04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-04-12 12:33:34.103 +04:00 [INF] Executing OkObjectResult, writing value of type 'BankSystem.Common.Models.HttpResult'.
+2023-04-12 12:33:34.104 +04:00 [INF] Executed action ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api) in 37.0949ms
+2023-04-12 12:33:34.105 +04:00 [INF] Executed endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)'
+2023-04-12 12:33:34.106 +04:00 [DBG] 'BankSystemDbContext' disposed.
+2023-04-12 12:33:34.107 +04:00 [DBG] Disposing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:34.109 +04:00 [DBG] Disposed connection to database '' on server '' (1ms).
+2023-04-12 12:33:34.110 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/api/Card/see-balance - - - 200 - application/json;+charset=utf-8 70.0345ms
+2023-04-12 12:33:38.737 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7261/api/Transaction/cash-out - -
+2023-04-12 12:33:38.738 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Transaction/cash-out'
+2023-04-12 12:33:38.739 +04:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-04-12 12:33:38.740 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-12 12:33:38.741 +04:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-04-12 12:33:38.742 +04:00 [INF] CORS policy execution successful.
+2023-04-12 12:33:38.743 +04:00 [DBG] The request is a preflight request.
+2023-04-12 12:33:38.744 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7261/api/Transaction/cash-out - - - 204 - - 6.9584ms
+2023-04-12 12:33:38.745 +04:00 [INF] Request starting HTTP/2 POST https://localhost:7261/api/Transaction/cash-out application/json 26
+2023-04-12 12:33:38.746 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Transaction/cash-out'
+2023-04-12 12:33:38.747 +04:00 [DBG] Endpoint 'ATM.Api.Controllers.TransactionController.CashOut (BankSystem.Atm.Api)' with route pattern 'api/Transaction/cash-out' is valid for the request path '/api/Transaction/cash-out'
+2023-04-12 12:33:38.749 +04:00 [DBG] Request matched endpoint 'ATM.Api.Controllers.TransactionController.CashOut (BankSystem.Atm.Api)'
+2023-04-12 12:33:38.750 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-12 12:33:38.751 +04:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-04-12 12:33:38.752 +04:00 [INF] CORS policy execution successful.
+2023-04-12 12:33:38.753 +04:00 [DBG] Successfully validated the token.
+2023-04-12 12:33:38.754 +04:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-04-12 12:33:38.755 +04:00 [DBG] Authorization was successful.
+2023-04-12 12:33:38.756 +04:00 [INF] Executing endpoint 'ATM.Api.Controllers.TransactionController.CashOut (BankSystem.Atm.Api)'
+2023-04-12 12:33:38.757 +04:00 [INF] Route matched with {action = "CashOut", controller = "Transaction"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CashOut(BankSystem.Atm.Services.Models.Requests.CashOutRequest) on controller ATM.Api.Controllers.TransactionController (BankSystem.Atm.Api).
+2023-04-12 12:33:38.759 +04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-04-12 12:33:38.760 +04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-04-12 12:33:38.762 +04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-04-12 12:33:38.765 +04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-04-12 12:33:38.766 +04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-04-12 12:33:38.768 +04:00 [DBG] Executing controller factory for controller ATM.Api.Controllers.TransactionController (BankSystem.Atm.Api)
+2023-04-12 12:33:38.770 +04:00 [DBG] Executed controller factory for controller ATM.Api.Controllers.TransactionController (BankSystem.Atm.Api)
+2023-04-12 12:33:38.772 +04:00 [DBG] Attempting to bind parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.CashOutRequest' ...
+2023-04-12 12:33:38.773 +04:00 [DBG] Attempting to bind parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.CashOutRequest' using the name '' in request data ...
+2023-04-12 12:33:38.775 +04:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-04-12 12:33:38.776 +04:00 [DBG] Connection id "0HMPR60T90KTN", Request id "0HMPR60T90KTN:0000000B": started reading request body.
+2023-04-12 12:33:38.777 +04:00 [DBG] Connection id "0HMPR60T90KTN", Request id "0HMPR60T90KTN:0000000B": done reading request body.
+2023-04-12 12:33:38.779 +04:00 [DBG] JSON input formatter succeeded, deserializing to type 'BankSystem.Atm.Services.Models.Requests.CashOutRequest'
+2023-04-12 12:33:38.780 +04:00 [DBG] Done attempting to bind parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.CashOutRequest'.
+2023-04-12 12:33:38.782 +04:00 [DBG] Done attempting to bind parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.CashOutRequest'.
+2023-04-12 12:33:38.783 +04:00 [DBG] Attempting to validate the bound parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.CashOutRequest' ...
+2023-04-12 12:33:38.785 +04:00 [DBG] Done attempting to validate the bound parameter 'request' of type 'BankSystem.Atm.Services.Models.Requests.CashOutRequest'.
+2023-04-12 12:33:38.787 +04:00 [DBG] Entity Framework Core 7.0.3 initialized 'BankSystemDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.3' with options: None
+2023-04-12 12:33:38.789 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-04-12 12:33:38.790 +04:00 [DBG] Creating DbConnection.
+2023-04-12 12:33:38.791 +04:00 [DBG] Created DbConnection. (0ms).
+2023-04-12 12:33:38.792 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2023-04-12 12:33:38.793 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+2023-04-12 12:33:38.794 +04:00 [DBG] Opening connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:38.796 +04:00 [DBG] Opened connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:38.798 +04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Code], [c].[Date], [c].[Diff], [c].[DiffFormated], [c].[LastUpdatedAt], [c].[Name], [c].[Quantity], [c].[Rate], [c].[RateFormated], [c].[ValidFromDate]
+FROM [Currencies] AS [c]
+2023-04-12 12:33:38.802 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Code], [c].[Date], [c].[Diff], [c].[DiffFormated], [c].[LastUpdatedAt], [c].[Name], [c].[Quantity], [c].[Rate], [c].[RateFormated], [c].[ValidFromDate]
+FROM [Currencies] AS [c]
+2023-04-12 12:33:38.804 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.806 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.807 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.808 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.810 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.811 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.813 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.815 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.816 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.817 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.819 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.820 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.822 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.823 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.825 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.826 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.827 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.829 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.831 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.832 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.834 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.836 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.837 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.838 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.840 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.841 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.843 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.845 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.846 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.848 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.849 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.850 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.852 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.854 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.855 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.856 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.858 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.859 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.861 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.863 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.865 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.866 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.868 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CurrencyEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.869 +04:00 [DBG] Closing data reader to 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:38.870 +04:00 [DBG] A data reader for 'BankSystem' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 66ms reading results.
+2023-04-12 12:33:38.872 +04:00 [DBG] Closing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:38.873 +04:00 [DBG] Closed connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB' (1ms).
+2023-04-12 12:33:38.875 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-04-12 12:33:38.875 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2023-04-12 12:33:38.877 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (2ms).
+2023-04-12 12:33:38.878 +04:00 [DBG] Opening connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:38.879 +04:00 [DBG] Opened connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:38.881 +04:00 [DBG] Executing DbCommand [Parameters=[@__cardId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId], [a0].[Id], [a0].[AccessFailedCount], [a0].[BirthDate], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PersonalNumber], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[RegisteredAt], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+FROM [Accounts] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Cards] AS [c]
+    WHERE [a].[Id] = [c].[AccountId] AND [c].[Id] = @__cardId_0)
+2023-04-12 12:33:38.887 +04:00 [INF] Executed DbCommand (7ms) [Parameters=[@__cardId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId], [a0].[Id], [a0].[AccessFailedCount], [a0].[BirthDate], [a0].[ConcurrencyStamp], [a0].[Email], [a0].[EmailConfirmed], [a0].[FirstName], [a0].[LastName], [a0].[LockoutEnabled], [a0].[LockoutEnd], [a0].[NormalizedEmail], [a0].[NormalizedUserName], [a0].[PasswordHash], [a0].[PersonalNumber], [a0].[PhoneNumber], [a0].[PhoneNumberConfirmed], [a0].[RegisteredAt], [a0].[SecurityStamp], [a0].[TwoFactorEnabled], [a0].[UserName]
+FROM [Accounts] AS [a]
+INNER JOIN [AspNetUsers] AS [a0] ON [a].[UserId] = [a0].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM [Cards] AS [c]
+    WHERE [a].[Id] = [c].[AccountId] AND [c].[Id] = @__cardId_0)
+2023-04-12 12:33:38.891 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'AccountEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.893 +04:00 [DBG] The navigation 'AccountEntity.UserEntity' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.895 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'UserEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.898 +04:00 [DBG] Closing data reader to 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:38.899 +04:00 [DBG] A data reader for 'BankSystem' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 8ms reading results.
+2023-04-12 12:33:38.901 +04:00 [DBG] Closing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:38.902 +04:00 [DBG] Closed connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB' (1ms).
+2023-04-12 12:33:38.904 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-04-12 12:33:38.905 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2023-04-12 12:33:38.906 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (1ms).
+2023-04-12 12:33:38.907 +04:00 [DBG] Opening connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:38.908 +04:00 [DBG] Opened connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:38.909 +04:00 [DBG] Executing DbCommand [Parameters=[@__accountId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccountFromIban], [t].[AccountFromId], [t].[AccountToIban], [t].[AccountToId], [t].[CreatedAt], [t].[CurrencyFrom], [t].[CurrencyTo], [t].[Fee], [t].[ReceivedAmount], [t].[TransactionType], [t].[WithDrawnAmount]
+FROM [Transactions] AS [t]
+WHERE [t].[AccountFromId] = @__accountId_0 AND CONVERT(date, [t].[CreatedAt]) = CONVERT(date, GETDATE()) AND [t].[TransactionType] = 0
+2023-04-12 12:33:38.914 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__accountId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AccountFromIban], [t].[AccountFromId], [t].[AccountToIban], [t].[AccountToId], [t].[CreatedAt], [t].[CurrencyFrom], [t].[CurrencyTo], [t].[Fee], [t].[ReceivedAmount], [t].[TransactionType], [t].[WithDrawnAmount]
+FROM [Transactions] AS [t]
+WHERE [t].[AccountFromId] = @__accountId_0 AND CONVERT(date, [t].[CreatedAt]) = CONVERT(date, GETDATE()) AND [t].[TransactionType] = 0
+2023-04-12 12:33:38.928 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'TransactionEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.930 +04:00 [DBG] Closing data reader to 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:38.932 +04:00 [DBG] A data reader for 'BankSystem' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 14ms reading results.
+2023-04-12 12:33:38.934 +04:00 [DBG] Closing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:38.935 +04:00 [DBG] Closed connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB' (1ms).
+2023-04-12 12:33:38.938 +04:00 [DBG] An entity of type 'AccountEntity' tracked by 'BankSystemDbContext' changed state from '"Unchanged"' to '"Modified"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.941 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'TransactionEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.943 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'EmailRequestEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.945 +04:00 [DBG] SaveChanges starting for 'BankSystemDbContext'.
+2023-04-12 12:33:38.947 +04:00 [DBG] DetectChanges starting for 'BankSystemDbContext'.
+2023-04-12 12:33:38.948 +04:00 [DBG] DetectChanges completed for 'BankSystemDbContext'.
+2023-04-12 12:33:38.950 +04:00 [DBG] Executing 3 update commands as a batch.
+2023-04-12 12:33:38.951 +04:00 [DBG] Opening connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:38.952 +04:00 [DBG] Opened connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:38.954 +04:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2023-04-12 12:33:38.955 +04:00 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2023-04-12 12:33:38.956 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-04-12 12:33:38.957 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-04-12 12:33:38.959 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (2ms).
+2023-04-12 12:33:38.960 +04:00 [DBG] Executing DbCommand [Parameters=[@p4='?' (DbType = Guid), @p0='?' (Precision = 18) (Scale = 3) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (DbType = Int32), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Guid), @p12='?' (Size = 4000), @p13='?' (DbType = Guid), @p14='?' (Size = 4000), @p15='?' (DbType = Guid), @p16='?' (DbType = DateTime2), @p17='?' (DbType = Int32), @p18='?' (DbType = Int32), @p19='?' (Precision = 18) (Scale = 3) (DbType = Decimal), @p20='?' (Precision = 18) (Scale = 3) (DbType = Decimal), @p21='?' (DbType = Int32), @p22='?' (Precision = 18) (Scale = 3) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Accounts] SET [Amount] = @p0, [Currency] = @p1, [Iban] = @p2, [UserId] = @p3
+OUTPUT 1
+WHERE [Id] = @p4;
+INSERT INTO [EmailRequests] ([Id], [Body], [CreatedAt], [Status], [Subject], [ToAddress])
+VALUES (@p5, @p6, @p7, @p8, @p9, @p10);
+INSERT INTO [Transactions] ([Id], [AccountFromIban], [AccountFromId], [AccountToIban], [AccountToId], [CreatedAt], [CurrencyFrom], [CurrencyTo], [Fee], [ReceivedAmount], [TransactionType], [WithDrawnAmount])
+VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22);
+2023-04-12 12:33:38.970 +04:00 [INF] Executed DbCommand (10ms) [Parameters=[@p4='?' (DbType = Guid), @p0='?' (Precision = 18) (Scale = 3) (DbType = Decimal), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = Guid), @p5='?' (DbType = Guid), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (DbType = Int32), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = Guid), @p12='?' (Size = 4000), @p13='?' (DbType = Guid), @p14='?' (Size = 4000), @p15='?' (DbType = Guid), @p16='?' (DbType = DateTime2), @p17='?' (DbType = Int32), @p18='?' (DbType = Int32), @p19='?' (Precision = 18) (Scale = 3) (DbType = Decimal), @p20='?' (Precision = 18) (Scale = 3) (DbType = Decimal), @p21='?' (DbType = Int32), @p22='?' (Precision = 18) (Scale = 3) (DbType = Decimal)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Accounts] SET [Amount] = @p0, [Currency] = @p1, [Iban] = @p2, [UserId] = @p3
+OUTPUT 1
+WHERE [Id] = @p4;
+INSERT INTO [EmailRequests] ([Id], [Body], [CreatedAt], [Status], [Subject], [ToAddress])
+VALUES (@p5, @p6, @p7, @p8, @p9, @p10);
+INSERT INTO [Transactions] ([Id], [AccountFromIban], [AccountFromId], [AccountToIban], [AccountToId], [CreatedAt], [CurrencyFrom], [CurrencyTo], [Fee], [ReceivedAmount], [TransactionType], [WithDrawnAmount])
+VALUES (@p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22);
+2023-04-12 12:33:38.973 +04:00 [DBG] Closing data reader to 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:38.975 +04:00 [DBG] A data reader for 'BankSystem' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 1ms reading results.
+2023-04-12 12:33:38.977 +04:00 [DBG] Committing transaction.
+2023-04-12 12:33:38.978 +04:00 [DBG] Committed transaction.
+2023-04-12 12:33:38.979 +04:00 [DBG] Closing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:38.980 +04:00 [DBG] Closed connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB' (1ms).
+2023-04-12 12:33:38.982 +04:00 [DBG] Disposing transaction.
+2023-04-12 12:33:38.983 +04:00 [DBG] An entity of type 'TransactionEntity' tracked by 'BankSystemDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.985 +04:00 [DBG] An entity of type 'EmailRequestEntity' tracked by 'BankSystemDbContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.987 +04:00 [DBG] An entity of type 'AccountEntity' tracked by 'BankSystemDbContext' changed state from '"Modified"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:38.989 +04:00 [DBG] SaveChanges completed for 'BankSystemDbContext' with 3 entities written to the database.
+2023-04-12 12:33:38.990 +04:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-04-12 12:33:38.993 +04:00 [DBG] No information found on request to perform content negotiation.
+2023-04-12 12:33:38.994 +04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-04-12 12:33:38.995 +04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-04-12 12:33:38.996 +04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-04-12 12:33:38.998 +04:00 [INF] Executing OkObjectResult, writing value of type 'BankSystem.Common.Models.HttpResult'.
+2023-04-12 12:33:38.999 +04:00 [INF] Executed action ATM.Api.Controllers.TransactionController.CashOut (BankSystem.Atm.Api) in 231.0007ms
+2023-04-12 12:33:39.000 +04:00 [INF] Executed endpoint 'ATM.Api.Controllers.TransactionController.CashOut (BankSystem.Atm.Api)'
+2023-04-12 12:33:39.002 +04:00 [DBG] 'BankSystemDbContext' disposed.
+2023-04-12 12:33:39.003 +04:00 [DBG] Disposing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:39.004 +04:00 [DBG] Disposed connection to database '' on server '' (1ms).
+2023-04-12 12:33:39.006 +04:00 [INF] Request finished HTTP/2 POST https://localhost:7261/api/Transaction/cash-out application/json 26 - 200 - application/json;+charset=utf-8 260.6417ms
+2023-04-12 12:33:39.834 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7261/api/Card/see-balance - -
+2023-04-12 12:33:39.834 +04:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7261/api/Card/see-balance - -
+2023-04-12 12:33:39.835 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Card/see-balance'
+2023-04-12 12:33:39.836 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Card/see-balance'
+2023-04-12 12:33:39.837 +04:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-04-12 12:33:39.838 +04:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-04-12 12:33:39.839 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-12 12:33:39.840 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-12 12:33:39.840 +04:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-04-12 12:33:39.841 +04:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-04-12 12:33:39.842 +04:00 [INF] CORS policy execution successful.
+2023-04-12 12:33:39.843 +04:00 [INF] CORS policy execution successful.
+2023-04-12 12:33:39.843 +04:00 [DBG] The request is a preflight request.
+2023-04-12 12:33:39.845 +04:00 [DBG] The request is a preflight request.
+2023-04-12 12:33:39.846 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7261/api/Card/see-balance - - - 204 - - 12.0966ms
+2023-04-12 12:33:39.847 +04:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7261/api/Card/see-balance - - - 204 - - 12.7049ms
+2023-04-12 12:33:39.848 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/api/Card/see-balance - -
+2023-04-12 12:33:39.849 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Card/see-balance'
+2023-04-12 12:33:39.850 +04:00 [DBG] Endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)' with route pattern 'api/Card/see-balance' is valid for the request path '/api/Card/see-balance'
+2023-04-12 12:33:39.852 +04:00 [DBG] Request matched endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)'
+2023-04-12 12:33:39.854 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-12 12:33:39.854 +04:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-04-12 12:33:39.855 +04:00 [INF] CORS policy execution successful.
+2023-04-12 12:33:39.856 +04:00 [DBG] Successfully validated the token.
+2023-04-12 12:33:39.857 +04:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-04-12 12:33:39.858 +04:00 [DBG] Authorization was successful.
+2023-04-12 12:33:39.859 +04:00 [INF] Executing endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)'
+2023-04-12 12:33:39.860 +04:00 [INF] Route matched with {action = "SeeBalance", controller = "Card"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SeeBalance() on controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api).
+2023-04-12 12:33:39.862 +04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-04-12 12:33:39.864 +04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-04-12 12:33:39.865 +04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-04-12 12:33:39.867 +04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-04-12 12:33:39.869 +04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-04-12 12:33:39.870 +04:00 [DBG] Executing controller factory for controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api)
+2023-04-12 12:33:39.872 +04:00 [DBG] Executed controller factory for controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api)
+2023-04-12 12:33:39.873 +04:00 [DBG] Entity Framework Core 7.0.3 initialized 'BankSystemDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.3' with options: None
+2023-04-12 12:33:39.875 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-04-12 12:33:39.876 +04:00 [DBG] Creating DbConnection.
+2023-04-12 12:33:39.878 +04:00 [DBG] Created DbConnection. (1ms).
+2023-04-12 12:33:39.879 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (3ms).
+2023-04-12 12:33:39.880 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (4ms).
+2023-04-12 12:33:39.881 +04:00 [DBG] Opening connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:39.883 +04:00 [DBG] Opened connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:39.884 +04:00 [DBG] Executing DbCommand [Parameters=[@__cardId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccountId], [c].[CardNumber], [c].[CreatedAt], [c].[Cvv], [c].[ExpiresAt], [c].[FullName], [c].[Pin], [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId]
+FROM [Cards] AS [c]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[Id]
+WHERE [c].[Id] = @__cardId_0
+2023-04-12 12:33:39.889 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__cardId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccountId], [c].[CardNumber], [c].[CreatedAt], [c].[Cvv], [c].[ExpiresAt], [c].[FullName], [c].[Pin], [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId]
+FROM [Cards] AS [c]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[Id]
+WHERE [c].[Id] = @__cardId_0
+2023-04-12 12:33:39.892 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CardEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:39.893 +04:00 [DBG] The navigation 'CardEntity.Account' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:39.895 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'AccountEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:39.896 +04:00 [DBG] Closing data reader to 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:39.898 +04:00 [DBG] A data reader for 'BankSystem' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 6ms reading results.
+2023-04-12 12:33:39.899 +04:00 [DBG] Closing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:39.900 +04:00 [DBG] Closed connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB' (1ms).
+2023-04-12 12:33:39.902 +04:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-04-12 12:33:39.904 +04:00 [DBG] No information found on request to perform content negotiation.
+2023-04-12 12:33:39.905 +04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-04-12 12:33:39.906 +04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-04-12 12:33:39.907 +04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-04-12 12:33:39.908 +04:00 [INF] Executing OkObjectResult, writing value of type 'BankSystem.Common.Models.HttpResult'.
+2023-04-12 12:33:39.909 +04:00 [INF] Executed action ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api) in 38.8747ms
+2023-04-12 12:33:39.911 +04:00 [INF] Request starting HTTP/2 GET https://localhost:7261/api/Card/see-balance - -
+2023-04-12 12:33:39.911 +04:00 [INF] Executed endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)'
+2023-04-12 12:33:39.912 +04:00 [DBG] 1 candidate(s) found for the request path '/api/Card/see-balance'
+2023-04-12 12:33:39.913 +04:00 [DBG] 'BankSystemDbContext' disposed.
+2023-04-12 12:33:39.914 +04:00 [DBG] Endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)' with route pattern 'api/Card/see-balance' is valid for the request path '/api/Card/see-balance'
+2023-04-12 12:33:39.915 +04:00 [DBG] Disposing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:39.917 +04:00 [DBG] Request matched endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)'
+2023-04-12 12:33:39.918 +04:00 [DBG] Disposed connection to database '' on server '' (2ms).
+2023-04-12 12:33:39.919 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-04-12 12:33:39.921 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/api/Card/see-balance - - - 200 - application/json;+charset=utf-8 72.7509ms
+2023-04-12 12:33:39.921 +04:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-04-12 12:33:39.923 +04:00 [INF] CORS policy execution successful.
+2023-04-12 12:33:39.924 +04:00 [DBG] Successfully validated the token.
+2023-04-12 12:33:39.925 +04:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2023-04-12 12:33:39.926 +04:00 [DBG] Authorization was successful.
+2023-04-12 12:33:39.927 +04:00 [INF] Executing endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)'
+2023-04-12 12:33:39.928 +04:00 [INF] Route matched with {action = "SeeBalance", controller = "Card"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SeeBalance() on controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api).
+2023-04-12 12:33:39.930 +04:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-04-12 12:33:39.932 +04:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-04-12 12:33:39.933 +04:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-04-12 12:33:39.935 +04:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-04-12 12:33:39.937 +04:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-04-12 12:33:39.938 +04:00 [DBG] Executing controller factory for controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api)
+2023-04-12 12:33:39.939 +04:00 [DBG] Executed controller factory for controller ATM.Api.Controllers.CardController (BankSystem.Atm.Api)
+2023-04-12 12:33:39.941 +04:00 [DBG] Entity Framework Core 7.0.3 initialized 'BankSystemDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:7.0.3' with options: None
+2023-04-12 12:33:39.944 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-04-12 12:33:39.945 +04:00 [DBG] Creating DbConnection.
+2023-04-12 12:33:39.946 +04:00 [DBG] Created DbConnection. (1ms).
+2023-04-12 12:33:39.947 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (3ms).
+2023-04-12 12:33:39.948 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (4ms).
+2023-04-12 12:33:39.949 +04:00 [DBG] Opening connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:39.950 +04:00 [DBG] Opened connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:39.951 +04:00 [DBG] Executing DbCommand [Parameters=[@__cardId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccountId], [c].[CardNumber], [c].[CreatedAt], [c].[Cvv], [c].[ExpiresAt], [c].[FullName], [c].[Pin], [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId]
+FROM [Cards] AS [c]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[Id]
+WHERE [c].[Id] = @__cardId_0
+2023-04-12 12:33:39.957 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__cardId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccountId], [c].[CardNumber], [c].[CreatedAt], [c].[Cvv], [c].[ExpiresAt], [c].[FullName], [c].[Pin], [a].[Id], [a].[Amount], [a].[Currency], [a].[Iban], [a].[UserId]
+FROM [Cards] AS [c]
+INNER JOIN [Accounts] AS [a] ON [c].[AccountId] = [a].[Id]
+WHERE [c].[Id] = @__cardId_0
+2023-04-12 12:33:39.960 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'CardEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:39.961 +04:00 [DBG] The navigation 'CardEntity.Account' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:39.963 +04:00 [DBG] Context 'BankSystemDbContext' started tracking 'AccountEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-04-12 12:33:39.965 +04:00 [DBG] Closing data reader to 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:39.966 +04:00 [DBG] A data reader for 'BankSystem' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 6ms reading results.
+2023-04-12 12:33:39.967 +04:00 [DBG] Closing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:39.969 +04:00 [DBG] Closed connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB' (1ms).
+2023-04-12 12:33:39.970 +04:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-04-12 12:33:39.972 +04:00 [DBG] No information found on request to perform content negotiation.
+2023-04-12 12:33:39.973 +04:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-04-12 12:33:39.974 +04:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-04-12 12:33:39.975 +04:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-04-12 12:33:39.976 +04:00 [INF] Executing OkObjectResult, writing value of type 'BankSystem.Common.Models.HttpResult'.
+2023-04-12 12:33:39.978 +04:00 [INF] Executed action ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api) in 39.4834ms
+2023-04-12 12:33:39.980 +04:00 [INF] Executed endpoint 'ATM.Api.Controllers.CardController.SeeBalance (BankSystem.Atm.Api)'
+2023-04-12 12:33:39.981 +04:00 [DBG] 'BankSystemDbContext' disposed.
+2023-04-12 12:33:39.982 +04:00 [DBG] Disposing connection to database 'BankSystem' on server '(localdb)\MSSQLLocalDB'.
+2023-04-12 12:33:39.983 +04:00 [DBG] Disposed connection to database '' on server '' (1ms).
+2023-04-12 12:33:39.985 +04:00 [INF] Request finished HTTP/2 GET https://localhost:7261/api/Card/see-balance - - - 200 - application/json;+charset=utf-8 74.0551ms
+2023-04-12 12:33:43.412 +04:00 [DBG] Connection id "0HMPR60T90KTN" received FIN.
+2023-04-12 12:33:43.414 +04:00 [DBG] Connection id "0HMPR60T90KTN" is closed. The last processed stream ID was 19.
+2023-04-12 12:33:43.414 +04:00 [DBG] The connection queue processing loop for 0HMPR60T90KTN completed.
+2023-04-12 12:33:43.415 +04:00 [DBG] Connection id "0HMPR60T90KTN" sending FIN because: "The client closed the connection."
+2023-04-12 12:33:43.422 +04:00 [DBG] Connection id "0HMPR60T90KTN" stopped.

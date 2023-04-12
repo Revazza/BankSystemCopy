@@ -27,8 +27,8 @@ AuthConfigurator.Configure(builder);
 
 builder.Services.AddTransient<ITransactionStatisticsService, TransactionStatisticsService>();
 
-builder.Services.AddTransient<ITransactionRepository, TransactionRepository>();
-builder.Services.AddTransient<ICustomersStatisticsRepository, CustomerStatisticsRepository>();
+builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
+builder.Services.AddScoped<ICustomersStatisticsRepository, CustomerStatisticsRepository>();
 
 builder.Services.AddCors(options =>
 {

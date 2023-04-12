@@ -73,13 +73,13 @@ builder.Services.AddDbContext<BankSystemDbContext>(c =>
 
 
 builder.Services.AddTransient<TransactionValidator>();
-builder.Services.AddTransient<ITransactionRepository, TransactionRepository>();
+builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 builder.Services.AddTransient<ITransferService, TransferService>();
-builder.Services.AddTransient<ICurrencyRepository, CurrencyRepository>();
+builder.Services.AddScoped<ICurrencyRepository, CurrencyRepository>();
 builder.Services.AddTransient<IbanService>();
-builder.Services.AddTransient<ICardRepository, CardRepository>();
-builder.Services.AddTransient<IAccountRepository, AccountRepository>();
-builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ICardRepository, CardRepository>();
+builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddTransient<RegisterUserValidator>();
 builder.Services.AddTransient<RegisterCardValidator>();
 builder.Services.AddTransient<IUserLoginService, UserLoginService>();
