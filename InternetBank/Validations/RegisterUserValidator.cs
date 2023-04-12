@@ -59,7 +59,7 @@ public class RegisterUserValidator
         {
             throw new ArgumentNullException(nameof(request.BirthDate));
         }
-        if (request.BirthDate > DateTime.Now.AddYears(-18))
+        if (CalculateAge(request)<18)
         {
             throw new ArgumentException("User must be at least 18 years old");
         }
@@ -79,6 +79,13 @@ public class RegisterUserValidator
         {
             throw new ArgumentNullException(nameof(request.Password));
         }
+        
+        
+    }
 
+    public int CalculateAge(RegisterUserRequest request)
+    {
+        int age = (int)((DateTime.Now - request.BirthDate).TotalDays / 365.242199);
+        return age;
     }
 }
