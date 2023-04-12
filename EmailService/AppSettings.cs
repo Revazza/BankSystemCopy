@@ -1,6 +1,5 @@
 ﻿using BankSystem.Common.Extensions;
 using Microsoft.Extensions.Configuration;
-using System.Reflection;
 
 namespace EmailService
 {
@@ -11,7 +10,7 @@ namespace EmailService
 
         public AppSettings()
         {
-            var baseFolderPath = FileExtensions.GetParentFolderPath("BankSystemCopy");
+            var baseFolderPath = FileExtensions.GetParentFolderPath("BankSystem");
             var configuration = GetConfiguration(baseFolderPath);
 
             CompanyEmail = configuration["CompanyEmail"];

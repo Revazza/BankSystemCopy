@@ -30,7 +30,7 @@ namespace ATM.Api.Middlewares
             };
 
             httpContext.Response.StatusCode = (int)status;
-
+             
             httpContext.Response.ContentType = "application/json";
 
             var json = JsonConvert.SerializeObject(problem);

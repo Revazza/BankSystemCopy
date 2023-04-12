@@ -15,6 +15,7 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .WriteTo.File("exception_logs/internet_bank.txt", rollingInterval: RollingInterval.Day)
     .CreateLogger();
+
 var builder = WebApplication.CreateBuilder(args);
 
 var os = Environment.OSVersion.Platform.ToString().ToLower();
@@ -62,10 +63,15 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+builder.Host.UseSerilog();
+
 AuthConfigurator.Configure(builder);
 
 builder.Services.AddDbContext<BankSystemDbContext>(c =>
     c.UseSqlServer(builder.Configuration["DefaultConnection"]));
+
+
+
 builder.Services.AddTransient<TransactionValidator>();
 builder.Services.AddTransient<ITransactionRepository, TransactionRepository>();
 builder.Services.AddTransient<ITransferService, TransferService>();
@@ -84,6 +90,8 @@ builder.Services.AddTransient<RegisterAccountValidator>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IOperatorService, OperatorService>();
 builder.Services.AddTransient<GlobalExceptionHandlingMiddleware>();
+
+
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(

@@ -9,6 +9,7 @@ namespace BankSystem.Reports.Repositories
         Task<List<TransactionEntity>> GetAllTransactionsAsync();
         Task<List<TransactionEntity>> GetLastMonthTransactionsAsync();
         Task<List<TransactionEntity>> GetTransactionsByDateAsync(DateTime date);
+        Task<List<TransactionEntity>> GetTransactionsByDateAndTimeAsync(DateTime date);
     }
     public class TransactionRepository : ITransactionRepository
     {
@@ -32,6 +33,13 @@ namespace BankSystem.Reports.Repositories
         }
 
         public async Task<List<TransactionEntity>> GetTransactionsByDateAsync(DateTime date)
+        {
+            return await _context.Transactions
+                .Where(t => t.CreatedAt.Date >= date.Date)
+                .ToListAsync();
+        }
+
+        public async Task<List<TransactionEntity>> GetTransactionsByDateAndTimeAsync(DateTime date)
         {
             return await _context.Transactions
                 .Where(t => t.CreatedAt >= date)

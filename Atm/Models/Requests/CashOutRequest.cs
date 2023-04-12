@@ -10,7 +10,7 @@ namespace BankSystem.Atm.Services.Models.Requests
 
         public void Validate()
         {
-            if (Amount == 0 || Amount % 5 != 0)
+            if (Amount <= 0 || Amount % 5 != 0)
             {
                 throw new ArgumentException(
                     "Invalid cash out amount. " +
